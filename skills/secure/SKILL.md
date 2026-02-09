@@ -1,5 +1,5 @@
 ---
-name: security
+name: secure
 description: "Use this skill when the user needs to secure their SaaS app, implement authentication, protect user data, secure APIs, or check for vulnerabilities. Covers OWASP Top 10, auth best practices, data protection, and security checklists for apps built with AI tools."
 ---
 

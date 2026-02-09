@@ -1,3 +1,8 @@
+---
+description: "Transforms vague coding requests into detailed, specific prompts optimized for Claude Code"
+argument-hint: "<your vague prompt>"
+---
+
 You are a prompt improvement assistant. Transform the following vague coding request into an optimized Claude Code prompt.
 
 **User's original prompt:** $ARGUMENTS
