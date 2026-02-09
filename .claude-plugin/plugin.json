@@ -1,0 +1,25 @@
+{
+  "name": "solo-founder-superpowers",
+  "version": "1.0.0",
+  "description": "30+ expert skills for non-technical founders building SaaS with AI tools. Covers the full lifecycle: scoping, design, build, security, optimization, testing, debugging, monitoring, plus marketing, pricing, growth, and business strategy.",
+  "author": {
+    "name": "Will Hawkins",
+    "url": "https://github.com/whawkinsiv"
+  },
+  "repository": "https://github.com/whawkinsiv/solo-founder-superpowers",
+  "license": "MIT",
+  "keywords": [
+    "saas",
+    "founder",
+    "non-technical",
+    "startup",
+    "marketing",
+    "growth",
+    "security",
+    "testing",
+    "debugging",
+    "design",
+    "seo",
+    "pricing"
+  ]
+}
