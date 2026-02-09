@@ -1,6 +1,6 @@
 ---
 name: scope
-description: Turn ideas into clear, buildable specs for AI tools or stakeholder review. Use when starting features, planning projects, or when AI keeps building the wrong thing. Creates Quick Feature Specs (10-15 min) for immediate AI builds or Full Project Scopes (1-2 hours) for budget planning and contractor estimates.
+description: "Use this skill when the user needs to turn an idea into a buildable spec, write a project scope, create feature requirements, or define an MVP. Covers quick feature specs (10-15 min) for immediate AI builds and full project scopes (1-2 hours) for planning and contractor estimates."
 ---
 
 # Scope

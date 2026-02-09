@@ -1,6 +1,6 @@
 ---
 name: design
-description: Create and manage project-specific design systems for SaaS applications. Use when starting a new app (CREATE mode), updating an existing design system (MODIFY mode), or building features that need to follow established patterns (WORK WITHIN mode). Outputs to instructions/design-system.md as the single source of truth for all UX/UI decisions.
+description: "Use this skill when the user needs to create a design system, establish UI patterns, choose colors and typography, or ensure visual consistency across their SaaS app. Operates in CREATE mode (new apps), MODIFY mode (updating existing systems), or WORK WITHIN mode (building features that follow established patterns)."
 ---
 
 # Design

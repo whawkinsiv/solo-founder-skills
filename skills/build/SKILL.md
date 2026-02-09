@@ -1,6 +1,6 @@
 ---
 name: build
-description: Build features with AI coding tools (Claude Code, Lovable, Replit, Cursor). Use when implementing specs, iterating on AI code, or choosing tools. Focuses on tool selection, effective prompting, and iteration workflows for non-technical founders.
+description: "Use this skill when the user needs to build features with AI coding tools, choose between Claude Code, Lovable, Replit, or Cursor, write effective prompts for code generation, or iterate on AI-generated code. Covers tool selection, prompting strategies, and development workflows for non-technical founders."
 ---
 
 # Build

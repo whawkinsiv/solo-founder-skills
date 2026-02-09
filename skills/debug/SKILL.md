@@ -1,6 +1,6 @@
 ---
 name: debug
-description: Fix bugs systematically instead of guessing. Use when features break, users report errors, or tests fail. Covers reproducing bugs, gathering diagnostic info, and working with AI tools to fix issues efficiently for non-technical founders.
+description: "Use this skill when features break, users report errors, deployments fail, or tests don't pass. Guides systematic debugging: reproducing bugs, gathering diagnostic info, reading error messages, and working with AI tools to fix issues efficiently."
 ---
 
 # Debug

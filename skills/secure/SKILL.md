@@ -1,6 +1,6 @@
 ---
 name: security
-description: Protect your SaaS app from common vulnerabilities. Use when building auth, handling user data, or deploying features. Covers authentication, data protection, API security, and OWASP Top 10 for non-technical founders using AI tools.
+description: "Use this skill when the user needs to secure their SaaS app, implement authentication, protect user data, secure APIs, or check for vulnerabilities. Covers OWASP Top 10, auth best practices, data protection, and security checklists for apps built with AI tools."
 ---
 
 # Security

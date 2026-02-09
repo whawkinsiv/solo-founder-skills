@@ -1,6 +1,6 @@
 ---
 name: optimize
-description: Optimize your SaaS app across four dimensions - Speed (page load, API response), Code (unused files, dead code), Database (orphaned data, schema hygiene), and Dependencies (package bloat, bundle size). Use when app feels slow, codebase feels bloated, or after significant development work accumulates. Each path follows AUDIT → CLEAN → PREVENT workflow.
+description: "Use this skill when the user's app feels slow, the codebase feels bloated, or after significant development work. Optimizes across four dimensions: Speed (page load, API response), Code (unused files, dead code), Database (orphaned data, schema hygiene), and Dependencies (package bloat, bundle size)."
 ---
 
 # Optimize

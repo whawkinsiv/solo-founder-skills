@@ -1,6 +1,6 @@
 ---
 name: test
-description: Test features before users find bugs. Use when feature is built, before deploying, or when bugs reported. Covers manual testing, edge cases, cross-browser testing, and testing checklists for non-technical founders.
+description: "Use this skill when the user needs to test features before deployment, create test scenarios, find edge cases, or verify bug fixes. Covers manual testing workflows, cross-browser testing, edge case identification, and testing checklists for non-technical founders."
 ---
 
 # Test

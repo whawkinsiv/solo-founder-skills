@@ -1,6 +1,6 @@
 ---
 name: monitor
-description: Track production app health and catch issues before users complain. Use after deploying, to check app status, or when investigating user reports. Covers error tracking, uptime monitoring, and metrics for non-technical founders.
+description: "Use this skill when the user needs to set up production monitoring, track app health, configure error alerts, or respond to incidents. Covers error tracking, uptime monitoring, performance metrics, and incident response for SaaS applications."
 ---
 
 # Monitor
