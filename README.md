@@ -1,64 +1,124 @@
 # Solo Founder Superpowers
 
-A comprehensive knowledge base for non-technical founders building SaaS applications with AI tools (Claude Code, Lovable, Replit, Cursor).
+A Claude Code plugin with 36 expert skills for non-technical founders building SaaS applications with AI tools (Claude Code, Lovable, Replit, Cursor).
 
-Covers the full software development lifecycle plus business, product, and marketing skills — all written as actionable guides, checklists, and reference material.
+Covers the full lifecycle of planning, building, launching, and growing a software business — all written as actionable guides, checklists, and copy-paste prompts.
+
+## Install
+
+```
+claude plugin add whawkinsiv/solo-founder-superpowers
+```
+
+Or use any skill directly with `/solo-founder-superpowers:skill-name`.
 
 ## What's Inside
 
-### Developer Skills (`developer-skills/`)
+### Build Your Product (9 skills)
 
-Eight phases covering the complete build lifecycle:
+| Skill | What It Covers |
+|-------|----------------|
+| **scope** | Turn ideas into AI-ready specs (quick feature specs + full project scopes) |
+| **design** | Design systems, UX patterns, Laws of UX, component libraries |
+| **build** | AI-assisted dev workflows, tool selection (Claude Code, Lovable, Replit, Cursor) |
+| **secure** | Security checklists, OWASP Top 10, auth and data protection |
+| **optimize** | Speed, code, database, and dependency tuning |
+| **test** | Test scenarios, edge cases, intentional bug hunting |
+| **debug** | Systematic debugging, error interpretation |
+| **monitor** | Production health, incident response, alerting |
+| **deployment-going-live** | Hosting selection, custom domains, environment variables, going live |
 
-| Phase | Skill | What It Covers |
-|-------|-------|----------------|
-| 1 | **Scope** | Turn ideas into AI-ready specs |
-| 2 | **Design** | UX/UI patterns, Laws of UX, component libraries |
-| 3 | **Build** | AI-assisted dev workflows, tool selection |
-| 4 | **Secure** | Security checklists, OWASP Top 10 |
-| 5 | **Optimize** | Speed, code, database, dependency tuning |
-| 6 | **Test** | Scenarios, edge cases, intentional bug hunting |
-| 7 | **Debug** | Systematic debugging, error interpretation |
-| 8 | **Monitor** | Production health, incident response |
+### Launch & Grow (7 skills)
 
-Each phase has a `SKILL.md` entry point plus supporting reference files.
+| Skill | What It Covers |
+|-------|----------------|
+| **launch-go-to-market** | Product Hunt, beta programs, waitlists, launch sequencing |
+| **growth-plg** | Product-led growth, viral loops, activation metrics |
+| **content-marketing-build-in-public** | Content strategy, build in public, audience building |
+| **seo-content-strategy** | Keyword research, on-page SEO, content planning |
+| **technical-seo-expert** | Technical SEO audits, Core Web Vitals, GEO for AI search |
+| **paid-acquisition-ad-copy** | Google Ads, keyword selection, ad copy, small budgets |
+| **founder-led-sales-outreach** | Cold outreach, prospect lists, landing the first 100 customers |
 
-### Non-Code Skills (`non-code-skills/`)
+### Convert & Retain (6 skills)
 
-22 skills covering the business side of building a SaaS:
+| Skill | What It Covers |
+|-------|----------------|
+| **landing-page-strategy** | Page structure, above-the-fold copy, conversion elements |
+| **onboarding-activation-design** | Aha moments, activation rates, first-run UX |
+| **conversion-rate-optimization** | Funnel analysis, friction reduction, A/B testing |
+| **email-lifecycle-marketing** | Welcome sequences, behavioral triggers, drip campaigns |
+| **churn-prevention-retention** | At-risk identification, win-back campaigns, expansion revenue |
+| **payments-billing-operations** | Stripe setup, subscriptions, tax, dunning, billing lifecycle |
 
-**Strategy** — Product prioritization, pricing, financial modeling, legal/formation
+### Product & Design (5 skills)
 
-**Marketing & Growth** — SEO, content marketing, email lifecycle, sales outreach, paid acquisition, product-led growth
+| Skill | What It Covers |
+|-------|----------------|
+| **ux-ui-design** | Visual hierarchy, interaction patterns, design systems |
+| **information-architecture** | Navigation, content hierarchy, findability |
+| **brand-identity-visual-design** | Color systems, typography, logo, visual consistency |
+| **copywriting-microcopy** | Headlines, CTAs, button text, error messages, UI copy |
+| **accessibility** | WCAG 2.2, ARIA patterns, screen readers, keyboard navigation |
 
-**Product & Design** — UX/UI, onboarding, information architecture, customer research, support docs
+### Strategy & Research (5 skills)
 
-**Brand & Messaging** — Brand identity, copywriting, landing pages, competitive analysis, conversion optimization
+| Skill | What It Covers |
+|-------|----------------|
+| **product-strategy-prioritization** | RICE prioritization, MVP definition, roadmapping |
+| **customer-research-personas** | Jobs-to-be-Done, user interviews, behavioral personas |
+| **market-research-competitive-analysis** | Market sizing, TAM/SAM/SOM, competitive analysis |
+| **pricing-monetization-strategy** | Pricing psychology, tier design, value metrics |
+| **analytics-instrumentation** | Event tracking, funnels, key metrics, data quality |
 
-**Technical** — Analytics instrumentation, accessibility
+### Business Operations (4 skills)
 
-### Commands (`commands/`)
+| Skill | What It Covers |
+|-------|----------------|
+| **saas-financial-modeling-metrics** | Unit economics, MRR/ARR/churn, burn rate, quit number |
+| **saas-legal-business-formation** | LLC vs C-Corp, Terms of Service, Privacy Policy, compliance |
+| **customer-support-documentation** | Help docs, knowledge base, self-serve support, scaling without hiring |
+| **hiring-technical-help** | Contractor sourcing, vetting developers, briefs, management |
 
-Custom Claude Code slash commands:
+### Commands
 
-- **improve-prompt** — Transforms vague coding requests into detailed, specific prompts
+| Command | What It Does |
+|---------|-------------|
+| **improve-prompt** | Transforms vague coding requests into detailed, specific prompts |
 
 ## How to Use
 
-These skills are designed for use with AI coding tools. The recommended workflow:
+Skills are invoked automatically when Claude Code detects a relevant request, or manually:
 
 ```
-1. Scope    — Write a feature spec (10-15 min)
-2. Design   — Reference UX patterns (as needed)
-3. Build    — Give spec to AI, iterate (1-3 hours)
-4. Secure   — Run security checklist (15 min)
-5. Optimize — Quick performance check (5 min)
-6. Test     — Happy path + edge cases (15 min)
-7. Debug    — Fix issues found (varies)
-8. Monitor  — Set up monitoring (first deploy)
+/solo-founder-superpowers:scope
+/solo-founder-superpowers:launch-go-to-market
+/solo-founder-superpowers:payments-billing-operations
 ```
 
-For MVPs, focus on Scope, Build, and Test. Add the rest as you approach production.
+### Recommended workflow for a new product
+
+```
+1. Validate   — customer-research, market-research, product-strategy
+2. Plan       — scope, saas-financial-modeling, pricing
+3. Design     — design, ux-ui-design, brand-identity
+4. Build      — build, secure, test, debug
+5. Deploy     — deployment-going-live, payments-billing
+6. Launch     — launch-go-to-market, landing-page, copywriting
+7. Grow       — growth-plg, content-marketing, seo, email, paid-acquisition
+8. Retain     — onboarding, churn-prevention, customer-support
+9. Scale      — optimize, monitor, analytics, hiring-technical-help
+```
+
+## Design Philosophy
+
+These skills assume Claude's intelligence — they focus on:
+
+- **Non-technical founder perspective** and common mistakes
+- **Tool selection criteria** (when to use Lovable vs Claude Code vs Replit)
+- **Actionable checklists** and "Tell AI:" copy-paste prompts
+- **What's out of scope** (preventing premature optimization)
+- Concise, actionable content that avoids explaining concepts Claude already knows
 
 ## Author
 
