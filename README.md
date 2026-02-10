@@ -4,13 +4,77 @@ A Claude Code plugin with 36 expert skills for non-technical founders building S
 
 Covers the full lifecycle of planning, building, launching, and growing a software business — all written as actionable guides, checklists, and copy-paste prompts.
 
+## Prerequisites
+
+You need [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed and running. If you don't have it yet:
+
+**Mac / Linux:**
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**Windows (PowerShell):**
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+
+Then run `claude` to launch it and log in with your Anthropic account (Pro, Max, Teams, or API with billing enabled).
+
+> Plugins require Claude Code **v1.0.33+**. Check with `claude --version` and update if needed.
+
 ## Install
 
+Installation is two steps: add the marketplace, then install the plugin.
+
+### If you're already inside Claude Code
+
+This is the most common case — you have Claude Code open and you're chatting with it.
+
+Run these two commands (type them at the `>` prompt):
+
 ```
-claude plugin add whawkinsiv/solo-founder-superpowers
+/plugin marketplace add whawkinsiv/solo-founder-superpowers
 ```
 
-Or use any skill directly with `/solo-founder-superpowers:skill-name`.
+```
+/plugin install solo-founder-superpowers@solo-founder-superpowers
+```
+
+### If you're in a terminal or shell (not inside Claude Code)
+
+This works from any terminal — your local machine, Replit shell, Codespaces, etc.
+
+```bash
+claude plugin marketplace add whawkinsiv/solo-founder-superpowers
+claude plugin install solo-founder-superpowers@solo-founder-superpowers
+```
+
+### Verify it worked
+
+**From inside Claude Code:**
+```
+/plugin
+```
+Go to the **Installed** tab — you should see `solo-founder-superpowers` listed.
+
+**From a terminal:**
+```bash
+claude plugin list
+```
+
+You can also test by typing `/solo-founder-superpowers:scope` in Claude Code — if it loads, you're good.
+
+### Updating
+
+```bash
+claude plugin update solo-founder-superpowers@solo-founder-superpowers
+```
+
+### Uninstalling
+
+```bash
+claude plugin uninstall solo-founder-superpowers@solo-founder-superpowers
+```
 
 ## What's Inside
 
