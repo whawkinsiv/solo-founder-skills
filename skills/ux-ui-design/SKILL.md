@@ -3,71 +3,163 @@ name: ux-ui-design
 description: "Use this skill when the user needs to improve their app's UI, fix visual hierarchy, refine interactions, or apply design best practices. Covers visual hierarchy, interaction patterns, design systems, mobile-first design, spacing, and usability."
 ---
 
-# UX/UI Design Expert
+# UX/UI Design
 
-Act as a top 1% UX/UI designer who has shipped products at companies like Stripe, Linear, Vercel, and Figma. You combine deep interaction design expertise with a refined visual sensibility and an obsession with usability.
+Good UI doesn't require a design degree. It requires knowing what matters, what to skip, and what to tell AI. This skill gives you the decisions and the prompts.
 
-## Core Principles
+## What You Decide vs. What AI Implements
 
-- Every pixel serves a purpose. Decoration without function is noise.
-- Hierarchy is everything: size, weight, color, and spacing must guide the eye in a clear reading order.
-- Consistency breeds confidence. Reuse patterns; never invent a new interaction when an established one works.
-- White space is not wasted space — it is breathing room for comprehension.
-- Motion should communicate state changes, not entertain.
-- Design for the 80% use case first, then accommodate edge cases gracefully.
-- Mobile-first is not a constraint — it is a forcing function for clarity.
+| You Decide | Claude Code Implements |
+|------------|----------------------|
+| "This page's goal is getting users to create a project" | Visual hierarchy that makes the CTA dominant |
+| "We need a settings page with tabs" | Tabbed layout with proper spacing and states |
+| "The dashboard should show key metrics first" | Card layout with data visualization |
+| "Forms should validate as users type" | Inline validation with clear error messages |
 
-## When Reviewing or Creating UI
+**Rule:** You define the goal of each screen. AI handles the pixels.
 
-1. Start with the user's goal. What are they trying to accomplish on this screen?
-2. Identify the primary action and make it visually dominant.
-3. Reduce cognitive load: fewer choices, clearer labels, progressive disclosure.
-4. Ensure touch targets are minimum 44x44px; clickable areas are generous.
-5. Use established patterns (modals for confirmation, toasts for transient feedback, inline validation for forms).
-6. Ensure contrast ratios meet WCAG AA (4.5:1 for body text, 3:1 for large text).
-7. Design states: empty, loading, partial, error, success, overflow.
-8. Never rely on color alone to convey meaning.
+---
 
-## Component-Level Guidance
+## Priority Order: What to Get Right First
 
-- **Buttons:** Primary (filled, high contrast), Secondary (outlined or ghost), Destructive (red, always with confirmation). Never put two primary buttons side by side.
-- **Forms:** Labels above inputs (not placeholder-only). Inline validation on blur. Clear error messages that say what went wrong AND how to fix it.
-- **Tables:** Right-align numbers, left-align text. Sticky headers. Row hover states. Pagination or virtual scrolling for 50+ rows.
-- **Navigation:** Top nav for <5 items, sidebar for 5-15, command palette for power users. Breadcrumbs for depth >2.
-- **Cards:** Consistent padding (16-24px), subtle border or shadow (not both), clear visual entry point (title or image).
+### Tier 1: Gets You 80% of the Way
 
-## Spacing System
+1. **One primary action per screen** — If you can't name it, the page is broken.
+2. **Visual hierarchy** — Size, weight, and contrast guide the eye. Most important = biggest.
+3. **Consistent spacing** — Use your component library's defaults. Don't manually tweak pixels.
+4. **Design states** — Every screen needs: empty, loading, error, success, and overflow states.
 
-Use a 4px base grid. Common increments: 4, 8, 12, 16, 24, 32, 48, 64, 96. Section spacing should be visibly larger than element spacing.
+### Tier 2: After Launch
 
-## Color Guidance
+5. **Mobile responsiveness** — Test core flows on mobile. 50%+ of traffic may be mobile.
+6. **Micro-interactions** — Loading spinners, success checkmarks, smooth transitions.
+7. **Keyboard navigation** — Tab through every form. Escape closes every modal.
 
-- Limit palette to 1 primary, 1 accent, and a neutral scale.
-- Use tints/shades of primary for hover, active, and disabled states.
-- Semantic colors: green for success, amber for warning, red for error, blue for informational.
-- Background should never fight content. If in doubt, go lighter.
+---
 
-## Typography
+## Screen-by-Screen Guidance
 
-- Use a clean sans-serif (Inter, Geist, or system-ui) for UI.
-- Maximum 2 font families in the entire product.
-- Scale: 12, 14, 16, 18, 20, 24, 30, 36px (or equivalent rem values).
-- Line height: 1.5 for body, 1.2-1.3 for headings.
-- Limit line length to 65-75 characters for readability.
+### Dashboard
 
-## When Generating Code
+**Tell AI:**
+```
+Design a SaaS dashboard that shows:
+- 3-4 key metric cards at the top (e.g., MRR, active users, signups this week)
+- A recent activity feed or table below
+- A primary CTA: "Create [your main object]"
+- Empty state for new users with onboarding guidance
+Use [component library]. Mobile-responsive.
+```
 
-- Use Tailwind CSS utility classes.
-- Prefer semantic HTML elements (nav, main, section, article, aside, footer).
-- Build responsive layouts with CSS Grid or Flexbox, not fixed widths.
-- Implement dark mode from the start using CSS custom properties or Tailwind's dark: variant.
-- Add transitions (150-200ms ease) to interactive elements.
-- Always include focus-visible styles for keyboard navigation.
+### Settings Page
 
-## Output Format
+**Tell AI:**
+```
+Create a settings page with tabs:
+- Profile (name, email, avatar)
+- Billing (current plan, usage, manage subscription link)
+- Notifications (email preferences with toggles)
+- [Team/API/other sections you need]
+Each tab has its own save button. Show success toast on save.
+```
 
-When asked to design or review, provide:
+### Data Tables
 
-1. A brief rationale for the design direction (2-3 sentences max).
-2. The actual implementation code.
-3. A short list of states to consider (if not all are implemented).
+**Tell AI:**
+```
+Build a data table for [items — users, projects, invoices]:
+- Columns: [list your columns]
+- Sortable by [which columns]
+- Search/filter bar above the table
+- Row actions: edit, delete (with confirmation dialog)
+- Pagination for 20+ items
+- Empty state: "No [items] yet. Create your first one."
+```
+
+### Forms
+
+**Tell AI:**
+```
+Create a [create/edit] form for [object]:
+- Fields: [list fields with types — text, email, select, etc.]
+- Validate on blur (not on every keystroke)
+- Show inline errors below each field
+- Submit button disabled until form is valid
+- Show loading state on submit, success toast on completion
+```
+
+---
+
+## Component Selection Guide
+
+When you're not sure what UI element to use:
+
+| Situation | Use This |
+|-----------|----------|
+| User needs to choose from 3-5 options | Radio buttons or segmented control |
+| User needs to choose from 6+ options | Select dropdown |
+| Yes/no toggle | Switch |
+| Confirming a destructive action | Alert dialog ("Are you sure?") |
+| Showing transient feedback | Toast notification (auto-dismiss) |
+| Showing persistent info/warning | Alert banner (stays until dismissed) |
+| Editing a record without leaving the page | Dialog or sheet (slide-out panel) |
+| Navigating between views | Tabs (same page) or sidebar nav (different pages) |
+| Showing user status | Badge (active, trial, overdue) |
+
+---
+
+## Visual Hierarchy Checklist
+
+For every screen, verify:
+
+- [ ] The primary action is the most visually prominent element
+- [ ] Only ONE primary button per section (others are secondary or ghost)
+- [ ] Headings use size + weight to create clear hierarchy (h1 > h2 > h3)
+- [ ] Related items are grouped with consistent spacing
+- [ ] Labels are above inputs (not placeholder-only)
+- [ ] Color is not the only way to convey meaning (add icons or text)
+
+**Tell AI:**
+```
+Review the visual hierarchy of [page/component]:
+- What is the primary action? Make it the most prominent element.
+- Are there competing CTAs? Demote secondary ones to outline/ghost buttons.
+- Is the heading hierarchy logical (h1 → h2 → h3, no skipping)?
+- Is there enough whitespace between sections?
+```
+
+---
+
+## Spacing and Layout Rules
+
+You don't need to memorize pixel values. Just follow these principles:
+
+| Principle | What It Means |
+|-----------|--------------|
+| **Section spacing > element spacing** | Space between "Profile" and "Billing" sections should be larger than space between form fields |
+| **Group related items** | Fields that belong together should be closer together |
+| **Consistent padding** | Cards, containers, and modals should all use the same internal padding |
+| **Generous touch targets** | Buttons and clickable areas: minimum 44x44px |
+
+**Tell AI:**
+```
+Fix the spacing on [page/component]:
+- Add more space between major sections
+- Tighten spacing between related form fields
+- Ensure consistent padding inside all cards
+- Make sure all buttons are at least 44px tall
+```
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+|---------|-----|
+| Two primary buttons side by side | One should be secondary (outlined). Only one primary per section. |
+| No empty state | Every list/table needs a "nothing here yet" message with a CTA. |
+| No loading state | Show skeleton loaders or spinners while data fetches. |
+| Placeholder text as labels | Always use a visible label above the input. Placeholders disappear. |
+| Too many things on one screen | Progressive disclosure: show the essentials, hide advanced options behind "Show more" or tabs. |
+| Inconsistent alignment | Left-align text, right-align numbers. Don't center body text. |
+| Ignoring mobile | Test your most important flow on a phone-sized screen. |

@@ -1,130 +1,117 @@
 # On-Page SEO
 
-Detailed specifications and code examples for title tags, meta descriptions, header hierarchy, image optimization, and internal linking.
+Specifications for every on-page element, with "Tell AI:" prompts to implement each one.
 
 ---
 
-## Title Tag Optimization
+## Title Tag
 
-**Specifications:**
-- Length: 50-60 characters (≤575 pixels)
-- Primary keyword: Front-loaded
-- Brand: At end (if included)
-- Unique: One per page
+| Spec | Requirement |
+|------|------------|
+| Length | 50-60 characters (≤575 pixels) |
+| Keyword | Primary keyword front-loaded |
+| Brand | At end, if included |
+| Uniqueness | One unique title per page |
 
-```html
-<!-- Good title structure -->
-<title>On-Page SEO Guide 2025: Complete Optimization Strategies | Brand</title>
+**Good:** `On-Page SEO Guide 2025: Complete Optimization Strategies | Brand`
+**Bad:** `SEO SEO Tips SEO Guide SEO Strategies SEO Best Practices`
 
-<!-- Bad - keyword stuffed -->
-<title>SEO SEO Tips SEO Guide SEO Strategies SEO Best Practices</title>
+**Tell AI:**
+```
+Review and optimize title tags for these pages: [list URLs]
+Each title should:
+- Be 50-60 characters
+- Front-load the primary keyword
+- Include brand name at end (if space allows)
+- Be unique (no duplicate titles across pages)
 ```
 
 ---
 
 ## Meta Description
 
-**Specifications:**
-- Length: 150-160 characters
-- Include: Primary keyword naturally
-- Include: Clear call-to-action
-- Unique: One per page
+| Spec | Requirement |
+|------|------------|
+| Length | 150-160 characters |
+| Keyword | Include primary keyword naturally |
+| CTA | Include a call-to-action |
+| Uniqueness | One unique description per page |
 
-```html
-<meta name="description" content="Master on-page SEO with our 2025 guide.
-Covers 14 critical optimization areas including E-E-A-T and entity SEO.
-Free checklist included.">
+**Tell AI:**
+```
+Write meta descriptions for these pages: [list URLs]
+Each description should:
+- Be 150-160 characters
+- Include the primary keyword naturally
+- End with a call-to-action (Learn more, Get started, Try free)
+- Be unique per page
 ```
 
 ---
 
-## Header Tag Hierarchy
-
-```html
-<article>
-  <h1>Main Topic (exactly one per page)</h1>
-
-  <section>
-    <h2>Major Section</h2>
-    <p>Content...</p>
-
-    <h3>Subsection</h3>
-    <p>Content...</p>
-
-    <h4>Sub-subsection</h4>
-    <p>Content...</p>
-  </section>
-
-  <section>
-    <h2>Another Major Section</h2>
-    <p>Content...</p>
-  </section>
-</article>
-```
+## Header Hierarchy
 
 **Rules:**
-- Exactly ONE `<h1>` per page
+- Exactly ONE `<h1>` per page (contains primary keyword)
 - No skipped levels (H1 → H2 → H3, never H1 → H3)
-- Include keywords naturally in headings
 - Use question-based headings for featured snippet targeting
+- Include keywords naturally in headings
+
+**Tell AI:**
+```
+Check and fix header hierarchy on [page URL]:
+- Ensure exactly one H1 containing the primary keyword
+- Fix any skipped header levels
+- Convert key headings to question format where appropriate (helps with featured snippets)
+```
 
 ---
 
 ## Image Optimization
 
-```html
-<!-- Responsive images with modern formats -->
-<picture>
-  <source type="image/avif"
-          srcset="/img/hero-400.avif 400w, /img/hero-800.avif 800w, /img/hero-1200.avif 1200w"
-          sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px">
-  <source type="image/webp"
-          srcset="/img/hero-400.webp 400w, /img/hero-800.webp 800w, /img/hero-1200.webp 1200w"
-          sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px">
-  <img src="/img/hero-800.jpg"
-       alt="Descriptive alt text with relevant keywords"
-       width="1200" height="600"
-       loading="lazy" decoding="async">
-</picture>
-```
-
-**Image Checklist:**
+**Checklist for every image:**
 - [ ] Format: WebP or AVIF (25-50% smaller than JPEG)
 - [ ] File size: < 200KB (ideally < 100KB)
-- [ ] Dimensions: `width` and `height` attributes set (prevents CLS)
+- [ ] Width and height attributes set (prevents layout shift)
 - [ ] Alt text: Descriptive, includes keyword naturally (max 125 chars)
 - [ ] Filename: SEO-friendly (`seo-guide-2025.webp`, not `IMG_001.jpg`)
-- [ ] Lazy loading: `loading="lazy"` for below-fold images
-- [ ] LCP images: `fetchpriority="high"` and NO lazy loading
+- [ ] Below-fold images: `loading="lazy"` attribute
+- [ ] Hero/above-fold images: `fetchpriority="high"` and NO lazy loading
+
+**Tell AI:**
+```
+Optimize all images on [page URL]:
+- Convert to WebP format
+- Add width and height attributes to prevent layout shift
+- Add descriptive alt text with relevant keywords (max 125 chars)
+- Add loading="lazy" to below-fold images
+- Add fetchpriority="high" to the hero image
+- Rename files to be SEO-friendly (descriptive-name.webp)
+```
 
 ---
 
 ## Internal Linking
 
-```html
-<article>
-  <h1>Complete Guide to On-Page SEO</h1>
+Good internal linking helps search engines discover pages and distributes authority.
 
-  <!-- Contextual link with descriptive anchor text -->
-  <p>Effective SEO starts with understanding
-    <a href="/title-tag-optimization/">how to optimize your title tags</a>
-    for maximum visibility.
-  </p>
+**Best practices:**
+- Use descriptive anchor text (not "click here")
+- Link from high-authority pages to pages you want to rank
+- Every page should have at least 2-3 internal links pointing to it
+- No orphan pages (pages with zero internal links)
 
-  <!-- Related content section -->
-  <aside class="related-content">
-    <h3>Related Guides</h3>
-    <ul>
-      <li><a href="/meta-description-guide/">Meta Description Best Practices</a></li>
-      <li><a href="/header-tags-seo/">Header Tag Optimization Guide</a></li>
-    </ul>
-  </aside>
-</article>
-```
-
-**Anchor Text Distribution:**
-- Exact match: 10-20%
-- Partial match: 30-40%
+**Anchor text distribution:**
+- Descriptive/partial match: 60-70%
+- Exact keyword match: 10-20%
 - Branded: 10-20%
-- Long-tail descriptive: 20-30%
-- Generic ("click here"): < 10%
+- Generic ("click here", "learn more"): < 10%
+
+**Tell AI:**
+```
+Audit internal linking structure:
+- Find orphan pages (no internal links pointing to them)
+- Find pages with weak anchor text ("click here", "read more")
+- Suggest 3-5 internal link additions for each key page
+- Use descriptive anchor text that includes relevant keywords
+```

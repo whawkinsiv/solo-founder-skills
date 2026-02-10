@@ -1,196 +1,113 @@
 # E-E-A-T & Schema Markup
 
-E-E-A-T implementation guidelines and a complete JSON-LD schema markup library for SEO.
+How to build trust signals that Google (and AI search engines) use to evaluate your content. Plus schema markup you should add — all via "Tell AI:" prompts.
 
 ---
 
-## E-E-A-T Components
+## E-E-A-T: Why It Matters
 
-| Signal | Implementation |
-|--------|----------------|
-| **Experience** | First-hand testing, case studies, original photos, "I tested this by..." |
-| **Expertise** | Author credentials, certifications, years of experience |
-| **Authoritativeness** | Quality backlinks, industry mentions, expert citations |
-| **Trustworthiness** | HTTPS, contact info, privacy policy, accurate content, citations |
+Google evaluates content quality using four signals. These affect your rankings and whether AI search engines cite you.
 
----
-
-## Author Schema Implementation
-
-```html
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Complete On-Page SEO Guide for 2025",
-  "author": {
-    "@type": "Person",
-    "name": "John Smith",
-    "url": "https://example.com/authors/john-smith",
-    "jobTitle": "Senior SEO Specialist",
-    "description": "10+ years experience in technical SEO",
-    "sameAs": [
-      "https://twitter.com/johnsmith",
-      "https://linkedin.com/in/johnsmith"
-    ],
-    "knowsAbout": ["SEO", "Technical SEO", "Content Strategy"]
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Example Company",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://example.com/logo.png"
-    }
-  },
-  "datePublished": "2025-01-15",
-  "dateModified": "2025-12-30"
-}
-</script>
-```
+| Signal | What It Means | How to Show It |
+|--------|--------------|----------------|
+| **Experience** | You've actually done/used what you're writing about | Case studies, original screenshots, "I tested this by..." |
+| **Expertise** | You know your subject deeply | Author credentials, certifications, detailed explanations |
+| **Authoritativeness** | Others recognize your expertise | Backlinks, industry mentions, expert citations |
+| **Trustworthiness** | Your site is reliable and honest | HTTPS, contact info, privacy policy, accurate citations |
 
 ---
 
-## Author Bio Template
+## Implementing E-E-A-T
 
-```html
-<footer class="author-bio">
-  <img src="/authors/john-smith.jpg" alt="John Smith, SEO Expert">
-  <div class="author-details">
-    <strong>About the Author</strong>
-    <p><a href="/authors/john-smith">John Smith</a> is a Senior SEO Specialist
-    with 10+ years of experience in technical SEO and content optimization.
-    He holds certifications from Google Analytics and has been featured in
-    Search Engine Journal and Moz Blog.</p>
-    <p><em>Last updated: December 30, 2025</em></p>
-  </div>
-</footer>
+### Author Pages
+
+Every blog post or content page should link to an author page showing credentials.
+
+**Tell AI:**
 ```
+Create an author bio section for blog posts that includes:
+- Author name with link to full author page
+- Job title and relevant experience
+- A 2-sentence bio
+- Links to social profiles (LinkedIn, Twitter)
+- "Last updated" date on every article
+
+Also create a full /about or /authors/[name] page with:
+- Detailed background and qualifications
+- Areas of expertise
+- Links to published content
+```
+
+### Trust Signals Checklist
+
+- [ ] HTTPS active on all pages
+- [ ] Contact information visible (email, form, or phone)
+- [ ] Privacy policy linked in footer
+- [ ] Terms of service linked in footer
+- [ ] Content includes citations with sources
+- [ ] Dates on all articles (published and last updated)
+- [ ] Author attribution on all content
 
 ---
 
-## Schema Markup Library
+## Schema Markup (JSON-LD)
 
-### Organization
+Schema tells search engines what your content IS, not just what it says. Claude Code can add all of these for you.
 
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Example Company",
-  "url": "https://example.com",
-  "logo": "https://example.com/logo.png",
-  "sameAs": [
-    "https://twitter.com/example",
-    "https://linkedin.com/company/example",
-    "https://facebook.com/example"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+1-800-555-1234",
-    "contactType": "customer service"
-  }
-}
+### Required Schema (Add These First)
+
+**Tell AI:**
+```
+Add JSON-LD schema markup to the site:
+
+1. Organization schema on homepage:
+   - Company name, URL, logo
+   - Social media profile links
+   - Contact information
+
+2. FAQPage schema on any page with FAQ content:
+   - Each question and answer as structured data
+   - This is critical for featured snippets and AI citations
+
+3. Article schema on blog posts:
+   - Headline, author, publisher
+   - Date published and date modified
+   - Author with credentials (Person schema)
+
+4. BreadcrumbList on all pages:
+   - Home > Category > Current Page path
+
+Validate with Google's Rich Results Test after adding.
 ```
 
-### FAQPage (Critical for GEO)
+### FAQPage Schema (Most Important for AI Citations)
 
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is on-page SEO?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "On-page SEO is the practice of optimizing individual web pages to rank higher in search engines. It includes optimizing content, HTML elements like title tags and meta descriptions, internal linking, and page speed."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long should a title tag be?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Title tags should be 50-60 characters or approximately 575 pixels wide. Place your primary keyword at the beginning for maximum impact."
-      }
-    }
-  ]
-}
+FAQPage schema makes your Q&A content machine-readable. Pages with FAQ schema are 3x more likely to appear in AI Overviews.
+
+**Tell AI:**
+```
+Add FAQPage schema to [page URL] for these questions:
+- [Question 1]
+- [Question 2]
+- [Question 3]
+
+Each answer should be a complete, standalone response (2-3 sentences).
+Output as JSON-LD in a script tag.
 ```
 
-### Product (E-commerce)
+### Optional Schema (Add When Relevant)
 
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Widget Pro",
-  "image": "https://example.com/widget-pro.webp",
-  "description": "Professional-grade widget for enterprise use",
-  "brand": { "@type": "Brand", "name": "Example Brand" },
-  "sku": "WIDGET-PRO-001",
-  "offers": {
-    "@type": "Offer",
-    "url": "https://example.com/products/widget-pro",
-    "priceCurrency": "USD",
-    "price": "299.99",
-    "availability": "https://schema.org/InStock",
-    "priceValidUntil": "2025-12-31"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "256"
-  }
-}
+| Schema Type | Add When... |
+|-------------|------------|
+| Product | You sell a product or SaaS with pricing |
+| HowTo | Content includes step-by-step instructions |
+| VideoObject | You embed videos on pages |
+| SoftwareApplication | You have a SaaS product page |
+
+**Tell AI:**
 ```
-
-### BreadcrumbList
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://example.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://example.com/products/" },
-    { "@type": "ListItem", "position": 3, "name": "Widget Pro" }
-  ]
-}
-```
-
-### HowTo
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How to Optimize Title Tags for SEO",
-  "description": "Step-by-step guide to creating SEO-optimized title tags",
-  "totalTime": "PT10M",
-  "step": [
-    { "@type": "HowToStep", "position": 1, "name": "Research Keywords", "text": "Identify your primary keyword using keyword research tools" },
-    { "@type": "HowToStep", "position": 2, "name": "Front-Load Keyword", "text": "Place your primary keyword at the beginning of the title" },
-    { "@type": "HowToStep", "position": 3, "name": "Keep Under 60 Characters", "text": "Ensure title is under 60 characters to prevent truncation" },
-    { "@type": "HowToStep", "position": 4, "name": "Add Compelling Hook", "text": "Include power words or numbers to increase CTR" }
-  ]
-}
-```
-
-### VideoObject
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  "name": "Complete SEO Guide 2025",
-  "description": "Learn all essential SEO techniques for 2025",
-  "thumbnailUrl": "https://example.com/thumbnails/seo-guide.jpg",
-  "uploadDate": "2025-01-15T08:00:00+00:00",
-  "duration": "PT15M30S",
-  "contentUrl": "https://example.com/videos/seo-guide.mp4",
-  "embedUrl": "https://www.youtube.com/embed/VIDEO_ID"
-}
+Add [Product/HowTo/VideoObject] schema to [page URL]:
+- Include all required fields for Google Rich Results
+- Validate with Rich Results Test
+- Include pricing, ratings, or step information as applicable
 ```

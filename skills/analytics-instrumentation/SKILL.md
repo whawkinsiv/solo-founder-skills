@@ -3,52 +3,98 @@ name: analytics-instrumentation
 description: "Use this skill when the user needs to set up analytics, design event tracking, define key metrics, build funnels, or instrument their SaaS product for data-driven decisions. Covers event naming conventions, tracking strategy, funnel analytics, and data quality."
 ---
 
-# Analytics & Instrumentation Expert
+# Analytics & Instrumentation
 
-Act as a top 1% analytics strategist who designs measurement systems for SaaS products. You ensure that every product decision is informed by data, and that the right things are measured without drowning in noise.
+Track decisions, not dashboards. This skill helps you set up analytics that answer the questions that matter — without drowning in data.
 
 ## Core Principles
 
-- Track decisions, not dashboards. Every metric should connect to an action you'd take differently based on the result.
+- Every metric should connect to an action you'd take differently based on the result.
 - Instrument events at build time, not as an afterthought. It's 10x easier.
-- More data ≠ better decisions. Focus on 5-10 key metrics per lifecycle stage.
-- Events should be human-readable. Your PM should understand the event stream without documentation.
+- More data ≠ better decisions. Focus on 5-10 key metrics per stage.
 - Data quality matters more than data quantity. One clean funnel beats fifty broken ones.
+
+---
+
+## Choosing an Analytics Tool
+
+You don't need to write code to track events. Pick a tool, add the snippet, and configure in the UI.
+
+### Recommended by Stage
+
+| Stage | Tool | Why | Cost |
+|-------|------|-----|------|
+| Pre-revenue | **PostHog** | Product analytics, funnels, session replay. Built for SaaS. | Free (1M events/mo) |
+| Pre-revenue | **Plausible** | Simple, privacy-first traffic analytics. | $9/mo |
+| $0-5K MRR | **PostHog** or **Mixpanel** | Deeper funnel analysis, cohort retention | Free tier or ~$200/mo |
+| $5K+ MRR | **Amplitude** or **Heap** | Advanced analytics, experimentation | $500+/mo |
+
+**Recommendation for solo founders:** Start with **PostHog** (free tier). It covers product analytics, funnels, session recordings, and feature flags — all things you'll need.
+
+For basic traffic analytics (where visitors come from), add **Plausible** or **Google Analytics 4** (free).
+
+### Setup
+
+**Tell AI:**
+```
+Set up PostHog analytics:
+1. Create a PostHog project and get the API key
+2. Add the PostHog JavaScript snippet to our app (in the <head> or layout component)
+3. Verify it's tracking page views by checking the PostHog dashboard
+4. Configure: exclude admin/test accounts from tracking
+```
+
+---
+
+## What to Track (By Stage)
+
+### Pre-Launch (Just These 3)
+1. Landing page visits (traffic source)
+2. Waitlist/signup conversions
+3. Where visitors drop off
+
+### 0-$1K MRR (Add These)
+4. Signup → activation rate (completed key action)
+5. Time to activate (hours from signup to key action)
+6. D7 retention (% returning after 1 week)
+7. Free-to-paid conversion
+
+### $1K-$10K MRR (Add These)
+8. Feature adoption (% of users using each feature weekly)
+9. Cohort retention curves (track each month's signups over time)
+10. Expansion revenue triggers (what behavior precedes upgrades)
+11. Churn rate and reasons
+
+---
 
 ## Event Naming Conventions
 
-Use a consistent schema: **[Object] [Action]** in past tense.
+Use a consistent schema so events make sense to anyone reading them.
 
-Examples:
-- Project Created
-- Invite Sent
-- Dashboard Viewed
-- Report Exported
-- Subscription Upgraded
-- Feature Flag Enabled
+**Format:** [Object] [Action] in past tense, Title Case.
+
+| Event Name | When It Fires |
+|------------|--------------|
+| Signup Form Submitted | User completes registration |
+| Project Created | User creates their first/any project |
+| Dashboard Viewed | User visits the main dashboard |
+| Report Exported | User downloads or shares a report |
+| Subscription Upgraded | User moves to a higher plan |
+| Invite Sent | User invites a teammate |
 
 **Rules:**
-- Use Title Case for event names.
-- Object first, then action (makes grouping in tools easier).
-- Past tense (the event already happened).
-- Be specific: "Signup Form Submitted" not "Form Submitted."
-- Never include user-specific data in the event name.
-  - BAD: "John Viewed Dashboard"
-  - GOOD: "Dashboard Viewed" with property `user_id: "john_123"`
+- Object first, then action (makes grouping in tools easier)
+- Past tense (the event already happened)
+- Be specific: "Signup Form Submitted" not "Form Submitted"
+- Never include personal data in the event name
 
-## Event Properties
+### Event Properties
 
-Every event should include:
-- `user_id`: Who performed the action
-- `timestamp`: When (usually auto-set by your analytics tool)
-- Context properties (set once, sent with every event): plan, role, account_id, signup_date, device_type
-
-**Event-specific properties:**
+Every event should include context:
 
 ```
 "Project Created"
   template_used: "blank" | "marketing" | "engineering"
-  team_size: 5
   source: "dashboard" | "onboarding" | "api"
 
 "Subscription Upgraded"
@@ -58,102 +104,115 @@ Every event should include:
   trigger: "usage_limit" | "feature_gate" | "self_serve"
 ```
 
+**Tell AI:**
+```
+Set up event tracking for our core funnel:
+- Track these events: [list your key events from the table above]
+- Include these properties with each event: [relevant properties]
+- Set user-level properties on identify: plan, signup_date, role
+- Verify events are firing correctly in PostHog/Mixpanel
+```
+
+---
+
 ## Core Metrics Framework
 
-**Acquisition:**
-- Signup rate: Visitors → Signups
-- Signup source: Organic, paid, referral, direct
-- Cost per acquisition (CPA) by channel
+### The 5 Metrics That Matter
 
-**Activation:**
-- Activation rate: Signups → Completed [key action]
-- Time to activate: Hours/days from signup to key action
-- Setup completion rate: Started onboarding → Finished onboarding
+| Metric | What It Tells You | How to Calculate |
+|--------|------------------|-----------------|
+| **Signup rate** | Is your marketing working? | Visitors → Signups |
+| **Activation rate** | Is your onboarding working? | Signups → Completed key action |
+| **D7 retention** | Does your product deliver ongoing value? | % of users returning 7 days later |
+| **Free-to-paid** | Is your product worth paying for? | Free users → Paying users |
+| **MRR** | Is your business growing? | Sum of all monthly subscription revenue |
 
-**Engagement:**
-- DAU/WAU/MAU and the ratios (DAU/MAU = stickiness)
-- Feature adoption: % of users who use each feature weekly
-- Core action frequency: How often users perform the key action
+### Setting Up Your Dashboard
 
-**Retention:**
-- D1, D7, D30 retention curves
-- Cohort retention: Track each signup cohort over time
-- Churn rate (monthly): Users lost / Users at start of month
+**Tell AI:**
+```
+Create an analytics dashboard with these 5 charts:
+1. Daily signups (line chart, last 30 days, by source)
+2. Activation rate (% of signups who [completed key action], last 30 days)
+3. D7 retention (% of each week's signups who returned 7 days later)
+4. Free-to-paid conversion rate (last 30 days)
+5. MRR (line chart, all time)
 
-**Revenue:**
-- MRR, ARR, MRR growth rate
-- ARPU (Average Revenue Per User)
-- Free-to-paid conversion rate
-- Expansion revenue (upgrades + seat additions) as % of new MRR
-- LTV:CAC ratio (target: >3:1)
+This should be the first thing I see when I open analytics.
+```
+
+---
 
 ## Funnel Instrumentation
 
-Define your core funnel and instrument every step:
+Define your core funnel and track every step:
 
 ```
-Example SaaS funnel:
+Typical SaaS funnel:
   1. Landing Page Viewed
   2. Signup Form Viewed
   3. Signup Form Submitted
-  4. Email Verified
-  5. Onboarding Started
-  6. [Key Activation Action] Completed
-  7. Second Session (returned next day/week)
-  8. Upgrade Page Viewed
-  9. Subscription Created
+  4. Onboarding Started
+  5. [Key Activation Action] Completed
+  6. Second Session (returned next day/week)
+  7. Upgrade Page Viewed
+  8. Subscription Created
 ```
 
-Calculate drop-off between each step. The biggest drop-off is your biggest opportunity.
+**The biggest drop-off between steps = your biggest opportunity.** Fix that first.
 
-## Implementation Pattern
-
-Create an analytics module that wraps your tracking calls:
-
-```typescript
-// analytics.ts — central tracking module
-const analytics = {
-  track: (event: string, properties?: Record<string, any>) => {
-    // Send to your analytics provider(s)
-    // Add common properties (plan, role, etc.)
-    // Respect user privacy preferences
-    // Queue events if offline
-  },
-  identify: (userId: string, traits: Record<string, any>) => {
-    // Set user-level properties
-  },
-  page: (name: string, properties?: Record<string, any>) => {
-    // Track page views
-  },
-  group: (groupId: string, traits: Record<string, any>) => {
-    // Set account/company-level properties
-  }
-};
+**Tell AI:**
 ```
+Instrument our conversion funnel:
+- Track these events in order: [list your funnel steps]
+- Build a funnel visualization showing drop-off between each step
+- Set up an alert if any step's conversion drops below [X]% week-over-week
+```
+
+---
 
 ## Privacy and Compliance
 
-- Never track PII (email, name, IP) in event properties without consent.
-- Implement a consent mechanism before loading analytics scripts.
-- Provide data deletion capabilities (GDPR "right to erasure").
-- Use anonymous IDs until the user identifies themselves.
-- Document what you track and why (for internal and external transparency).
-- Respect Do Not Track (DNT) browser settings.
+Add these before you launch:
 
-## Dashboards
+- [ ] Add analytics tool reference to your Privacy Policy
+- [ ] Add cookie consent banner if required (depends on tool and geography)
+- [ ] Enable "anonymize IP" in your analytics tool
+- [ ] Exclude admin/test accounts from tracking
+- [ ] Never track PII (email, name) in event properties without consent
+- [ ] Allow users to opt out of tracking
+- [ ] Respect Do Not Track (DNT) browser settings
 
-Build three levels:
+**Tell AI:**
+```
+Add privacy compliance for analytics:
+- Add a cookie consent banner that loads analytics only after consent
+- Exclude users with DNT enabled
+- Add an "opt out of tracking" toggle in account settings
+- Ensure no PII is sent in event properties
+```
 
-1. **Executive dashboard:** MRR, growth rate, churn, activation rate. Updated daily. Fits on one screen.
-2. **Product dashboard:** Feature adoption, funnel conversion, retention curves. Updated daily. Used by product and engineering.
-3. **Experiment dashboard:** A/B test results, feature flag impact. Real-time. Used by whoever owns the experiment.
+---
 
-## Output Format
+## Common Mistakes
 
-When designing analytics:
+| Mistake | Fix |
+|---------|-----|
+| Tracking everything from day one | Start with 5 metrics. Add more when you have questions they can't answer. |
+| No analytics until post-launch | Add the snippet during build. Track from first user. |
+| Dashboard but no actions | Every metric should have an "if this drops, I'll do X" response |
+| Ignoring data quality | Check that events are firing correctly once a week for the first month |
+| Paying for expensive tools too early | PostHog free tier handles most needs until $5K MRR |
 
-1. Define the events to track (name + properties).
-2. Provide the instrumentation code.
-3. Specify the key metrics and how to calculate them.
-4. Suggest dashboard layout with metric groupings.
-5. Note privacy considerations.
+---
+
+## If You Can't Set Up Analytics Right Now
+
+Track these manually in a spreadsheet until you can:
+
+| Week | Signups | Activated | Retained (D7) | Paid | MRR |
+|------|---------|-----------|---------------|------|-----|
+| Week 1 | | | | | |
+| Week 2 | | | | | |
+
+Even rough manual tracking beats flying blind. Graduate to a real tool as soon as you can.

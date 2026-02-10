@@ -5,37 +5,38 @@ description: "Use this skill when the user's app feels slow, the codebase feels 
 
 # Optimize
 
-Reduce waste and improve efficiency across four dimensions.
+Reduce waste and improve efficiency. **Only optimize after you have real users and real problems** — premature optimization is the most common waste of founder time.
 
-## Choose Your Path
+## When to Optimize (and When NOT To)
 
-**Speed** → Pages slow, APIs timeout, sluggish UX
-**Code** → Bloated codebase, unused files, redundant components
-**Database** → Orphaned data, unused fields/tables, slow queries
-**Dependencies** → Package bloat, large bundles, outdated libraries
+**Don't optimize when:**
+- Building your MVP
+- Fewer than ~100 active users
+- Everything works fine
+- You haven't measured the problem
+
+**Optimize when:**
+- Users complain about slowness (Speed)
+- Bundle size warnings or security alerts appear (Dependencies)
+- App noticeably slower than when you launched (Speed/Database)
+- You're paying for hosting you shouldn't need (Speed/Database)
+
+**Rule:** Make it work → get users → measure → THEN make it lean.
 
 ---
 
-## When to Optimize
+## Priority Order
 
-**Optimize when:**
-- App feels slow (Speed)
-- Codebase has grown significantly (Code)
-- Database has accumulated cruft (Database)
-- Bundle size is large or security warnings appear (Dependencies)
+When multiple things need work:
 
-**Don't optimize when:**
-- Building MVP
-- < 100 users
-- Everything works fine
-
-**Rule:** Make it work, then make it lean.
+1. **Speed** — Users feel this immediately. Slow = churn.
+2. **Dependencies** — Security vulnerabilities are urgent. Bundle bloat affects speed.
+3. **Database** — Affects long-term performance and hosting costs.
+4. **Code** — Affects maintainability. Lowest user impact.
 
 ---
 
 ## Speed Optimization
-
-Make your app fast and responsive.
 
 ### Targets
 
@@ -44,249 +45,77 @@ Make your app fast and responsive.
 | Page load | < 3s | > 5s |
 | API response | < 500ms | > 1s |
 | Time to interactive | < 5s | > 8s |
-| Database query | < 100ms | > 500ms |
 
-### AUDIT
+### Step 1: Measure
 
-Identify what's slow.
+**Quick manual check:**
+- Open your app in Chrome → Right-click → Inspect → Network tab → Reload
+- Look at the "Load" time at the bottom. That's your page load time.
+- Click a button that calls your API. Look for the request time in the Network tab.
 
 **Tell AI:**
 ```
 Audit app performance:
-- Measure page load times
-- Log API response times
-- Identify slow database queries
-- Check bundle size
+- Measure page load times for the 3 most important pages
+- Log API response times for the 5 most-used endpoints
+- Identify the slowest database queries
+- Check total bundle size
 Report findings with specific numbers.
 ```
 
-**Quick manual check:**
-- Chrome DevTools → Network tab → Reload → Check "Load" time
-- Chrome DevTools → Network tab → Click action → Check API time
-
-### CLEAN
-
-Fix identified issues.
+### Step 2: Fix
 
 **Tell AI:**
 ```
 Optimize these performance issues:
 [paste audit findings]
 
-Apply fixes:
-- Add caching for slow API calls
-- Add database indexes for slow queries
-- Optimize/lazy-load images
-- Code split large bundles
+Apply fixes in this order:
+1. Add caching for slow API calls
+2. Add database indexes for slow queries
+3. Optimize and lazy-load images
+4. Code split large bundles
+Run build and tests after each fix.
 ```
 
-### PREVENT
-
-Stop future slowdowns.
+### Step 3: Prevent
 
 **Tell AI:**
 ```
 Add performance monitoring:
 - Log API calls > 500ms
 - Log database queries > 100ms
-- Alert on page load > 3s
-- Track bundle size in CI
+- Alert if page load > 3s
 ```
 
-See [PERFORMANCE-CHECKS.md](PERFORMANCE-CHECKS.md) for testing methods.
-See [OPTIMIZATION-PROMPTS.md](OPTIMIZATION-PROMPTS.md) for specific patterns.
-
----
-
-## Code Optimization
-
-Remove unused code and reduce complexity.
-
-### Signs You Need This
-
-- Files you don't recognize
-- Components that aren't used anywhere
-- Multiple versions of similar code
-- "I'm afraid to delete this"
-
-### AUDIT
-
-Find unused code.
-
-**Tell AI:**
-```
-Audit codebase for unused code:
-- Find components not imported anywhere
-- Find functions never called
-- Find files not referenced
-- Find duplicate/similar code
-- Find commented-out code blocks
-
-List each with file path and last modified date.
-```
-
-**What to look for:**
-- Dead components (created during iteration, never used)
-- Orphaned utilities (helper functions nothing calls)
-- Abandoned features (half-built, never finished)
-- Copy-paste duplication (same logic in multiple places)
-
-### CLEAN
-
-Remove identified waste.
-
-**Tell AI:**
-```
-Remove this unused code:
-[paste audit findings]
-
-Before deleting:
-- Verify nothing imports/calls it
-- Check git history for context
-- Remove related tests if any
-
-After deleting:
-- Run build to verify no breaks
-- Run tests to verify no breaks
-```
-
-**Safety rule:** If unsure, comment out first and test. Delete after confirming nothing breaks.
-
-### PREVENT
-
-Stop code accumulation.
-
-**Tell AI:**
-```
-Set up code hygiene practices:
-- Add ESLint rule for unused imports
-- Add ESLint rule for unused variables
-- Configure IDE to highlight unused code
-- Add CI check for unused exports
-```
-
-See [CODE.md](CODE.md) for detailed patterns.
-
----
-
-## Database Optimization
-
-Clean up data schema and orphaned records.
-
-### Signs You Need This
-
-- Tables you don't recognize
-- Fields that are always null
-- Queries getting slower over time
-- "What is this table for?"
-
-### AUDIT
-
-Find database waste.
-
-**Tell AI:**
-```
-Audit database for cleanup opportunities:
-- Tables with no recent reads/writes
-- Columns that are always NULL or empty
-- Orphaned records (foreign keys pointing to deleted rows)
-- Duplicate data across tables
-- Missing indexes on frequently queried fields
-
-List each with table name, row count, and last access if available.
-```
-
-**What to look for:**
-- Abandoned feature tables (feature removed, table remains)
-- Legacy columns (renamed but old column kept)
-- Orphaned records (user deleted, their data remains)
-- Redundant data (same info stored multiple places)
-
-### CLEAN
-
-Remove identified waste.
-
-**Tell AI:**
-```
-Clean up database:
-[paste audit findings]
-
-Before removing:
-- Backup affected tables
-- Verify no code references removed tables/columns
-- Check for foreign key constraints
-
-Migration steps:
-- Create migration to drop unused columns
-- Create migration to drop unused tables
-- Create script to delete orphaned records
-- Add missing indexes
-```
-
-**Safety rule:** Always backup before schema changes. Test on staging first.
-
-### PREVENT
-
-Stop data accumulation.
-
-**Tell AI:**
-```
-Set up database hygiene:
-- Add ON DELETE CASCADE for dependent records
-- Add NOT NULL constraints where appropriate
-- Create cleanup job for soft-deleted records (>90 days)
-- Add monitoring for table size growth
-```
-
-See [DATABASE.md](DATABASE.md) for detailed patterns.
+See [PERFORMANCE-CHECKS.md](PERFORMANCE-CHECKS.md) for detailed testing methods.
 
 ---
 
 ## Dependencies Optimization
 
-Reduce package bloat and bundle size.
+The most relevant optimization at any stage — even pre-launch.
 
 ### Signs You Need This
 
-- `npm install` takes forever
+- Security vulnerability warnings when you run `npm install`
 - Bundle size > 500KB
-- Security vulnerability warnings
 - "What does this package do?"
 
-### AUDIT
-
-Find dependency waste.
+### Audit
 
 **Tell AI:**
 ```
 Audit dependencies:
 - List packages not imported anywhere in code
 - List packages with security vulnerabilities
-- List packages with major version updates available
 - Analyze bundle size by package
-- Find duplicate packages (different versions of same thing)
+- Find packages with lighter alternatives
 
-Report: package name, size impact, last used, and recommendation.
+Report: package name, size impact, and recommendation.
 ```
 
-**Quick manual check:**
-```bash
-# Check bundle size
-npm run build
-
-# Check for unused packages
-npx depcheck
-
-# Check for vulnerabilities
-npm audit
-
-# Check for outdated packages
-npm outdated
-```
-
-### CLEAN
-
-Remove identified waste.
+### Fix
 
 **Tell AI:**
 ```
@@ -297,55 +126,84 @@ Steps:
 - Remove unused packages from package.json
 - Update packages with security vulnerabilities
 - Replace heavy packages with lighter alternatives
-- Remove duplicate package versions
-
-After changes:
-- Delete node_modules and package-lock.json
-- Fresh npm install
-- Run build and tests
+After changes: delete node_modules, fresh npm install, run build and tests.
 ```
 
 **Common replacements:**
+
 | Heavy | Light Alternative |
 |-------|-------------------|
 | moment.js | date-fns or dayjs |
 | lodash (full) | lodash-es (tree-shakeable) |
 | axios | fetch (built-in) |
 
-### PREVENT
-
-Stop dependency bloat.
+### Prevent
 
 **Tell AI:**
 ```
 Set up dependency hygiene:
-- Add bundle size check to CI (fail if > X KB)
 - Add npm audit to CI pipeline
-- Configure Dependabot for security updates
-- Add depcheck to pre-commit hook
+- Configure Dependabot for automatic security updates
 ```
 
 See [DEPENDENCIES.md](DEPENDENCIES.md) for detailed patterns.
 
 ---
 
-## Optimization Priority
+## Database Optimization
 
-**When everything needs work:**
+**When this matters:** After months of real usage, when queries slow down or hosting costs climb.
 
-1. **Speed** - Users feel this immediately
-2. **Dependencies** - Security vulnerabilities are urgent
-3. **Database** - Affects long-term performance
-4. **Code** - Affects maintainability, not users
+### Signs You Need This
 
-**Quick wins per category:**
+- Pages that were fast are now slow
+- Database hosting costs increasing
+- Queries timing out under load
 
-| Category | Quick Win |
-|----------|-----------|
-| Speed | Add caching to slowest API endpoint |
-| Code | Delete obviously dead files |
-| Database | Add indexes to slow queries |
-| Dependencies | Remove unused packages |
+### Audit and Fix
+
+**Tell AI:**
+```
+Audit database for optimization opportunities:
+- Find missing indexes on frequently queried columns
+- Find slow queries (> 100ms)
+- Find orphaned records (foreign keys pointing to deleted rows)
+- Find tables with no recent reads/writes
+
+For each issue, apply the fix:
+- Add indexes for slow queries
+- Set up ON DELETE CASCADE for dependent records
+- Create cleanup job for orphaned/soft-deleted records (> 90 days)
+Always backup before making schema changes.
+```
+
+---
+
+## Code Cleanup
+
+**When this matters:** After your codebase has grown significantly through AI-assisted iteration. Multiple rounds of "build feature, rebuild feature" leave dead code.
+
+### Signs You Need This
+
+- Files you don't recognize
+- Components that aren't used anywhere
+- "I'm afraid to delete this"
+
+### Audit and Fix
+
+**Tell AI:**
+```
+Audit codebase for unused code:
+- Find components not imported anywhere
+- Find functions never called
+- Find commented-out code blocks
+- Find duplicate/similar code
+
+For each: verify nothing references it, then remove it.
+Run build and tests after cleanup.
+```
+
+**Safety rule:** If unsure, comment out first and test. Delete after confirming nothing breaks.
 
 ---
 
@@ -354,19 +212,19 @@ See [DEPENDENCIES.md](DEPENDENCIES.md) for detailed patterns.
 | Mistake | Fix |
 |---------|-----|
 | Optimizing before measuring | AUDIT first, always |
-| Deleting code without checking | Verify no references before removing |
-| Dropping database columns in production | Test migrations on staging |
+| Optimizing during MVP | Ship first, optimize when users complain |
 | Updating all packages at once | Update one at a time, test each |
-| Premature optimization | Wait until there's actual waste to clean |
+| Deleting code without verifying | Check imports/references before removing |
+| Dropping database columns in production | Test migrations on staging first |
 
 ---
 
 ## Success Looks Like
 
-✅ Pages load < 3 seconds
-✅ No unused code in codebase
-✅ No orphaned data in database
-✅ No unused dependencies
-✅ Bundle size < 200KB (React apps)
-✅ Zero security vulnerabilities
-✅ Automated checks prevent future waste
+After optimization, you should see:
+
+- Pages load < 3 seconds
+- Zero security vulnerabilities in dependencies
+- No obviously unused packages
+- Database queries respond < 100ms
+- Automated checks catch future regressions
