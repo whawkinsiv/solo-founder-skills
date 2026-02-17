@@ -24,16 +24,18 @@ Then run `claude` to launch it and log in with your Anthropic account (Pro, Max,
 
 ## Install
 
-One command — run this inside Claude Code (at the `>` prompt):
+Run these two commands inside Claude Code (at the `>` prompt):
 
 ```
-/plugin install solo-founder-superpowers@claude-plugins-official
+/plugin marketplace add whawkinsiv/solo-founder-superpowers
+/plugin install solo-founder-superpowers@solo-founder-superpowers-marketplace
 ```
 
 Or from a terminal:
 
 ```bash
-claude plugin install solo-founder-superpowers@claude-plugins-official
+claude plugin marketplace add whawkinsiv/solo-founder-superpowers
+claude plugin install solo-founder-superpowers@solo-founder-superpowers-marketplace
 ```
 
 ### Verify it worked
@@ -47,13 +49,13 @@ Go to the **Installed** tab — you should see `solo-founder-superpowers` listed
 ### Updating
 
 ```bash
-claude plugin update solo-founder-superpowers@claude-plugins-official
+claude plugin update solo-founder-superpowers@solo-founder-superpowers-marketplace
 ```
 
 ### Uninstalling
 
 ```bash
-claude plugin uninstall solo-founder-superpowers@claude-plugins-official
+claude plugin uninstall solo-founder-superpowers@solo-founder-superpowers-marketplace
 ```
 
 ## What's Inside
