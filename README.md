@@ -1,50 +1,51 @@
 # Solo Founder Superpowers
 
-A Claude Code plugin with 36 expert skills for non-technical founders building SaaS applications with AI tools (Claude Code, Lovable, Replit, Cursor).
+36 expert skills for non-technical founders building SaaS with AI tools (Claude Code, Lovable, Replit, Cursor).
 
-Covers the full lifecycle of planning, building, launching, and growing a software business — all written as actionable guides, checklists, and copy-paste prompts.
+Covers the full lifecycle of planning, building, launching, and growing a software business — actionable guides, checklists, and copy-paste prompts.
 
-## Prerequisites
+## Installation
 
-You need [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed and running. If you don't have it yet:
+**Note:** Installation differs by platform. Claude Code has a built-in plugin marketplace. Cursor support is coming soon.
 
-**Mac / Linux:**
+### Claude Code (via Plugin Marketplace)
+
+In Claude Code, register the marketplace first:
+
 ```bash
-curl -fsSL https://claude.ai/install.sh | bash
-```
-
-**Windows (PowerShell):**
-```powershell
-irm https://claude.ai/install.ps1 | iex
-```
-
-Then run `claude` to launch it and log in with your Anthropic account (Pro, Max, Teams, or API with billing enabled).
-
-> Plugins require Claude Code **v1.0.33+**. Check with `claude --version` and update if needed.
-
-## Install
-
-Run these two commands inside Claude Code (at the `>` prompt):
-
-```
 /plugin marketplace add whawkinsiv/solo-founder-superpowers
+```
+
+Then install the plugin from this marketplace:
+
+```bash
 /plugin install solo-founder-superpowers@solo-founder-superpowers-marketplace
 ```
 
-Or from a terminal:
+### Claude Code (from terminal)
+
+If you prefer to install from a terminal or shell (Replit, Codespaces, etc.):
 
 ```bash
 claude plugin marketplace add whawkinsiv/solo-founder-superpowers
 claude plugin install solo-founder-superpowers@solo-founder-superpowers-marketplace
 ```
 
-### Verify it worked
+### Verify Installation
 
-```
+In Claude Code, run:
+
+```bash
 /plugin
 ```
 
-Go to the **Installed** tab — you should see `solo-founder-superpowers` listed. You can also test by typing `/solo-founder-superpowers:scope` in Claude Code.
+Go to the **Installed** tab — you should see `solo-founder-superpowers` listed.
+
+Or test directly by invoking a skill:
+
+```bash
+/solo-founder-superpowers:scope
+```
 
 ### Updating
 
