@@ -24,56 +24,36 @@ Then run `claude` to launch it and log in with your Anthropic account (Pro, Max,
 
 ## Install
 
-Installation is two steps: add the marketplace, then install the plugin.
-
-### If you're already inside Claude Code
-
-This is the most common case — you have Claude Code open and you're chatting with it.
-
-Run these two commands (type them at the `>` prompt):
+One command — run this inside Claude Code (at the `>` prompt):
 
 ```
-/plugin marketplace add whawkinsiv/solo-founder-superpowers
+/plugin install solo-founder-superpowers@claude-plugins-official
 ```
 
-```
-/plugin install solo-founder-superpowers@solo-founder-superpowers
-```
-
-### If you're in a terminal or shell (not inside Claude Code)
-
-This works from any terminal — your local machine, Replit shell, Codespaces, etc.
+Or from a terminal:
 
 ```bash
-claude plugin marketplace add whawkinsiv/solo-founder-superpowers
-claude plugin install solo-founder-superpowers@solo-founder-superpowers
+claude plugin install solo-founder-superpowers@claude-plugins-official
 ```
 
 ### Verify it worked
 
-**From inside Claude Code:**
 ```
 /plugin
 ```
-Go to the **Installed** tab — you should see `solo-founder-superpowers` listed.
 
-**From a terminal:**
-```bash
-claude plugin list
-```
-
-You can also test by typing `/solo-founder-superpowers:scope` in Claude Code — if it loads, you're good.
+Go to the **Installed** tab — you should see `solo-founder-superpowers` listed. You can also test by typing `/solo-founder-superpowers:scope` in Claude Code.
 
 ### Updating
 
 ```bash
-claude plugin update solo-founder-superpowers@solo-founder-superpowers
+claude plugin update solo-founder-superpowers@claude-plugins-official
 ```
 
 ### Uninstalling
 
 ```bash
-claude plugin uninstall solo-founder-superpowers@solo-founder-superpowers
+claude plugin uninstall solo-founder-superpowers@claude-plugins-official
 ```
 
 ## What's Inside
