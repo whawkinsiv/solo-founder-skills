@@ -6,58 +6,33 @@ Covers the full lifecycle of planning, building, launching, and growing a softwa
 
 ## Installation
 
-**Note:** Installation differs by platform. Claude Code has a built-in plugin marketplace. Cursor support is coming soon.
+**Note:** Installation differs by platform. Claude Code or Cursor have built-in plugin marketplaces. Codex and OpenCode require manual setup.
 
 ### Claude Code (via Plugin Marketplace)
 
 In Claude Code, register the marketplace first:
 
-```bash
+```
 /plugin marketplace add whawkinsiv/solo-founder-superpowers
 ```
 
 Then install the plugin from this marketplace:
 
-```bash
+```
 /plugin install solo-founder-superpowers@solo-founder-superpowers-marketplace
 ```
 
-### Claude Code (from terminal)
+### Cursor (via Plugin Marketplace)
 
-If you prefer to install from a terminal or shell (Replit, Codespaces, etc.):
+In Cursor Agent chat, install from marketplace:
 
-```bash
-claude plugin marketplace add whawkinsiv/solo-founder-superpowers
-claude plugin install solo-founder-superpowers@solo-founder-superpowers-marketplace
+```
+/plugin-add solo-founder-superpowers
 ```
 
 ### Verify Installation
 
-In Claude Code, run:
-
-```bash
-/plugin
-```
-
-Go to the **Installed** tab — you should see `solo-founder-superpowers` listed.
-
-Or test directly by invoking a skill:
-
-```bash
-/solo-founder-superpowers:plan
-```
-
-### Updating
-
-```bash
-claude plugin update solo-founder-superpowers@solo-founder-superpowers-marketplace
-```
-
-### Uninstalling
-
-```bash
-claude plugin uninstall solo-founder-superpowers@solo-founder-superpowers-marketplace
-```
+Start a new session in your chosen platform and ask for something that should trigger a skill (for example, "help me validate this idea" or "help me plan this feature"). The agent should automatically invoke the relevant solo-founder-superpowers skill.
 
 ## What's Inside
 
