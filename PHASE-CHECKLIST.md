@@ -6,31 +6,33 @@ Target ICP: solo, non-technical, bootstrapped founder building a real SaaS busin
 
 Goal: prove painful demand, ship fast, get first paying customers.
 
-- [ ] `validation-pre-mvp` *(new skill needed)*
-- [ ] `market-research-competitive-analysis`
-- [ ] `customer-research-personas`
-- [ ] `product-strategy-prioritization`
-- [ ] `pricing-monetization-strategy`
-- [ ] `landing-page-strategy`
-- [ ] `copywriting-microcopy`
-- [ ] `scope`
-- [ ] `ux-ui-design`
-- [ ] `information-architecture`
+- [ ] `validate`
+- [ ] `market-research`
+- [ ] `customer-research`
+- [ ] `prioritize`
+- [ ] `pricing`
+- [ ] `landing-page`
+- [ ] `copywriting`
+- [ ] `plan`
+- [ ] `design`
+- [ ] `navigation`
 - [ ] `build`
+- [ ] `database`
+- [ ] `integrations`
 - [ ] `secure`
 - [ ] `test`
-- [ ] `deployment-going-live` *(new skill needed)*
-- [ ] `payments-billing-operations` *(new skill needed)*
-- [ ] `analytics-instrumentation`
-- [ ] `launch-go-to-market`
-- [ ] `founder-led-sales-outreach`
-- [ ] `onboarding-activation-design`
-- [ ] `customer-support-documentation`
+- [ ] `deploy`
+- [ ] `payments`
+- [ ] `analytics`
+- [ ] `launch`
+- [ ] `sales`
+- [ ] `onboarding`
+- [ ] `support`
 - [ ] `monitor`
 - [ ] `debug`
-- [ ] `saas-legal-business-formation`
-- [ ] `saas-financial-modeling-metrics`
-- [ ] `founder-ops-cadence` *(new skill needed)*
+- [ ] `legal`
+- [ ] `finances`
+- [ ] `accounting`
 
 Exit criteria:
 - [ ] First repeatable channel for signups identified
@@ -42,25 +44,24 @@ Exit criteria:
 
 Goal: improve retention, tighten activation, and make acquisition repeatable.
 
-- [ ] `churn-prevention-retention` *(new skill needed)*
-- [ ] `customer-success-for-first-50-customers` *(new skill needed)*
-- [ ] `onboarding-activation-design`
-- [ ] `conversion-rate-optimization`
-- [ ] `email-lifecycle-marketing`
-- [ ] `growth-plg`
-- [ ] `content-marketing-build-in-public`
-- [ ] `seo-content-strategy`
-- [ ] `technical-seo-expert` *(for audits only)*
-- [ ] `partnerships-referrals-lightweight` *(new skill needed)*
-- [ ] `paid-acquisition-ad-copy` *(small-budget tests only)*
-- [ ] `pricing-monetization-strategy` *(quarterly review)*
-- [ ] `analytics-instrumentation`
+- [ ] `retention`
+- [ ] `feedback`
+- [ ] `onboarding`
+- [ ] `conversion`
+- [ ] `email`
+- [ ] `growth`
+- [ ] `content`
+- [ ] `social-media`
+- [ ] `seo`
+- [ ] `technical-seo`
+- [ ] `ads` *(small-budget tests only)*
+- [ ] `pricing` *(quarterly review)*
+- [ ] `analytics`
 - [ ] `monitor`
 - [ ] `debug`
 - [ ] `optimize`
-- [ ] `customer-support-documentation`
-- [ ] `saas-financial-modeling-metrics`
-- [ ] `founder-ops-cadence` *(new skill needed)*
+- [ ] `support`
+- [ ] `finances`
 
 Exit criteria:
 - [ ] Churn causes are identified and tracked
@@ -72,22 +73,21 @@ Exit criteria:
 
 Goal: systemize operations, reduce founder bottlenecks, and scale safely.
 
-- [ ] `hiring-technical-help` *(new skill needed)*
-- [ ] `deployment-going-live` *(production hardening; new skill needed)*
-- [ ] `payments-billing-operations` *(dunning, invoicing, leakage; new skill needed)*
-- [ ] `compliance-trust-lite` *(new skill needed)*
+- [ ] `hiring`
+- [ ] `deploy` *(production hardening)*
+- [ ] `payments` *(dunning, invoicing, leakage)*
 - [ ] `secure`
 - [ ] `accessibility`
-- [ ] `customer-support-documentation` *(self-serve scale)*
-- [ ] `customer-success-for-first-50-customers` *(expand to CS playbooks; new skill needed)*
-- [ ] `product-strategy-prioritization`
-- [ ] `pricing-monetization-strategy` *(packaging + expansion revenue)*
-- [ ] `partnerships-referrals-lightweight` *(new skill needed)*
-- [ ] `founder-led-sales-outreach` *(for higher-ticket deals)*
-- [ ] `paid-acquisition-ad-copy` *(scale only if CAC payback works)*
-- [ ] `analytics-instrumentation`
-- [ ] `saas-financial-modeling-metrics`
-- [ ] `founder-ops-cadence` *(new skill needed)*
+- [ ] `support` *(self-serve scale)*
+- [ ] `community`
+- [ ] `prioritize`
+- [ ] `pricing` *(packaging + expansion revenue)*
+- [ ] `sales` *(for higher-ticket deals)*
+- [ ] `ads` *(scale only if CAC payback works)*
+- [ ] `ai-features`
+- [ ] `analytics`
+- [ ] `finances`
+- [ ] `accounting`
 
 Exit criteria:
 - [ ] Core ops documented and delegable
