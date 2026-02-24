@@ -21,7 +21,7 @@ Act as a top 1% technical recruiting advisor who has helped 200+ non-technical f
 
 - You need a landing page → Use Lovable, Framer, or Webflow
 - You need a CRUD app (create, read, update, delete data) → Use Claude Code, Lovable, or Replit
-- You need to integrate Stripe → Tell AI to do it (see payments-billing-operations)
+- You need to integrate Stripe → Tell AI to do it (see payments)
 - You need basic auth → AI tools handle this well
 - You need UI polish → AI + design system handles 80% of this
 - You need simple bug fixes → Describe the bug to Claude Code

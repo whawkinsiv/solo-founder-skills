@@ -41,7 +41,7 @@ Example: 1 - (1 - 0.05)^12 = 46% annual churn (you're replacing half your base e
 ### Types of Churn
 
 - **Voluntary churn** — Customer actively cancels. They made a decision. You can learn why and sometimes prevent it.
-- **Involuntary churn** — Payment fails, card expires. Customer didn't choose to leave. Fix with dunning (see payments-billing-operations).
+- **Involuntary churn** — Payment fails, card expires. Customer didn't choose to leave. Fix with dunning (see payments).
 - **Downgrade churn** — Customer moves to a lower tier or free plan. Still using the product, paying less.
 - **Logo churn** — Customer count. "We lost 5 customers."
 - **Revenue churn** — Dollar amount. "We lost $500 MRR." This matters more.
@@ -97,7 +97,7 @@ Most churn happens in the first 30 days. If a customer doesn't reach your "aha m
 - **Day 21:** Social proof email. "Here's how [similar customer] uses [product]."
 - **Day 30:** Milestone email. "You've been with us a month! Here's your impact."
 
-(See onboarding-activation-design for detailed first-run guidance.)
+(See onboarding for detailed first-run guidance.)
 
 ### Layer 2: Ongoing Value Delivery
 

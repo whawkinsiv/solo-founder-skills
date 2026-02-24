@@ -21,7 +21,7 @@ Act as a top 1% go-to-market strategist who has launched 50+ bootstrapped SaaS p
 
 ```
 Waitlist Setup Checklist:
-- [ ] Landing page live with clear value prop (see landing-page-strategy)
+- [ ] Landing page live with clear value prop (see landing-page)
 - [ ] Email capture with incentive ("Get early access" or "Join 500+ founders")
 - [ ] Confirmation email with share mechanic ("Move up the list by sharing")
 - [ ] Weekly update email to keep waitlist warm
@@ -41,7 +41,7 @@ share-to-move-up mechanic. Use [framework/stack].
 
 You need at least 100 people who will show up on launch day. Sources:
 
-- **Build in public** — Share progress on Twitter/X, LinkedIn, Indie Hackers for 4-6 weeks before launch (see content-marketing-build-in-public)
+- **Build in public** — Share progress on Twitter/X, LinkedIn, Indie Hackers for 4-6 weeks before launch (see content)
 - **Direct outreach** — Email 50 people who fit your ICP, offer early access in exchange for feedback
 - **Communities** — Be active (not spammy) in 3-5 communities where your users hang out
 - **Personal network** — Email everyone you know. Ask for shares, not signups
