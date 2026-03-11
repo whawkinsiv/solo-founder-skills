@@ -99,21 +99,12 @@ Add a "Skip to main content" link as the first focusable element on every page. 
 
 ### Reduced Motion
 
-Respect the user's OS-level motion preference:
+Respect the user's OS-level motion preference. See the **motion-polish** skill for the complete reduced motion CSS implementation and guidelines on what to disable vs. simplify.
 
-```css
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-```
-
-- Disable autoplay on videos and carousels when reduced motion is preferred
-- Keep essential transitions (opacity fades) but remove motion (slides, bounces, zooms)
+- Implement `@media (prefers-reduced-motion: reduce)` to disable animations
+- Use Tailwind `motion-safe:` prefix for animation classes
+- Keep opacity transitions (fades are acceptable), remove transforms and movement
+- Disable autoplay on videos and carousels
 
 ## Tier 3: Polish
 

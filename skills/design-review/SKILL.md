@@ -7,7 +7,7 @@ description: "Use this skill when the user wants a design audit, asks what to fi
 
 The quality gate for visual design. This skill is for evaluating and systematically improving existing UI — not generating new designs. Use it to audit pages, identify what to fix first, and elevate AI-generated output to production quality.
 
-For design principles and system creation, reference the **design** skill. For specific AI-generated UI antipatterns (gradient overuse, excessive rounded corners, decorative emptiness), reference the **aesthetics** skill's AI slop fixes.
+For visual principles (hierarchy, whitespace, composition), reference the **aesthetics** skill. For specific AI-generated antipatterns, reference **aesthetics/AI-SLOP-FIXES.md**. For component and layout implementation, reference **ui-patterns**.
 
 ---
 

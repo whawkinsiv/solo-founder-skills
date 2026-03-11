@@ -168,21 +168,6 @@ Lists of items (pricing plans, feature comparisons, team members) should use ide
 
 ---
 
-## Quick Reference Checklist
+## Auditing
 
-Audit any screen in 60 seconds:
-
-- [ ] Can I identify the single most important action/element in under 2 seconds?
-- [ ] Are there at most 3 levels of text hierarchy visible (heading, body, meta)?
-- [ ] Does the space between groups exceed the space within groups by at least 2x?
-- [ ] Is the brand/accent color used on less than 10% of the visible area?
-- [ ] Are body text lines shorter than ~65 characters?
-- [ ] Is there only ONE primary (filled, colored) button per section?
-- [ ] Are all repeating elements (cards, list items, rows) visually identical in structure?
-- [ ] Do page edges have adequate breathing room (not content touching the viewport edge)?
-- [ ] Is text left-aligned (not center-aligned) for all content except hero sections and empty states?
-- [ ] Are there fewer than 4 font weights visible on the page?
-- [ ] Are borders and shadows used sparingly (not on every element)?
-- [ ] Does the page use color for information (status, actions) rather than decoration?
-- [ ] Is the visual weight of the nav/header lighter than the main content area?
-- [ ] Could I remove any visual element (border, shadow, background color) without losing information?
+For structured audit checklists (60-second scan and comprehensive), use the **design-review** skill. The principles in this skill inform what to look for; design-review provides the systematic checklist.
