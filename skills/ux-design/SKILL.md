@@ -5,7 +5,7 @@ description: "Use this skill when flows feel clunky, users are confused, navigat
 
 # UX Design — Flows, Structure & Interaction
 
-Design how users move through the app, find what they need, and accomplish tasks with minimal friction. This skill covers the structural and behavioral layer of UX — information architecture, navigation, user flows, interaction patterns, and error handling. For visual design (colors, typography, layout), see the design skill. For onboarding flows, see ONBOARDING.md. For accessibility implementation, see ACCESSIBILITY.md.
+Design how users move through the app, find what they need, and accomplish tasks with minimal friction. This skill covers the structural and behavioral layer of UX — information architecture, navigation, user flows, interaction patterns, and error handling. For visual design (colors, typography, layout), see the aesthetics and ui-patterns skills. For onboarding flows, see ONBOARDING.md. For accessibility implementation, see ACCESSIBILITY.md.
 
 ## Information Architecture
 

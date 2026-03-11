@@ -497,136 +497,30 @@ All values are multiples of the base unit.
 
 ---
 
-## 8. Component Specs
+## 8. Component Specs (Summary)
 
-Every component below lists ALL applicable states. When building UI, match these values exactly.
+This section specifies the brand-level token values for key components. For detailed component behavior, patterns, and implementation guidance, see the **ui-patterns** skill.
 
-**State coverage by component:**
-- **Interactive components** (Button, Input, Navigation items): default, hover, active, focus, disabled, loading, error
-- **Container components** (Card, Modal): default, hover (if clickable), selected, disabled, loading (skeleton)
-- **Status components** (Badge, Toast): variant-based (success, warning, error, info) — not interactive-state-based
-- **Data components** (Table): row default, row hover, row selected, header, empty state, loading (skeleton)
+### Key Component Tokens
 
-If a state is not listed for a component, it should NOT be implemented. Do not invent states that aren't specified here.
+Specify values for these components using the brand tokens from sections above:
 
-### Button
+| Component | Key Properties to Specify |
+|-----------|--------------------------|
+| Button (primary, secondary, ghost, destructive) | Background, text color, border, height, padding, radius, font weight, hover/active/focus/disabled states |
+| Input | Background, border, text/placeholder colors, height, padding, radius, focus ring, error state |
+| Card | Background, border, shadow, radius, padding, hover state (if clickable) |
+| Badge (default, success, warning, error, info) | Background, text color, padding, radius, font size/weight |
+| Toast (success, error, warning, info) | Background, text color, icon, border-left, shadow, auto-dismiss duration |
+| Modal | Backdrop color, background, radius, shadow, padding, max-width, animation |
+| Table | Header style, row height/border/hover, cell padding, sort indicators |
+| Navigation | Style (sidebar/topnav), background, dimensions, item states, mobile behavior |
 
-| Property | Primary | Secondary | Ghost | Destructive |
-|----------|---------|-----------|-------|-------------|
-| Background | #XXXXXX | #XXXXXX | transparent | #XXXXXX |
-| Text color | #XXXXXX | #XXXXXX | #XXXXXX | #XXXXXX |
-| Border | none | 1px solid #XXXXXX | none | none |
-| Height | Xpx | Xpx | Xpx | Xpx |
-| Padding | Xpx Xpx | Xpx Xpx | Xpx Xpx | Xpx Xpx |
-| Radius | Xpx | Xpx | Xpx | Xpx |
-| Font weight | XXX | XXX | XXX | XXX |
-| **Hover** | bg #XXXXXX | bg #XXXXXX | bg #XXXXXX | bg #XXXXXX |
-| **Active** | bg #XXXXXX | bg #XXXXXX | bg #XXXXXX | bg #XXXXXX |
-| **Focus** | ring 2px #XXXXXX offset 2px | ring 2px #XXXXXX offset 2px | ring 2px #XXXXXX offset 2px | ring 2px #XXXXXX offset 2px |
-| **Disabled** | opacity 0.5, cursor not-allowed | opacity 0.5 | opacity 0.5 | opacity 0.5 |
-| **Loading** | spinner replaces text, maintain width | same | same | same |
-
-### Input
-
-| Property | Default | Focus | Error | Disabled |
-|----------|---------|-------|-------|----------|
-| Background | #XXXXXX | #XXXXXX | #XXXXXX | #XXXXXX |
-| Border | 1px solid #XXXXXX | 2px solid #XXXXXX | 2px solid #XXXXXX | 1px solid #XXXXXX |
-| Text color | #XXXXXX | #XXXXXX | #XXXXXX | #XXXXXX |
-| Placeholder color | #XXXXXX | #XXXXXX | #XXXXXX | #XXXXXX |
-| Height | Xpx | Xpx | Xpx | Xpx |
-| Padding | Xpx Xpx | Xpx Xpx | Xpx Xpx | Xpx Xpx |
-| Radius | Xpx | Xpx | Xpx | Xpx |
-| Ring | none | 0 0 0 3px rgba(primary, 0.15) | 0 0 0 3px rgba(error, 0.15) | none |
-| Label | [neutral-700 hex], font-weight XXX, margin-bottom Xpx | same | same | opacity 0.5 |
-| Helper text | [neutral-500 hex], font-size Xpx | same | [error hex] | hidden |
-
-### Card
-
-| Property | Default | Hoverable | Selected | Disabled |
-|----------|---------|-----------|----------|----------|
-| Background | #XXXXXX | #XXXXXX | #XXXXXX | #XXXXXX |
-| Border | 1px solid #XXXXXX | 1px solid #XXXXXX | 2px solid #XXXXXX | 1px solid #XXXXXX |
-| Shadow | [shadow token] | [shadow token on hover] | [shadow token] | none |
-| Radius | Xpx | Xpx | Xpx | Xpx |
-| Padding | Xpx | Xpx | Xpx | Xpx |
-| Opacity | 1 | 1 | 1 | 0.6 |
-| Cursor | default | pointer | default | not-allowed |
-
-### Badge
-
-| Property | Default | Success | Warning | Error | Info |
-|----------|---------|---------|---------|-------|------|
-| Background | #XXXXXX | #XXXXXX | #XXXXXX | #XXXXXX | #XXXXXX |
-| Text color | #XXXXXX | #XXXXXX | #XXXXXX | #XXXXXX | #XXXXXX |
-| Border | none | none | none | none | none |
-| Padding | Xpx Xpx | same | same | same | same |
-| Radius | Xpx | same | same | same | same |
-| Font size | Xpx | same | same | same | same |
-| Font weight | XXX | same | same | same | same |
-
-### Toast
-
-| Property | Success | Error | Warning | Info |
-|----------|---------|-------|---------|------|
-| Background | #XXXXXX | #XXXXXX | #XXXXXX | #XXXXXX |
-| Text color | #XXXXXX | #XXXXXX | #XXXXXX | #XXXXXX |
-| Icon | checkmark | x-circle | alert-triangle | info |
-| Border-left | 4px solid #XXXXXX | 4px solid #XXXXXX | 4px solid #XXXXXX | 4px solid #XXXXXX |
-| Shadow | [shadow-md] | same | same | same |
-| Duration | 5 seconds | persistent (manual dismiss) | 8 seconds | 5 seconds |
-| Position | top-right | top-right | top-right | top-right |
-| Animation | slide in from right, fade out | same | same | same |
-
-### Modal
-
-| Property | Value |
-|----------|-------|
-| Backdrop | [overlay backdrop color from surfaces] |
-| Background | #XXXXXX |
-| Border radius | Xpx |
-| Shadow | [shadow-xl] |
-| Padding | Xpx (header), Xpx (body), Xpx (footer) |
-| Max width | XXXpx (sm), XXXpx (md), XXXpx (lg) |
-| Header | font-size Xpx, font-weight XXX, border-bottom 1px solid #XXXXXX |
-| Footer | border-top 1px solid #XXXXXX, buttons right-aligned, gap Xpx |
-| Close button | top-right, Xpx from edges, [neutral-500 hex], hover [neutral-700 hex] |
-| Animation | fade in backdrop + scale modal from 0.95 to 1, [XXX]ms |
-| Escape key | always closes |
-| Click backdrop | closes (unless destructive action in progress) |
-| Focus trap | yes — focus cycles within modal |
-
-### Table
-
-| Property | Value |
-|----------|-------|
-| Header bg | #XXXXXX |
-| Header text | #XXXXXX, font-weight XXX, font-size Xpx, text-transform uppercase, letter-spacing 0.05em |
-| Row height | Xpx |
-| Row border | 1px solid #XXXXXX (bottom) |
-| Row hover | bg #XXXXXX |
-| Row selected | bg #XXXXXX |
-| Cell padding | Xpx Xpx |
-| Striped rows | [yes/no — if yes: alternate #XXXXXX] |
-| Sort indicator | [neutral-400 hex] default, [primary hex] when active |
-| Empty state | centered, icon + message + CTA, padded Xpx |
-
-### Navigation
-
-| Property | Value |
-|----------|-------|
-| Style | [sidebar / topnav / both] |
-| Background | #XXXXXX |
-| Width (sidebar) | Xpx (expanded), Xpx (collapsed) |
-| Height (topnav) | Xpx |
-| Item padding | Xpx Xpx |
-| Item text | #XXXXXX, font-size Xpx, font-weight XXX |
-| Item hover | bg #XXXXXX, text #XXXXXX |
-| Item active | bg #XXXXXX, text #XXXXXX, font-weight XXX |
-| Item icon | Xpx, gap Xpx from text |
-| Divider | 1px solid #XXXXXX, margin Xpx 0 |
-| Mobile breakpoint | < XXXpx |
-| Mobile behavior | [hamburger menu / bottom nav / drawer] |
+**State coverage requirements:**
+- **Interactive** (Button, Input, Nav items): default, hover, active, focus, disabled, loading, error
+- **Container** (Card, Modal): default, hover (if clickable), selected, disabled, loading (skeleton)
+- **Status** (Badge, Toast): variant-based — not interactive-state-based
+- **Data** (Table): row default, hover, selected, header, empty state, loading (skeleton)
 
 ---
 
@@ -867,3 +761,14 @@ Before writing the final `BRAND-IDENTITY.md`, verify every item:
 - [ ] Breakpoint values are consistent between Section 4 and Section 11
 - [ ] Icon library specified and "never mix" rule included
 - [ ] Reduced motion CSS included in Section 7
+
+---
+
+## Related Skills
+
+Once the brand identity is generated, these skills use the tokens to build the actual UI:
+
+- **aesthetics** — How to apply these tokens beautifully (visual hierarchy, whitespace, composition)
+- **ui-patterns** — Component implementation and page layouts using these tokens
+- **motion-polish** — Animation timing and micro-interactions that match the brand personality
+- **design-review** — Quality gate to audit whether the UI correctly implements this identity
