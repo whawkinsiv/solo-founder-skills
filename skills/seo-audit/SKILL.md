@@ -22,6 +22,11 @@ The output is a **prioritized action plan** — not a lecture on SEO theory. Eve
 recommendation should be a concrete thing the founder can do (or that you can do
 for them right now).
 
+This skill is the **audit workflow**. For implementation and strategy:
+- **technical-seo** — Implement fixes in code (meta tags, schema, CWV, crawlability, GEO)
+- **seo-content** — Write or rewrite content (briefs, humanized prose, SERP feature targeting)
+- **seo** — Plan content strategy (keyword research, content architecture, topic clusters)
+
 ## Step 1: Understand the project
 
 Start by gathering context:

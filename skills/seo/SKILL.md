@@ -1,13 +1,16 @@
 ---
 name: seo
-description: "Use this skill when the user needs to plan SEO content, do keyword research, build a content calendar, optimize pages for search intent, or create an internal linking strategy. Covers keyword intent analysis, content architecture, on-page optimization, and content planning for SaaS."
+description: "Use this skill when the user needs to plan SEO content, do keyword research, build a content calendar, map search intent to page types, or create an internal linking strategy. This is the strategy and planning skill — for writing content see seo-content, for technical implementation see technical-seo, for auditing see seo-audit."
 ---
 
-# SEO & Content Strategy
+# SEO Strategy & Planning
 
-SEO is a long game that compounds. This skill helps you build a content strategy that drives organic signups — starting with the pages that matter most.
+SEO is a long game that compounds. This skill helps you plan a content strategy that drives organic signups — deciding what to build, in what order, targeting which keywords.
 
-For technical SEO (site speed, schema markup, crawlability, GEO), see the **technical-seo-expert** skill.
+This skill answers **what to write and where**. For the other SEO concerns:
+- **seo-content** — How to write it (content briefs, humanized writing, SERP feature targeting)
+- **technical-seo** — How to implement it in code (meta tags, schema, CWV, crawlability, GEO)
+- **seo-audit** — How to assess what exists (scan a codebase, produce an action plan)
 
 ## Core Principles
 
@@ -87,49 +90,6 @@ Do keyword research for our product [name] in the [category] space:
 - Estimate competition level (low, medium, high)
 - Recommend which page type to create for each keyword
 - Prioritize: low competition + high intent first
-```
-
----
-
-## On-Page Optimization
-
-For every page, get these elements right:
-
-### Meta Tags
-
-**Tell AI:**
-```
-Write SEO-optimized meta tags for our [page type] page about [topic]:
-- Title tag: 50-60 characters, primary keyword near the front
-- Meta description: 120-155 characters, include value prop and CTA language
-- Open Graph tags (og:title, og:description, og:image) for social sharing
-```
-
-### Meta Tag Templates
-
-| Page Type | Title Format | Description Format |
-|-----------|-------------|-------------------|
-| Homepage | `[Product] — [Value Prop] \| [Category]` | `[Product] helps [audience] [outcome]. [Differentiator]. Start free.` |
-| Feature page | `[Feature] — [Benefit] \| [Product]` | `[How feature works] to help you [outcome]. Try it free.` |
-| Blog post | `[Keyword-Rich Title] — [Product] Blog` | `[What reader learns]. [Why it matters]. [Specific detail for click].` |
-| Comparison | `[Product] vs [Competitor] — [Year] Comparison` | `Compare [Product] and [Competitor] on [key factors]. See which is right for you.` |
-
-### Heading Structure
-
-- One `<h1>` per page matching the primary keyword intent
-- `<h2>` headings for each major section
-- `<h3>` for subsections — no skipping levels
-- Headings should read as a scannable outline of the page
-
-### Image Optimization
-
-**Tell AI:**
-```
-Optimize all images on [page]:
-- Add descriptive alt text (include relevant keywords naturally, max 125 chars)
-- Serve in WebP or AVIF format
-- Set explicit width and height to prevent layout shift
-- Lazy-load images below the fold
 ```
 
 ---

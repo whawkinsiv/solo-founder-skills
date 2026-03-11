@@ -15,7 +15,7 @@ For every important page, verify:
 | Element | Requirement | How to Check |
 |---------|------------|--------------|
 | Title tag | 50-60 chars, primary keyword front-loaded | View page source or browser tab |
-| Meta description | 150-160 chars, includes CTA | View page source |
+| Meta description | 120-155 chars, includes CTA | View page source |
 | Canonical tag | Self-referencing on every page | View page source, look for `<link rel="canonical">` |
 | Robots tag | No accidental `noindex` on important pages | View page source |
 

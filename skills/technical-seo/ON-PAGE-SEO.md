@@ -32,7 +32,7 @@ Each title should:
 
 | Spec | Requirement |
 |------|------------|
-| Length | 150-160 characters |
+| Length | 120-155 characters |
 | Keyword | Include primary keyword naturally |
 | CTA | Include a call-to-action |
 | Uniqueness | One unique description per page |
@@ -41,7 +41,7 @@ Each title should:
 ```
 Write meta descriptions for these pages: [list URLs]
 Each description should:
-- Be 150-160 characters
+- Be 120-155 characters
 - Include the primary keyword naturally
 - End with a call-to-action (Learn more, Get started, Try free)
 - Be unique per page

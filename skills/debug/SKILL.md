@@ -5,62 +5,90 @@ description: "Use this skill when features break, users report errors, deploymen
 
 # Debug
 
-## Debugging Workflow
-
-```
-Debug Process:
-- [ ] Reproduce bug consistently
-- [ ] Capture what's happening (screenshots, errors)
-- [ ] Check what changed recently
-- [ ] Gather diagnostic info
-- [ ] Give info to AI to diagnose
-- [ ] AI proposes fix
-- [ ] Test fix works
-- [ ] Verify didn't break anything else
-```
-
-See [DEBUG-CHECKLIST.md](DEBUG-CHECKLIST.md) for detailed steps.
-
----
-
-## The Golden Rule
+## The golden rule
 
 **NO GUESSING. GATHER INFO FIRST.**
 
-Bad approach:
-1. Something broke
-2. Try random fix
-3. Doesn't work
-4. Try another fix
-5. Still broken after 5 attempts
+Bad: Something broke → try random fix → doesn't work → try another → still broken after 5 attempts.
 
-Good approach:
-1. Something broke
-2. Reproduce it consistently
-3. Gather diagnostic info
-4. Give to AI to diagnose
-5. AI fixes it (usually first try)
+Good: Something broke → reproduce it → gather diagnostic info → diagnose root cause → fix it (usually first try).
 
 **Diagnosis before fixes.**
 
 ---
 
-## Reproducing Bugs
+## Debugging by tool
 
-**Before asking AI to fix, reproduce it:**
+How you debug depends on which tool you're using.
+
+### Claude Code (you have direct access)
+
+Claude Code can gather its own diagnostics. Before asking the founder for screenshots or logs, do this automatically:
+
+```
+Auto-debug steps (do these yourself):
+1. Check git history: git log --oneline -10 and git diff HEAD~3
+2. Search for the error: Grep for error text across the codebase
+3. Read the failing file: Read the file + surrounding context
+4. Run the app/tests: Bash to run dev server, test suite, or reproduce
+5. Check logs: Read server logs, build output, or error logs
+6. Check environment: Verify .env.example vs actual config
+```
+
+Only ask the founder for information you can't get yourself: what they saw in the browser, what they clicked, screenshots of visual bugs.
+
+### Lovable / Replit (founder pastes into chat)
+
+The founder needs to gather info manually and paste it. Use the "Tell AI:" prompts in [DEBUG-PROMPTS.md](DEBUG-PROMPTS.md) — they're structured templates that ensure complete context.
+
+### Production bugs (check monitoring first)
+
+Before debugging production issues, check monitoring and error tracking:
+
+```
+1. Error tracker (Sentry, LogRocket): exact error + stack trace + user context
+2. Server logs: filter by timestamp of report
+3. Hosting dashboard: any deployment or outage at that time?
+4. Database: any failed migrations or connection issues?
+```
+
+See /monitor skill for setting up monitoring. See /deploy skill for rollback procedures.
+
+---
+
+## Workflow
+
+```
+Debug process:
+- [ ] Reproduce bug consistently
+- [ ] Gather diagnostic info (auto in Claude Code, manual elsewhere)
+- [ ] Check what changed recently
+- [ ] Diagnose root cause before proposing fixes
+- [ ] Fix the root cause
+- [ ] Test fix works
+- [ ] Verify didn't break anything else
+- [ ] Ask: how do we prevent this?
+```
+
+---
+
+## Reproducing bugs
+
+Before fixing, reproduce it:
 
 ```
 Can you reproduce it?
 - [ ] Exact steps to trigger bug
-- [ ] Happens every time
-- [ ] Happens on specific browser/device
-- [ ] Happens with specific data
+- [ ] Happens every time or intermittently?
+- [ ] Specific browser/device?
+- [ ] Specific data or user?
 
 If can't reproduce:
-- Ask user for exact steps
-- Try different browser/device
+- Ask user for exact steps or screen recording
+- Try different browser/device/account
 - Try with different data
-- Check if intermittent (timing issue)
+- Clear cache and retry
+- Check if timing-dependent
 ```
 
 **Tell AI:**
@@ -79,235 +107,140 @@ Screenshot: [attach]
 
 ---
 
-## Capturing Error Info
+## Capturing error info
 
-### Browser Console Errors
+### Browser console
 
-**Open console:**
-1. Right-click page → Inspect
-2. Click "Console" tab
-3. Look for red errors
+1. Right-click page → Inspect → Console tab
+2. Look for red errors
+3. Screenshot the full error including stack trace
 
-**Screenshot errors and give to AI:**
+**Tell AI:**
 ```
-I see this error in console:
-[paste error message]
-
-When it happens:
-[what you were doing]
-
-Please:
-1. Explain what this means
-2. Identify the cause
-3. Fix the issue
+Console error: [paste full error message]
+When it happens: [what you were doing]
 ```
 
-### Network Errors
+### Network tab
 
-**Check network tab:**
-1. Open DevTools → Network
-2. Reproduce bug
-3. Look for failed requests (red)
-4. Click failed request
-5. Check response
+1. DevTools → Network tab → reproduce bug
+2. Look for failed requests (red, 4xx, 5xx)
+3. Click failed request → check Response tab
 
 **Tell AI:**
 ```
 API call failing:
 URL: /api/endpoint
-Status: 500 Internal Server Error
+Method: [GET/POST]
+Status: [status code]
 Response: [paste error response]
-
 This happens when: [action]
 ```
 
-### Visual Bugs
+### Visual bugs
 
-**Screenshot everything:**
-- What you expected to see
-- What actually shows
-- Full page context
-- Error messages
-
-**Tell AI:**
-```
-Visual bug: [description]
-Expected: [screenshot or description]
-Actual: [screenshot]
-Device: [iPhone 14, Chrome on Mac, etc]
-```
+Screenshot what you expected vs what actually shows. Include device and browser.
 
 ---
 
-## What Changed?
-
-**Ask yourself:**
-- Did this work yesterday?
-- What did AI change today?
-- Did you deploy recently?
-- Did you change any settings?
-
-**Tell AI:**
-```
-This worked yesterday, broke today.
-Changes made today:
-- [Change 1]
-- [Change 2]
-
-Which could cause: [the bug]?
-```
-
----
-
-## Common Bug Types
+## Common bug types
 
 ### "Nothing happens when I click"
-
-**Check:**
-- Console errors?
-- Network request failing?
-- Button actually clickable?
-
-**Tell AI:**
-```
-Button does nothing when clicked.
-Button: [which button]
-Expected: [what should happen]
-Console errors: [paste any errors]
-```
+Check: console errors? Network request failing? Element actually clickable (not covered by another element)?
 
 ### "Page won't load"
-
-**Check:**
-- Network errors?
-- JavaScript errors?
-- Infinite redirect?
-
-**Tell AI:**
-```
-Page won't load: /page/url
-Browser shows: [blank / error / loading forever]
-Console errors: [paste]
-Network errors: [paste]
-```
+Check: network errors? JavaScript errors? Infinite redirect? Missing environment variable?
 
 ### "Wrong data showing"
-
-**Check:**
-- API returning wrong data?
-- Caching issue?
-- State management bug?
-
-**Tell AI:**
-```
-Showing wrong data.
-Expected: [User A's profile]
-Showing: [User B's profile]
-API response: [paste from Network tab]
-```
+Check: API returning wrong data (network tab)? Caching issue? State not updating? Wrong user context?
 
 ### "Form doesn't submit"
+Check: validation errors visible? Console errors? Network request firing at all?
 
-**Check:**
-- Validation errors?
-- Console errors?
-- Network request happening?
+### "Works in dev, broken in production"
+Check: environment variables set? Different database? Build step stripping something? CORS configured for production domain?
 
-**Tell AI:**
-```
-Form won't submit.
-Form: [which form]
-Filled: [what data entered]
-Validation errors: [any visible]
-Console errors: [paste]
-```
+### "Works in Chrome, broken in Safari"
+Check: CSS/JS compatibility? Safari-specific defaults? Date parsing differences?
 
 ---
 
-## Working with AI to Debug
+## Escalation discipline
 
-### Step 1: Gather Info
+### After 1 failed fix
 
-```
-Before asking AI to fix, provide:
-- Exact steps to reproduce
-- Expected vs actual behavior
-- Screenshots/error messages
-- Browser and device
-- What changed recently (if known)
-```
-
-### Step 2: AI Diagnoses
+Reassess. Did we misdiagnose? Is there more info we should gather?
 
 ```
-[Paste all info above]
-
-Before proposing fixes:
-1. What do you think is wrong?
-2. Why is it happening?
-3. What needs to change?
-
-Explain in plain English first.
+Fix didn't work. Here's what happened after applying it: [new info].
+Are we fixing the right thing?
 ```
 
-### Step 3: AI Fixes
+### After 2 failed fixes
+
+**Stop trying fixes.** The diagnosis is probably wrong.
 
 ```
-Okay, now please fix it.
+2 fixes failed.
+Fix 1: [tried] → [result]
+Fix 2: [tried] → [result]
 
-After fixing:
-- Explain what you changed
-- How to test the fix
-- What to watch out for
+Are we fixing the wrong thing? Should we rethink the approach entirely?
 ```
 
-### Step 4: Verify Fix
+### After 3 failed fixes
 
-```
-Test the fix:
-- [ ] Original bug is gone
-- [ ] Tested same steps, works now
-- [ ] Related features still work
-- [ ] No new console errors
-```
-
-See [DEBUG-PROMPTS.md](DEBUG-PROMPTS.md) for more patterns.
+Don't try a 4th. Change strategy:
+1. Rebuild the feature with a simpler approach
+2. Get a human developer to look at it (see /hiring)
+3. Ship a workaround and fix properly later
 
 ---
 
-## When You're Stuck
+## Digging deeper: find the real root cause
 
-**After 2 failed fix attempts:**
+Most debugging failures happen because you stop at the first plausible cause instead of the actual root cause. Use the "keep asking why" technique:
 
-Stop. Don't try a 3rd fix.
-
-**Ask AI:**
 ```
-Tried 2 fixes, both didn't work.
-
-Original bug: [description]
-Fix 1: [what we tried] - didn't work
-Fix 2: [what we tried] - still broken
-
-Questions:
-- Are we fixing the wrong thing?
-- Is there a better approach?
-- Should we start over?
+Problem: Server crashed
+  Why? → Out of memory
+  Why? → Memory leak in the auth service          ← Most people stop here and "add more RAM"
+  Why? → Database connections not being released
+  Why? → Error handler doesn't close connections
+  Why? → No cleanup in the finally block           ← THIS is the fix
 ```
 
-**If 3+ fixes failed:** Probably need to rethink approach, not try more fixes.
+**How to tell you've found the real root cause:**
+- It's something you can actually change (code, config, process)
+- Fixing it would prevent the problem from recurring
+- Asking "why?" again doesn't lead anywhere actionable
+
+**Common mistake: stopping at "the AI broke it."** That's blame, not a cause. Ask instead: what process would have caught this? Missing test? Missing validation? No code review?
+
+### When a bug has multiple causes
+
+Sometimes a bug needs two things to go wrong at the same time. When the obvious cause doesn't fully explain the problem, look for a second branch:
+
+```
+Problem: Deployment failed
+  Why? → Database migration timed out
+    Branch A: Why was the migration slow?
+      → Table lock from a long-running query → Missing index
+    Branch B: Why is the timeout so short?
+      → Using default timeout → No deployment-specific config
+```
+
+Both branches need fixing, or the bug will come back under slightly different conditions.
+
+### Validate your diagnosis
+
+Before implementing a fix, trace it backwards: "If I fix X, does that prevent Y, which prevents Z, which prevents the original problem?" If the chain breaks, you found the wrong root cause.
 
 ---
 
-## Intermittent Bugs
+## Intermittent bugs
 
-**"It works sometimes, breaks sometimes"**
-
-**Likely causes:**
-- Race condition (timing)
-- Caching issue
-- Network timing
-- External API flakiness
+"Works sometimes, breaks sometimes" — likely a race condition, caching issue, or external API flakiness.
 
 **Tell AI:**
 ```
@@ -315,163 +248,118 @@ Bug is intermittent.
 Works: [X] out of 10 times
 Fails: [Y] out of 10 times
 
-Pattern noticed:
-- Fails more often when [condition]
-- Never fails when [condition]
+Pattern: Fails more when [condition]. Never fails when [condition].
 
-Please add logging to capture when it fails.
+Add logging to capture state when it fails.
 ```
 
 ---
 
-## Bugs in Production
+## Edge case testing
 
-**Users reporting bugs in live app:**
+When a fix works for the main case, also test:
+
+- **Empty states**: no data, empty lists, missing fields
+- **Volume**: 1 item, 100 items, 10,000 items
+- **Timing**: slow connection (3G throttle in DevTools), rapid double-clicks, expired sessions, multiple tabs
+- **Boundaries**: very long text, special characters, zero values, negative numbers
+
+---
+
+## Bugs in production
 
 **Priority 1: Can users work around it?**
-- Yes → Fix in next deployment
-- No → Emergency fix needed
+- Yes → fix in next deployment
+- No → emergency fix needed
 
-**For emergency fixes:**
+**Emergency fix:**
 ```
 Production bug blocking users.
 Bug: [description]
 Impact: [how many users affected]
 
-Need quick fix:
-- Simplest solution that works
-- Don't optimize, just unblock users
-- Can improve later
-```
-
-**For non-urgent:**
-```
-Production bug reported by user.
-Bug: [description]
-Impact: [minor / major]
-Can work around: [yes / no]
-
-Reproduce in development:
-[steps]
-
-Then fix and test before deploying.
+Need the simplest fix that unblocks users. Can improve later.
 ```
 
 ---
 
-## Reading Error Messages
+## Multiple bugs at once
 
-**Common error patterns:**
+Symptoms that look like one bug might be several, or several symptoms might share one root cause.
 
-**"Cannot read property of undefined"**
-- Trying to access something that doesn't exist
-- Check: Is data loaded before accessing it?
+```
+List all symptoms:
+1. [Symptom]
+2. [Symptom]
+3. [Symptom]
 
-**"Maximum call stack exceeded"**
-- Infinite loop or recursion
-- Check: Function calling itself forever?
+Are these separate bugs or one root cause?
+```
 
-**"Network request failed"**
-- API call not working
-- Check: Network tab for status code
-
-**"Unauthorized" or "401"**
-- Authentication issue
-- Check: Are you logged in? Token valid?
-
-**"Internal Server Error" or "500"**
-- Backend problem
-- Check: Server logs for details
-
-See [ERROR-MESSAGES.md](ERROR-MESSAGES.md) for more.
+**Fix in priority order:** blocking (can't use app) → critical (main features broken) → major → minor. Don't fix minor bugs while critical ones are unfixed.
 
 ---
 
-## Debugging Tools
+## Adding debug logging
 
-**Built into browser:**
-- Console: See errors and logs
-- Network: See API calls and responses
-- Elements: Inspect HTML/CSS
-- Sources: Set breakpoints (advanced)
+When a bug is hard to diagnose, add strategic logging:
 
-**How to use:**
-1. Open DevTools (F12 or right-click → Inspect)
-2. Click relevant tab
-3. Reproduce bug
-4. Look for errors/failed requests
+```
+Add logging at:
+- Function entry with input values
+- Before/after API calls with request/response
+- State changes with before/after values
+- Error handlers with full context
+- Decision points (which branch was taken)
 
-**Screenshot and give to AI** - AI can interpret errors.
+Format: [TIMESTAMP] [LEVEL] [CONTEXT] Message
+Example: [2025-01-13 10:30:45] [ERROR] [UserAuth] Login failed for user@example.com - Reason: Invalid password - Attempts: 3
+```
 
----
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Trying fixes without info | Gather diagnostic info first |
-| "It doesn't work" | Be specific: what doesn't work? |
-| Not reproducing first | Find consistent steps to trigger bug |
-| Random fixes | Diagnose root cause first |
-| Ignoring console errors | Always check console |
-| Not testing after fix | Verify fix works, didn't break other things |
-
----
-
-## When to Get Help
-
-**Consider hiring developer when:**
-- Stuck after following this process
-- Critical bug can't figure out
-- Same bug keeps coming back
-- Bug in complex integration
-- Need production fixed urgently
-
-**For most bugs:** Following this process with AI is sufficient.
+Remove or reduce logging after the bug is fixed.
 
 ---
 
 ## Prevention
 
-**After fixing, ask AI:**
-```
-Bug is fixed. 
+After every fix, think at three levels:
 
-How could we have prevented this?
-- Better validation?
-- Better error handling?
-- Testing we should add?
-```
+1. **Immediate fix** — you already did this (the bug is gone)
+2. **Preventive measure** — what stops this from ever happening again? (validation, test, type check)
+3. **Detection mechanism** — if prevention fails, how do you catch it early? (monitoring alert, error tracking)
 
-**Build prevention into next features.**
+```
+Bug is fixed. Now:
+- What validation or test would prevent this from recurring?
+- What monitoring or alert would catch it early if it does recur? (see /monitor)
+- Is this a pattern? Could the same type of bug exist elsewhere in the codebase?
+```
 
 ---
 
-## Quick Debug Checklist
+## When to get help
 
-**When something breaks:**
+**Consider hiring a developer when:**
+- Stuck after following this entire process
+- Critical production bug you can't figure out
+- Same bug keeps coming back after fixing
+- Bug in a complex third-party integration
+- Security issue or data corruption risk
 
-```
-Quick Debug:
-- [ ] Can I reproduce it?
-- [ ] Any console errors?
-- [ ] Any network errors?
-- [ ] What changed recently?
-- [ ] Screenshot the issue
-- [ ] Gather all info
-- [ ] Give to AI with context
-- [ ] Test AI's fix
-```
-
-**5 minutes of diagnosis > 2 hours of guessing**
+For most bugs, this process with AI tools is sufficient.
 
 ---
 
-## Success Looks Like
+## Common mistakes
 
-✅ Bugs fixed on first or second try  
-✅ Can explain what was wrong  
-✅ Know how to reproduce bugs  
-✅ Gather complete info before asking for fixes  
-✅ Verify fixes work and don't break other things  
-✅ Bugs getting rarer over time (learning patterns)
+| Mistake | Fix |
+|---------|-----|
+| Trying fixes without info | Gather diagnostic info first |
+| "It doesn't work" (vague) | Be specific: what exactly doesn't work? |
+| Not reproducing first | Find consistent steps to trigger the bug |
+| Asking AI for random fixes | Diagnose root cause first |
+| Ignoring console/network errors | Always check both tabs |
+| Not testing after fix | Verify fix works AND didn't break other things |
+| Fixing minor bugs while critical ones exist | Prioritize by user impact |
+| Accepting first plausible cause | Keep asking "why?" until you reach something you can actually fix |
+| "The AI broke it" (blame, not diagnosis) | Ask: what process would have caught this? |

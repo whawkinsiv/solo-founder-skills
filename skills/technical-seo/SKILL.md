@@ -1,51 +1,49 @@
 ---
 name: technical-seo
-description: "Use this skill to perform comprehensive SEO audits, implement technical optimizations, improve on-page SEO, optimize for Core Web Vitals, and implement GEO (Generative Engine Optimization) for AI search engines."
+description: "Use this skill to implement technical SEO optimizations in code — meta tags, schema markup, Core Web Vitals, crawlability, robots.txt, sitemaps, and GEO (Generative Engine Optimization) for AI search engines. This is the implementation skill — for strategy see seo, for content writing see seo-content, for auditing see seo-audit."
 ---
 
-# SEO Expert Protocol v2.0 (2025)
+# Technical SEO Implementation
 
-You are a Senior Technical SEO & GEO Engineer. Your mission is to ensure websites meet 100% of modern SEO standards (Google Search Essentials) AND are optimized for AI-powered search engines (ChatGPT, Perplexity, Google AI Overviews, Claude).
+This skill is the implementation reference for technical SEO. Use it when you need to add, fix, or optimize SEO elements in code — meta tags, schema markup, Core Web Vitals, crawlability, and GEO.
 
-## Core Philosophy
-
-1. **Dual Optimization**: Optimize for both traditional search (SEO) AND generative engines (GEO)
-2. **User-First**: Quality content that serves users will rank in both paradigms
-3. **Technical Excellence**: Fast, accessible, and properly structured sites win
-4. **E-E-A-T Signals**: Experience, Expertise, Authoritativeness, Trustworthiness drive authority
-5. **Continuous Iteration**: SEO/GEO is never "done" — monitor and adapt
+This skill covers **how to implement in code**. For the other SEO concerns:
+- **seo** — Strategy and planning (keyword research, content architecture, what to build)
+- **seo-content** — Writing content (briefs, humanized prose, SERP feature targeting)
+- **seo-audit** — Auditing an existing codebase (scan, diagnose, produce action plan)
 
 ---
 
-## Audit Workflow
+## Metadata
 
-When asked to "audit for SEO", follow this sequence:
+Every indexable page needs these elements correct:
 
-### Step 1: Technical Audit
+- **Title tag:** 50-60 chars, primary keyword front-loaded
+- **Meta description:** 120-155 chars, includes CTA
+- **Canonical:** self-referencing or correct target
+- **Robots:** no accidental noindex
+- **Open Graph:** og:title, og:description, og:image for social sharing
 
-Crawl the target URL and verify:
+For detailed specs and code examples, see [ON-PAGE-SEO.md](ON-PAGE-SEO.md).
 
-**Metadata:**
-- Title tag: 50-60 chars, primary keyword front-loaded
-- Meta description: 150-160 chars, includes CTA
-- Canonical: self-referencing or correct target
-- Robots: no accidental noindex
+## HTML Structure
 
-**Structure:**
-- Exactly one H1, contains primary keyword
+- Exactly one H1 per page, contains primary keyword
 - No skipped header levels (H1 → H2 → H3)
 - Semantic HTML: `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`
 
-**Crawlability:**
+## Crawlability
+
 - robots.txt exists, not blocking important paths
 - XML sitemap exists, all important URLs included
+- Canonical tags on every page
 - No orphan pages, proper internal linking
 
-For detailed audit checklist and code examples, see [TECHNICAL-AUDIT.md](TECHNICAL-AUDIT.md).
+For detailed crawlability checklist, see [TECHNICAL-AUDIT.md](TECHNICAL-AUDIT.md).
 
-### Step 2: Core Web Vitals
+## Core Web Vitals
 
-Target metrics (2025 thresholds):
+Target metrics (2026 thresholds):
 
 | Metric | Good | Needs Improvement | Poor |
 |--------|------|-------------------|------|
@@ -57,20 +55,7 @@ Target metrics (2025 thresholds):
 
 For optimization techniques (LCP, INP, CLS), see [TECHNICAL-AUDIT.md](TECHNICAL-AUDIT.md).
 
-### Step 3: On-Page SEO
-
-Check every page for:
-- Title tag optimization (50-60 chars, keyword front-loaded)
-- Meta description (150-160 chars, includes CTA)
-- Header hierarchy (single H1, no skipped levels)
-- Image optimization (WebP/AVIF, alt text, dimensions, lazy loading)
-- Internal linking (descriptive anchors, no orphan pages)
-
-For detailed specifications and code examples, see [ON-PAGE-SEO.md](ON-PAGE-SEO.md).
-
-### Step 4: E-E-A-T & Schema
-
-Verify E-E-A-T signals are present:
+## E-E-A-T & Schema
 
 | Signal | Implementation |
 |--------|----------------|
@@ -79,11 +64,11 @@ Verify E-E-A-T signals are present:
 | **Authoritativeness** | Quality backlinks, industry mentions |
 | **Trustworthiness** | HTTPS, contact info, privacy policy, citations |
 
-Check for required JSON-LD schema: Organization, WebSite, Article/BlogPosting, FAQPage, BreadcrumbList, Person (author).
+Required JSON-LD schema: Organization, WebSite, Article/BlogPosting, FAQPage, BreadcrumbList, Person (author).
 
 For schema code examples and author bio templates, see [EEAT-AND-SCHEMA.md](EEAT-AND-SCHEMA.md).
 
-### Step 5: GEO (Generative Engine Optimization)
+## GEO (Generative Engine Optimization)
 
 Optimize for AI-powered search engines:
 
@@ -93,8 +78,6 @@ Optimize for AI-powered search engines:
 | **Success Metric** | Click-through rate | Citation frequency |
 | **Approach** | Keywords, backlinks | Entity clarity, authority signals |
 | **Optimization** | Pages and snippets | Citable facts and answers |
-
-**Key Stats (2025):** AI Overviews appear for 15-30% of queries. ChatGPT has 400M+ weekly users. AI referrals to websites increased 357% YoY.
 
 For GEO techniques, llms.txt implementation, and AI crawler management, see [GEO.md](GEO.md).
 
@@ -169,7 +152,7 @@ After applying fixes:
 | Element | Specification |
 |---------|---------------|
 | Title Tag | 50-60 chars, keyword front-loaded |
-| Meta Description | 150-160 chars, includes CTA |
+| Meta Description | 120-155 chars, includes CTA |
 | H1 | Exactly 1 per page, contains keyword |
 | URL | Lowercase, hyphens, descriptive |
 | Images | WebP/AVIF, <200KB, alt text, dimensions |
@@ -202,5 +185,6 @@ After applying fixes:
 
 ## Version History
 
+- **v3.0** (March 2026): Reframed as implementation reference (auditing moved to seo-audit skill), added cross-references to seo-content and seo skills, standardized meta description spec to 120-155 chars
 - **v2.0** (December 2025): Added GEO section, AI crawler management, llms.txt, GA4 AI tracking, updated Core Web Vitals (INP), expanded schema library, framework-specific guides
 - **v1.0** (December 2024): Initial version with technical audit, on-page SEO, basic schema
