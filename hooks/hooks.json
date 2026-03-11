@@ -1,0 +1,60 @@
+{
+  "description": "Solo Founder Superpowers: guardrails for non-technical founders building SaaS",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "A file was just written or edited. Here is the tool input:\n\n$ARGUMENTS\n\nYour job: determine if this file contains marketing copy, blog content, landing page text, email content, social media posts, or any user-facing prose meant for customers.\n\nIt is NOT prose if it is: source code, configuration, package.json, CLAUDE.md, developer documentation, test files, JSON/YAML data, or skill/plugin definitions.\n\nIf it IS user-facing prose, respond with exactly:\n{\"decision\": \"block\", \"reason\": \"This looks like customer-facing copy. Consider running /humanize to remove AI writing patterns before shipping.\"}\n\nIf it is NOT prose, respond with exactly:\n{}",
+            "statusMessage": "Checking for AI-sounding copy..."
+          },
+          {
+            "type": "prompt",
+            "prompt": "A file was just written or edited. Here is the tool input:\n\n$ARGUMENTS\n\nYour job: check if this file handles security-sensitive operations. Only flag REAL issues.\n\nCheck ONLY if the file contains code that handles: authentication, passwords, API keys/secrets, user input that touches databases or HTML output, SQL queries, session tokens, file uploads, or environment variables containing credentials.\n\nIf the file handles security-sensitive code, check for these specific issues:\n- Hardcoded secrets, API keys, or passwords in source code\n- SQL built with string concatenation (SQL injection risk)\n- User input rendered without escaping (XSS risk)\n- Plaintext password storage (not hashed)\n- Missing input validation on auth endpoints\n- Secrets logged to console or files\n- CORS set to allow all origins on sensitive endpoints\n\nIf you find a REAL, SPECIFIC issue, respond with exactly:\n{\"decision\": \"block\", \"reason\": \"Security issue: <specific description of the vulnerability and which line(s)>\"}\n\nIf the file doesn't handle security-sensitive code, OR if it handles it correctly, respond with exactly:\n{}",
+            "statusMessage": "Security check..."
+          },
+          {
+            "type": "prompt",
+            "prompt": "A file was just written or edited. Here is the tool input:\n\n$ARGUMENTS\n\nYour job: check if this file is a UI component, page, or template (JSX, TSX, HTML, Vue, Svelte, Astro, or similar). Look at the file_path extension and the content.\n\nIf it is NOT a UI file, respond with exactly:\n{}\n\nIf it IS a UI file, check for these accessibility issues:\n- <img> tags without meaningful alt text (alt=\"\" is OK for decorative images)\n- Clickable <div> or <span> elements that should be <button> or <a>\n- Form <input> elements without associated <label> or aria-label\n- Icon-only buttons without aria-label or sr-only text\n- Missing lang attribute on <html> elements\n- Modals/dialogs without focus trapping or aria-modal\n- Non-semantic markup: <div> used where <nav>, <main>, <section>, <header>, <footer> would be correct\n- Color used as the only way to convey information\n\nOnly flag issues that are clearly present. Do not flag things that might be handled by a parent component.\n\nIf you find accessibility issues, respond with exactly:\n{\"decision\": \"block\", \"reason\": \"Accessibility issues found: <specific list of issues with element references>\"}\n\nIf the UI file looks accessible, respond with exactly:\n{}",
+            "statusMessage": "Accessibility check..."
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/check-deploy-without-tests.sh",
+            "statusMessage": "Checking for deploy commands..."
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "A file is about to be written. Here is the tool input:\n\n$ARGUMENTS\n\nYour job: determine if this file will be served as a web page or is a page-level component that represents a URL/route. Look at the file_path and content.\n\nIt IS a page if: it's an HTML file, a Next.js/Nuxt/SvelteKit page (e.g., page.tsx, index.tsx in a pages/ or app/ directory), an Astro page, or a layout/template that renders <head> content.\n\nIt is NOT a page if: it's a reusable component, a utility, an API route, a config file, CSS, a test, or any non-page file.\n\nIf it IS a page, check whether the content includes:\n- A <title> tag or document title (via Head component, metadata export, etc.)\n- A meta description\n- Open Graph tags (og:title, og:description)\n- A canonical URL\n\nIf 2 or more of these are missing, respond with exactly:\n{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"ask\", \"permissionDecisionReason\": \"Missing SEO metadata: <list what is missing>. These are important for search visibility. Add them before creating this page?\"}}\n\nIf the file is not a page, or if SEO metadata is present, respond with exactly:\n{}",
+            "statusMessage": "SEO metadata check..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Claude just finished responding. Here is the conversation context:\n\n$ARGUMENTS\n\nYour job: based on what Claude just did, suggest ONE logical next step from the skills below. Only suggest if it's clearly relevant. Do not suggest skills for work that was already done.\n\nSkills and when to suggest them:\n- /test - After building or modifying features, before deploying\n- /secure - After implementing authentication, payments, or user data handling\n- /humanize - After writing marketing copy, landing pages, emails, or blog posts\n- /deploy - After tests pass and the feature is ready to ship\n- /monitor - After deploying to production for the first time\n- /optimize - After users report the app feels slow\n- /seo-audit - After launching a public-facing site or adding new pages\n- /accessibility - After building UI components or pages\n\nIf a next step is clearly relevant, respond with a JSON object like:\n{\"hookSpecificOutput\": {\"hookEventName\": \"Stop\", \"additionalContext\": \"Suggested next step: run /test to verify this feature works before deploying.\"}}\n\nIf no suggestion is clearly relevant (e.g., Claude just answered a question, did research, or the logical next step is obvious), respond with exactly:\n{}",
+            "statusMessage": "Suggesting next steps..."
+          }
+        ]
+      }
+    ]
+  }
+}
