@@ -768,7 +768,7 @@ Before writing the final `BRAND-IDENTITY.md`, verify every item:
 
 Once the brand identity is generated, these skills use the tokens to build the actual UI:
 
-- **aesthetics** — How to apply these tokens beautifully (visual hierarchy, whitespace, composition)
+- **beautify** — How to apply these tokens beautifully (visual hierarchy, whitespace, composition)
 - **ui-patterns** — Component implementation and page layouts using these tokens
 - **motion-polish** — Animation timing and micro-interactions that match the brand personality
 - **design-review** — Quality gate to audit whether the UI correctly implements this identity

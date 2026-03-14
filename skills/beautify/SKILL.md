@@ -1,9 +1,9 @@
 ---
-name: aesthetics
+name: beautify
 description: "Use this skill when the user wants to make their app look better, says it looks like a template, asks how to achieve Stripe/Linear quality, or says something looks off. Covers visual hierarchy, whitespace, composition, color application, and typography in practice."
 ---
 
-# Aesthetics
+# Beautify
 
 Make web apps look intentionally designed rather than AI-generated. This skill covers the visual principles that separate premium-feeling apps (Stripe, Linear, Vercel) from generic template output. Apply these principles when building new UI or when the user says something "looks off" but can't articulate why.
 

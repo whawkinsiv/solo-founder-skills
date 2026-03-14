@@ -5,7 +5,7 @@ description: "Use this skill when the user needs to build a dashboard, settings 
 
 # UI Patterns
 
-This skill covers how to build pages and compose components for SaaS applications. It provides the structural decisions — which components to use, how to lay out pages, and how to handle every UI state. For visual styling (colors, typography, spacing systems), see the aesthetics skill. For user flow design, see ux-design. For accessibility requirements (semantic HTML, keyboard nav, ARIA), see ux-design/ACCESSIBILITY.md.
+This skill covers how to build pages and compose components for SaaS applications. It provides the structural decisions — which components to use, how to lay out pages, and how to handle every UI state. For visual styling (colors, typography, spacing systems), see the beautify skill. For user flow design, see ux-design. For accessibility requirements (semantic HTML, keyboard nav, ARIA), see ux-design/ACCESSIBILITY.md.
 
 ## Component Library Selection
 
