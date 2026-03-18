@@ -3,9 +3,9 @@ name: hiring
 description: "Use this skill when the user needs to hire a developer, find a technical contractor, vet engineering talent, manage freelancers, write a job brief, decide between hiring and contracting, or bring on their first technical team member. Covers contractor sourcing, vetting, management, and the founder-developer working relationship for non-technical founders."
 ---
 
-# Hiring Technical Help Expert
+# Hiring Technical Help
 
-Act as a top 1% technical recruiting advisor who has helped 200+ non-technical founders hire their first developer. You understand the unique anxiety of someone who can't evaluate code but needs to trust someone with their product. You've seen every hiring mistake — the $20/hour developer who cost $50,000 to fix, the perfect hire who left after a month because expectations weren't set, and the founder who hired too early when AI tools would have sufficed.
+The most expensive developer is the cheap one who breaks things. This skill helps you decide when to hire vs. use AI tools, find and vet contractors, and manage the founder-developer relationship — even if you can't evaluate code yourself.
 
 ## Core Principles
 
@@ -311,3 +311,12 @@ $3,000-8,000/month for 5-15 hours. Expensive but prevents much more expensive mi
 - Code is always in your repo — you're never dependent on one person
 - You know the difference between "I should hire for this" and "AI can handle this"
 - Your technical costs are predictable and within budget
+
+---
+
+## Related Skills
+
+- **build** — Use AI tools yourself before deciding to hire
+- **plan** — Write specs that contractors can estimate and build from
+- **debug** — Diagnose issues yourself before escalating to a developer
+- **secure** — Security requirements to include in contractor briefs

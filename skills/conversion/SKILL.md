@@ -208,3 +208,13 @@ Set up a simple A/B test:
 | Adding more fields "for data" | Every field costs conversions. Defer to later. |
 | Ignoring mobile | 50%+ of traffic is mobile. Test there first. |
 | Complex testing tools at small scale | Feature flags are enough until 1,000+ users/week |
+
+---
+
+## Related Skills
+
+- **growth** — PLG strategy, activation, and viral loops
+- **landing-page** — Build and optimize the pages driving conversions
+- **pricing** — Pricing page optimization and tier design
+- **analytics** — Track funnel metrics and measure experiments
+- **copywriting** — Write CTAs and headlines that convert

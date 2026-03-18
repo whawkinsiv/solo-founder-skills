@@ -3,9 +3,9 @@ name: ads
 description: "Use this skill when the user needs to run Google Ads, write ad copy, select keywords, optimize CAC/LTV, or manage a small paid acquisition budget. Covers Google Ads strategy, keyword selection, ad copywriting, and conversion tracking for bootstrapped SaaS."
 ---
 
-# Paid Acquisition & Ad Copy Expert
+# Paid Acquisition & Ad Copy
 
-Act as a top 1% performance marketer who has managed Google Ads for bootstrapped SaaS companies spending $500-$50K/month. You specialize in getting profitable results from small budgets — no wasted spend, no vanity metrics, just customers acquired at a cost that makes math work. You understand that for a solo founder, paid acquisition is a scalpel, not a firehose.
+Paid acquisition amplifies what's already working. If your landing page doesn't convert organic traffic, ads won't fix it. This skill helps you run profitable Google Ads on a small budget — from campaign setup to weekly optimization.
 
 ## Core Principles
 
@@ -26,7 +26,7 @@ Act as a top 1% performance marketer who has managed Google Ads for bootstrapped
 
 If any of these are missing, fix them first. Ads on a broken funnel is burning money.
 
-## Google Ads for SaaS (Task 62)
+## Google Ads for SaaS
 
 ### Campaign Structure for Solo Founders
 
@@ -225,7 +225,7 @@ Everything working:
 4. Consider Meta/LinkedIn Ads only after Google Search is profitable.
 5. Never spend more than you can afford to lose for 3 months with zero return.
 
-## CAC Tracking (Task 63)
+## CAC Tracking
 
 ```
 Simple CAC calculation:
@@ -242,12 +242,61 @@ Sustainability check:
   Target: <6 months for bootstrapped
 ```
 
-## Output Format
+---
 
-When creating ad campaigns:
+## Setting Up a Campaign
 
-1. Provide the complete campaign structure (ad groups, keywords, match types, negatives).
-2. Write 3-4 ad copy variants per ad group, properly formatted with character counts.
-3. Draft the landing page copy with message-match to each ad group.
-4. Set up the tracking requirements (conversion events, UTM parameters).
-5. Define the weekly review metrics and decision thresholds.
+**Tell AI:**
+```
+Set up a Google Ads search campaign for my SaaS:
+- Product: [what it does]
+- Audience: [who it's for]
+- Budget: [$10-20/day to start]
+- Top 3 competitors: [names]
+- Main problem solved: [one sentence]
+
+Create:
+1. Campaign structure with 2-3 ad groups (competitor, problem, solution keywords)
+2. 10-15 exact-match keywords per ad group
+3. Negative keyword list
+4. 3 ad copy variants per ad group (with character counts)
+5. UTM parameters for tracking
+6. Landing page recommendations for each ad group
+```
+
+**Tell AI (for ad copy iteration):**
+```
+Write 4 Google Search ad variants for this ad group:
+- Target keyword: [keyword]
+- Landing page: [URL]
+- Our differentiator: [what makes us different]
+- Social proof: [user count, notable customers, specific results]
+
+Follow Google Ads limits: H1-H3 (30 chars each), D1-D2 (90 chars each).
+Include the keyword in at least one headline.
+Show character counts for each line.
+```
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+|---------|-----|
+| Running ads before landing page converts | Get 2%+ organic conversion rate first |
+| Broad match keywords from day one | Start with exact match. Expand after 30+ conversions |
+| No negative keywords | Add the standard exclusion list on day one |
+| Sending traffic to homepage | Create dedicated landing pages per ad group |
+| No conversion tracking | Set up Google Ads conversion tracking before spending |
+| Scaling too fast | Increase budget max 30% per week |
+| CAC > 1/3 of LTV | Pause and fix conversion rate before spending more |
+
+---
+
+## Related Skills
+
+- **landing-page** — Build dedicated landing pages for each ad group
+- **conversion** — Optimize the signup flow that ads drive traffic to
+- **analytics** — Track ad spend → signup → payment attribution
+- **copywriting** — Write stronger ad headlines and descriptions
+- **seo** — Build organic traffic so you're not paying for every click

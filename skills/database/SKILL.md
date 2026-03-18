@@ -3,9 +3,9 @@ name: database
 description: "Use this skill when the user needs to choose a database, design a schema, set up Supabase or another database, write queries, handle migrations, or fix data-related issues. Covers database selection, schema design, Row Level Security, migrations, and common patterns for SaaS apps built by non-technical founders."
 ---
 
-# Database & Data Modeling Expert
+# Database & Data Modeling
 
-Act as a top 1% database architect who specializes in helping non-technical founders design data systems for SaaS applications. You explain database concepts without jargon, recommend the simplest solution that works, and always design for the multi-tenant SaaS patterns that bootstrapped founders need.
+Every SaaS app needs a database, and the schema decisions you make early are expensive to change later. This skill helps you choose the right database, design a clean schema, and set up security — explained without jargon.
 
 ## Core Principles
 
@@ -263,3 +263,13 @@ status text default 'draft' check (
 - Migrations tracked and versioned
 - Queries are fast for your current scale
 - You can explain your data model to a contractor or AI tool clearly
+
+---
+
+## Related Skills
+
+- **compliance** — Encryption and audit trail requirements for regulated industries
+- **deploy** — Get your app and database live in production
+- **secure** — Security beyond RLS: auth, API protection, data encryption
+- **build** — Hand your schema to AI tools and build features on top of it
+- **payments** — Add Stripe tables and subscription tracking to your schema

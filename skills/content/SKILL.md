@@ -3,9 +3,9 @@ name: content
 description: "Use this skill when the user needs a content strategy, wants to build in public, grow an audience, choose content platforms, or create a distribution plan. Covers platform selection, build-in-public frameworks, content distribution, and audience building for solo founders."
 ---
 
-# Content Marketing & Build-in-Public Expert
+# Content Marketing & Build-in-Public
 
-Act as a top 1% content strategist who specializes in solo-founder distribution. You've helped bootstrapped SaaS founders build audiences of 10K-100K+ followers that convert directly into customers — without a marketing team, ad budget, or PR agency. You understand that for a solo founder, content IS the marketing department.
+For a solo founder, content IS the marketing department. This skill helps you pick a platform, build an audience through authentic sharing, and convert followers into customers — without a marketing team or ad budget.
 
 ## Core Principles
 
@@ -16,7 +16,7 @@ Act as a top 1% content strategist who specializes in solo-founder distribution.
 - The content that converts best is the content that would be useful even if your product didn't exist.
 - Consistency matters more than quality. Publish regularly at 80% quality rather than occasionally at 100%.
 
-## Platform Selection (Task 59)
+## Platform Selection
 
 Choose ONE based on where your ICP actually spends time:
 
@@ -190,7 +190,7 @@ Body:
 
 The IH community values transparency and specificity above all else.
 
-## Driving to Conversion (Task 61)
+## Driving to Conversion
 
 Every piece of content should have a path to your product, but it should never feel like an ad.
 
@@ -250,12 +250,57 @@ Track monthly:
 
 **The only metric that truly matters**: signups (or revenue) attributed to content. Everything else is a leading indicator.
 
-## Output Format
+---
 
-When creating content:
+## Getting Started
 
-1. Produce ready-to-publish posts formatted for the specific platform.
-2. Write in the founder's authentic voice (brief them on tone if needed).
-3. Include 3-5 variants of each post so the founder can pick what feels right.
-4. Suggest a posting schedule with specific days and times.
-5. Draft both the content piece and the distribution plan.
+**Tell AI:**
+```
+Help me plan my build-in-public content strategy:
+- Product: [what it does]
+- Audience: [who it's for]
+- Platform I want to focus on: [Twitter/LinkedIn/Reddit/etc.]
+- Current metrics: [MRR, users, or "pre-launch"]
+- What I'm working on this week: [current project or feature]
+
+Create:
+1. A week's worth of posts (5 posts) using the 5 content pillars
+2. Each post ready to copy-paste, formatted for [platform]
+3. A mix: 1 progress update, 1 decision story, 1 lesson, 1 how-we-built-it, 1 problem exploration
+```
+
+**Tell AI (for individual posts):**
+```
+Write a [Twitter thread / LinkedIn post / Reddit post] about:
+- Topic: [what happened, what you learned, what you decided]
+- Key insight: [the one thing you want people to take away]
+- Product mention: [include naturally / don't mention product]
+- Tone: [casual and honest / professional / technical]
+
+Make it sound like a real person sharing their experience, not a brand posting content.
+Use the humanize skill patterns — no AI-sounding language.
+```
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+|---------|-----|
+| Posting on 5 platforms at once | Pick ONE. Go deep. Expand after 3 months of consistency. |
+| "Excited to announce..." openings | Lead with the value, insight, or result — not your feelings |
+| Only posting about your product | 80% valuable content, 20% product mentions |
+| AI-generated posts without editing | Audiences detect AI instantly. Write authentically or use humanize skill. |
+| Giving up after 2 weeks | Content compounds. Give it 3 months of 3x/week before judging. |
+| No call-to-action anywhere | Every post should have a soft path to your product |
+
+---
+
+## Related Skills
+
+- **niche-advantage** — If you're an industry expert, write authority content only a practitioner can write
+- **humanize** — Remove AI writing patterns from generated content
+- **copywriting** — Write stronger headlines and hooks for posts
+- **seo** — Turn your best content into SEO-optimized blog posts
+- **social-media** — Platform-specific growth and engagement tactics
+- **launch** — Coordinate content with product launches

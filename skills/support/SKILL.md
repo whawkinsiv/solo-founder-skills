@@ -3,9 +3,9 @@ name: support
 description: "Use this skill when the user needs to create help docs, build a knowledge base, set up self-serve support, or reduce support tickets. Covers documentation strategy, help center structure, support tone, and scaling support without hiring."
 ---
 
-# Customer Support & Documentation Expert
+# Customer Support & Documentation
 
-Act as a top 1% customer support architect who has designed support systems for bootstrapped SaaS companies that scale from 10 to 10,000 customers without hiring a support team. You understand that for a solo founder, support is the product — every interaction either builds loyalty or accelerates churn. You also design documentation that eliminates tickets before they're created.
+The best support interaction is the one that never happens. This skill helps you build self-serve documentation that eliminates tickets, set up efficient support workflows, and scale from 10 to 10,000 customers without a support team.
 
 ## Core Principles
 
@@ -15,8 +15,7 @@ Act as a top 1% customer support architect who has designed support systems for 
 - Tone matters more than speed. A warm, helpful reply in 4 hours beats a robotic auto-response in 4 seconds.
 - A solo founder can support 500+ customers if the product, docs, and onboarding are good. If support is crushing you at 50 customers, the product has problems.
 
-## Minimal Support Setup (Task 34)
-
+## Minimal Support Setup
 ### What You Need at Launch
 
 **Tier 1: Absolute minimum (launch day)**
@@ -50,8 +49,7 @@ $50-100/mo:  HelpScout Starter or Intercom Starter
 $100-300/mo: Intercom or Plain (for developer tools)
 ```
 
-## Help Center Architecture (Task 81)
-
+## Help Center Architecture
 ### Information Structure
 
 Organize by user journey, not by feature:
@@ -243,8 +241,7 @@ Let me know if you run into anything else.
 [Your name]
 ```
 
-## Reducing Support Load (Task 81)
-
+## Reducing Support Load
 ### The Support Reduction Loop
 
 ```
@@ -301,12 +298,9 @@ Track monthly:
 
 **The key ratio**: Tickets per 100 users. If this is rising, your product is getting harder to use. If it's falling, your docs and UX improvements are working.
 
-## Output Format
+## Related Skills
 
-When designing support systems or writing documentation:
-
-1. Produce complete, ready-to-publish help articles with the proper structure.
-2. Build the help center information architecture (full outline with article titles).
-3. Write canned response templates personalized to the founder's product and tone.
-4. Analyze ticket patterns and recommend specific product/docs changes.
-5. If building a FAQ, write every Q&A in plain language, not marketing speak.
+- **community** — Build a community that supplements support
+- **feedback** — Turn support tickets into product improvement insights
+- **copywriting** — Write clear help articles and canned responses
+- **retention** — Support quality directly impacts churn

@@ -3,9 +3,9 @@ name: customer-research
 description: "Use this skill when the user needs to understand their customers, create personas, conduct user interviews, or apply the Jobs-to-be-Done framework. Covers JTBD methodology, behavioral personas, interview techniques, and extracting actionable insights."
 ---
 
-# Customer Research & Personas Expert
+# Customer Research & Personas
 
-Act as a top 1% product researcher who has conducted hundreds of user interviews and built personas that actually drive product decisions. You use Jobs-to-be-Done (JTBD) framework and care about behavior, not demographics.
+Personas based on demographics are useless. Personas based on behaviors, goals, and constraints drive decisions. This skill helps you run interviews, apply Jobs-to-be-Done, and build personas that actually inform your product.
 
 ## Core Principles
 
@@ -100,6 +100,23 @@ What circumstances push them to seek a new solution?
 "Is there anything about [topic] I should have asked but didn't?"
 "Would you be open to trying an early version and giving feedback?"
 
+## When You ARE the Persona
+
+If you're building for your own profession, you have a unique advantage and a unique blind spot.
+
+**The advantage:** You understand the pain deeply. You don't need to "discover" the problem — you've lived it.
+
+**The blind spot:** You assume everyone does the job the way you do. They don't. After 20 years, your workflow is optimized. A 3-year practitioner's workflow is different. A solo practitioner's is different from someone at a large firm.
+
+**How to correct for this:**
+- Interview people at different experience levels (junior, mid, senior)
+- Interview people at different organization sizes (solo, small firm, large firm)
+- When they describe their process and it's different from yours, don't correct them. That's data.
+- Ask: "What tools do you actually use?" — not "Would you use a tool that does X?"
+- The question isn't "Do I have this pain?" — it's "Do enough OTHER people have it, and will they pay?"
+
+---
+
 ## Interview Analysis
 
 After interviews, synthesize:
@@ -120,12 +137,9 @@ Research is only valuable if it changes decisions:
 - **Pricing:** Align tiers with persona segments.
 - **Roadmap:** Sequence features by persona priority.
 
-## Output Format
+## Related Skills
 
-When conducting research or building personas:
-
-1. Define the research question and how it maps to product decisions.
-2. Provide the interview guide tailored to the context.
-3. Build the persona using the behavioral template above.
-4. List actionable insights with specific product implications.
-5. Identify open questions that need further research.
+- **validate** — Validate demand before building (uses similar interview techniques)
+- **prioritize** — Turn research insights into feature prioritization
+- **copywriting** — Use customer language in your marketing copy
+- **feedback** — Ongoing feedback collection after launch

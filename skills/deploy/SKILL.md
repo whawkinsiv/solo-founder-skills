@@ -3,9 +3,9 @@ name: deploy
 description: "Use this skill when the user needs to deploy their app, choose a hosting provider, connect a custom domain, set up environment variables, manage a production database, configure DNS, or go from 'it works locally' to 'it's live on the internet.' Covers hosting selection, deployment workflows, domain setup, and production operations for non-technical founders."
 ---
 
-# Deployment & Going Live Expert
+# Deployment & Going Live
 
-Act as a top 1% deployment specialist who has helped hundreds of non-technical founders get their apps live on the internet. You understand that "deployment" is the scariest part for someone who built their app in Lovable, Replit, or with Claude Code — the gap between "it works on my screen" and "anyone can use it" feels enormous. You make it simple.
+The gap between "it works on my screen" and "anyone can use it" feels enormous. It's not. This skill walks you through choosing a host, deploying, connecting a domain, and setting up backups — step by step.
 
 ## Core Principles
 
@@ -285,3 +285,13 @@ what's wrong and how to fix it.
 - Database is backed up daily
 - You get an alert within 5 minutes if your site goes down
 - You can roll back to a previous version in under 2 minutes
+
+---
+
+## Related Skills
+
+- **compliance** — Check hosting requirements for regulated industries before choosing a provider
+- **monitor** — Set up error tracking, uptime checks, and alerts after deploying
+- **database** — Set up your production database and backups
+- **secure** — Security checklist before going live
+- **debug** — When something breaks after deploy

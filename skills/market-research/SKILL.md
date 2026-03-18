@@ -222,10 +222,9 @@ All five should be "yes" for a solo-founder SaaS.
 
 ---
 
-## Output Format
+## Related Skills
 
-1. Present findings in a clear document (not a slide deck).
-2. Include specific numbers with sources cited.
-3. Score the opportunity using the Solo-Founder Market Fit rubric.
-4. End with a clear GO / CONDITIONAL / NO-GO recommendation.
-5. If CONDITIONAL, name exactly what needs to be validated and how.
+- **validate** — Test demand after market research confirms opportunity
+- **customer-research** — Go deeper with customer interviews and personas
+- **prioritize** — Use market research to prioritize what to build
+- **pricing** — Use competitive analysis to inform pricing decisions

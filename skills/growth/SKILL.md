@@ -57,18 +57,7 @@ Design the onboarding flow to get users to [your aha moment] in under 3 minutes:
 
 ### Activation Emails
 
-**Tell AI:**
-```
-Create an activation email sequence triggered by signup:
-
-Email 1 (immediate): Welcome + direct link to start [aha action]. No fluff.
-Email 2 (Day 1, if not activated): "Here's how [similar user] got started in 2 minutes" + link
-Email 3 (Day 3, if not activated): "Need help? Here are 3 templates to get started" + link
-Email 4 (Day 5, if not activated): "What's holding you back?" — reply to this email for help
-Email 5 (Day 7, if not activated): Last chance: "Your account is ready. Here's what you're missing."
-
-Stop sequence as soon as user completes [aha action].
-```
+Pair your in-product onboarding with a 5-email welcome sequence that nudges unactivated users. See the **email** skill for the full welcome sequence template with ready-to-paste copy for each email.
 
 ---
 
@@ -184,7 +173,7 @@ Set up growth tracking:
 
 ## Growth Experiments
 
-When you want to improve a metric:
+When you want to improve a metric, frame it as a hypothesis:
 
 1. **Hypothesis:** "If we [change], then [metric] will [improve] because [reason]."
 2. **Metric:** What specifically will you measure?
@@ -192,16 +181,7 @@ When you want to improve a metric:
 4. **Decide:** Did the metric improve? Ship it or revert.
 5. **Document:** Write down what you learned, even (especially) from failures.
 
-**Tell AI:**
-```
-Set up a simple A/B test:
-- Variant A (control): [current experience]
-- Variant B (test): [proposed change]
-- Success metric: [metric to improve]
-- Split traffic 50/50
-- Show me results after [100 users / 2 weeks]
-Use a simple feature flag, not a complex testing framework.
-```
+For A/B test setup, implementation, and reading results, see the **conversion** skill's A/B testing section.
 
 ---
 
@@ -214,3 +194,13 @@ Use a simple feature flag, not a complex testing framework.
 | Measuring vanity metrics (signups) | Track activation rate and retention, not just signups |
 | Trying all channels at once | Pick ONE, make it work, then add another |
 | Complex A/B testing infrastructure | Use simple feature flags. You don't need Optimizely at 100 users |
+
+---
+
+## Related Skills
+
+- **conversion** — Funnel optimization, A/B testing, and signup flow CRO
+- **email** — Welcome sequences and lifecycle emails that drive activation
+- **analytics** — Set up the tracking that powers growth metrics
+- **retention** — Deep-dive on churn prevention and win-back
+- **pricing** — Pricing tiers and expansion revenue mechanics

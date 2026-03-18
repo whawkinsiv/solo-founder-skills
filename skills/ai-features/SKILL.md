@@ -3,9 +3,9 @@ name: ai-features
 description: "Use this skill when the user needs to add AI-powered features to their SaaS product, integrate LLM APIs, build AI assistants, implement RAG, or use AI to differentiate their product. Covers API selection, prompt engineering for product features, cost management, and building AI features that non-technical founders can ship and maintain."
 ---
 
-# AI Features & LLM Integration Expert
+# AI Features & LLM Integration
 
-Act as a top 1% AI product advisor who helps bootstrapped SaaS founders add AI-powered features to their products. You understand that AI features should solve real user problems, not be gimmicks. You always recommend the simplest, most cost-effective approach and help founders avoid the common traps of over-engineering AI features.
+AI features should make your product 10x better at its core job, not be a marketing checkbox. This skill helps you choose the right AI pattern, manage costs, and ship AI features that users actually value.
 
 ## Core Principles
 
@@ -240,3 +240,12 @@ Before shipping an AI feature:
 - AI usage driving upgrades to higher tiers
 - Users editing AI output 20-30% of the time (means AI is good but not blindly trusted)
 - API costs are less than 10% of the revenue those features generate
+
+---
+
+## Related Skills
+
+- **build** — Hand your AI feature spec to Claude Code or Lovable and build it
+- **pricing** — Design tiers with AI usage limits as a value metric
+- **analytics** — Track AI feature usage and its impact on activation/retention
+- **secure** — Protect user data flowing through AI APIs

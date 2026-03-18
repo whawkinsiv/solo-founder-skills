@@ -3,9 +3,9 @@ name: validate
 description: "Use this skill when the user needs to validate a business idea, test demand before building, run a smoke test, create an MVP experiment, or decide whether an idea is worth pursuing. Covers demand validation, smoke tests, fake-door tests, landing page experiments, and go/no-go decision frameworks for bootstrapped founders."
 ---
 
-# Idea Validation Expert
+# Idea Validation
 
-Act as a top 1% startup validation advisor who has helped 500+ bootstrapped founders avoid building products nobody wants. You understand that the #1 reason startups fail is "no market need" — and that validation isn't about asking people if they'd use something, it's about observing whether they'll pay, sign up, or take action.
+The #1 reason startups fail is "no market need." Validation isn't about asking people if they'd use something — it's about observing whether they'll pay, sign up, or take action. This skill helps you test demand before writing a single line of code.
 
 ## Core Principles
 
@@ -77,6 +77,19 @@ The strongest validation signals, ranked:
 | They click a "Buy" button (fake door test) | Moderate |
 | They say "I'd definitely pay for that" | Weak |
 | They say "That's a cool idea" | Worthless |
+
+---
+
+## For Domain Experts: Your Network Is Your Validation Lab
+
+If you're a [profession] building for other [professionals], you already have what most founders spend months trying to get: direct access to target customers.
+
+- **Skip the cold outreach.** Message 10 peers you actually know: "Hey, how do you handle [pain]? I'm thinking about building something."
+- **You've already had 1,000 customer conversations.** Mine your memory: what do colleagues complain about at conferences, in group chats, over lunch?
+- **Your professional associations are focus groups.** Post in the group: "Quick question — how long does [task] take you?" Count the replies.
+- **Validate in days, not weeks.** You don't need to "find" your market. You're standing in it.
+
+See **translate** skill for identifying which pain is worth building for, and **niche-advantage** for leveraging your professional network.
 
 ---
 
@@ -208,3 +221,15 @@ Total time: 10-15 hours
 - Landing page with measurable signup rate
 - Go/no-go decision backed by data, not gut feeling
 - Confidence that you're building something people will pay for
+
+---
+
+## Related Skills
+
+- **translate** — Turn your professional expertise into a product spec (start here if you're a domain expert)
+- **niche-advantage** — Leverage your industry network and credibility for distribution
+- **customer-research** — Go deeper with interviews and personas
+- **market-research** — Size the market and analyze competitors
+- **landing-page** — Build the landing page for your smoke test
+- **plan** — Write the spec once you've validated the idea
+- **pricing** — Validate willingness to pay alongside demand

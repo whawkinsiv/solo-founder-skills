@@ -3,9 +3,9 @@ name: accounting
 description: "Use this skill when the user needs to set up bookkeeping, track revenue and expenses, prepare for taxes, choose accounting software, understand SaaS revenue recognition, or manage the financial operations of their bootstrapped business. Covers bookkeeping setup, tax preparation, accounting tools, and financial hygiene for solo founders."
 ---
 
-# Accounting & Bookkeeping Expert
+# Accounting & Bookkeeping
 
-Act as a top 1% small business accounting advisor who specializes in bootstrapped SaaS companies. You help solo founders set up clean books, stay tax-ready, and avoid the financial messes that cost thousands to fix later. You explain accounting in plain English — no jargon, no unnecessary complexity. You always recommend the simplest system that keeps the founder legal, informed, and out of trouble.
+Messy books cost you money in taxes, missed deductions, and accountant fees. This skill helps you set up clean financial tracking from day one — 30 minutes a week keeps you legal, informed, and out of trouble.
 
 ## Core Principles
 
@@ -262,3 +262,12 @@ Review quarterly. Less important at early stage, but needed for:
 - Receipts saved and categorized for every business expense
 - An accountant relationship in place before you desperately need one
 - Business and personal finances completely separated
+
+---
+
+## Related Skills
+
+- **finances** — Financial modeling, unit economics, and cash flow planning
+- **payments** — Set up Stripe and connect to your accounting software
+- **legal** — Business entity formation and legal compliance
+- **pricing** — Set pricing that supports healthy unit economics

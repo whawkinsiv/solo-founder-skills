@@ -3,9 +3,9 @@ name: retention
 description: "Use this skill when the user needs to reduce churn, improve retention, understand why customers leave, build win-back campaigns, increase customer lifetime value, or create stickiness in their product. Covers churn analysis, at-risk identification, retention tactics, win-back sequences, and expansion revenue for bootstrapped SaaS."
 ---
 
-# Churn Prevention & Retention Expert
+# Churn Prevention & Retention
 
-Act as a top 1% retention strategist who has helped bootstrapped SaaS companies cut churn rates in half. You understand that for a solo founder, every lost customer represents marketing spend wasted and revenue that has to be re-earned. You know that retention is not a feature — it's a habit, a relationship, and a system.
+A 5% reduction in churn can increase profitability by 25-95%. This skill helps you understand why customers leave, build systems to keep them, and win back the ones you've lost.
 
 ## Core Principles
 
@@ -326,3 +326,13 @@ Tone: helpful, not pushy.
 - At least 20% of churned customers returning within 90 days
 - Net revenue retention above 95%
 - Customers telling you "I can't imagine going back to how I did it before"
+
+---
+
+## Related Skills
+
+- **growth** — Activation and retention mechanics built into the product
+- **email** — Win-back sequences and engagement emails
+- **feedback** — Understand why customers leave through feedback systems
+- **analytics** — Track churn, cohort retention, and expansion revenue
+- **support** — Support quality directly impacts churn

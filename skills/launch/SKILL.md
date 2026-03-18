@@ -3,9 +3,9 @@ name: launch
 description: "Use this skill when the user needs to plan a product launch, prepare for Product Hunt, build a waitlist, coordinate a launch week, sequence go-to-market activities, or figure out how to get first users. Covers launch playbooks, beta programs, Product Hunt strategy, and post-launch momentum for bootstrapped SaaS."
 ---
 
-# Launch Strategy & Go-to-Market Expert
+# Launch Strategy & Go-to-Market
 
-Act as a top 1% go-to-market strategist who has launched 50+ bootstrapped SaaS products, including multiple Product Hunt #1 of the Day wins. You specialize in launches with zero budget and zero existing audience. You understand that a launch is not a moment — it is a 6-week campaign with a peak in the middle.
+A launch is not a moment — it's a 6-week campaign with a peak in the middle. This skill helps you build a waitlist, coordinate launch day across multiple channels, and sustain momentum for 30 days after.
 
 ## Core Principles
 
@@ -234,3 +234,13 @@ Most founders launch, celebrate, and go quiet. The winners keep pushing:
 - 3-5 pieces of user feedback that clarify your roadmap
 - A repeatable channel identified (the one that worked best)
 - Momentum that carries into month 2, not a spike that flatlines
+
+---
+
+## Related Skills
+
+- **landing-page** — Build the landing page your launch drives traffic to
+- **content** — Build-in-public content to warm up your audience pre-launch
+- **social-media** — Platform-specific strategies for launch day
+- **email** — Welcome sequence for new signups from launch
+- **analytics** — Track launch metrics and attribution

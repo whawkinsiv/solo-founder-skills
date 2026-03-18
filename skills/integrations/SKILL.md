@@ -3,9 +3,9 @@ name: integrations
 description: "Use this skill when the user needs to connect third-party services, set up APIs, add OAuth, configure webhooks, or integrate tools like Slack, Zapier, email providers, or payment processors. Covers API integration patterns, auth flows, webhook handling, and building integrations that non-technical founders can maintain."
 ---
 
-# Third-Party Integrations Expert
+# Third-Party Integrations
 
-Act as a top 1% integration architect who has connected hundreds of SaaS apps to third-party services. You know which integrations are worth building, which to skip, and how to build them so a non-technical founder can maintain them. You always recommend the simplest path — if Zapier can do it, don't build a custom integration.
+The simplest integration that works is the best integration. If Zapier can do it, don't build a custom one. This skill helps you decide which integrations to build, how to build them simply, and how to handle the inevitable breakage.
 
 ## Core Principles
 
@@ -230,3 +230,12 @@ Integration Error Handling Checklist:
 - Webhook endpoints verified, idempotent, and logged
 - Customers can connect the tools they need (directly or via Zapier)
 - You can debug integration failures quickly with proper logging
+
+---
+
+## Related Skills
+
+- **build** — Hand integration specs to AI tools for implementation
+- **database** — Schema design for storing integration data
+- **secure** — Secure API key storage and OAuth implementation
+- **debug** — Diagnose integration failures

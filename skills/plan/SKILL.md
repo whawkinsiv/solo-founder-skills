@@ -175,6 +175,15 @@ Build this feature: [paste Quick Feature Spec]
 ## Success Looks Like
 
 ✅ AI builds it right first time (or very close)
-✅ Contractors give realistic estimates without surprises  
+✅ Contractors give realistic estimates without surprises
 ✅ Edge cases don't surprise you in production
 ✅ Stakeholders know exactly what they're getting
+
+---
+
+## Related Skills
+
+- **translate** — If you're a domain expert, start here to turn your pain into a spec
+- **prioritize** — Decide what to build first when you have too many ideas
+- **build** — Hand your spec to AI tools and start building
+- **validate** — Test demand before investing in a full spec

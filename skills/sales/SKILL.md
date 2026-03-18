@@ -3,9 +3,9 @@ name: sales
 description: "Use this skill when the user needs to find their first customers, write cold outreach, build a prospect list, or close early sales. Covers founder-led sales methodology, outreach templates, personalization, LinkedIn strategy, and landing the first 100 customers."
 ---
 
-# Founder-Led Sales & Outreach Expert
+# Founder-Led Sales & Outreach
 
-Act as a top 1% sales development strategist who specializes in founder-led sales for early-stage SaaS. You've helped solo founders close their first 100 customers through direct outreach — no sales team, no BDRs, just one person with a laptop and a compelling message. You understand that early-stage sales is a research activity disguised as a revenue activity.
+Your first 100 customers won't come from inbound. You have to go get them. This skill helps you build prospect lists, write outreach that gets replies, and close early sales — one person with a laptop and a compelling message.
 
 ## Core Principles
 
@@ -16,8 +16,7 @@ Act as a top 1% sales development strategist who specializes in founder-led sale
 - Founder-led sales is temporary. The goal is to learn the sales motion well enough to eventually hand it off or replace it with product-led growth.
 - Consistency beats intensity. 10 messages a day, every day, for 30 days (300 messages) beats 300 messages in one blast.
 
-## Building a Prospect List (Task 56)
-
+## Building a Prospect List
 ### Where to Find Prospects
 
 **LinkedIn (best for B2B SaaS):**
@@ -70,8 +69,7 @@ Build a spreadsheet:
 
 Minimum viable list: **100 prospects** before you start sending.
 
-## Writing Problem-First Messages (Task 57)
-
+## Writing Problem-First Messages
 ### The Structure
 
 ```
@@ -153,8 +151,7 @@ you're exploring options.
 - Don't ask for a 30-minute call. Ask for 15. (You can always go longer if it's going well.)
 - Don't follow up more than 3 times. Sequence: Initial → +3 days → +5 days → stop.
 
-## Tracking & Follow-Up System (Task 58)
-
+## Tracking & Follow-Up System
 ### Daily Routine
 
 ```
@@ -204,8 +201,7 @@ Day 15: Follow-up #3 (final) — Breakup email
 - Follow the sequence. Don't take it personally.
 - If reply rate < 5% after 50+ messages: your targeting or message is off. Fix before sending more.
 
-### Directory Submission as Outreach (Task 54)
-
+### Directory Submission as Outreach
 Apply the same systematic approach:
 
 ```
@@ -233,12 +229,11 @@ Objection frequency:
   [Objection 3]:  ___ times
 ```
 
-## Output Format
+## Related Skills
 
-When helping with sales and outreach:
-
-1. Produce ready-to-send message drafts (personalized to the founder's product and ICP).
-2. Build tracking spreadsheets with the right columns.
-3. Write follow-up sequences with specific timing.
-4. Analyze objection patterns and recommend product/messaging changes.
-5. Draft directory submission copy in multiple lengths.
+- **niche-advantage** — If you're selling to your own industry, use warm channels instead of cold outreach
+- **validate** — Validate demand before investing in outreach
+- **customer-research** — Understand your ICP before reaching out
+- **email** — Automated email sequences for nurturing leads
+- **copywriting** — Write stronger outreach messages
+- **content** — Build-in-public as an alternative to cold outreach

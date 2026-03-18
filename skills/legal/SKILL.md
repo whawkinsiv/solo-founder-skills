@@ -3,9 +3,11 @@ name: legal
 description: "Use this skill when the user needs to form a business entity, choose between LLC and C-Corp, create Terms of Service, write a Privacy Policy, or handle legal compliance. Covers entity selection, legal documents, contracts, and compliance for solo-founded SaaS."
 ---
 
-# SaaS Legal & Business Formation Expert
+# SaaS Legal & Business Formation
 
-Act as a top 1% startup lawyer who has advised hundreds of solo-founded SaaS companies on formation, legal documents, and compliance. You provide clear, actionable legal guidance that keeps a solo founder protected without overspending on attorneys. You always caveat that you are not a substitute for a licensed attorney, but you produce first drafts and frameworks that are 90% of the way there.
+Every SaaS needs three legal documents at launch: Terms of Service, Privacy Policy, and a basic entity structure. Everything else can wait. This skill helps you handle formation, legal docs, and compliance without overspending on attorneys.
+
+> **Disclaimer:** This skill produces informed first drafts based on common SaaS legal patterns. Always have a licensed attorney review before publishing anything that creates binding obligations.
 
 ## Core Principles
 
@@ -15,8 +17,7 @@ Act as a top 1% startup lawyer who has advised hundreds of solo-founded SaaS com
 - Legal language should be readable. If your users can't understand your ToS, it's bad legal writing, not "standard."
 - Disclaimers: This skill produces informed first drafts based on common SaaS legal patterns. Always have a licensed attorney review before publishing anything that creates binding obligations.
 
-## Business Entity Decision (Task 21)
-
+## Business Entity Decision
 ### Solo Founder Entity Comparison
 
 **LLC (Limited Liability Company)**
@@ -60,8 +61,7 @@ Just getting started? → LLC (your home state, or Wyoming/Delaware for privacy)
 - [ ] Set up separate accounting (QuickBooks Self-Employed, Xero, or Wave)
 - [ ] Register for state sales tax if required (SaaS taxability varies by state)
 
-## Terms of Service (Task 36)
-
+## Terms of Service
 ### Structure for SaaS Terms of Service
 
 ```markdown
@@ -137,8 +137,7 @@ These terms are governed by the laws of [State], [Country].
 Questions? Email [support email].
 ```
 
-## Privacy Policy (Task 36)
-
+## Privacy Policy
 ### Structure for SaaS Privacy Policy
 
 ```markdown
@@ -247,12 +246,10 @@ Key facts for US-based SaaS:
 - Trademark registration — nice to have, not urgent until brand has value
 - Cookie consent banner — need it once you serve EU users meaningfully
 
-## Output Format
+## Related Skills
 
-When drafting legal documents:
-
-1. Produce the complete document text, ready to publish.
-2. Mark any sections with [BRACKETS] where the founder needs to fill in specifics.
-3. Add a brief plain-English summary of each major section.
-4. Flag anything that varies significantly by jurisdiction.
-5. Always include the disclaimer: "This is a template based on common SaaS legal patterns. Have a licensed attorney review before publishing."
+- **compliance** — Industry-specific regulations (HIPAA, FERPA, PCI, GDPR) for your tech stack
+- **accounting** — Financial setup, bookkeeping, and tax compliance
+- **payments** — Stripe setup and subscription billing
+- **pricing** — Pricing strategy and tier design
+- **secure** — Technical security measures alongside legal compliance

@@ -3,9 +3,9 @@ name: finances
 description: "Use this skill when the user needs to build a financial model, calculate unit economics, understand MRR/ARR/churn, or figure out their quit number. Covers SaaS metrics, CAC/LTV, burn rate, cash flow modeling, and making unit economics legible for non-finance founders."
 ---
 
-# SaaS Financial Modeling & Metrics Expert
+# SaaS Financial Modeling & Metrics
 
-Act as a top 1% SaaS finance analyst who has modeled unit economics for companies from $0 to $50M ARR. You make the math of a SaaS business legible to a solo founder who doesn't have a finance background — clear enough to make decisions, rigorous enough to be trusted.
+A SaaS business is a math machine. If you don't know your numbers, you're guessing. This skill makes unit economics legible — MRR, CAC, LTV, churn, burn rate — clear enough to make decisions, rigorous enough to be trusted.
 
 ## Core Principles
 
@@ -15,8 +15,7 @@ Act as a top 1% SaaS finance analyst who has modeled unit economics for companie
 - Revenue is vanity. Margin is sanity. Cash flow is reality.
 - Every metric should answer a specific question: "Should I spend more here?" or "Is this working?"
 
-## The Quit Number (Task 03)
-
+## The Quit Number
 Before building anything, calculate what it takes to replace your income:
 
 ```
@@ -42,8 +41,7 @@ Timeline:
 
 **Reality check**: If you need 500+ customers at $29/mo to quit, that's an 18-36 month journey. Plan accordingly.
 
-## Personal Constraint Budget (Task 02/04)
-
+## Personal Constraint Budget
 ```
 Runway calculation:
   Current savings available for this venture: $______
@@ -160,8 +158,7 @@ Benchmarks:
   NRR > 100%:           Excellent (expansion revenue working)
 ```
 
-## Unit Economics Calculation (Task 84)
-
+## Unit Economics Calculation
 Build this table monthly:
 
 ```
@@ -187,8 +184,7 @@ Build this table monthly:
 | Runway (months)           |         |         |         |     |
 ```
 
-## Revenue Mix Model (Task 16)
-
+## Revenue Mix Model
 Map your revenue sources:
 
 ```
@@ -207,8 +203,7 @@ Revenue mix target:
   Services %:     ____% (keep <10% — doesn't scale)
 ```
 
-## Essential Metrics Dashboard (Task 83)
-
+## Essential Metrics Dashboard
 Track weekly, review monthly:
 
 **Growth metrics:**
@@ -264,12 +259,9 @@ Red flags that mean pivot or stop:
 - Revenue plateaus for 3+ months despite active effort
 - Cash runway < 3 months with no path to profitability
 
-## Output Format
+## Related Skills
 
-When building financial models or analyzing metrics:
-
-1. Present numbers in clean tables with labeled rows and clear formulas.
-2. Show the calculation, not just the result — founders need to understand the math to update it.
-3. Include benchmarks alongside actuals so the founder knows what "good" looks like.
-4. Flag any metric in a danger zone with a specific recommendation.
-5. If building a spreadsheet, make it updateable monthly with clear input cells.
+- **accounting** — Bookkeeping, tax prep, and financial operations
+- **pricing** — Set prices that support healthy unit economics
+- **analytics** — Track the product metrics that feed financial models
+- **ads** — CAC tracking and paid acquisition budgeting

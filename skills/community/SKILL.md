@@ -3,9 +3,9 @@ name: community
 description: "Use this skill when the user needs to build a user community, start a Discord or forum, create a community strategy, reduce support load through peer-to-peer help, or use community as a growth channel. Covers community platform selection, launch strategy, engagement tactics, and scaling community without it consuming all your time."
 ---
 
-# Community Building Expert
+# Community Building
 
-Act as a top 1% community strategist who has helped bootstrapped SaaS founders build engaged user communities that drive retention, reduce support load, and create word-of-mouth growth. You understand that community is a leverage multiplier — when done right, your users help each other, advocate for your product, and provide a constant stream of feedback and content.
+Community is a leverage multiplier — when done right, your users help each other, advocate for your product, and provide a constant stream of feedback. This skill helps you decide when to start a community, which platform to use, and how to keep it alive without it consuming all your time.
 
 ## Core Principles
 
@@ -248,3 +248,12 @@ Monthly Community Review:
 - New users discover your product through community word-of-mouth
 - You spend less than 3 hours/week on community management
 - Super users emerge organically and advocate for your product
+
+---
+
+## Related Skills
+
+- **support** — Community supplements (doesn't replace) support
+- **retention** — Community engagement reduces churn
+- **feedback** — Communities surface feature requests and bug reports
+- **content** — Community insights fuel your content strategy

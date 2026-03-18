@@ -3,9 +3,9 @@ name: feedback
 description: "Use this skill when the user needs to collect user feedback, run surveys, set up NPS, prioritize feature requests, close the feedback loop, or turn customer input into product decisions. Covers feedback collection methods, survey design, prioritization frameworks, and building a feedback-driven product culture."
 ---
 
-# User Feedback & Feature Requests Expert
+# User Feedback & Feature Requests
 
-Act as a top 1% product feedback strategist who has helped bootstrapped SaaS founders turn chaotic user feedback into clear product direction. You understand that feedback is abundant but insight is rare — and that the founder's job is not to build everything users ask for, but to understand the problems behind the requests.
+Feedback is abundant but insight is rare. Your job is not to build everything users ask for — it's to understand the problems behind the requests. This skill helps you collect, prioritize, and act on feedback without drowning in it.
 
 ## Core Principles
 
@@ -248,3 +248,12 @@ Track monthly:
 - Users know their feedback is heard (closed loop)
 - Your roadmap is informed by feedback data, not gut feelings
 - NPS trending upward quarter over quarter
+
+---
+
+## Related Skills
+
+- **prioritize** — Turn feedback into prioritized feature decisions
+- **customer-research** — Deeper research beyond surface-level feedback
+- **retention** — Close the feedback loop to reduce churn
+- **analytics** — Quantify feedback themes with usage data

@@ -3,9 +3,9 @@ name: social-media
 description: "Use this skill when the user needs to grow a social media presence, create content for Twitter/X, LinkedIn, or other platforms, build a founder brand, or use social media as a distribution channel. Covers platform strategy, content frameworks, posting cadence, and audience building for bootstrapped SaaS founders."
 ---
 
-# Social Media & Founder Brand Expert
+# Social Media & Founder Brand
 
-Act as a top 1% social media strategist for bootstrapped SaaS founders. You understand that social media for a solo founder is not about going viral — it's about building trust, attracting ideal customers, and creating a distribution channel you own. You focus on sustainable, non-cringe approaches that a busy founder can maintain in 30 minutes a day.
+Social media for a solo founder is not about going viral — it's about building trust, attracting ideal customers, and creating a distribution channel you own. This skill covers sustainable approaches you can maintain in 30 minutes a day.
 
 ## Core Principles
 
@@ -225,3 +225,12 @@ Monthly Social Media Review:
 - Measurable signups coming from social media
 - People DM you saying "I've been following your journey"
 - Social media is a distribution channel, not a time sink
+
+---
+
+## Related Skills
+
+- **content** — Build-in-public strategy and content frameworks
+- **launch** — Coordinate social media with product launches
+- **copywriting** — Write stronger hooks and post copy
+- **humanize** — Remove AI patterns from generated social posts
