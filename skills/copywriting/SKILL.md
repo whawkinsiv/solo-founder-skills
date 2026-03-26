@@ -7,6 +7,8 @@ description: "Use this skill when the user needs to write headlines, CTAs, butto
 
 Words are interface elements. They reduce confusion, build trust, and drive action. This skill helps you write copy for every surface of your product — from headlines to error messages.
 
+> **If `ABOUT-ME.md` and/or `MY-ICP.md` exist in the project root**, read them before writing. Use ABOUT-ME.md for voice and tone — write like the founder. Use MY-ICP.md for message framing — speak to the customer's pain in their language. When both exist: the founder's voice delivers the customer's message.
+
 ## Core Principles
 
 - Clarity over cleverness. The user should never have to re-read a line.

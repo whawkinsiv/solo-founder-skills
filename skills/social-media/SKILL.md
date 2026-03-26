@@ -7,6 +7,8 @@ description: "Use this skill when the user needs to grow a social media presence
 
 Social media for a solo founder is not about going viral — it's about building trust, attracting ideal customers, and creating a distribution channel you own. This skill covers sustainable approaches you can maintain in 30 minutes a day.
 
+> **If `ABOUT-ME.md` exists in the project root**, read it before creating any social content. Match the Communication Style section exactly — this IS the founder's voice. Draw post content from Key Stories and Values & Opinions. Social media is the founder speaking as themselves. Don't default to generic "founder voice" when you have a specific one on file.
+
 ## Core Principles
 
 - Social media is distribution, not the product. It exists to send people to your app, not replace it.

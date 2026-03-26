@@ -7,6 +7,8 @@ description: "Use this skill when the user needs to find their first customers, 
 
 Your first 100 customers won't come from inbound. You have to go get them. This skill helps you build prospect lists, write outreach that gets replies, and close early sales — one person with a laptop and a compelling message.
 
+> **If `ABOUT-ME.md` and/or `MY-ICP.md` exist in the project root**, read them before writing outreach. Lead with founder credibility from ABOUT-ME.md (Domain Expertise, Key Stories). Frame the message around ICP pain from MY-ICP.md (Their Pain, Their Language). If the founder has a strong network (ABOUT-ME.md Network & Distribution), prioritize warm channels over cold outreach.
+
 ## Core Principles
 
 - Your first 100 customers won't come from inbound. You have to go get them.

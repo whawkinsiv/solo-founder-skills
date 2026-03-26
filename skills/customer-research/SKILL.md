@@ -1,6 +1,6 @@
 ---
 name: customer-research
-description: "Use this skill when the user needs to understand their customers, create personas, conduct user interviews, or apply the Jobs-to-be-Done framework. Covers JTBD methodology, behavioral personas, interview techniques, and extracting actionable insights."
+description: "Use this skill when the user needs to understand their customers, create personas, conduct user interviews, apply the Jobs-to-be-Done framework, or create an ideal customer profile. Also use when the user says 'ICP,' 'ideal customer,' 'who is my customer,' 'customer profile,' or 'target audience.' Covers JTBD methodology, behavioral personas, interview techniques, and creates MY-ICP.md — a reference file that other skills use to personalize copy with customer language."
 ---
 
 # Customer Research & Personas
@@ -137,9 +137,89 @@ Research is only valuable if it changes decisions:
 - **Pricing:** Align tiers with persona segments.
 - **Roadmap:** Sequence features by persona priority.
 
+---
+
+## Capture Your ICP: Create MY-ICP.md
+
+Research is useful in the moment. `MY-ICP.md` makes it useful forever. This file captures who your customer is so every other skill — landing pages, ads, email, pricing copy — can use their language instead of your marketing language.
+
+### When to create it
+
+- After completing interviews and synthesizing findings
+- After building behavioral personas above
+- Or right now, if you're a domain expert who already knows your customer deeply
+
+### Quick capture for domain experts
+
+If you ARE your customer (or were recently), you can skip interviews and write this directly. But be honest about your blind spots — the "When You ARE the Persona" section above still applies.
+
+> Describe your ideal customer. Be specific about who they are, what frustrates them, what they're trying to accomplish, how they make buying decisions, and what words they actually use when talking about this problem. If you have multiple customer types, describe each one — start with your primary.
+
+### After interviews
+
+Pull from your Interview Analysis above:
+- **Exact quotes** become the "Their Language" section
+- **Common patterns** become "Their Pain" and "Their Goals"
+- **Pain intensity** informs priority within sections
+
+### MY-ICP.md template
+
+```markdown
+# My Ideal Customer Profile
+
+## Primary ICP: [Name or label — e.g., "Solo Consultants" or "Marketing Managers at Series A startups"]
+
+### Who They Are
+[Role, company size, experience level, relevant demographics.
+Not a persona — specific enough that you could find them on LinkedIn.]
+
+### Their Pain
+[Primary problems, current workarounds, what frustrates them.
+Use THEIR words, not your marketing language.
+Example: "I spend 3 hours every Monday pulling reports from 4 different tools"
+not "inefficient multi-platform reporting workflows."]
+
+### Their Goals
+[What success looks like to them. What they're trying to achieve.
+The outcome they'd pay for, in their framing.]
+
+### How They Buy
+[Decision process — do they decide alone or need approval?
+Common objections. Price sensitivity. What triggers a purchase.
+What makes them say no.]
+
+### Their Language
+[Actual words and phrases they use to describe the problem.
+Pull directly from interviews, Reddit posts, reviews, support tickets.
+This section is gold for landing pages, ads, and email subject lines.]
+
+### Where They Are
+[Communities, publications, events, Slack groups, subreddits, LinkedIn groups.
+Where you can reach them. Where they go for advice.]
+
+---
+
+## Secondary ICP: [Name or label] (if applicable)
+
+[Same sections as above. Only add a secondary if the audiences are
+genuinely distinct — different roles, different pains, different language.
+If they're similar, one profile is fine.]
+```
+
+### What makes a good MY-ICP.md
+
+- **Their words, not yours.** "I waste hours on reporting" not "streamline analytics workflows."
+- **Specific enough to find them.** "Marketing managers at B2B SaaS companies with 20-100 employees" not "marketers."
+- **Pain described with intensity.** "Hair-on-fire: broken onboarding causes 40% of trials to churn in 3 days" not "onboarding could be improved."
+- **Multiple ICPs only if truly distinct.** Don't split into 5 segments. Most early-stage products have 1-2.
+
+---
+
 ## Related Skills
 
+- **about-me** — Creates `ABOUT-ME.md`, the companion file. MY-ICP.md is who your customer is. ABOUT-ME.md is who you are. Together they let skills personalize both message and voice.
 - **validate** — Validate demand before building (uses similar interview techniques)
 - **prioritize** — Turn research insights into feature prioritization
-- **copywriting** — Use customer language in your marketing copy
+- **copywriting** — Use customer language (from MY-ICP.md) in your marketing copy
+- **landing-page** — Uses MY-ICP.md "Their Language" and "Their Pain" sections for copy
 - **feedback** — Ongoing feedback collection after launch

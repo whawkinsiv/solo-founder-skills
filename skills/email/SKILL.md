@@ -1,11 +1,13 @@
 ---
 name: email
-description: "Use this skill when the user needs to create email sequences, design onboarding drips, write welcome emails, set up behavioral triggers, or improve email engagement. Also use when the user mentions 'drip campaign,' 'welcome email,' 'trial expiry email,' 'email automation,' or 'lifecycle emails.' Covers lifecycle email programs, subject line formulas, and drip campaign design."
+description: "Use this skill when the user needs to create email sequences, design onboarding drips, write welcome emails, set up behavioral triggers, improve email engagement, or set up professional branded email. Also use when the user mentions 'drip campaign,' 'welcome email,' 'trial expiry email,' 'email automation,' 'lifecycle emails,' 'branded email,' 'business email,' 'email forwarding,' 'DMARC,' 'SPF,' 'DKIM,' 'hello@ email,' or 'professional email.' Covers branded email setup, email security, lifecycle email programs, subject line formulas, and drip campaign design."
 ---
 
 # Email & Lifecycle Marketing
 
 Email is the highest-ROI channel in SaaS — when done right. This skill helps you design email sequences that drive activation, retention, and revenue with specific copy you can paste into your email tool.
+
+> **If `ABOUT-ME.md` and/or `MY-ICP.md` exist in the project root**, read them before writing emails. The "from" voice should match ABOUT-ME.md Communication Style — emails should sound like the founder, not a marketing department. The content should speak to MY-ICP.md — their pain, their goals, their language.
 
 ## Core Principles
 
@@ -17,7 +19,108 @@ Email is the highest-ROI channel in SaaS — when done right. This skill helps y
 
 ---
 
-## Workflow
+## Part 1: Professional Branded Email (Do This First)
+
+Before you send a single marketing email, you need a professional email address. Sending from `yourname@gmail.com` kills credibility. You want `hello@yourdomain.com` — and you can set this up for free in under 30 minutes.
+
+### The Free Setup (Cloudflare + Gmail)
+
+This is the 80/20 approach. You get a branded email address without paying for Google Workspace or managing an email server.
+
+**What you need:**
+- A free Gmail account (you probably already have one)
+- Your domain on Cloudflare (free plan works — if your domain is elsewhere, transfer DNS to Cloudflare)
+
+**Step 1: Set up Cloudflare Email Routing (receiving mail)**
+
+Cloudflare Email Routing forwards `hello@yourdomain.com` to your personal Gmail — for free.
+
+1. Go to Cloudflare dashboard > your domain > Email > Email Routing
+2. Click "Get started" and add a destination address (your Gmail)
+3. Verify your Gmail address when Cloudflare sends the confirmation
+4. Create a route: `hello@yourdomain.com` → `yourpersonal@gmail.com`
+5. Add a catch-all if you want (sends ANY `@yourdomain.com` address to your Gmail)
+
+That's it. Emails to `hello@yourdomain.com` now arrive in your Gmail inbox.
+
+**Step 2: Send AS your branded address from Gmail**
+
+Receiving is only half the equation. You also want to reply FROM `hello@yourdomain.com` so recipients see your branded address, not your personal Gmail.
+
+Option A — **Use a free SMTP relay** (most reliable):
+1. Create a free account on [Resend](https://resend.com) or [Brevo](https://brevo.com) (both have free tiers)
+2. Verify your domain in their dashboard (they'll give you DNS records to add in Cloudflare)
+3. Get your SMTP credentials from the relay service
+4. In Gmail: Settings > Accounts > "Send mail as" > Add another email address
+5. Enter `hello@yourdomain.com`, uncheck "Treat as alias"
+6. Enter the SMTP server, port, username, and password from your relay service
+7. Click the verification link Gmail sends to `hello@yourdomain.com` (which forwards to your Gmail)
+
+Option B — **ImprovMX** ($10/year):
+- Handles both forwarding AND SMTP sending in one service
+- Simpler setup than Option A if you want to skip the relay configuration
+- Free tier available (forwarding only; sending requires paid plan)
+
+**Step 3: Set your branded address as the default**
+
+In Gmail: Settings > Accounts > "Send mail as" > make `hello@yourdomain.com` the default. Now every email you send comes from your branded address.
+
+### Email Security: SPF, DKIM, and DMARC
+
+These three DNS records prevent attackers from spoofing your domain (sending fake emails that look like they come from you). They also dramatically improve deliverability — without them, your emails land in spam.
+
+**Why this matters for founders:**
+- Without DMARC, anyone can send emails pretending to be `@yourdomain.com`
+- Phishing attacks using your domain destroy trust and can get your domain blacklisted
+- Gmail, Outlook, and Yahoo now require SPF and DKIM for bulk senders — even small senders benefit
+
+**What to set up (add these as DNS records in Cloudflare):**
+
+| Record | What It Does | Priority |
+|--------|-------------|----------|
+| **SPF** | Declares which servers can send email for your domain | Must have |
+| **DKIM** | Cryptographically signs your emails to prove they're authentic | Must have |
+| **DMARC** | Tells receiving servers what to do with emails that fail SPF/DKIM checks | Must have |
+
+Your email forwarding service (Cloudflare) and SMTP relay (Resend/Brevo) will give you the exact DNS records to add. Follow their setup guides — they walk you through it.
+
+**DMARC record to start with** (add as a TXT record for `_dmarc.yourdomain.com`):
+
+```
+v=DMARC1; p=quarantine; rua=mailto:dmarc@yourdomain.com; pct=100
+```
+
+- `p=quarantine` tells receiving servers to spam-folder emails that fail authentication (use `p=reject` once you're confident everything is configured correctly)
+- `rua=mailto:...` sends you aggregate reports about who's sending email from your domain
+
+**Verify your setup:** Use [MXToolbox](https://mxtoolbox.com/SuperTool.aspx) or Google's [Check MX](https://toolbox.googleapps.com/apps/checkmx/) to confirm SPF, DKIM, and DMARC are working.
+
+### When to Upgrade to Google Workspace
+
+The free Cloudflare + Gmail setup works great for solo founders. Consider Google Workspace ($7/user/month) when:
+
+- You're hiring and need multiple `@yourdomain.com` accounts
+- You want native Google Calendar invites from your branded address
+- You need shared drives or team collaboration features
+- You want a cleaner separation between personal and business email
+
+Don't pay for Google Workspace on day one. The free setup is professional enough to close deals, send investor updates, and handle customer support.
+
+### Other 80/20 Email Recommendations
+
+- **Create 3-4 aliases** for free: `hello@`, `support@`, `billing@`, `founder@` — all forwarding to the same Gmail. This looks professional and helps you filter/label incoming mail.
+- **Set up Gmail filters** to auto-label emails by which alias received them (e.g., label "Support" for anything to `support@`).
+- **Add a professional email signature** with your name, title, product name, and website link. Keep it minimal — no logos, no quotes, no social icons.
+- **Use "Canned Responses" (Gmail Templates)** for repetitive replies: support answers, sales follow-ups, investor FAQs.
+- **Never send marketing emails from your primary domain** — use a subdomain like `mail.yourdomain.com` to protect your main domain's reputation. Your lifecycle email tool handles this separately.
+
+---
+
+## Part 2: Lifecycle Email Marketing
+
+Once you have professional email set up, here's how to build the automated sequences that drive activation, retention, and revenue.
+
+### Workflow
 
 ```
 Email Sequence Setup:
@@ -31,7 +134,7 @@ Email Sequence Setup:
 
 ---
 
-## Choosing an Email Tool
+### Choosing an Email Tool
 
 | Stage | Tool | Why | Cost |
 |-------|------|-----|------|
@@ -43,7 +146,7 @@ For most bootstrapped founders: **Loops** (simple, modern) or **Resend** (if you
 
 ---
 
-## Welcome Sequence (Most Important)
+### Welcome Sequence (Most Important)
 
 Triggered on signup. Goal: get users to their aha moment.
 
@@ -75,7 +178,7 @@ For each email: subject line, preview text, body, CTA button text.
 
 ---
 
-## Trial Expiry Sequence
+### Trial Expiry Sequence
 
 Triggered 3 days before trial ends. Goal: convert to paid.
 
@@ -103,7 +206,7 @@ For each: subject line, preview text, body, CTA. Keep subject lines under 50 cha
 
 ---
 
-## Re-engagement Sequence
+### Re-engagement Sequence
 
 Triggered after 14+ days inactive. Goal: bring them back.
 
@@ -127,7 +230,7 @@ For each: subject line, preview text, body, CTA.
 
 ---
 
-## Subject Line Formulas
+### Subject Line Formulas
 
 - **Curiosity:** "The one thing most [role]s get wrong about [topic]"
 - **Specificity:** "3 ways to [outcome] in [Product]"
@@ -145,7 +248,7 @@ For each: subject line, preview text, body, CTA.
 
 ---
 
-## Transactional Emails
+### Transactional Emails
 
 Receipts, password resets, invitations, notifications:
 
@@ -157,7 +260,7 @@ Receipts, password resets, invitations, notifications:
 
 ---
 
-## Technical Setup
+### Technical Setup
 
 Before sending anything:
 
@@ -185,7 +288,7 @@ Set up email infrastructure for our app:
 
 ---
 
-## Common Mistakes
+### Common Mistakes
 
 | Mistake | Fix |
 |---------|-----|
@@ -199,7 +302,7 @@ Set up email infrastructure for our app:
 
 ---
 
-## Related Skills
+### Related Skills
 
 - **growth** — Activation strategies that email sequences support
 - **conversion** — Optimize the full signup-to-paid funnel
