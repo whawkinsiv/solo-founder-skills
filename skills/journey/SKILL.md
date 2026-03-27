@@ -69,10 +69,11 @@ The app works locally or in your dev environment. Time to put it on the internet
 3. **legal** — Terms of Service, Privacy Policy, business entity
 4. **test** — Test the full flow as if you're a new user
 5. **monitor** — Set up error tracking and uptime alerts
+6. **go-live** — Run the pre-launch checklist before letting anyone in
 
 **Time:** 1-2 days for deploy. 1 week for payments + legal.
 
-**Gate:** Someone can visit your URL, sign up, use the product, and pay you.
+**Gate:** Someone can visit your URL, sign up, use the product, and pay you. **go-live** is your final checkpoint before opening the doors.
 
 ---
 
@@ -146,6 +147,7 @@ You have product-market fit. Revenue is growing. Now scale.
 | Set up my database | **database** |
 | Make it look professional | **brand-identity-generator**, **beautify** |
 | Get it live on the internet | **deploy** |
+| Check if I'm ready to launch | **go-live** |
 | Accept payments | **payments** |
 | Handle legal stuff | **legal**, **compliance** |
 | Build a landing page | **landing-page** |

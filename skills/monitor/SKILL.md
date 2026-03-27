@@ -1,9 +1,18 @@
 ---
 name: monitor
-description: "Use this skill when the user needs to set up production monitoring, track app health, configure error alerts, or respond to incidents. Covers error tracking, uptime monitoring, performance metrics, and incident response for SaaS applications."
+description: "Use this skill when the user needs to set up production monitoring, track app health, configure error alerts, or respond to incidents. Also use when the user says 'my app went down,' 'how do I know if something breaks,' 'set up alerts,' 'is my app healthy,' or 'I found out from a user that my site was down.' Covers error tracking, uptime monitoring, performance metrics, and incident response for SaaS applications."
 ---
 
 # Monitor
+
+**This skill is for production monitoring and incident response.** For debugging specific bugs, use **debug**. For pre-launch readiness checks, use **go-live**. For security-specific monitoring (auth events, API abuse), use **secure**. For analytics and user behavior tracking, use **analytics**.
+
+### Don't Do Yet
+
+- **Don't pay for monitoring tools** until you've outgrown the free tiers. UptimeRobot + Sentry free handles most early-stage apps.
+- **Don't set up DataDog, New Relic, or Grafana.** These are enterprise tools. You don't need them with < 1,000 users.
+- **Don't build custom dashboards.** Your hosting platform (Vercel, Railway) has built-in metrics. Use those first.
+- **Don't monitor everything.** Three things matter at launch: is it up, are there errors, is it slow. That's it.
 
 ## Monitoring Checklist
 
@@ -67,14 +76,23 @@ See [MONITORING-SETUP.md](MONITORING-SETUP.md) for implementation.
 - LogRocket (limited free)
 - Vercel/Netlify logs (for deployed apps)
 
-**Setup:**
+**Claude Code:**
 ```
-Tell AI:
-"Add Sentry error tracking:
-- Capture all frontend errors
-- Capture all API errors
-- Include user context
-- Send to Sentry dashboard"
+Add Sentry error tracking to my app:
+- Install @sentry/nextjs (or appropriate package)
+- Capture all frontend errors and API errors
+- Include user context (email, ID)
+- Configure source maps for readable stack traces
+- Set up Sentry.init in both client and server entry points
+```
+
+**Lovable / Replit** (paste into chat):
+```
+Add error tracking to my app. I want to be notified when errors happen.
+Use Sentry (free tier). Show me how to:
+1. Create a Sentry account and project
+2. Add the tracking code to my app
+3. Test that errors are being captured
 ```
 
 ### 3. Is It Slow?
@@ -455,10 +473,20 @@ Incident Response:
 
 ## Success Looks Like
 
-✅ Know about issues before users report them  
-✅ Uptime >99.9%  
-✅ Errors caught and fixed quickly  
-✅ Performance trends stable or improving  
-✅ Daily monitoring routine (5 minutes)  
-✅ Alerts configured and actionable  
+✅ Know about issues before users report them
+✅ Uptime >99.9%
+✅ Errors caught and fixed quickly
+✅ Performance trends stable or improving
+✅ Daily monitoring routine (5 minutes)
+✅ Alerts configured and actionable
 ✅ Issues resolved proactively
+
+---
+
+## Related Skills
+
+- **debug** — Investigate and fix specific bugs
+- **deploy** — Hosting setup and rollback procedures
+- **secure** — Security monitoring and hardening
+- **analytics** — User behavior tracking and conversion funnels
+- **go-live** — Pre-launch readiness (includes monitoring as a checklist item)

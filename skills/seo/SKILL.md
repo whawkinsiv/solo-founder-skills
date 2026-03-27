@@ -1,6 +1,6 @@
 ---
 name: seo
-description: "Use this skill when the user needs to plan SEO content, do keyword research, build a content calendar, map search intent to page types, or create an internal linking strategy. This is the strategy and planning skill — for writing content see seo-content, for technical implementation see technical-seo, for auditing see seo-audit."
+description: "Use this skill when the user needs to plan SEO content, do keyword research, build a content calendar, map search intent to page types, or create an internal linking strategy. Also use when the user says 'how do I rank higher,' 'what should I write about for SEO,' 'SEO plan,' 'what keywords should I target,' or 'how to get organic traffic.' This is the strategy and planning skill — for writing content see seo-content, for technical implementation see technical-seo, for auditing see seo-audit."
 ---
 
 # SEO Strategy & Planning
@@ -12,6 +12,21 @@ This skill answers **what to write and where**. For the other SEO concerns:
 - **technical-seo** — How to implement it in code (meta tags, schema, CWV, crawlability, GEO)
 - **seo-audit** — How to assess what exists (scan a codebase, produce an action plan)
 
+## Workflow
+
+```
+SEO Strategy Setup:
+- [ ] Research keywords for your niche (see Keyword Intent Mapping below)
+- [ ] Map keywords to page types (feature, comparison, blog, etc.)
+- [ ] Build content architecture (site structure + URL patterns)
+- [ ] Prioritize: bottom-funnel pages first, then mid, then top
+- [ ] Create internal linking plan
+- [ ] Set up tracking (Google Search Console)
+- [ ] Build content calendar (2-5 pieces/month)
+```
+
+---
+
 ## Core Principles
 
 - SEO is not gaming Google — it's structuring content so it's findable and useful.
@@ -19,6 +34,13 @@ This skill answers **what to write and where**. For the other SEO concerns:
 - Target intent, not just keywords. "Best CRM" and "CRM pricing" have completely different searchers.
 - One page per intent. Cannibalizing your own rankings is the most common SaaS SEO mistake.
 - Internal linking is your most underused lever.
+
+### Don't Do Yet
+
+- **Don't obsess over technical SEO** before you have content. Schema markup on an empty blog is pointless.
+- **Don't buy backlinks.** Google penalizes this. Earn them with good content.
+- **Don't write 50 blog posts at once.** Start with 5 high-intent pages, measure, iterate.
+- **Don't hire an SEO agency** before doing keyword research yourself. You understand your customers better than they do.
 
 ---
 
@@ -82,7 +104,9 @@ Every keyword has an intent. Match your page type to the intent:
 | **Commercial** | "best [category] tools", "[tool A] vs [tool B]" | Comparison page, listicle |
 | **Transactional** | "[category] pricing", "buy [product]" | Pricing page, signup page |
 
-**Tell AI:**
+### Keyword Research by Tool
+
+**Claude Code** (has web access via Ahrefs MCP or web search):
 ```
 Do keyword research for our product [name] in the [category] space:
 - Find 20 keywords our ICP would search for
@@ -90,6 +114,15 @@ Do keyword research for our product [name] in the [category] space:
 - Estimate competition level (low, medium, high)
 - Recommend which page type to create for each keyword
 - Prioritize: low competition + high intent first
+```
+
+**Lovable / Replit / Cursor** (no web access — bring your own data):
+1. Do keyword research first using a free tool: Google Search Console (what you already rank for), Google autocomplete (type your topic and note suggestions), or AnswerThePublic
+2. Then paste results into your AI tool:
+```
+Here are my keyword research results: [paste keywords + volumes]
+Classify each by intent, recommend a page type for each, and prioritize by
+low competition + high intent.
 ```
 
 ---
@@ -136,14 +169,18 @@ Write content in this order:
 
 ### Content Calendar (Simple Version)
 
-**Tell AI:**
+**Claude Code:**
 ```
 Create a 3-month content calendar for our SaaS blog:
 - Product: [name], solves [problem] for [audience]
 - Goal: drive organic signups
 - Mix: 2 bottom-funnel pieces, 2 mid-funnel pieces, 1 top-funnel piece per month
 - For each piece: title, target keyword, intent, URL, and brief outline
+- Use web search to validate keyword difficulty before finalizing
 ```
+
+**Lovable / Replit / Cursor:**
+Use the same prompt above but remove the last line (these tools can't search the web). Instead, validate keywords yourself in Google Search Console or a free tool like Ubersuggest first, then paste your validated keyword list into the prompt.
 
 ---
 

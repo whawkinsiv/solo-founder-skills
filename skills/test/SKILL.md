@@ -42,7 +42,84 @@ See [TEST-SCENARIOS.md](TEST-SCENARIOS.md) for detailed scenarios.
 
 ---
 
-## Manual Testing Workflow
+## Structured QA Workflow
+
+Don't test randomly. Follow this sequence every time.
+
+### Step 1: Orient — What Exists?
+
+Before testing, know what you're testing. Walk through your app and list every page and feature.
+
+```
+Map Your App:
+- [ ] List every page (home, dashboard, settings, etc.)
+- [ ] List every form (signup, contact, create/edit)
+- [ ] List every button that does something
+- [ ] List every integration (payments, email, third-party)
+```
+
+### Step 2: Explore — Visit Everything Systematically
+
+Go through every page, every button, every form. Don't skip pages you "know" work.
+
+**Tell AI:**
+```
+Go through every page of my app. Click every button. Fill every form.
+Submit every action. Tell me what's broken, what looks wrong, and what
+behaves unexpectedly. For each issue, tell me:
+- What page it's on
+- What you did
+- What happened vs. what should happen
+- How severe it is (blocks users vs. cosmetic)
+```
+
+### Step 3: Score — Rate Your App's Health
+
+Rate your app 1-10 on each dimension. Be honest — this is for you.
+
+```
+App Health Score:
+                                      Score (1-10)
+Does it load fast? (under 3 seconds)  ___
+Do all buttons/links work?            ___
+Do forms submit correctly?            ___
+Do error messages make sense?         ___
+Does it work on mobile?               ___
+Is the core flow completable?         ___
+                              Total:  ___/60
+
+50-60: Ready to ship
+40-49: Fix the gaps, then ship
+30-39: Significant issues — fix before showing users
+<30:   Major problems — keep building before testing
+```
+
+### Step 4: Fix and Re-Verify
+
+After each fix, re-test **two things**: the thing that was broken AND the things that were working. AI fixes often break something else.
+
+```
+After Every Fix:
+- [ ] Original bug is resolved
+- [ ] Core signup/login flow still works
+- [ ] Core action still works
+- [ ] No new visual issues on the page you changed
+```
+
+### Step 5: The Fresh Eyes Test
+
+Have someone who's never seen your app try to sign up and complete the core action. Watch without helping. What surprises you?
+
+- Where do they hesitate?
+- What do they click that you didn't expect?
+- Where do they get confused but don't say anything?
+- Can they describe what the app does after using it for 2 minutes?
+
+This test reveals more than a week of solo testing. The things you "know" are obvious often aren't.
+
+---
+
+## Manual Testing Checklist
 
 ```
 1. Test happy path

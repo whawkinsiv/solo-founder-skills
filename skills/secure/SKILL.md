@@ -1,9 +1,44 @@
 ---
 name: secure
-description: "Use this skill when the user needs to secure their SaaS app, implement authentication, protect user data, secure APIs, or check for vulnerabilities. Covers OWASP Top 10, auth best practices, data protection, and security checklists for apps built with AI tools."
+description: "Use this skill when the user needs to secure their SaaS app, implement authentication, protect user data, secure APIs, or check for vulnerabilities. Also use when the user says 'is my app secure,' 'security check,' 'I'm worried about hackers,' 'how do I protect user data,' or 'security before launch.' Covers OWASP Top 10, auth best practices, data protection, and security checklists for apps built with AI tools."
 ---
 
 # Security
+
+**This skill is for securing your app's code and data.** For regulatory compliance (HIPAA, SOC 2, GDPR), use **compliance**. For pre-launch readiness checks, use **go-live**. For environment variable setup during deployment, use **deploy**. For database-level security (Row Level Security), use **database**.
+
+### Don't Do Yet
+
+- **Don't implement OAuth/SSO** until you have paying customers who need it. Email + password is fine for launch.
+- **Don't buy a pentest** until you have 1,000+ users or handle sensitive data (health, finance). This checklist is enough for MVP.
+- **Don't set up a Web Application Firewall (WAF)** — your hosting platform (Vercel, Railway) handles this. You don't need Cloudflare yet.
+- **Don't build your own auth system.** Use Supabase Auth, Clerk, or NextAuth. Rolling your own is how breaches happen.
+
+## Quick Start
+
+**Claude Code:**
+```
+Run a security audit on my app. Check for:
+- API keys or secrets in code (should be in .env)
+- Missing auth on protected routes
+- SQL injection risks
+- XSS vulnerabilities
+- Missing rate limiting
+Fix anything you find.
+```
+
+**Lovable / Replit / Cursor** (paste into chat):
+```
+Review my app for security issues. Check these common problems:
+1. Are any API keys or passwords hardcoded? Move them to environment variables.
+2. Can someone access pages without logging in? Add auth checks.
+3. Is user input validated before hitting the database?
+4. Are passwords hashed (not stored as plain text)?
+5. Is rate limiting set up on API endpoints?
+Show me what needs fixing and fix it.
+```
+
+---
 
 ## Security Checklist
 
@@ -43,23 +78,28 @@ Access via process.env.API_KEY
 
 ---
 
-## Authentication Basics
+## Authentication
 
-**Minimum requirements:**
-- Passwords: 8+ chars, require number/symbol
-- Hash passwords (bcrypt with 10+ rounds)
-- Email verification for signups
-- Password reset via email only
-- Sessions expire (30-60 min idle)
-- Logout clears session completely
+**Use a service. Don't build this yourself.**
+
+| If you use... | Auth solution |
+|---------------|---------------|
+| Supabase | Supabase Auth (built in) |
+| Next.js | NextAuth.js or Clerk |
+| Lovable | Supabase Auth (Lovable's default) |
+| Replit | Replit Auth or Supabase |
+
+**If you must build auth yourself** (not recommended), the minimums are:
+- Passwords: 8+ chars, hashed with bcrypt (12 rounds), never stored plain text
+- Email verification required for signups
+- Password reset via email token only
+- Sessions expire after 30-60 minutes idle
 
 **Tell AI:**
 ```
-Add authentication:
-- bcrypt for password hashing (12 rounds)
-- Email verification required
-- Session timeout: 30 minutes
-- Password requirements: 8+ chars, 1 number, 1 symbol
+Set up authentication using [Supabase Auth / NextAuth / Clerk].
+I need: email+password signup, email verification, password reset,
+and session timeout after 30 minutes of inactivity.
 ```
 
 See [SECURITY-PROMPTS.md](SECURITY-PROMPTS.md) for implementation details.
@@ -237,9 +277,19 @@ grep -r "password" src/
 
 ## Success Looks Like
 
-✅ No secrets in code (all in .env)  
-✅ Can't access protected routes without auth  
-✅ Passwords hashed, never stored plain text  
-✅ Rate limiting prevents abuse  
-✅ HTTPS enforced in production  
+✅ No secrets in code (all in .env)
+✅ Can't access protected routes without auth
+✅ Passwords hashed, never stored plain text
+✅ Rate limiting prevents abuse
+✅ HTTPS enforced in production
 ✅ Input validated on server side
+
+---
+
+## Related Skills
+
+- **compliance** — Regulatory requirements (HIPAA, SOC 2, GDPR, CCPA)
+- **go-live** — Pre-launch readiness checks (security is one part of this)
+- **deploy** — Hosting and environment variable setup
+- **database** — Row Level Security, data access policies
+- **payments** — Stripe security and PCI compliance

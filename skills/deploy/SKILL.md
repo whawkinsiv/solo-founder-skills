@@ -7,6 +7,8 @@ description: "Use this skill when the user needs to deploy their app, choose a h
 
 The gap between "it works on my screen" and "anyone can use it" feels enormous. It's not. This skill walks you through choosing a host, deploying, connecting a domain, and setting up backups — step by step.
 
+**This skill is for deployment and hosting.** For pre-launch quality checks, use **go-live**. For monitoring after deploy, use **monitor**. For database setup, use **database**. For security hardening, use **secure**.
+
 ## Core Principles
 
 - The best hosting platform is the one that matches how you built. Don't migrate unless you have to.
@@ -14,6 +16,13 @@ The gap between "it works on my screen" and "anyone can use it" feels enormous. 
 - Your first deployment should take under 30 minutes. If it's taking hours, you're overcomplicating it.
 - Custom domains are not optional for a real business. yourapp.vercel.app is not professional.
 - Backups are not optional. If you don't have them, you don't have a business.
+
+### Don't Do Yet
+
+- **Don't set up Kubernetes, Docker Swarm, or "infrastructure as code."** Managed platforms handle this. You're shipping a product, not building a data center.
+- **Don't set up a staging environment** until you have paying users. Deploy straight to production. You can add staging later.
+- **Don't optimize for scale** before you have traffic. A $5/month Railway plan handles thousands of users. Worry about scaling when it becomes a real problem.
+- **Don't self-host your database.** Use a managed service (Supabase, Railway Postgres, PlanetScale). Self-hosting means you're on call for backups, upgrades, and outages.
 
 ## Choose Your Hosting
 
@@ -160,6 +169,13 @@ Your hosting platform will tell you exactly which DNS records to add. Typical se
 **Where to add DNS records:** Log in to wherever you bought your domain (Namecheap, Cloudflare, etc.) → DNS Settings → Add the records your hosting platform gives you.
 
 **DNS propagation** takes 5 minutes to 48 hours (usually under 30 minutes). Be patient.
+
+**Tell AI:**
+```
+I bought a domain on [Namecheap/Cloudflare/Google Domains] and I'm hosting on [Vercel/Railway/Netlify].
+Walk me through connecting the domain step by step. Tell me exactly which DNS records
+to add and where.
+```
 
 ### SSL / HTTPS
 

@@ -55,6 +55,61 @@ See [PROMPTS.md](PROMPTS.md) for patterns.
 
 ---
 
+## Build in Pieces, Not All at Once
+
+The biggest mistake non-technical founders make: giving AI the entire spec and hoping it comes back perfect. It won't. AI tools work best in focused chunks.
+
+**The Build Loop:**
+```
+1. Pick ONE piece (a single feature or flow)
+2. Give AI a clear spec for just that piece
+3. Test it — does the piece work?
+4. Fix any issues before moving on
+5. Pick the next piece → repeat
+```
+
+**Good pieces** (1-3 hours each):
+- User signup and login
+- Dashboard showing key metrics
+- Settings page with profile editing
+- One core workflow (e.g., "create an invoice")
+
+**Bad pieces** (too big):
+- "Build the whole app"
+- "Build the dashboard with all integrations"
+- "User management with roles, permissions, and team features"
+
+### Quality Gate Between Pieces
+
+Before building the next feature, check: **Does the previous feature still work?** Can you sign up, do the core action, and see the result? AI tools sometimes break existing features while adding new ones. Catch that early.
+
+### When to Start a Fresh Session
+
+Start a new chat/session with your AI tool when:
+- AI has made **3+ attempts** at the same fix without success — context is polluted
+- You're seeing **new bugs appear** every time a bug is fixed
+- The AI is **going in circles** (suggesting things it already tried)
+- You want to **add a new feature** after finishing the current one
+
+When starting fresh, give AI a clear description of: what exists, what works, and what you need next. Don't assume it remembers.
+
+### Things AI Won't Add Unless You Ask
+
+AI-built projects routinely ship without these. Add them explicitly:
+
+```
+Ask Your AI Tool to Add:
+- [ ] Error tracking (Sentry) — so you know when things break
+- [ ] Analytics snippet (Plausible, PostHog, or GA4) — so you know who visits
+- [ ] Proper 404 page — so broken links don't show a blank screen
+- [ ] Proper 500 page — so server errors show a helpful message
+- [ ] Favicon — so your browser tab has an icon, not a blank square
+- [ ] Meta tags (title, description, OG image) — so links look good when shared
+- [ ] Loading states — so users know something is happening
+```
+
+---
+
 ## Reviewing What AI Built
 
 Test, don't just run:

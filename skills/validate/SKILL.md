@@ -15,6 +15,40 @@ The #1 reason startups fail is "no market need." Validation isn't about asking p
 - You don't need to build anything to validate. Landing pages, waitlists, and conversations come first.
 - Validation is not a one-time event. You re-validate at every stage: idea, MVP, pricing, features.
 
+## Pressure-Test Your Idea
+
+Before running experiments, pressure-test the idea itself. These six questions expose fatal flaws fast — answer them honestly, not optimistically.
+
+### Which Questions to Answer
+
+| Your Stage | Focus On |
+|-----------|----------|
+| Pre-product (just an idea) | Q1, Q2, Q3 |
+| Have a prototype or early users | Q2, Q4, Q5 |
+| Have paying customers | Q4, Q5, Q6 |
+
+### The Six Questions
+
+**Q1 — Demand Reality:** What evidence do you have — beyond your own experience — that someone else actually wants this? Not "I think people need it." What have you seen, heard, or measured?
+
+**Q2 — Status Quo:** What are people in your field doing right now to handle this — even badly? What does that workaround cost them in time, money, or errors?
+
+**Q3 — Desperate Specificity:** Name one specific person who needs this most. Not "dentists" — which dentist, at which practice, with what problem? If you can't name someone, you haven't found your customer yet.
+
+**Q4 — Narrowest Wedge:** What's the smallest version of this someone would pay for this week — not after you build the platform? One screen, one workflow, one outcome.
+
+**Q5 — Observation:** Have you watched a colleague struggle with this task without helping them? What surprised you about how they actually do it vs. how you assumed?
+
+**Q6 — Future-Fit:** How does your industry change in 3 years, and does that make this tool more essential or less?
+
+> **Interest is not demand.** Waitlist signups are not demand. Someone would be genuinely upset if it disappeared — that's demand.
+
+> **"Everyone in my field needs this"** means you haven't found anyone specific yet. The more universal you think the need is, the less validated it actually is.
+
+> **The status quo is your real competitor** — not the other startup. It's the spreadsheet-and-email workaround people already live with. You have to be dramatically better than "good enough."
+
+---
+
 ## Validation Levels
 
 ### Level 1: Problem Validation (Do People Have This Problem?)

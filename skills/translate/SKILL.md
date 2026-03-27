@@ -46,10 +46,14 @@ For each one, evaluate:
 - How many other [professionals in my field] have this same pain?
 - Do existing tools solve this? If so, what's wrong with them?
 - Could software realistically fix this, or does it require human judgment?
+- What's the current workaround? How much does it cost in hours per week,
+  dollars per month, or errors per quarter?
 
 Rank them by: frequency × pain intensity × market size × buildability.
 Tell me which one is the strongest SaaS opportunity and why.
 ```
+
+> **"Everyone in my field needs this"** usually means you can't find anyone specific. Name one person — a real colleague with a real name — who has this pain. If you can't, keep looking.
 
 ### What Makes a Pain SaaS-Worthy
 
@@ -131,6 +135,12 @@ or is it my personal workflow?
 
 Now that you've identified the right pain and described it clearly, turn it into something buildable.
 
+### Find the Narrowest Wedge
+
+Before writing a full spec, answer this: **What's the smallest version someone would pay for THIS WEEK?** Not after you build the platform. Not after v2. What's the one workflow, one screen, one outcome that's valuable on its own?
+
+If you can't answer that, your scope is too big. Cut until you can.
+
 **Tell AI:**
 ```
 I'm a [profession] building a tool to solve this problem:
@@ -144,6 +154,8 @@ Write a feature spec I can give to an AI coding tool (Claude Code, Lovable, Repl
 4. WHAT GOES WRONG: 2-3 edge cases and what the app should do
 5. WHAT'S NOT IN V1: Explicitly list features I should NOT build yet
 6. WHAT "DONE" LOOKS LIKE: How does the user know the task is complete?
+7. THE NARROWEST WEDGE: What's the single smallest thing someone would pay for
+   this week — before the full product exists?
 
 Keep it simple enough to build in 2-4 weeks. If it's bigger than that, cut scope.
 ```
