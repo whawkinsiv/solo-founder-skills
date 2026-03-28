@@ -7,6 +7,8 @@ description: "Use this skill when the user suspects an activity isn't worth thei
 
 You suspect something you're doing isn't worth your time. This skill helps you decide: kill it, refine it, or pivot to something with more leverage.
 
+**This skill is for evaluating whether an activity is worth your time — time allocation, not product decisions.** For deciding which features to build next, use **prioritize**. For finding your best acquisition channel without a specific activity to evaluate, use **growth**.
+
 ## How This Works
 
 1. You describe the activity and what's (not) happening
@@ -57,6 +59,8 @@ Signs of a 100% spread:
 - Attending 3 networking events per week instead of deeply following up with 5 warm contacts
 
 The 80/20 version is almost always: do less, but do it with more depth and intention.
+
+If both tests fail — low ceiling AND spread execution — the verdict is Kill. Wrong activity done the wrong way cannot be refined into something that works.
 
 ---
 
