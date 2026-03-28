@@ -62,6 +62,21 @@ Just getting started? → LLC (your home state, or Wyoming/Delaware for privacy)
 - [ ] Register for state sales tax if required (SaaS taxability varies by state)
 
 ## Terms of Service
+
+**Tell AI:**
+```
+Generate Terms of Service for my SaaS product:
+- Product name: [name]
+- What it does: [one sentence]
+- Pricing model: [free tier / paid plans / both]
+- Refund policy: [e.g., 14-day full refund]
+- User-generated content: [yes/no — do users upload or create content?]
+- Target geography: [US only / US + EU / global]
+
+Use the template structure below. Write in plain English, not legalese.
+I'll have an attorney review before publishing.
+```
+
 ### Structure for SaaS Terms of Service
 
 ```markdown
@@ -138,6 +153,21 @@ Questions? Email [support email].
 ```
 
 ## Privacy Policy
+
+**Tell AI:**
+```
+Generate a Privacy Policy for my SaaS product:
+- Product name: [name]
+- Data we collect: [email, name, usage data, payment via Stripe, etc.]
+- Analytics tool: [PostHog / Google Analytics / Plausible / none]
+- Email service: [Resend / SendGrid / none]
+- Do we serve EU users? [yes/no]
+- Do we serve California users? [yes/no]
+
+Use the template structure below. Include GDPR section if EU, CCPA if California.
+Write in plain English. I'll have an attorney review before publishing.
+```
+
 ### Structure for SaaS Privacy Policy
 
 ```markdown
@@ -235,6 +265,19 @@ Key facts for US-based SaaS:
 - Use a tool like TaxJar, Avalara, or Stripe Tax to automate collection.
 - Don't ignore this. States are increasingly aggressive about SaaS tax enforcement.
 - Start tracking from day one even if you don't collect yet — retroactive liability is real.
+
+## Common Mistakes
+
+| Mistake | Fix |
+|---------|-----|
+| Mixing personal and business finances | Open a business bank account on day one. Mercury takes 10 minutes. |
+| No refund policy in ToS | State it explicitly. "14-day full refund, no refund after" prevents disputes. |
+| Copying another company's ToS verbatim | Their terms are for their business, not yours. Use the template, customize it. |
+| No Privacy Policy at launch | Required by law in most jurisdictions. Generate one before going live. |
+| Paying a lawyer $5K for boilerplate | Use AI to draft, pay a lawyer $500-1K to review. Don't pay for first drafts. |
+| Ignoring sales tax | Start tracking from day one. Retroactive SaaS tax liability is real and growing. |
+
+---
 
 ## What You DON'T Need Yet
 

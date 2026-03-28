@@ -1,11 +1,13 @@
 ---
 name: hiring
-description: "Use this skill when the user needs to hire a developer, find a technical contractor, vet engineering talent, manage freelancers, write a job brief, decide between hiring and contracting, or bring on their first technical team member. Covers contractor sourcing, vetting, management, and the founder-developer working relationship for non-technical founders."
+description: "Use this skill when the user needs to hire a developer, find a technical contractor, vet engineering talent, manage freelancers, write a job brief, decide between hiring and contracting, or bring on their first technical team member. Also use when the user says 'I need a developer,' 'should I hire someone,' 'how do I find a contractor,' 'I need technical help I can't do myself,' or 'AI keeps getting this wrong, I need a human.' Covers contractor sourcing, vetting, management, and the founder-developer working relationship for non-technical founders."
 ---
 
 # Hiring Technical Help
 
 The most expensive developer is the cheap one who breaks things. This skill helps you decide when to hire vs. use AI tools, find and vet contractors, and manage the founder-developer relationship — even if you can't evaluate code yourself.
+
+**This skill is for hiring and managing technical people.** For writing specs contractors can build from, use **plan**. For trying AI tools before hiring, use **build**. For legal contracts and IP protection, use **legal**.
 
 ## Core Principles
 
@@ -44,6 +46,18 @@ Do I need to hire?
 2. Did AI fail or produce something that doesn't work? → Try a different AI prompt
 3. Still stuck after 2-3 serious attempts? → Time to hire
 4. Is this a one-time task or ongoing? → One-time = contractor. Ongoing = consider part-time.
+```
+
+**Tell AI:**
+```
+I'm trying to decide if I need to hire a developer. Here's what I need done:
+[describe the task]
+
+I've tried: [what AI tools you used, what happened]
+
+Help me decide: can this be solved with a better prompt or approach,
+or do I genuinely need a human developer? If I need to hire,
+what type (freelance contractor, part-time dev, agency)?
 ```
 
 ---

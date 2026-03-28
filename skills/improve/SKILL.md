@@ -38,10 +38,11 @@ When the user says "improve [skill name]":
 7. **Show scores and ask for focus.** Print the rubric scores in a compact tiered table:
    ```
    Tier 1 (Critical):  trigger-precision=1  trigger-phrases=1  checklists=2  tell-ai-prompts=2  → 6/12
-   Tier 2 (Important): boundary=1  tool-specific=2  founder-pov=2  mistakes=1              → 6/12
+   Tier 2 (Important): boundary=1  tool-specific=N/A  founder-pov=2  mistakes=1             → 4/9
    Tier 3 (Polish):    conciseness=✓  disclosure=✗  scannable=✓  cross-refs=✗
-   Total: 12/24
+   Total: 10/21
    ```
+   (Example shows a knowledge skill where tool-specific is N/A. For implementation skills, all 8 dimensions apply and max is /24.)
    Then ask:
    > "I'll focus on the lowest-scoring dimensions, Tier 1 first. Want me to auto-prioritize (default) or focus on specific areas?"
 
@@ -68,7 +69,7 @@ These determine whether the skill fires and delivers value. All must reach ≥2 
 These improve quality but only matter if the skill fires correctly.
 
 - **Boundary clarity:** Does it explicitly state what this skill is NOT for and where to go instead?
-- **Tool-specific guidance:** Does it differentiate advice by tool (Claude Code vs Lovable vs Replit)?
+- **Tool-specific guidance (conditional):** Does it differentiate advice by tool (Claude Code vs Lovable vs Replit)? **Mark N/A** for knowledge/decision skills where the same guidance applies regardless of tool — e.g., compliance, hiring, legal, pricing, finances, market-research, customer-research, validate, analytics, retention. If the skill's advice changes depending on which tool runs it, score it. If not, skip it and reduce the denominator.
 - **Founder perspective:** Is it written for a non-technical founder, not a developer?
 - **Common mistakes:** Does it cover what founders typically get wrong?
 
@@ -81,7 +82,7 @@ Not scored individually. Handled as a single cleanup pass after the main loop co
 - [ ] **Scannable:** Headers, tables, short paragraphs — not walls of text?
 - [ ] **Cross-references:** Links to related skills where relevant?
 
-**Loop score: Tier 1 + Tier 2 = 8 dimensions × 3pts = 24pt max.**
+**Loop score: Tier 1 + Tier 2 = applicable dimensions × 3pts.** Max is 24 when all 8 dimensions apply, 21 when tool-specific guidance is N/A.
 
 Tier 3 is not part of the loop score. It's a yes/no sweep after convergence.
 
@@ -94,6 +95,7 @@ REPEAT:
   1. PICK the lowest-scoring dimension, respecting tier order:
      - Tier 1 dimensions below 2 → always first
      - Tier 2 dimensions → only after all Tier 1 ≥ 2
+     - N/A dimensions → skip entirely, never experiment on them
      - Tier 3 → never (handled in polish pass)
      - User-specified focus areas override this order
 
@@ -192,7 +194,7 @@ When the loop stops, generate `eval/winners-report.md`:
 | Dimension | Before | After |
 |-----------|--------|-------|
 | Boundary clarity | 1 | 2 |
-| Tool-specific guidance | 2 | 3 |
+| Tool-specific guidance | 2 | 3 |  ← or N/A for knowledge skills
 | Founder perspective | 2 | 3 |
 | Common mistakes | 1 | 2 |
 

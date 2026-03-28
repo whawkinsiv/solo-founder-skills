@@ -7,6 +7,8 @@ description: "Use this skill when the user is building software for a regulated 
 
 If you're building for healthcare, finance, education, or any regulated industry, there are rules about how you handle data. You probably already know the regulations from your professional life — but you don't know what they mean for software. This skill translates compliance requirements into concrete technical decisions.
 
+**This skill is for understanding what regulations mean for your tech stack.** For implementing security controls (auth, encryption, rate limiting), use **secure**. For writing legal documents (ToS, Privacy Policy), use **legal**. For payment processing and PCI, use **payments**.
+
 > **Disclaimer:** This skill covers common compliance patterns. It is not legal advice. Consult a compliance specialist for your specific situation, especially before handling sensitive data in production.
 
 ## Core Principles
@@ -16,6 +18,13 @@ If you're building for healthcare, finance, education, or any regulated industry
 - The right tech stack choices handle 80% of compliance for you. Don't reinvent the wheel.
 - Compliance is cheaper to build in from the start than to retrofit later.
 - You don't need SOC 2 certification at $0 MRR. But you do need to make decisions now that don't block certification later.
+
+### Don't Do Yet
+
+- **Don't pay for a SOC 2 audit** ($15K-50K) until enterprise customers require it. Just follow the practices.
+- **Don't hire a compliance officer.** A one-time consultation ($1K-5K) is enough until $10K+ MRR.
+- **Don't build compliance features nobody asked for.** Cookie consent is required. A full data governance dashboard is not — yet.
+- **Don't use compliance as a reason to delay launch.** Make compliant tech choices, launch, then iterate. Perfection is the enemy of shipped.
 
 ---
 

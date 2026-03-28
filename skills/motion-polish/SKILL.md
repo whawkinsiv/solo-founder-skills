@@ -1,11 +1,49 @@
 ---
 name: motion-polish
-description: "Use this skill when the user wants to add animations, make transitions smooth, add micro-interactions, or apply final polish. Covers transition patterns, micro-interactions, page transitions, loading animations, scroll interactions, and the restraint principle."
+description: "Use this skill when the user wants to add animations, make transitions smooth, add micro-interactions, or apply final polish. Also use when the user says 'my app feels static,' 'add some life to this,' 'make it feel smoother,' 'the transitions are janky,' or 'make this feel like Linear/Stripe.' Covers transition patterns, micro-interactions, page transitions, loading animations, scroll interactions, and the restraint principle."
 ---
 
 # Motion & Polish
 
 Animation is the final 10% that makes a functional app feel premium. Apply motion to reinforce spatial relationships, confirm user actions, and smooth state changes. This skill covers what to animate, how to animate it, and — most importantly — what to leave alone.
+
+**This skill is for adding motion and animation polish.** For visual design (colors, typography, spacing), use **beautify**. For page layouts and component selection, use **ui-patterns**. For user flow and navigation design, use **ux-design**. For a full design audit, use **design-review**.
+
+## Quick Start
+
+**Tell AI:**
+```
+Add polish animations to my app. Apply these in order of impact:
+1. Button press feedback (subtle scale on click)
+2. Hover states on cards and interactive elements
+3. Smooth transitions on modals, dropdowns, and side panels
+4. Loading skeletons replacing spinners for content areas
+5. Toast notification entrance/exit animations
+
+Use CSS transitions where possible (not JS). Respect prefers-reduced-motion.
+Keep all durations under 300ms. Use ease-out for entrances, ease-in for exits.
+```
+
+## Workflow
+
+```
+Add motion polish (in priority order):
+- [ ] Button press feedback (active:scale-[0.98])
+- [ ] Hover states on cards and list items
+- [ ] Modal/dropdown entrance transitions (fade + scale from 95%)
+- [ ] Loading skeletons instead of spinners
+- [ ] Toast notification entrance/exit
+- [ ] Staggered list entrance on page load
+- [ ] Reduced motion support (prefers-reduced-motion)
+```
+
+**Do these in order.** Each one is independently valuable. Stop whenever it feels like enough.
+
+**Lovable / Replit** — paste the Quick Start prompt above. These tools apply Tailwind transitions directly.
+
+**Claude Code** — use the Quick Start prompt, or point to specific components: "Add hover state animation to the card component in `src/components/Card.tsx`."
+
+---
 
 ## The Restraint Principle
 
@@ -420,3 +458,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 | Adding motion during MVP | Ship first. Polish after you have users who will feel the difference. |
 | Spinners for inline content | Use skeleton loaders. Spinners are for buttons and full-page loads only. |
 | Parallax in a SaaS dashboard | Parallax is for marketing sites. Inside the app, it just gets in the way. |
+
+---
+
+## Related Skills
+
+- **beautify** — Visual design: colors, typography, spacing, composition
+- **ui-patterns** — Page layouts, component selection, responsive design
+- **ux-design** — User flows, navigation, interaction patterns
+- **design-review** — Full design audit and quality gate
+- **optimize** — Performance optimization (animation can cause jank if done wrong)

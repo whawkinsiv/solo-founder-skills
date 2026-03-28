@@ -76,6 +76,20 @@ Happy to share what I learn from the research as a thank you.
 
 ## Market Sizing (Napkin Math That Matters)
 
+**Tell AI:**
+```
+Help me size the market for my SaaS idea:
+- Product: [what it does]
+- Target customer: [who — job title, company size, industry]
+- Problem it solves: [the pain point]
+
+Do a bottom-up calculation:
+1. Estimate how many potential buyers exist (use industry data, LinkedIn job title counts)
+2. Multiply by a realistic price point for this type of tool
+3. Apply a 1-3% capture rate for a new entrant
+4. Tell me: does this math support a solo-founder business ($200K-500K ARR)?
+```
+
 ### Bottom-Up (The Only Method That Matters for Solo Founders)
 
 ```
@@ -119,6 +133,18 @@ If SOM doesn't fund your business, stop here.
 ---
 
 ## Competitive Analysis
+
+**Tell AI:**
+```
+Analyze the competitive landscape for my product:
+- My product: [what it does]
+- My target customer: [who]
+- Known competitors: [list any you know, or "not sure"]
+
+For each competitor, find: pricing, target audience, strengths, weaknesses
+(check G2/Capterra reviews for complaints). Then build a 2x2 positioning
+matrix showing where I could differentiate.
+```
 
 ### Substitute Mapping
 
@@ -219,6 +245,19 @@ Confirm your ICP can actually buy:
 5. **One person gets value alone?** Network effects help growth but hurt initial adoption.
 
 All five should be "yes" for a solo-founder SaaS.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+|---------|-----|
+| Analysis paralysis — researching for months instead of shipping | 5 conversations + napkin math. Then build. |
+| Inflating TAM to feel good ("it's a $10B market!") | Bottom-up only. TAM is a vanity metric for solo founders. |
+| Ignoring "do nothing" as a competitor | Most of your market tolerates the pain. Your real competition is inertia. |
+| Researching the wrong ICP | Talk to the person who writes the check, not the person who has the problem. |
+| Only talking to people who confirm your idea | Seek disconfirming evidence. Ask "why wouldn't you use this?" |
+| Skipping competitive pricing research | Visit every competitor's pricing page. Screenshot them. This is your anchor. |
 
 ---
 
