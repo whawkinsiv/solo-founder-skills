@@ -1,11 +1,25 @@
 ---
 name: optimize
-description: "Use this skill when the user's app feels slow, the codebase feels bloated, or after significant development work. Optimizes across four dimensions: Speed (page load, API response), Code (unused files, dead code), Database (orphaned data, schema hygiene), and Dependencies (package bloat, bundle size)."
+description: "Use this skill when the user's app feels slow, the codebase feels bloated, or after significant development work. Also use when the user says 'my app is slow,' 'clean up my code,' 'reduce bundle size,' 'my hosting bill is too high,' or 'everything feels sluggish.' Optimizes across four dimensions: Speed (page load, API response), Code (unused files, dead code), Database (orphaned data, schema hygiene), and Dependencies (package bloat, bundle size)."
 ---
 
 # Optimize
 
 Reduce waste and improve efficiency. **Only optimize after you have real users and real problems** — premature optimization is the most common waste of founder time.
+
+**This skill is for making existing things faster and leaner.** For building features, use **build**. For fixing bugs, use **debug**. For monitoring performance in production, use **monitor**. For database schema design, use **database**.
+
+## Workflow
+
+```
+Optimize your app:
+- [ ] Measure first — get actual numbers (page load, API speed, bundle size)
+- [ ] Speed — fix the slowest page or API endpoint
+- [ ] Dependencies — update packages, remove unused ones
+- [ ] Database — clean orphaned data, optimize slow queries
+- [ ] Code — remove dead code and unused files
+- [ ] Re-measure — verify improvements with numbers
+```
 
 ## When to Optimize (and When NOT To)
 
@@ -48,12 +62,7 @@ When multiple things need work:
 
 ### Step 1: Measure
 
-**Quick manual check:**
-- Open your app in Chrome → Right-click → Inspect → Network tab → Reload
-- Look at the "Load" time at the bottom. That's your page load time.
-- Click a button that calls your API. Look for the request time in the Network tab.
-
-**Tell AI:**
+**Claude Code** (can measure directly):
 ```
 Audit app performance:
 - Measure page load times for the 3 most important pages
@@ -61,6 +70,19 @@ Audit app performance:
 - Identify the slowest database queries
 - Check total bundle size
 Report findings with specific numbers.
+```
+
+**Lovable / Replit / Cursor** (measure manually first):
+1. Open your app in Chrome → Right-click → Inspect → Network tab → Reload
+2. Note the "Load" time at the bottom — that's your page load time
+3. Click a button that calls your API — note the request time in Network tab
+4. Then paste findings into chat:
+```
+My app's performance numbers:
+- Homepage loads in [X] seconds
+- [Main feature] API takes [X] seconds
+- [Other page] loads in [X] seconds
+What's slow and how do I fix it?
 ```
 
 ### Step 2: Fix
@@ -228,3 +250,13 @@ After optimization, you should see:
 - No obviously unused packages
 - Database queries respond < 100ms
 - Automated checks catch future regressions
+
+---
+
+## Related Skills
+
+- **monitor** — Track performance in production after optimizing
+- **debug** — Fix broken things (optimize fixes slow things)
+- **deploy** — Hosting configuration affects performance
+- **database** — Schema design and query optimization
+- **build** — Feature development (optimize after building, not during)

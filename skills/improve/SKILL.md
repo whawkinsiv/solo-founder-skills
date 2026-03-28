@@ -30,43 +30,60 @@ When the user says "improve [skill name]":
 
 5. **Initialize the log.** Create `eval/results.tsv` (or append if it exists from a previous run):
    ```
-   experiment	skill	dimension	score_before	score_after	status	change_description
+   experiment	skill	tier	dimension	score_before	score_after	status	change_description
    ```
 
 6. **Run the baseline diagnosis.** Score the original against the rubric (see below). Log it as experiment 0.
 
-7. **Show scores and ask for focus.** Print the rubric scores in a compact table, then ask:
-   > "I'll focus on the lowest-scoring dimensions. Want me to auto-prioritize (default) or focus on specific areas?"
+7. **Show scores and ask for focus.** Print the rubric scores in a compact tiered table:
+   ```
+   Tier 1 (Critical):  trigger-precision=1  trigger-phrases=1  checklists=2  tell-ai-prompts=2  → 6/12
+   Tier 2 (Important): boundary=1  tool-specific=2  founder-pov=2  mistakes=1              → 6/12
+   Tier 3 (Polish):    conciseness=✓  disclosure=✗  scannable=✓  cross-refs=✗
+   Total: 12/24
+   ```
+   Then ask:
+   > "I'll focus on the lowest-scoring dimensions, Tier 1 first. Want me to auto-prioritize (default) or focus on specific areas?"
 
-   If the user says "go," "auto," or anything non-specific → auto-prioritize by lowest score.
+   If the user says "go," "auto," or anything non-specific → auto-prioritize (Tier 1 first, then Tier 2).
    If the user names specific dimensions → focus the loop on those, skip others.
 
 ---
 
 ## Rubric: Diagnosing Weaknesses
 
-Score the skill on each dimension (0-3 scale: 0=missing, 1=weak, 2=adequate, 3=strong):
+Score each dimension 0-3 (0=missing, 1=weak, 2=adequate, 3=strong). Dimensions are tiered by impact.
 
-### Description Quality
+### Tier 1 — Critical (scored 0-3, experimented first)
+
+These determine whether the skill fires and delivers value. All must reach ≥2 before moving to Tier 2.
+
 - **Trigger precision:** Does the description activate for the right prompts and NOT for neighbor skills' prompts?
 - **Trigger phrases:** Does it include phrases users actually say (natural language, not jargon)?
-- **Boundary clarity:** Does it explicitly state what this skill is NOT for and where to go instead?
-
-### Content Quality
-- **Founder perspective:** Is it written for a non-technical founder, not a developer?
 - **Actionable checklists:** Does it have concrete workflows with checkboxes?
 - **"Tell AI:" prompts:** Does it include copy-paste prompts founders can use with any AI tool?
+
+### Tier 2 — Important (scored 0-3, experimented after Tier 1 ≥2)
+
+These improve quality but only matter if the skill fires correctly.
+
+- **Boundary clarity:** Does it explicitly state what this skill is NOT for and where to go instead?
 - **Tool-specific guidance:** Does it differentiate advice by tool (Claude Code vs Lovable vs Replit)?
+- **Founder perspective:** Is it written for a non-technical founder, not a developer?
 - **Common mistakes:** Does it cover what founders typically get wrong?
-- **Out of scope:** Does it explicitly say what NOT to do (preventing premature optimization)?
-- **Conciseness:** Does it avoid explaining concepts Claude already knows?
 
-### Structure Quality
-- **Progressive disclosure:** SKILL.md first, supporting files for depth?
-- **Scannable:** Headers, tables, short paragraphs — not walls of text?
-- **Cross-references:** Links to related skills where relevant?
+### Tier 3 — Polish (binary checklist, batch pass at end)
 
-**Focus the loop on the LOWEST-scoring dimensions.** Don't polish what's already strong.
+Not scored individually. Handled as a single cleanup pass after the main loop converges.
+
+- [ ] **Conciseness:** Avoids explaining concepts Claude already knows?
+- [ ] **Progressive disclosure:** SKILL.md first, supporting files for depth?
+- [ ] **Scannable:** Headers, tables, short paragraphs — not walls of text?
+- [ ] **Cross-references:** Links to related skills where relevant?
+
+**Loop score: Tier 1 + Tier 2 = 8 dimensions × 3pts = 24pt max.**
+
+Tier 3 is not part of the loop score. It's a yes/no sweep after convergence.
 
 ---
 
@@ -74,7 +91,11 @@ Score the skill on each dimension (0-3 scale: 0=missing, 1=weak, 2=adequate, 3=s
 
 ```
 REPEAT:
-  1. PICK the lowest-scoring rubric dimension (or user-specified focus area)
+  1. PICK the lowest-scoring dimension, respecting tier order:
+     - Tier 1 dimensions below 2 → always first
+     - Tier 2 dimensions → only after all Tier 1 ≥ 2
+     - Tier 3 → never (handled in polish pass)
+     - User-specified focus areas override this order
 
   2. MAKE ONE CHANGE to eval/experiments/<name>/SKILL.md
      - Target the specific weakness identified
@@ -101,22 +122,33 @@ REPEAT:
      - Original wins or tie → DISCARD (revert experiment file to previous version)
 
   5. LOG to eval/results.tsv:
-     experiment#  skill  dimension_targeted  score_before  score_after  status  change_description
+     experiment#  skill  tier  dimension_targeted  score_before  score_after  status  change_description
 
   6. RE-SCORE the full rubric after every KEEP (do this internally, don't print)
 
-  7. PRINT the experiment summary + scoreboard line (see Output Rules)
+  7. PRINT one line per experiment (see Output Rules)
 
   8. CHECK stopping condition
 ```
 
 ### Stopping Condition
 
-Stop when ANY of:
+Stop the main loop when ANY of:
 - **Converged:** 3 consecutive experiments with no improvement (all discarded)
 - **Experiment cap reached:** default 8 experiments. User can override: "improve seo with 12 experiments max"
-- **All dimensions scoring 3:** nothing left to improve
+- **All Tier 1+2 dimensions scoring 3:** nothing left to improve
 - **User interrupts**
+
+### Polish Pass
+
+After the main loop stops, run **one** final experiment targeting all Tier 3 items at once:
+- Check each Tier 3 item (conciseness, progressive disclosure, scannable, cross-references)
+- Make a single batch edit addressing any that are missing or weak
+- Evaluate the batch change via the same A/B process
+- KEEP or DISCARD as a unit — not individually
+- Show as one line in output: `P  polish  KEEP|DISCARD  score→score  summary`
+
+The polish pass does not change the /24 loop score. It's shown as a separate line at the end.
 
 ---
 
@@ -140,33 +172,50 @@ When the loop stops, generate `eval/winners-report.md`:
 # Skill Improvement Results — [skill name] — [date]
 
 ## Summary
-- Experiments run: [N]
-- Improvements kept: [N]
-- Dimensions improved: [list]
+[skill]: [before]/24 → [after]/24 (+[delta]) | [N] kept, [N] discarded, [N] skipped | [N] experiments + polish
 
-## Changes Made (in order)
+## What Changed
+- [Plain English bullet 1 — net effect, not experiment sequence]
+- [Plain English bullet 2]
+- ...
 
-### 1. [Dimension]: [what changed]
-- Why: [weakness identified]
-- Change: [1-2 sentence description]
-- A/B result: Modified won 2/3 prompts
-
-### 2. [Dimension]: [what changed]
-...
-
-## Rubric Score
+## Rubric Scores
+### Tier 1 — Critical
 | Dimension | Before | After |
 |-----------|--------|-------|
 | Trigger precision | 1 | 3 |
+| Trigger phrases | 1 | 3 |
 | Actionable checklists | 2 | 3 |
-| ... | ... | ... |
+| "Tell AI:" prompts | 2 | 3 |
 
-## Review the result
+### Tier 2 — Important
+| Dimension | Before | After |
+|-----------|--------|-------|
+| Boundary clarity | 1 | 2 |
+| Tool-specific guidance | 2 | 3 |
+| Founder perspective | 2 | 3 |
+| Common mistakes | 1 | 2 |
+
+### Tier 3 — Polish
+- [x] Conciseness
+- [x] Progressive disclosure
+- [ ] Scannable
+- [x] Cross-references
+
+## Experiment Log
+| # | Dimension | Result | Score | Change |
+|---|-----------|--------|-------|--------|
+| 1 | trigger-precision | KEEP | 12→15 | Narrowed description... |
+| 2 | trigger-phrases | KEEP | 15→17 | Added natural phrases... |
+| ... | ... | ... | ... | ... |
+| P | polish | KEEP | — | Added cross-refs... |
+
+## Review
 The improved version is at: eval/experiments/[skill]/SKILL.md
 
-To accept: "promote the improved [skill]"
+To accept: "promote [skill]"
 To compare: "show me the diff for [skill]"
-To reject: "discard the [skill] improvements"
+To reject: "discard [skill]"
 ```
 
 ---
@@ -201,37 +250,69 @@ When the user says "discard":
 
 The terminal is not a research paper. Print only what the user needs to see.
 
-### During the loop
+### How to talk to the user
 
-**DO print** (per experiment — 5 lines max):
+The user is not reading a log file. When you speak between experiments — explaining the baseline, describing what you're focusing on, or summarizing results — use plain English.
+
+**Do:**
+- "This skill doesn't fire when someone says 'my app is slow' — that's the biggest gap, so I'll fix that first."
+- "The skill gives good advice but doesn't tell you what to do step by step. Adding a checklist."
+- "5 out of 8 dimensions are already solid. The weak spots are: it doesn't include ready-to-paste prompts, and it doesn't warn you about common mistakes."
+
+**Don't:**
+- "Trigger precision scored 2/3 on the baseline rubric. Targeting this dimension next."
+- "Re-scoring Tier 1 dimensions after KEEP. Convergence streak reset to 0."
+- "No stale references to /42. Stopping condition still references 3 consecutive discards."
+
+The rubric is your internal tool. The user wants to know: what's wrong with this skill, what are you fixing, and did it get better. If you can't explain it without jargon, you don't understand it well enough.
+
+### During the loop — one line per experiment
+
+Print exactly one line per experiment. No diffs. No multi-line blocks.
+
 ```
-Experiment 3 — Actionable checklists
-  Change: Added 7-step workflow checklist after intro
-  Result: KEEP (won 2/3 prompts)
-  Score: 30/42 → 33/42
-[3/8] actionable checklists → KEEP | 33/42 | Kept: 3 Discarded: 0 | Streak: 0
+ 1  trigger-precision      KEEP   12→15  Narrowed description to exclude neighbor skill prompts
+ 2  trigger-phrases         KEEP   15→17  Added "my app is slow," "hosting bill too high"
+ 3  actionable-checklists   KEEP   17→19  Added 6-step workflow checklist at top
+ 4  boundary-clarity        KEEP   19→21  Routes out-of-scope to build/debug/monitor
+ 5  tool-specific-guidance  SKIP   21     Already scoring 3
+ 6  founder-perspective     DISCARD 21    Rewrite didn't improve A/B results
+ P  polish                  KEEP   21→21  Added cross-refs, trimmed verbose sections
 ```
 
-**DO NOT print:**
-- A/B reasoning (which prompt, which version won, why)
-- Rubric re-scoring details
-- Prompt generation reasoning
-- File edit explanations
+**Format:** `experiment#  dimension  KEEP|DISCARD|SKIP  score[→score]  one-line summary`
 
-**DO log to file:** Write the full A/B reasoning, prompt details, and rubric re-scoring to `eval/experiments/<name>/experiment-log.md`. Append each experiment. This file is the audit trail if the user wants to review later.
+- `KEEP` = experiment won A/B, change retained
+- `DISCARD` = experiment lost A/B, change reverted
+- `SKIP` = dimension already scoring 3, no experiment run
+- `P` = polish pass (Tier 3 batch, after main loop)
+- Score is the Tier 1+2 total out of /24 (polish pass doesn't change it)
 
-### Scoreboard format
+**DO NOT print:** A/B reasoning, rubric re-scoring, prompt details, file diffs, edit explanations.
 
-After each experiment, print one scoreboard line:
+**DO log to file:** Full A/B reasoning, prompts, and rubric details go to `eval/experiments/<name>/experiment-log.md`. This is the audit trail if the user wants to review later.
+
+### After the loop — summary + decision
+
+Print a compact summary, then offer promote/discard:
+
 ```
-[N/MAX] dimension → KEEP|DISCARD | score/total | Kept: N Discarded: N | Streak: N
+optimize: 12/24 → 21/24 (+9) | 4 kept, 1 discarded, 1 skipped | 6 experiments + polish
+
+What changed:
+- Description now triggers on "my app is slow," "hosting bill too high"
+- Routes out-of-scope requests to build/debug/monitor/database
+- Speed audit split: Claude Code runs directly vs Lovable/Replit manual measure
+- 6-step workflow checklist at top
+- Related Skills section linking to 5 adjacent skills
+
+Diff: "show me the diff"
+Accept: "promote optimize" | Reject: "discard optimize"
 ```
-- `N/MAX` = experiment number out of the cap (default 8)
-- `Streak` = consecutive discards (3 = convergence stop). Resets to 0 after a KEEP.
 
-### After the loop
+**"What changed"** is plain English grouped by theme — not by experiment number, not line-by-line diffs. Summarize the net effect, not the sequence of changes.
 
-Print the winners report summary to the terminal (not just to file). Then offer promote/discard.
+The detailed winners report is still written to `eval/winners-report.md` for audit, but the terminal shows only this compact summary.
 
 ---
 
