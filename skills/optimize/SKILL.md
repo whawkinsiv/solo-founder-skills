@@ -219,9 +219,9 @@ Audit codebase for unused code:
 - Find components not imported anywhere
 - Find functions never called
 - Find commented-out code blocks
-- Find duplicate/similar code
-
 For each: verify nothing references it, then remove it.
+
+For duplicate/similar code, use **dry** — it covers deduplication across UI, database, and logic.
 Run build and tests after cleanup.
 ```
 
@@ -259,4 +259,5 @@ After optimization, you should see:
 - **debug** — Fix broken things (optimize fixes slow things)
 - **deploy** — Hosting configuration affects performance
 - **database** — Schema design and query optimization
+- **dry** — Find and eliminate code duplication across UI, database, and logic
 - **build** — Feature development (optimize after building, not during)
