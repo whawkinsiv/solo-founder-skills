@@ -1,39 +1,4 @@
 {
   "description": "Solo Founder Superpowers: guardrails for non-technical founders building SaaS",
-  "hooks": {
-    "PostToolUse": [],
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/check-deploy-without-tests.sh",
-            "statusMessage": "Checking for deploy commands..."
-          }
-        ]
-      },
-      {
-        "matcher": "Write",
-        "hooks": [
-          {
-            "type": "prompt",
-            "prompt": "A file is about to be written. Here is the tool input:\n\n$ARGUMENTS\n\nYour job: determine if this file will be served as a web page or is a page-level component that represents a URL/route. Look at the file_path and content.\n\nIt IS a page if: it's an HTML file, a Next.js/Nuxt/SvelteKit page (e.g., page.tsx, index.tsx in a pages/ or app/ directory), an Astro page, or a layout/template that renders <head> content.\n\nIt is NOT a page if: it's a reusable component, a utility, an API route, a config file, CSS, a test, or any non-page file.\n\nIf it IS a page, check whether the content includes:\n- A <title> tag or document title (via Head component, metadata export, etc.)\n- A meta description\n- Open Graph tags (og:title, og:description)\n- A canonical URL\n\nIf 2 or more of these are missing, respond with exactly:\n{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"ask\", \"permissionDecisionReason\": \"Missing SEO metadata: <list what is missing>. These are important for search visibility. Add them before creating this page?\"}}\n\nIf the file is not a page, or if SEO metadata is present, respond with exactly:\n{}",
-            "statusMessage": "SEO metadata check..."
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "prompt",
-            "prompt": "Claude just finished responding. Here is the conversation context:\n\n$ARGUMENTS\n\nYour job: based on what Claude just did, suggest ONE logical next step from the skills below. Only suggest if it's clearly relevant. Do not suggest skills for work that was already done.\n\nSkills and when to suggest them:\n- /test - After building or modifying features, before deploying\n- /secure - After implementing authentication, payments, or user data handling\n- /humanize - After writing marketing copy, landing pages, emails, or blog posts\n- /deploy - After tests pass and the feature is ready to ship\n- /monitor - After deploying to production for the first time\n- /optimize - After users report the app feels slow\n- /seo-audit - After launching a public-facing site or adding new pages\n- /accessibility - After building UI components or pages\n\nIf a next step is clearly relevant, respond with a JSON object like:\n{\"hookSpecificOutput\": {\"hookEventName\": \"Stop\", \"additionalContext\": \"Suggested next step: run /test to verify this feature works before deploying.\"}}\n\nIf no suggestion is clearly relevant (e.g., Claude just answered a question, did research, or the logical next step is obvious), respond with exactly:\n{}",
-            "statusMessage": "Suggesting next steps..."
-          }
-        ]
-      }
-    ]
-  }
+  "hooks": {}
 }
