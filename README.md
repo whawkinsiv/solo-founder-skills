@@ -1,4 +1,4 @@
-# Solo Founder Superpowers
+# Solo Founder Skills
 
 43 expert skills for non-technical founders building SaaS with AI tools (Claude Code, Lovable, Replit, Cursor).
 
