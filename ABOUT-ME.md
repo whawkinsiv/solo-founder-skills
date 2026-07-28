@@ -54,7 +54,7 @@ Analyzed from actual posts and writing:
 - **LinkedIn** — ~8,000 followers
 - **Twitter/X** — ~2,000 followers
 - **Personal site:** willovesnocode.com
-- **GitHub:** github.com/whawkinsiv/solo-founder-superpowers
+- **GitHub:** github.com/whawkinsiv/solo-founder-skills
 - **Live products:** vibecodejobs.io, bootstrapped.app, alldirectories.org, launchrails.dev, founderschool.dev
 - Builds in public — posts launches, experiments, and honest progress updates
 

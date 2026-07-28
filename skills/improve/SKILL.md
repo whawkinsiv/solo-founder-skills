@@ -1,6 +1,6 @@
 ---
 name: improve
-description: "Use this skill to autonomously improve any other skill in solo-founder-superpowers. Point it at a skill (e.g., 'improve the seo skill') and it runs an autoresearch-style loop: diagnoses weaknesses, experiments with improvements, evaluates each change via A/B comparison, keeps winners, discards regressions, and reports results. Originals are always preserved — nothing changes until you approve."
+description: "Use this skill to autonomously improve any other skill in solo-founder-skills. Point it at a skill (e.g., 'improve the seo skill') and it runs an autoresearch-style loop: diagnoses weaknesses, experiments with improvements, evaluates each change via A/B comparison, keeps winners, discards regressions, and reports results. Originals are always preserved — nothing changes until you approve."
 ---
 
 # Improve
