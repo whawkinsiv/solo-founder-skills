@@ -8,7 +8,7 @@
     {
       "name": "solo-founder-skills",
       "description": "59 expert skills for non-technical founders building SaaS with AI tools. Covers the full lifecycle: planning, design, build, database, integrations, AI features, security, testing, debugging, deployment, monitoring, plus marketing, pricing, growth, and business strategy.",
-      "version": "3.0.0",
+      "version": "3.0.1",
       "source": "./",
       "author": {
         "name": "Will Hawkins"
