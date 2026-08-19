@@ -1,6 +1,6 @@
 # Solo Founder Skills
 
-43 expert skills for non-technical founders building SaaS with AI tools (Claude Code, Lovable, Replit, Cursor).
+59 expert skills for non-technical founders building SaaS with AI tools (Claude Code, Lovable, Replit, Cursor).
 
 Covers the full lifecycle of planning, building, launching, and growing a software business — actionable guides, checklists, and copy-paste prompts.
 
@@ -21,6 +21,21 @@ Then install the plugin from this marketplace:
 ```
 /plugin install solo-founder-skills@solo-founder-skills-marketplace
 ```
+
+#### Upgrading from Solo Founder Superpowers
+
+This plugin was renamed. The old plugin and marketplace names no longer exist, so
+an existing install stops loading after an update. Remove the old install first:
+
+```
+/plugin uninstall solo-founder-superpowers@solo-founder-superpowers-marketplace
+/plugin marketplace remove solo-founder-superpowers-marketplace
+```
+
+Then add the new marketplace and install the plugin with the commands above.
+
+Manual skill invocations also changed. Replace `/solo-founder-superpowers:plan`
+with `/solo-founder-skills:plan`.
 
 ### Cursor (via Plugin Marketplace)
 
@@ -62,79 +77,114 @@ Start a new session in your chosen platform and ask for something that should tr
 
 ## What's Inside
 
-### Development & Technical (10 skills)
+### Getting Started (4 skills)
+
+| Skill | What It Covers |
+|-------|----------------|
+| **journey** | Where to start, what order to do things, the path from idea to launch |
+| **about-me** | Founder profile and voice setup so other skills produce personalized output |
+| **glossary** | Plain-English explanations of 50+ technical terms |
+| **next** | What to work on next, finding high-value opportunities |
+
+### Strategy & Validation (8 skills)
+
+| Skill | What It Covers |
+|-------|----------------|
+| **validate** | Smoke tests, fake door tests, testing demand before you build |
+| **customer-research** | User interviews, Jobs-to-be-Done, ideal customer profile |
+| **market-research** | Market sizing, competitor analysis, TAM/SAM/SOM |
+| **translate** | Turn professional expertise into a software product |
+| **niche-advantage** | Use domain expertise as a competitive moat |
+| **focus** | 80/20 analysis, deciding if an activity is worth your time |
+| **plan** | Turn ideas into buildable specs, MVPs, feature requirements |
+| **prioritize** | Feature prioritization, roadmaps, RICE scoring |
+
+### Design & UX (6 skills)
+
+| Skill | What It Covers |
+|-------|----------------|
+| **ux-design** | Information architecture, user flows, onboarding, accessibility |
+| **ui-patterns** | Dashboards, data tables, settings pages, component libraries, dark mode |
+| **beautify** | Visual hierarchy, whitespace, composition, color, typography |
+| **brand-identity-generator** | Generates a full BRAND-IDENTITY.md: colors, type, spacing, components |
+| **motion-polish** | Animations, micro-interactions, smooth transitions |
+| **design-review** | Design audit and quality gate before you ship |
+
+### Build & Technical (10 skills)
 
 | Skill | What It Covers |
 |-------|----------------|
 | **build** | AI-assisted dev workflows, tool selection (Claude Code, Lovable, Replit, Cursor) |
-| **database** | Data modeling, schemas, relationships, Supabase/Firebase/Airtable setup |
-| **integrations** | APIs, webhooks, Zapier/Make, connecting third-party services |
-| **ai-features** | Adding AI/LLM capabilities to your product, cost management |
-| **deploy** | Hosting selection, custom domains, environment variables, going live |
-| **secure** | Security checklists, OWASP Top 10, auth and data protection |
+| **database** | Schema design, Supabase setup, Row Level Security, migrations |
+| **integrations** | APIs, OAuth, webhooks, connecting third-party services |
+| **ai-features** | LLM APIs, RAG, AI assistants, cost management |
+| **secure** | Authentication, data protection, API security, vulnerability checks |
 | **test** | Test scenarios, edge cases, cross-browser testing |
 | **debug** | Systematic debugging, error interpretation, diagnostics |
-| **optimize** | Speed, code, database, and dependency optimization |
+| **dry** | Find and remove duplication across code, schema, and workflows |
+| **optimize** | Speed, bundle size, database, and hosting cost optimization |
+| **compliance** | HIPAA, SOC 2, GDPR, PCI, FERPA for regulated industries |
+
+### Ship & Operate (4 skills)
+
+| Skill | What It Covers |
+|-------|----------------|
+| **go-live** | Pre-launch go/no-go checklist — the gate before you deploy |
+| **deploy** | Hosting selection, custom domains, DNS, environment variables |
 | **monitor** | Production monitoring, error alerts, incident response |
-
-### Design & UX (5 skills)
-
-| Skill | What It Covers |
-|-------|----------------|
-| **design** | Design systems, UI patterns, visual hierarchy, components, mobile-first |
-| **brand** | Brand identity, color palettes, typography, logos, design tokens |
-| **navigation** | App navigation, content hierarchy, menus, findability |
-| **onboarding** | Onboarding flows, aha moments, activation rates, first-run UX |
-| **accessibility** | WCAG compliance, ARIA, screen readers, keyboard navigation |
-
-### SEO & Content (4 skills)
-
-| Skill | What It Covers |
-|-------|----------------|
-| **seo** | Keyword research, content calendars, on-page optimization |
-| **technical-seo** | SEO audits, Core Web Vitals, GEO for AI search engines |
-| **content** | Content strategy, build in public, audience building, distribution |
-| **copywriting** | Headlines, CTAs, button text, error messages, UI copy |
-
-### Growth & Marketing (9 skills)
-
-| Skill | What It Covers |
-|-------|----------------|
-| **launch** | Product Hunt, waitlists, beta programs, GTM sequencing |
-| **landing-page** | Page structure, above-the-fold copy, conversion elements |
-| **growth** | Product-led growth, viral loops, activation metrics, referrals |
-| **conversion** | Funnel analysis, friction reduction, A/B testing |
-| **email** | Email sequences, onboarding drips, behavioral triggers |
-| **ads** | Google Ads, ad copy, keyword selection, CAC/LTV optimization |
-| **sales** | Cold outreach, prospect lists, landing the first 100 customers |
-| **social-media** | Platform-specific tactics: Twitter/X, LinkedIn, Reddit, short-form video |
-| **community** | Discord/Slack communities, user forums, community-led growth |
-
-### Strategy & Planning (8 skills)
-
-| Skill | What It Covers |
-|-------|----------------|
-| **plan** | Turn ideas into buildable specs, MVPs, feature requirements |
-| **validate** | Pre-build validation: smoke tests, fake door tests, concierge MVPs |
-| **customer-research** | User interviews, JTBD framework, behavioral personas |
-| **market-research** | Market sizing, competitor analysis, TAM/SAM/SOM |
-| **pricing** | Pricing tiers, value metrics, psychology, monetization |
-| **prioritize** | Feature prioritization, roadmaps, RICE scoring, MVP definition |
-| **feedback** | Post-launch feedback collection, NPS, feature requests |
 | **analytics** | Event tracking, funnels, key metrics, data quality |
 
-### Business Operations (7 skills)
+### Launch & Growth (9 skills)
 
 | Skill | What It Covers |
 |-------|----------------|
-| **legal** | Entity formation, ToS, Privacy Policy, compliance |
+| **launch** | Product Hunt, waitlists, beta programs, go-to-market sequencing |
+| **landing-page** | Page structure, above-the-fold copy, conversion elements |
+| **growth** | Product-led growth, viral loops, activation metrics |
+| **conversion** | Funnel analysis, friction reduction, A/B testing |
+| **sales** | Cold outreach, prospect lists, landing the first 100 customers |
+| **ads** | Google Ads, ad copy, keyword selection, CAC/LTV |
+| **email** | Onboarding drips, welcome sequences, behavioral triggers |
+| **social-media** | Twitter/X, LinkedIn, Reddit, founder brand building |
+| **community** | Discord and Slack communities, forums, community-led growth |
+
+### Content & SEO (8 skills)
+
+| Skill | What It Covers |
+|-------|----------------|
+| **seo** | Keyword research, content calendars, search intent mapping |
+| **seo-content** | Blog posts, comparison pages, how-to guides built to rank |
+| **seo-audit** | Codebase SEO audit with a prioritized fix-it plan |
+| **technical-seo** | Meta tags, schema markup, Core Web Vitals, GEO for AI search |
+| **content** | Content strategy, build in public, audience building, distribution |
+| **copywriting** | Headlines, CTAs, button text, error messages, UI copy |
+| **prose-writing** | Founder essays, blog posts, About pages, origin stories |
+| **humanize** | Remove AI writing patterns so copy reads as human-written |
+
+### Customers & Retention (3 skills)
+
+| Skill | What It Covers |
+|-------|----------------|
+| **retention** | Churn prevention, win-back campaigns, expansion revenue |
+| **support** | Help docs, knowledge bases, self-serve support |
+| **feedback** | Surveys, NPS, feature requests, closing the feedback loop |
+
+### Business & Money (6 skills)
+
+| Skill | What It Covers |
+|-------|----------------|
+| **pricing** | Pricing tiers, value metrics, psychology, monetization |
+| **payments** | Stripe setup, subscriptions, billing, failed payments, tax |
 | **finances** | Financial models, unit economics, MRR/ARR/churn, burn rate |
 | **accounting** | Bookkeeping, expense tracking, quarterly taxes, invoicing |
-| **payments** | Stripe setup, subscriptions, billing, tax collection |
+| **legal** | Entity formation, Terms of Service, Privacy Policy, compliance |
 | **hiring** | Developer sourcing, vetting contractors, briefs, management |
-| **support** | Help docs, knowledge bases, self-serve support |
-| **retention** | Churn prevention, win-back campaigns, expansion revenue |
 
+### Meta (1 skill)
+
+| Skill | What It Covers |
+|-------|----------------|
+| **improve** | Autonomously improves any other skill in this plugin through A/B evaluation |
 ### Commands
 
 | Command | What It Does |
@@ -154,15 +204,16 @@ Skills are invoked automatically when Claude Code detects a relevant request, or
 ### Recommended workflow for a new product
 
 ```
-1. Validate   — validate, customer-research, market-research
-2. Plan       — plan, prioritize, pricing, finances
-3. Design     — design, brand, navigation
-4. Build      — build, database, integrations, secure, test, debug
-5. Deploy     — deploy, payments
-6. Launch     — launch, landing-page, copywriting
-7. Grow       — growth, content, seo, email, ads, social-media
-8. Retain     — onboarding, retention, support, feedback
-9. Scale      — optimize, monitor, analytics, ai-features, hiring
+0. Orient    — journey, about-me, glossary
+1. Validate  — validate, customer-research, market-research, focus
+2. Plan      — plan, prioritize, pricing, finances
+3. Design    — brand-identity-generator, ux-design, ui-patterns, beautify
+4. Build     — build, database, integrations, secure, test, debug
+5. Ship      — design-review, go-live, deploy, payments
+6. Launch    — launch, landing-page, copywriting, humanize
+7. Grow      — growth, content, seo, seo-content, email, ads, social-media
+8. Retain    — retention, support, feedback, conversion
+9. Scale     — optimize, dry, monitor, analytics, ai-features, hiring
 ```
 
 ## Design Philosophy
