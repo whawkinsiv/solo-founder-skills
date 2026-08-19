@@ -13,13 +13,13 @@ Covers the full lifecycle of planning, building, launching, and growing a softwa
 In Claude Code, register the marketplace first:
 
 ```
-/plugin marketplace add whawkinsiv/solo-founder-superpowers
+/plugin marketplace add whawkinsiv/solo-founder-skills
 ```
 
 Then install the plugin from this marketplace:
 
 ```
-/plugin install solo-founder-superpowers@solo-founder-superpowers-marketplace
+/plugin install solo-founder-skills@solo-founder-skills-marketplace
 ```
 
 ### Cursor (via Plugin Marketplace)
@@ -27,7 +27,7 @@ Then install the plugin from this marketplace:
 In Cursor Agent chat, install from marketplace:
 
 ```
-/plugin-add solo-founder-superpowers
+/plugin-add solo-founder-skills
 ```
 
 ### Codex (Manual Setup)
@@ -35,13 +35,13 @@ In Cursor Agent chat, install from marketplace:
 Codex discovers skills from `.agents/skills/` directories. Clone this repo into your project:
 
 ```
-git clone https://github.com/whawkinsiv/solo-founder-superpowers.git .agents/skills/solo-founder-superpowers
+git clone https://github.com/whawkinsiv/solo-founder-skills.git .agents/skills/solo-founder-skills
 ```
 
 Or install a single skill using the built-in skill installer:
 
 ```
-$skill-installer install https://github.com/whawkinsiv/solo-founder-superpowers/tree/main/skills/build
+$skill-installer install https://github.com/whawkinsiv/solo-founder-skills/tree/main/skills/build
 ```
 
 Restart Codex after installing. Invoke skills with `$skill-name` or let Codex select them automatically.
@@ -51,14 +51,14 @@ Restart Codex after installing. Invoke skills with `$skill-name` or let Codex se
 OpenCode discovers skills from `.opencode/skills/`, `~/.config/opencode/skills/`, or `~/.agents/skills/`. Clone into any of these locations:
 
 ```
-git clone https://github.com/whawkinsiv/solo-founder-superpowers.git .opencode/skills/solo-founder-superpowers
+git clone https://github.com/whawkinsiv/solo-founder-skills.git .opencode/skills/solo-founder-skills
 ```
 
 Skills are loaded on-demand — OpenCode will show available skills and load them when relevant.
 
 ### Verify Installation
 
-Start a new session in your chosen platform and ask for something that should trigger a skill (for example, "help me validate this idea" or "help me plan this feature"). The agent should automatically invoke the relevant solo-founder-superpowers skill.
+Start a new session in your chosen platform and ask for something that should trigger a skill (for example, "help me validate this idea" or "help me plan this feature"). The agent should automatically invoke the relevant solo-founder-skills entry.
 
 ## What's Inside
 
@@ -146,9 +146,9 @@ Start a new session in your chosen platform and ask for something that should tr
 Skills are invoked automatically when Claude Code detects a relevant request, or manually:
 
 ```
-/solo-founder-superpowers:plan
-/solo-founder-superpowers:launch
-/solo-founder-superpowers:payments
+/solo-founder-skills:plan
+/solo-founder-skills:launch
+/solo-founder-skills:payments
 ```
 
 ### Recommended workflow for a new product
