@@ -1,8 +1,8 @@
 # Solo Founder Skills
 
-59 expert skills for non-technical founders building SaaS with AI tools (Claude Code, Lovable, Replit, Cursor).
+Expert skills for non-technical founders building SaaS with AI tools (Claude Code, Lovable, Replit, Cursor).
 
-Covers the full lifecycle of planning, building, launching, and growing a software business — actionable guides, checklists, and copy-paste prompts.
+Covers the full lifecycle of planning, building, launching, and growing a software business — actionable guides, checklists, and copy-paste prompts. The skills ship as 10 focused plugins, so you install only what you need.
 
 ## Installation
 
@@ -10,32 +10,52 @@ Covers the full lifecycle of planning, building, launching, and growing a softwa
 
 ### Claude Code (via Plugin Marketplace)
 
-In Claude Code, register the marketplace first:
+Register the marketplace, then install `sf-core` first:
 
 ```
 /plugin marketplace add whawkinsiv/solo-founder-skills
+/plugin install sf-core@solo-founder-skills-marketplace
 ```
 
-Then install the plugin from this marketplace:
+`sf-core` holds the `journey` and `next` skills. They tell you which plugin to install for each step.
+
+Then install the plugins for the work you are doing now:
+
+| Plugin | The job it does | Install |
+|--------|-----------------|---------|
+| **sf-core** | Orientation and routing. Install this first. | `/plugin install sf-core@solo-founder-skills-marketplace` |
+| **sf-strategy** | Turn an idea into a buildable spec. | `/plugin install sf-strategy@solo-founder-skills-marketplace` |
+| **sf-design** | Make it look and feel right. | `/plugin install sf-design@solo-founder-skills-marketplace` |
+| **sf-build** | Write and fix the code. | `/plugin install sf-build@solo-founder-skills-marketplace` |
+| **sf-ship** | Get it live and keep it up. | `/plugin install sf-ship@solo-founder-skills-marketplace` |
+| **sf-copy** | Write the words. | `/plugin install sf-copy@solo-founder-skills-marketplace` |
+| **sf-seo** | Rank in search and get cited by AI. | `/plugin install sf-seo@solo-founder-skills-marketplace` |
+| **sf-channels** | Reach people. | `/plugin install sf-channels@solo-founder-skills-marketplace` |
+| **sf-customers** | Win and keep customers. | `/plugin install sf-customers@solo-founder-skills-marketplace` |
+| **sf-business** | Run the company. | `/plugin install sf-business@solo-founder-skills-marketplace` |
+
+Why separate plugins? Claude Code loads the description of every installed skill into every session. Fewer installed skills means less context used and fewer wrong skills competing for the same request.
+
+#### Upgrading from the single `solo-founder-skills` plugin
+
+Version 3 was one plugin with every skill in it. That plugin no longer exists. Remove it, refresh the marketplace, then install the plugins you want:
 
 ```
-/plugin install solo-founder-skills@solo-founder-skills-marketplace
+/plugin uninstall solo-founder-skills@solo-founder-skills-marketplace
+/plugin marketplace update solo-founder-skills-marketplace
+/plugin install sf-core@solo-founder-skills-marketplace
 ```
+
+Manual skill invocations changed. Replace `/solo-founder-skills:plan` with `/sf-strategy:plan`. The table under "What's Inside" shows the plugin for each skill.
 
 #### Upgrading from Solo Founder Superpowers
 
-This plugin was renamed. The old plugin and marketplace names no longer exist, so
-an existing install stops loading after an update. Remove the old install first:
+Remove the old install and the old marketplace first, then follow the install steps above:
 
 ```
 /plugin uninstall solo-founder-superpowers@solo-founder-superpowers-marketplace
 /plugin marketplace remove solo-founder-superpowers-marketplace
 ```
-
-Then add the new marketplace and install the plugin with the commands above.
-
-Manual skill invocations also changed. Replace `/solo-founder-superpowers:plan`
-with `/solo-founder-skills:plan`.
 
 ### Cursor (via Plugin Marketplace)
 
@@ -47,70 +67,77 @@ In Cursor Agent chat, install from marketplace:
 
 ### Codex (Manual Setup)
 
-Codex discovers skills from `.agents/skills/` directories. Clone this repo into your project:
+Codex discovers skills from `.agents/skills/` directories. Clone this repo, then copy the skills into your project:
 
 ```
-git clone https://github.com/whawkinsiv/solo-founder-skills.git .agents/skills/solo-founder-skills
+git clone https://github.com/whawkinsiv/solo-founder-skills.git /tmp/solo-founder-skills
+mkdir -p .agents/skills
+cp -R /tmp/solo-founder-skills/plugins/*/skills/* .agents/skills/
 ```
+
+To copy one plugin only, replace `plugins/*` with its name, for example `plugins/sf-build`.
 
 Or install a single skill using the built-in skill installer:
 
 ```
-$skill-installer install https://github.com/whawkinsiv/solo-founder-skills/tree/main/skills/build
+$skill-installer install https://github.com/whawkinsiv/solo-founder-skills/tree/main/plugins/sf-build/skills/build
 ```
 
 Restart Codex after installing. Invoke skills with `$skill-name` or let Codex select them automatically.
 
 ### OpenCode (Manual Setup)
 
-OpenCode discovers skills from `.opencode/skills/`, `~/.config/opencode/skills/`, or `~/.agents/skills/`. Clone into any of these locations:
+OpenCode discovers skills from `.opencode/skills/`, `~/.config/opencode/skills/`, or `~/.agents/skills/`. Clone this repo, then copy the skills into any of these locations:
 
 ```
-git clone https://github.com/whawkinsiv/solo-founder-skills.git .opencode/skills/solo-founder-skills
+git clone https://github.com/whawkinsiv/solo-founder-skills.git /tmp/solo-founder-skills
+mkdir -p .opencode/skills
+cp -R /tmp/solo-founder-skills/plugins/*/skills/* .opencode/skills/
 ```
 
 Skills are loaded on-demand — OpenCode will show available skills and load them when relevant.
 
 ### Verify Installation
 
-Start a new session in your chosen platform and ask for something that should trigger a skill (for example, "help me validate this idea" or "help me plan this feature"). The agent should automatically invoke the relevant solo-founder-skills skill.
+Start a new session in your chosen platform and ask for something that should trigger a skill (for example, "where do I start?" or "help me plan this feature"). The agent should automatically invoke the relevant skill.
 
 ## What's Inside
 
-### Getting Started (4 skills)
+### sf-core — Start here (6 skills)
 
 | Skill | What It Covers |
 |-------|----------------|
 | **journey** | Where to start, what order to do things, the path from idea to launch |
-| **about-me** | Founder profile and voice setup so other skills produce personalized output |
-| **glossary** | Plain-English explanations of 50+ technical terms |
 | **next** | What to work on next, finding high-value opportunities |
+| **about-me** | Founder profile and voice setup so other skills produce personalized output |
+| **focus** | 80/20 analysis, deciding if an activity is worth your time |
+| **prioritize** | Feature prioritization, roadmaps, RICE scoring |
+| **glossary** | Plain-English explanations of 50+ technical terms |
 
-### Strategy & Validation (8 skills)
+### sf-strategy — Strategy & Validation (7 skills)
 
 | Skill | What It Covers |
 |-------|----------------|
+| **translate** | Turn professional expertise into a software product |
 | **validate** | Smoke tests, fake door tests, testing demand before you build |
 | **customer-research** | User interviews, Jobs-to-be-Done, ideal customer profile |
 | **market-research** | Market sizing, competitor analysis, TAM/SAM/SOM |
-| **translate** | Turn professional expertise into a software product |
 | **niche-advantage** | Use domain expertise as a competitive moat |
-| **focus** | 80/20 analysis, deciding if an activity is worth your time |
 | **plan** | Turn ideas into buildable specs, MVPs, feature requirements |
-| **prioritize** | Feature prioritization, roadmaps, RICE scoring |
+| **domain-name** | Judge domain name ideas for a product and check whether they are available |
 
-### Design & UX (6 skills)
+### sf-design — Design & UX (6 skills)
 
 | Skill | What It Covers |
 |-------|----------------|
+| **brand-identity-generator** | Generates a full BRAND-IDENTITY.md: colors, type, spacing, components |
 | **ux-design** | Information architecture, user flows, onboarding, accessibility |
 | **ui-patterns** | Dashboards, data tables, settings pages, component libraries, dark mode |
 | **beautify** | Visual hierarchy, whitespace, composition, color, typography |
-| **brand-identity-generator** | Generates a full BRAND-IDENTITY.md: colors, type, spacing, components |
 | **motion-polish** | Animations, micro-interactions, smooth transitions |
 | **design-review** | Design audit and quality gate before you ship |
 
-### Build & Technical (10 skills)
+### sf-build — Build (7 skills)
 
 | Skill | What It Covers |
 |-------|----------------|
@@ -118,37 +145,32 @@ Start a new session in your chosen platform and ask for something that should tr
 | **database** | Schema design, Supabase setup, Row Level Security, migrations |
 | **integrations** | APIs, OAuth, webhooks, connecting third-party services |
 | **ai-features** | LLM APIs, RAG, AI assistants, cost management |
-| **secure** | Authentication, data protection, API security, vulnerability checks |
-| **test** | Test scenarios, edge cases, cross-browser testing |
 | **debug** | Systematic debugging, error interpretation, diagnostics |
 | **dry** | Find and remove duplication across code, schema, and workflows |
 | **optimize** | Speed, bundle size, database, and hosting cost optimization |
-| **compliance** | HIPAA, SOC 2, GDPR, PCI, FERPA for regulated industries |
 
-### Ship & Operate (4 skills)
+### sf-ship — Ship & Operate (7 skills)
 
 | Skill | What It Covers |
 |-------|----------------|
+| **test** | Test scenarios, edge cases, cross-browser testing |
+| **secure** | Authentication, data protection, API security, vulnerability checks |
+| **compliance** | HIPAA, SOC 2, GDPR, PCI, FERPA for regulated industries |
 | **go-live** | Pre-launch go/no-go checklist — the gate before you deploy |
 | **deploy** | Hosting selection, custom domains, DNS, environment variables |
 | **monitor** | Production monitoring, error alerts, incident response |
 | **analytics** | Event tracking, funnels, key metrics, data quality |
 
-### Launch & Growth (9 skills)
+### sf-copy — Copy (4 skills)
 
 | Skill | What It Covers |
 |-------|----------------|
-| **launch** | Product Hunt, waitlists, beta programs, go-to-market sequencing |
+| **copywriting** | Headlines, CTAs, button text, error messages, UI copy |
+| **prose-writing** | Founder essays, blog posts, About pages, origin stories |
+| **humanize** | Remove AI writing patterns so copy reads as human-written |
 | **landing-page** | Page structure, above-the-fold copy, conversion elements |
-| **growth** | Product-led growth, viral loops, activation metrics |
-| **conversion** | Funnel analysis, friction reduction, A/B testing |
-| **sales** | Cold outreach, prospect lists, landing the first 100 customers |
-| **ads** | Google Ads, ad copy, keyword selection, CAC/LTV |
-| **email** | Onboarding drips, welcome sequences, behavioral triggers |
-| **social-media** | Twitter/X, LinkedIn, Reddit, founder brand building |
-| **community** | Discord and Slack communities, forums, community-led growth |
 
-### Content & SEO (8 skills)
+### sf-seo — SEO (4 skills)
 
 | Skill | What It Covers |
 |-------|----------------|
@@ -156,20 +178,30 @@ Start a new session in your chosen platform and ask for something that should tr
 | **seo-content** | Blog posts, comparison pages, how-to guides built to rank |
 | **seo-audit** | Codebase SEO audit with a prioritized fix-it plan |
 | **technical-seo** | Meta tags, schema markup, Core Web Vitals, GEO for AI search |
-| **content** | Content strategy, build in public, audience building, distribution |
-| **copywriting** | Headlines, CTAs, button text, error messages, UI copy |
-| **prose-writing** | Founder essays, blog posts, About pages, origin stories |
-| **humanize** | Remove AI writing patterns so copy reads as human-written |
 
-### Customers & Retention (3 skills)
+### sf-channels — Channels (6 skills)
 
 | Skill | What It Covers |
 |-------|----------------|
+| **launch** | Product Hunt, waitlists, beta programs, go-to-market sequencing |
+| **content** | Content strategy, build in public, audience building, distribution |
+| **social-media** | Twitter/X, LinkedIn, Reddit, founder brand building |
+| **email** | Onboarding drips, welcome sequences, behavioral triggers |
+| **ads** | Google Ads, ad copy, keyword selection, CAC/LTV |
+| **community** | Discord and Slack communities, forums, community-led growth |
+
+### sf-customers — Customers (6 skills)
+
+| Skill | What It Covers |
+|-------|----------------|
+| **growth** | Product-led growth, viral loops, activation metrics |
+| **conversion** | Funnel analysis, friction reduction, A/B testing |
 | **retention** | Churn prevention, win-back campaigns, expansion revenue |
+| **sales** | Cold outreach, prospect lists, landing the first 100 customers |
 | **support** | Help docs, knowledge bases, self-serve support |
 | **feedback** | Surveys, NPS, feature requests, closing the feedback loop |
 
-### Business & Money (6 skills)
+### sf-business — Business & Money (6 skills)
 
 | Skill | What It Covers |
 |-------|----------------|
@@ -180,32 +212,27 @@ Start a new session in your chosen platform and ask for something that should tr
 | **legal** | Entity formation, Terms of Service, Privacy Policy, compliance |
 | **hiring** | Developer sourcing, vetting contractors, briefs, management |
 
-### Meta (1 skill)
-
-| Skill | What It Covers |
-|-------|----------------|
-| **improve** | Autonomously improves any other skill in this plugin through A/B evaluation |
 ### Commands
 
-| Command | What It Does |
-|---------|-------------|
-| **improve-prompt** | Transforms vague coding requests into detailed, specific prompts |
+| Command | Plugin | What It Does |
+|---------|--------|-------------|
+| **improve-prompt** | sf-core | Transforms vague coding requests into detailed, specific prompts |
 
 ## How to Use
 
-Skills are invoked automatically when Claude Code detects a relevant request, or manually:
+Skills are invoked automatically when Claude Code detects a relevant request, or manually with `/<plugin>:<skill>`:
 
 ```
-/solo-founder-skills:plan
-/solo-founder-skills:launch
-/solo-founder-skills:payments
+/sf-strategy:plan
+/sf-channels:launch
+/sf-business:payments
 ```
 
 ### Recommended workflow for a new product
 
 ```
 0. Orient    — journey, about-me, glossary
-1. Validate  — validate, customer-research, market-research, focus
+1. Validate  — validate, customer-research, market-research, focus, domain-name
 2. Plan      — plan, prioritize, pricing, finances
 3. Design    — brand-identity-generator, ux-design, ui-patterns, beautify
 4. Build     — build, database, integrations, secure, test, debug

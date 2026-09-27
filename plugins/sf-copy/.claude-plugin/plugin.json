@@ -1,0 +1,20 @@
+{
+  "name": "sf-copy",
+  "version": "1.0.0",
+  "description": "Write the words for a SaaS product: UI copy and CTAs, long-form founder prose, landing pages, and removing AI writing patterns so copy reads as human-written.",
+  "author": {
+    "name": "Will Hawkins",
+    "url": "https://github.com/whawkinsiv"
+  },
+  "repository": "https://github.com/whawkinsiv/solo-founder-skills",
+  "license": "MIT",
+  "keywords": [
+    "saas",
+    "founder",
+    "non-technical",
+    "copywriting",
+    "landing-page",
+    "writing",
+    "humanize"
+  ]
+}

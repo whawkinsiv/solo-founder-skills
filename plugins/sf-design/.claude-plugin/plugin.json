@@ -1,0 +1,21 @@
+{
+  "name": "sf-design",
+  "version": "1.0.0",
+  "description": "Make an AI-built SaaS look and feel professional: brand identity, UX flows, UI patterns, visual polish, motion, and a design review quality gate.",
+  "author": {
+    "name": "Will Hawkins",
+    "url": "https://github.com/whawkinsiv"
+  },
+  "repository": "https://github.com/whawkinsiv/solo-founder-skills",
+  "license": "MIT",
+  "keywords": [
+    "saas",
+    "founder",
+    "non-technical",
+    "design",
+    "ux",
+    "ui",
+    "branding",
+    "animation"
+  ]
+}
