@@ -1,0 +1,33 @@
+{
+  "skill_name": "validate",
+  "evals": [
+    {
+      "id": 0,
+      "name": "idea-with-no-evidence",
+      "prompt": "i'm a dental hygienist and ive been thinking about building an app that helps practices handle patient recalls \u2014 right now everyone i work with just uses a spreadsheet and phone calls and its a mess. i want to build it but idk if its actually a real business or just me being annoyed at my job. where do i start",
+      "expected_output": "Should pressure-test at the pre-product stage (Q1/Q2/Q3 only), find no external evidence, and route to customer conversations rather than producing a score or verdict. Should not invent a scorecard from nothing.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "real-numbers-in-hand",
+      "prompt": "ok so i put up a landing page for my contractor invoicing tool two weeks ago and drove traffic from a few facebook groups. 340 people hit the page and 41 gave me their email. nobody has paid anything yet. i know the problem is real because ive been a contractor for 9 years. should i build it or keep testing",
+      "expected_output": "Should compute the 12% signup rate, score the six dimensions from evidence, score willingness to pay at 1 because a waitlist signup costs the person nothing, and declare the verdict the band its own total falls in \u2014 not a verdict chosen in advance. Should name a pre-sale as the single next test and archive the brief. The check that matters is internal consistency: the verdict must match the printed score.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "enthusiasm-mistaken-for-demand",
+      "prompt": "i showed my idea to like 15 people at a conference last month and literally everyone said theyd use it. its a scheduling tool for physical therapy clinics. i've got a prototype half built in lovable. am i good to go all in on this",
+      "expected_output": "Should recognise 'everyone said they'd use it' as interest rather than demand, decline to treat it as Q1 evidence, and name a concrete willingness-to-pay test before any go-ahead.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "near-miss-should-route-elsewhere",
+      "prompt": "ive got paying customers now (like 30ish) and theyre all asking for different stuff \u2014 bulk export, a mobile app, and some kind of team permissions thing. i cant build all three. how do i figure out which one is actually worth doing first",
+      "expected_output": "Should recognise this is feature prioritisation for a product with paying customers, not demand validation, and route to the prioritize skill instead of running a validation brief.",
+      "files": []
+    }
+  ]
+}
