@@ -96,7 +96,7 @@ A viral loop has 4 parts: User gets value → Has reason to share → New user s
 |----------|-------------|---------|
 | Collaboration invites | Product requires multiple users | "Invite your team to edit this" |
 | Shared outputs | User creates something shareable | Reports, links, dashboards with "Made with [Product]" |
-| Referral rewards | Incentivized invitations | "Give $20, get $20" |
+| Referral rewards | Incentivized invitations | "Give \$20, get \$20" |
 | Public pages | User content is SEO-indexable | Public profiles, portfolios, pages |
 | Embeds | Widget on user's site links back | Badges, chat widgets, forms |
 

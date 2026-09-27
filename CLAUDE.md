@@ -34,6 +34,7 @@ Bump the `version` in that plugin's `plugin.json` when you ship a change to it.
 - SKILL.md files use YAML frontmatter with `name` and `description` fields
 - Skills are designed for progressive disclosure: SKILL.md first, then supporting files
 - Never more than 1 level deep from SKILL.md
+- In a SKILL.md body, write dollar amounts as `\$29/mo`, not `$29/mo`. Claude Code replaces `$0`, `$1`, and so on with the words the user typed after the skill name. The backslash stops this, and Claude Code removes it before the model reads the skill. Amounts followed by a letter (`$10k`, `$1M`) are safe without it.
 
 ## Design Philosophy
 

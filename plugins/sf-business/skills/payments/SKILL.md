@@ -203,7 +203,7 @@ Test every flow in Stripe test mode before going live:
 - [ ] Replace test API keys with live keys in production
 - [ ] Update webhook endpoint URL and signing secret
 - [ ] Verify Stripe Tax is enabled in live mode
-- [ ] Make a real $1 purchase with your own card
+- [ ] Make a real \$1 purchase with your own card
 - [ ] Verify webhook received in Stripe logs
 - [ ] Refund your test purchase
 ```
@@ -214,10 +214,10 @@ Test every flow in Stripe test mode before going live:
 
 | Fee | Amount |
 |-----|--------|
-| Standard (US cards) | 2.9% + $0.30 per transaction |
+| Standard (US cards) | 2.9% + \$0.30 per transaction |
 | International cards | +1.5% |
 | Stripe Tax | +0.5% per transaction |
-| Chargebacks | $15 per dispute |
+| Chargebacks | \$15 per dispute |
 | Monthly/setup fees | None |
 
 ---

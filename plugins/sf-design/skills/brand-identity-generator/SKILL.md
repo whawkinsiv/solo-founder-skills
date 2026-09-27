@@ -709,7 +709,7 @@ Every value in these examples must come from a specific section above. No invent
 ### When to Invest in a Real Logo
 - After product-market fit (not before)
 - When you're embarrassed showing the text logo to potential customers
-- When you have budget for a designer ($500-2000 range)
+- When you have budget for a designer (\$500-2000 range)
 - Never let logo design block your launch
 
 ---

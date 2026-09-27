@@ -313,7 +313,7 @@ Monthly Health:
 **Logs:**
 - Platform logs (Vercel, Netlify, Railway)
 
-**Cost: $0/month until you need more.**
+**Cost: \$0/month until you need more.**
 
 ---
 
@@ -325,10 +325,10 @@ Monthly Health:
 - Need faster alert response
 - Need advanced features (session replay, etc.)
 
-**Paid tiers (typically $20-50/mo):**
-- Sentry Pro ($26/mo)
-- LogRocket ($99/mo - session replay)
-- DataDog ($15/host/mo)
+**Paid tiers (typically \$20-50/mo):**
+- Sentry Pro (\$26/mo)
+- LogRocket (\$99/mo - session replay)
+- DataDog (\$15/host/mo)
 
 **For < 1000 users:** Free tiers sufficient.
 

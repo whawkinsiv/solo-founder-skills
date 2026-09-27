@@ -28,7 +28,7 @@ Answer these five questions. Write one sentence for each — don't overthink it.
 2. What takes way too long relative to the value it produces?
 3. What makes you think "there has to be a better way" at least once a month?
 4. What do you see junior people in your field struggle with that a tool could fix?
-5. What would you pay $100/month to never do again?
+5. What would you pay \$100/month to never do again?
 ```
 
 **Tell AI:**

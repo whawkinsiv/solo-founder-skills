@@ -73,7 +73,7 @@ they receive, and creates natural expansion revenue. Show 2-3 options with trade
 **Pro / Team:**
 - Purpose: Conversion. This is your primary revenue tier.
 - Include: Everything in Free + collaboration + higher limits + integrations.
-- Price: $10-30/user/month for SMB, $30-80 for mid-market.
+- Price: \$10-30/user/month for SMB, \$30-80 for mid-market.
 - This tier should feel like an obvious upgrade when they hit Free limits.
 
 **Business / Scale:**
@@ -108,8 +108,8 @@ Create 3 tiers with:
 
 - **Anchoring:** Display the most expensive plan prominently to make mid-tier feel reasonable.
 - **Decoy effect:** Make the middle tier clearly the best value relative to the others.
-- **Charm pricing:** $29 vs $30 — the effect is real, especially for SMB.
-- **Per-day framing:** "Less than $1/day" for higher-priced plans.
+- **Charm pricing:** \$29 vs \$30 — the effect is real, especially for SMB.
+- **Per-day framing:** "Less than \$1/day" for higher-priced plans.
 - **Loss aversion:** On trial expiry, emphasize what they'll lose, not what they'll gain.
 
 ### Freemium vs. Free Trial
@@ -147,7 +147,7 @@ Based on these industry anchors, what price range makes sense?
 Position my product relative to what they already pay.
 ```
 
-**Key insight:** Your peers' existing software spending sets the anchor, not your costs. If every dentist already pays $300/month for practice management software, a $49/month add-on feels trivial. If your audience pays $0/month for tools, $29/month feels like a big ask.
+**Key insight:** Your peers' existing software spending sets the anchor, not your costs. If every dentist already pays \$300/month for practice management software, a \$49/month add-on feels trivial. If your audience pays \$0/month for tools, \$29/month feels like a big ask.
 
 ---
 
@@ -212,7 +212,7 @@ If you already have customers and want to adjust pricing:
 | Only one paid tier | Three tiers enable anchoring and self-selection |
 | Free tier is too generous | Free should create desire to upgrade, not satisfy forever |
 | No annual discount | Annual billing improves cash flow and reduces churn |
-| Hiding pricing ("Contact us" at $20/mo) | Show prices for SMB plans. Only hide enterprise/custom |
+| Hiding pricing ("Contact us" at \$20/mo) | Show prices for SMB plans. Only hide enterprise/custom |
 | Never revisiting pricing | Review every 6 months. You're probably underpricing. |
 
 ---

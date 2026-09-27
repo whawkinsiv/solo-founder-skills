@@ -17,7 +17,7 @@ If you're building for healthcare, finance, education, or any regulated industry
 - Most compliance requirements boil down to: who can see data, how is it stored, and what happens when something goes wrong.
 - The right tech stack choices handle 80% of compliance for you. Don't reinvent the wheel.
 - Compliance is cheaper to build in from the start than to retrofit later.
-- You don't need SOC 2 certification at $0 MRR. But you do need to make decisions now that don't block certification later.
+- You don't need SOC 2 certification at \$0 MRR. But you do need to make decisions now that don't block certification later.
 
 ### Don't Do Yet
 
@@ -229,7 +229,7 @@ Add if regulated industry:
 | Storing credit card numbers in your database | Use Stripe. Card data never touches your server. |
 | Using a hosting provider without a BAA for healthcare data | Check BAA availability before choosing your stack |
 | "We'll add compliance later" for regulated data | Retrofitting compliance is 10x more expensive than building it in |
-| Over-investing in certification at $0 MRR | You need compliant practices, not a $50K audit, until you have enterprise customers |
+| Over-investing in certification at \$0 MRR | You need compliant practices, not a $50K audit, until you have enterprise customers |
 | Putting sensitive data in error logs or analytics | Scrub PII from all logging. This is the most common compliance violation. |
 
 ---

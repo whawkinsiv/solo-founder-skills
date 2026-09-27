@@ -41,7 +41,7 @@ Community is a leverage multiplier — when done right, your users help each oth
 | **Discord** | Technical products, developer tools, real-time chat | Free | Medium |
 | **Slack** | B2B SaaS, professional communities | Free (limited) | Medium |
 | **GitHub Discussions** | Open-source, developer tools | Free | Low |
-| **Circle** | Course creators, premium communities | $89+/mo | Medium |
+| **Circle** | Course creators, premium communities | \$89+/mo | Medium |
 | **Forum (Discourse)** | Long-form Q&A, searchable knowledge | Free (self-hosted) | High |
 | **Reddit (own subreddit)** | Large consumer products | Free | Low |
 

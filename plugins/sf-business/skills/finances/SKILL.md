@@ -39,7 +39,7 @@ Timeline:
   Customers needed ÷ realistic monthly growth rate = months to quit
 ```
 
-**Reality check**: If you need 500+ customers at $29/mo to quit, that's an 18-36 month journey. Plan accordingly.
+**Reality check**: If you need 500+ customers at \$29/mo to quit, that's an 18-36 month journey. Plan accordingly.
 
 ## Personal Constraint Budget
 ```
@@ -51,11 +51,11 @@ Runway calculation:
   Hard deadline: Date you MUST have revenue or go back to employment.
 
 Startup costs (one-time):
-  Domain + hosting (year 1):  $100-500
-  LLC formation:              $50-500
-  Tools (analytics, email):   $0-200/mo
-  Paid acquisition test:      $500-1,000
-  Legal (if needed):          $500-2,000
+  Domain + hosting (year 1):  \$100-500
+  LLC formation:              \$50-500
+  Tools (analytics, email):   \$0-200/mo
+  Paid acquisition test:      \$500-1,000
+  Legal (if needed):          \$500-2,000
   = Total launch cost:        $______
 
 Monthly operating costs (once live):
@@ -92,7 +92,7 @@ ARR = MRR × 12
 ```
 CAC = Total acquisition spend ÷ New customers acquired (in same period)
 
-Include: Ad spend, outreach tools, content costs, your time (value it at $0
+Include: Ad spend, outreach tools, content costs, your time (value it at \$0
 for solo founder or at your opportunity cost — be consistent).
 
 By channel:
@@ -107,8 +107,8 @@ Simple LTV:
   LTV = ARPU ÷ Monthly churn rate
 
 Example:
-  ARPU = $49/mo, Monthly churn = 5%
-  LTV = $49 ÷ 0.05 = $980
+  ARPU = \$49/mo, Monthly churn = 5%
+  LTV = \$49 ÷ 0.05 = \$980
 
 With gross margin:
   LTV = (ARPU × Gross margin %) ÷ Monthly churn rate
@@ -130,8 +130,8 @@ Benchmarks:
 Payback = CAC ÷ (ARPU × Gross margin %)
 
 Example:
-  CAC = $150, ARPU = $49/mo, Gross margin = 85%
-  Payback = $150 ÷ ($49 × 0.85) = 3.6 months
+  CAC = \$150, ARPU = \$49/mo, Gross margin = 85%
+  Payback = \$150 ÷ (\$49 × 0.85) = 3.6 months
 
 Benchmarks:
   < 6 months:  Excellent for solo founder

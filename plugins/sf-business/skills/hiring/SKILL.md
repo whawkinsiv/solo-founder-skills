@@ -66,10 +66,10 @@ what type (freelance contractor, part-time dev, agency)?
 
 | Type | Cost | Best For | Where to Find |
 |------|------|----------|---------------|
-| **Freelance contractor** | $50-150/hr | One-time tasks, specific features, bug fixes | Upwork, Toptal, referrals |
-| **Part-time developer** | $2-6K/mo | Ongoing development, 10-20 hrs/week | Indie communities, referrals |
-| **Fractional CTO** | $3-8K/mo | Architecture decisions, code review, hiring other devs | Toptal, referrals, FounderPath |
-| **Dev agency** | $5-20K/project | Full builds, redesigns | Clutch.co, referrals |
+| **Freelance contractor** | \$50-150/hr | One-time tasks, specific features, bug fixes | Upwork, Toptal, referrals |
+| **Part-time developer** | \$2-6K/mo | Ongoing development, 10-20 hrs/week | Indie communities, referrals |
+| **Fractional CTO** | \$3-8K/mo | Architecture decisions, code review, hiring other devs | Toptal, referrals, FounderPath |
+| **Dev agency** | \$5-20K/project | Full builds, redesigns | Clutch.co, referrals |
 | **Technical co-founder** | Equity | Building the company together, long-term | Co-founder matching, network |
 
 **For most solo bootstrapped founders: Start with a freelance contractor.**
@@ -82,7 +82,7 @@ what type (freelance contractor, part-time dev, agency)?
 
 1. **Personal referrals** — Ask other founders: "Who built your product?" Best source by far.
 2. **Indie communities** — Indie Hackers, r/forhire, Twitter/X developer community. Developers here understand SaaS.
-3. **Toptal** — Pre-vetted, expensive ($80-150+/hr), but high quality and low risk.
+3. **Toptal** — Pre-vetted, expensive (\$80-150+/hr), but high quality and low risk.
 4. **Upwork** — Huge pool, variable quality. You need to vet carefully. More on this below.
 5. **Arc.dev, Gun.io, Lemon.io** — Curated freelancer platforms. Mid-range pricing.
 6. **Agency** — Good for well-defined projects. Expensive. You lose the direct relationship.
@@ -93,7 +93,7 @@ what type (freelance contractor, part-time dev, agency)?
 - **Can't explain things simply** — If they use jargon to answer simple questions, they'll be hard to work with
 - **"I can build anything"** — Specialists outperform generalists. Look for experience with your stack
 - **No questions about your project** — Good developers ask questions before estimating
-- **Price way below market** — $15-25/hr for a "senior developer" means they're either lying about experience or in a situation where communication overhead will eat the savings
+- **Price way below market** — \$15-25/hr for a "senior developer" means they're either lying about experience or in a situation where communication overhead will eat the savings
 - **Won't do a small paid trial** — The best test is a real task (see below)
 
 ### Green Flags
@@ -232,17 +232,17 @@ Working Agreement:
 
 | Level | US/UK/EU | Eastern Europe | Latin America | South/SE Asia |
 |-------|----------|---------------|--------------|---------------|
-| Junior | $40-75/hr | $25-45/hr | $25-50/hr | $15-30/hr |
-| Mid | $75-125/hr | $40-75/hr | $40-75/hr | $25-50/hr |
-| Senior | $125-200/hr | $60-120/hr | $60-100/hr | $40-80/hr |
+| Junior | \$40-75/hr | \$25-45/hr | \$25-50/hr | \$15-30/hr |
+| Mid | \$75-125/hr | \$40-75/hr | \$40-75/hr | \$25-50/hr |
+| Senior | \$125-200/hr | \$60-120/hr | \$60-100/hr | \$40-80/hr |
 
 ### What to Expect
 
-- **Simple bug fix:** 1-4 hours ($50-400)
-- **Small feature:** 5-20 hours ($250-2,000)
-- **Medium feature:** 20-60 hours ($1,000-6,000)
-- **Full integration:** 40-100 hours ($2,000-10,000)
-- **Ongoing part-time dev:** $2,000-6,000/month for 10-20 hrs/week
+- **Simple bug fix:** 1-4 hours (\$50-400)
+- **Small feature:** 5-20 hours (\$250-2,000)
+- **Medium feature:** 20-60 hours (\$1,000-6,000)
+- **Full integration:** 40-100 hours (\$2,000-10,000)
+- **Ongoing part-time dev:** \$2,000-6,000/month for 10-20 hrs/week
 
 ### Budget Tips
 
@@ -299,7 +299,7 @@ If you're growing and need ongoing technical leadership but aren't ready for a f
 
 ### Cost
 
-$3,000-8,000/month for 5-15 hours. Expensive but prevents much more expensive mistakes.
+\$3,000-8,000/month for 5-15 hours. Expensive but prevents much more expensive mistakes.
 
 ---
 

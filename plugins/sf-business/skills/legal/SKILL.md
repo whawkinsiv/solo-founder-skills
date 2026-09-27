@@ -25,7 +25,7 @@ Every SaaS needs three legal documents at launch: Terms of Service, Privacy Poli
 - Liability protection: Yes — separates personal and business assets.
 - Tax: Pass-through by default (income on personal return). Can elect S-Corp taxation later.
 - Paperwork: Minimal. Operating agreement + annual report (varies by state).
-- Cost: $50-500 to form depending on state.
+- Cost: \$50-500 to form depending on state.
 - When to choose: You're bootstrapping, have no plans to raise VC, want simplicity.
 
 **S-Corp (via LLC election)**
@@ -38,7 +38,7 @@ Every SaaS needs three legal documents at launch: Terms of Service, Privacy Poli
 - Best for: Founders who plan to raise venture capital.
 - Required for: Most VC investment, issuing stock options, accelerator programs.
 - Tax: Double taxation (corporate tax + personal tax on dividends).
-- Cost: $400+ to form in Delaware, plus ~$400/year franchise tax minimum.
+- Cost: \$400+ to form in Delaware, plus ~\$400/year franchise tax minimum.
 - When to choose: Only if you intend to raise institutional money or join an accelerator that requires it.
 
 **Decision flow:**
@@ -274,7 +274,7 @@ Key facts for US-based SaaS:
 | No refund policy in ToS | State it explicitly. "14-day full refund, no refund after" prevents disputes. |
 | Copying another company's ToS verbatim | Their terms are for their business, not yours. Use the template, customize it. |
 | No Privacy Policy at launch | Required by law in most jurisdictions. Generate one before going live. |
-| Paying a lawyer $5K for boilerplate | Use AI to draft, pay a lawyer $500-1K to review. Don't pay for first drafts. |
+| Paying a lawyer $5K for boilerplate | Use AI to draft, pay a lawyer \$500-1K to review. Don't pay for first drafts. |
 | Ignoring sales tax | Start tracking from day one. Retroactive SaaS tax liability is real and growing. |
 
 ---

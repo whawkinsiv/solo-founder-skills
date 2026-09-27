@@ -159,7 +159,7 @@ Your content goes where your audience already reads — not where startups post:
 
 When a dentist evaluates two scheduling tools:
 - **Tool A:** "AI-powered scheduling platform for healthcare professionals" (built by a tech team)
-- **Tool B:** "Built by a dentist who was tired of losing $2,000/month to no-shows" (built by a practitioner)
+- **Tool B:** "Built by a dentist who was tired of losing \$2,000/month to no-shows" (built by a practitioner)
 
 Tool B wins on trust every time. The practitioner understands the specific workflow, the specific pain points, the specific edge cases.
 

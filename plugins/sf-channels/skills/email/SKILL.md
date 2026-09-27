@@ -56,7 +56,7 @@ Option A — **Use a free SMTP relay** (most reliable):
 6. Enter the SMTP server, port, username, and password from your relay service
 7. Click the verification link Gmail sends to `hello@yourdomain.com` (which forwards to your Gmail)
 
-Option B — **ImprovMX** ($10/year):
+Option B — **ImprovMX** (\$10/year):
 - Handles both forwarding AND SMTP sending in one service
 - Simpler setup than Option A if you want to skip the relay configuration
 - Free tier available (forwarding only; sending requires paid plan)
@@ -97,7 +97,7 @@ v=DMARC1; p=quarantine; rua=mailto:dmarc@yourdomain.com; pct=100
 
 ### When to Upgrade to Google Workspace
 
-The free Cloudflare + Gmail setup works great for solo founders. Consider Google Workspace ($7/user/month) when:
+The free Cloudflare + Gmail setup works great for solo founders. Consider Google Workspace (\$7/user/month) when:
 
 - You're hiring and need multiple `@yourdomain.com` accounts
 - You want native Google Calendar invites from your branded address
@@ -139,8 +139,8 @@ Email Sequence Setup:
 | Stage | Tool | Why | Cost |
 |-------|------|-----|------|
 | Pre-revenue | **Resend** or **Loops** | Modern, developer-friendly, good free tier | Free tier |
-| 0-$5K MRR | **Customer.io** or **Loops** | Behavioral triggers, event-based sequences | $0-150/mo |
-| $5K+ MRR | **Customer.io** or **Intercom** | Advanced segmentation, in-app + email | $150+/mo |
+| 0-$5K MRR | **Customer.io** or **Loops** | Behavioral triggers, event-based sequences | \$0-150/mo |
+| $5K+ MRR | **Customer.io** or **Intercom** | Advanced segmentation, in-app + email | \$150+/mo |
 
 For most bootstrapped founders: **Loops** (simple, modern) or **Resend** (if you want to code your own templates). Graduate to Customer.io when you need complex behavioral triggers.
 

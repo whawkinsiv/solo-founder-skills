@@ -62,7 +62,7 @@ The internet's phone book. Translates "yourapp.com" into the IP address of the s
 Encryption between the user's browser and your server. The padlock icon in the browser. All modern hosting provides this automatically. If your site shows "Not Secure," SSL isn't set up yet.
 
 **Domain**
-Your website's address (yourapp.com). You buy one from a registrar (Namecheap, Cloudflare) for ~$10/year and point it at your hosting.
+Your website's address (yourapp.com). You buy one from a registrar (Namecheap, Cloudflare) for ~\$10/year and point it at your hosting.
 
 **URL**
 The full address of a specific page: `https://yourapp.com/dashboard`. The domain is part of the URL.
@@ -154,7 +154,7 @@ The percentage of time your app is accessible. 99.9% uptime means ~8.7 hours of 
 One instance of your app serves multiple customers, with each customer's data isolated. Almost every SaaS is multi-tenant. The alternative (single-tenant) means running a separate copy of the app for each customer — expensive and unnecessary for most products.
 
 **MRR / ARR**
-Monthly Recurring Revenue / Annual Recurring Revenue. If 10 customers pay $50/month, your MRR is $500 and ARR is $6,000.
+Monthly Recurring Revenue / Annual Recurring Revenue. If 10 customers pay \$50/month, your MRR is \$500 and ARR is \$6,000.
 
 **Churn**
 The rate at which customers cancel. 5% monthly churn means you lose 5 out of every 100 customers each month.
