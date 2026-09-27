@@ -138,11 +138,11 @@ Include: source citations, "I don't know" handling, loading state.
 Cost per request = (input tokens × input price) + (output tokens × output price)
 
 Example (Claude Sonnet):
-- Input: ~1,000 tokens ($0.003)
-- Output: ~500 tokens ($0.0075)
-- Cost per request: ~$0.01
+- Input: ~1,000 tokens (\$0.003)
+- Output: ~500 tokens (\$0.0075)
+- Cost per request: ~\$0.01
 
-1,000 requests/day = ~$10/day = ~$300/month
+1,000 requests/day = ~\$10/day = ~\$300/month
 ```
 
 ### Reducing Costs

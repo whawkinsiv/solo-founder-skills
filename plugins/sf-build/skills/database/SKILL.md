@@ -12,7 +12,7 @@ Every SaaS app needs a database, and the schema decisions you make early are exp
 - Choose the database that matches your hosting platform. Don't fight the defaults.
 - Schema design is product design. Get the relationships right early — migrations are painful later.
 - Every SaaS app is multi-tenant. Every table needs a way to isolate customer data.
-- Start simple. You don't need Redis, Elasticsearch, or a data warehouse at $0-10k MRR.
+- Start simple. You don't need Redis, Elasticsearch, or a data warehouse at \$0-10k MRR.
 - Row Level Security is not optional. One leaked customer seeing another's data kills trust.
 
 ## Choosing a Database

@@ -11,8 +11,8 @@ Paid acquisition amplifies what's already working. If your landing page doesn't 
 
 - Paid acquisition amplifies what's already working. If your landing page doesn't convert organic traffic, ads won't fix it.
 - Start with the highest-intent keywords. People searching for "[Competitor] alternative" are closer to buying than people searching for "what is [category]."
-- Small budgets demand focus. $10-20/day on 5-10 exact-match keywords beats $100/day spread across 500 broad-match keywords.
-- Test the message, not the channel. If Google Ads doesn't work at $10/day, the problem is usually your ad copy or landing page, not the channel.
+- Small budgets demand focus. \$10-20/day on 5-10 exact-match keywords beats \$100/day spread across 500 broad-match keywords.
+- Test the message, not the channel. If Google Ads doesn't work at \$10/day, the problem is usually your ad copy or landing page, not the channel.
 - CAC must be less than 1/3 of LTV from day one. If the math doesn't work at small scale, it won't work at large scale.
 - Every dollar should be traceable to a conversion. If you can't track it, don't spend it.
 
@@ -34,9 +34,9 @@ Start with ONE campaign, 2-3 ad groups:
 
 ```
 Campaign: [Product Name] — Search
-  Budget: $10-20/day
+  Budget: \$10-20/day
   Bidding: Maximize conversions (once you have 15+ conversions)
-           OR Manual CPC to start (set bids at $2-5 range)
+           OR Manual CPC to start (set bids at \$2-5 range)
   Network: Search only (NOT Display, NOT Search Partners)
   Location: Countries where your ICP lives
 
@@ -184,10 +184,10 @@ Each landing page should:
 ```
 | Metric              | This Week | Last Week | Target |
 |---------------------|-----------|-----------|--------|
-| Spend               |           |           | $70-140|
+| Spend               |           |           | \$70-140|
 | Clicks              |           |           |        |
 | CTR                 |           |           | >3%    |
-| CPC (avg)           |           |           | <$3    |
+| CPC (avg)           |           |           | <\$3    |
 | Signups from ads    |           |           |        |
 | Cost per signup     |           |           | <$XX   |
 | Signups → Activated |           |           | >30%   |
@@ -201,7 +201,7 @@ Each landing page should:
 CTR < 2%:
   → Ad copy isn't compelling. Rewrite headlines.
 
-CPC too high (>$5 for SMB SaaS):
+CPC too high (>\$5 for SMB SaaS):
   → Keywords too competitive. Go more longtail or niche.
 
 Clicks but no signups:
@@ -251,7 +251,7 @@ Sustainability check:
 Set up a Google Ads search campaign for my SaaS:
 - Product: [what it does]
 - Audience: [who it's for]
-- Budget: [$10-20/day to start]
+- Budget: [\$10-20/day to start]
 - Top 3 competitors: [names]
 - Main problem solved: [one sentence]
 

@@ -43,10 +43,10 @@ The best support interaction is the one that never happens. This skill helps you
 ### Tool Recommendations by Stage
 
 ```
-$0/mo:       Email + Notion/Google Docs help page
-$0-50/mo:    Crisp (free tier) or Tawk.to (free)
-$50-100/mo:  HelpScout Starter or Intercom Starter
-$100-300/mo: Intercom or Plain (for developer tools)
+\$0/mo:       Email + Notion/Google Docs help page
+\$0-50/mo:    Crisp (free tier) or Tawk.to (free)
+\$50-100/mo:  HelpScout Starter or Intercom Starter
+\$100-300/mo: Intercom or Plain (for developer tools)
 ```
 
 ## Help Center Architecture

@@ -1,6 +1,6 @@
 {
   "name": "sf-business",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Run the company: pricing, Stripe payments and billing, financial models and unit economics, bookkeeping and taxes, legal setup, and hiring technical help.",
   "author": {
     "name": "Will Hawkins",

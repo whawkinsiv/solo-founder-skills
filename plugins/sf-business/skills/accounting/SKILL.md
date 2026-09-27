@@ -54,11 +54,11 @@ Before your first dollar of revenue:
 | Stage | Tool | Cost | Why |
 |-------|------|------|-----|
 | Pre-revenue | Spreadsheet | Free | Don't over-invest before revenue |
-| $0-5k MRR | Wave | Free | Full accounting, free, good for solo |
-| $0-10k MRR | QuickBooks Self-Employed | $15/mo | Simple, widely supported by accountants |
-| $5k-50k MRR | QuickBooks Online | $30+/mo | Standard. Every accountant knows it |
-| $5k-50k MRR | Xero | $15+/mo | Clean UI, good for SaaS |
-| Any stage | Bench | $299+/mo | Done-for-you bookkeeping service |
+| \$0-5k MRR | Wave | Free | Full accounting, free, good for solo |
+| \$0-10k MRR | QuickBooks Self-Employed | \$15/mo | Simple, widely supported by accountants |
+| $5k-50k MRR | QuickBooks Online | \$30+/mo | Standard. Every accountant knows it |
+| $5k-50k MRR | Xero | \$15+/mo | Clean UI, good for SaaS |
+| Any stage | Bench | \$299+/mo | Done-for-you bookkeeping service |
 
 **The short answer:** Start with Wave (free) or QuickBooks Online. Switch to QBO when you hire an accountant — it's what they all use.
 
@@ -82,7 +82,7 @@ REVENUE
 
 COST OF GOODS SOLD (COGS)
   Hosting & Infrastructure  (Vercel, Supabase, AWS, etc.)
-  Payment Processing Fees   (Stripe fees, ~2.9% + $0.30)
+  Payment Processing Fees   (Stripe fees, ~2.9% + \$0.30)
   Third-Party APIs          (SendGrid, Twilio, OpenAI, etc.)
 
 OPERATING EXPENSES
@@ -110,7 +110,7 @@ Spend 30 minutes every week. It prevents the year-end panic.
 ```
 Weekly (pick a day, be consistent):
 - [ ] Categorize new transactions in accounting software
-- [ ] Upload receipts for any expense over $75
+- [ ] Upload receipts for any expense over \$75
 - [ ] Reconcile bank account (does your software match your bank?)
 - [ ] Note any unusual transactions to ask your accountant about
 
@@ -132,9 +132,9 @@ Revenue is recognized when you deliver the service, not when you receive payment
 
 ```
 Example:
-- Customer pays $1,200 for annual plan on March 1
-- You DON'T book $1,200 as March revenue
-- You book $100/month for 12 months (March through February)
+- Customer pays \$1,200 for annual plan on March 1
+- You DON'T book \$1,200 as March revenue
+- You book \$100/month for 12 months (March through February)
 
 Why: You owe them 12 months of service. Until delivered, it's "deferred revenue" (a liability).
 ```
@@ -151,7 +151,7 @@ Why: You owe them 12 months of service. Until delivered, it's "deferred revenue"
 
 ### Estimated Tax Payments (US)
 
-If you expect to owe $1,000+ in taxes, the IRS wants quarterly estimated payments:
+If you expect to owe \$1,000+ in taxes, the IRS wants quarterly estimated payments:
 
 ```
 Due dates:
@@ -196,7 +196,7 @@ Monthly accountant: $10k+ MRR (hire a bookkeeper or service like Bench)
 **Finding a good accountant:**
 - Look for CPAs who specialize in small businesses or startups
 - Ask other founders for referrals
-- Expect to pay $500-2,000 for annual tax prep (depending on complexity)
+- Expect to pay \$500-2,000 for annual tax prep (depending on complexity)
 - A good accountant saves you more than they cost in missed deductions and avoided mistakes
 
 ---
@@ -246,7 +246,7 @@ Review quarterly. Less important at early stage, but needed for:
 | Mixing personal and business finances | Separate bank accounts from day one |
 | Not tracking expenses | Categorize weekly. 30 minutes prevents 30 hours of cleanup |
 | Ignoring estimated tax payments | Set aside 25-30% of profit monthly in a separate account |
-| No receipts for expenses | Save digital copies of everything over $75 |
+| No receipts for expenses | Save digital copies of everything over \$75 |
 | Doing books once a year | Weekly categorization, monthly review |
 | DIY taxes past $10k MRR | Hire a CPA. They pay for themselves in avoided mistakes |
 | Confusing Stripe revenue with accounting revenue | Stripe payouts include refunds, fees, and timing differences |

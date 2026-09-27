@@ -21,7 +21,7 @@ You know a problem exists in your field. You haven't validated whether anyone el
 1. **translate** — Turn your professional pain into a clear problem statement
 2. **validate** — Test whether other people have this pain and will pay to fix it
 
-**Time:** 1-2 weeks. **Cost:** $0-200.
+**Time:** 1-2 weeks. **Cost:** \$0-200.
 
 **Gate:** Do NOT move to Stage 2 until you have signal that real people want this. Signal = email signups, survey responses, or pre-payments. "My friends think it's cool" is not signal.
 

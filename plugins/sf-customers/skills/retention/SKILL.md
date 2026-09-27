@@ -44,7 +44,7 @@ Example: 1 - (1 - 0.05)^12 = 46% annual churn (you're replacing half your base e
 - **Involuntary churn** — Payment fails, card expires. Customer didn't choose to leave. Fix with dunning (see payments).
 - **Downgrade churn** — Customer moves to a lower tier or free plan. Still using the product, paying less.
 - **Logo churn** — Customer count. "We lost 5 customers."
-- **Revenue churn** — Dollar amount. "We lost $500 MRR." This matters more.
+- **Revenue churn** — Dollar amount. "We lost \$500 MRR." This matters more.
 
 ---
 
@@ -277,7 +277,7 @@ Retention Dashboard (check weekly):
 ```
 NRR = (Starting MRR + Expansion - Contraction - Churn) / Starting MRR × 100
 
-Example: ($10,000 + $500 - $200 - $800) / $10,000 = 95% NRR
+Example: (\$10,000 + \$500 - \$200 - \$800) / \$10,000 = 95% NRR
 ```
 
 - **< 90%:** Revenue is shrinking even if you add new customers. Fix retention first.

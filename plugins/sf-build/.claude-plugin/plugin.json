@@ -1,6 +1,6 @@
 {
   "name": "sf-build",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Build and fix SaaS features with AI coding tools (Claude Code, Lovable, Replit, Cursor): tool selection, database design, integrations, LLM features, debugging, deduplication, and performance.",
   "author": {
     "name": "Will Hawkins",

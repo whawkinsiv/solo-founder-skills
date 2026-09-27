@@ -52,7 +52,7 @@ Happy to share what I learn from the research as a thank you.
 
 **Method 3: Landing Page Test (Lowest effort — 2-3 weeks)**
 1. Build a simple landing page describing the problem you solve (use Lovable or Claude Code)
-2. Drive 100-200 visits via communities, social posts, or $100-200 in ads
+2. Drive 100-200 visits via communities, social posts, or \$100-200 in ads
 3. Measure: Signups / Visitors = interest rate
 4. Below 5% signup rate → positioning is unclear or demand is weak
 
@@ -99,11 +99,11 @@ Do a bottom-up calculation:
 
 2. What will each pay annually?
    [Price point] × [12 months]
-   Example: $49/month × 12 = $588/year
+   Example: \$49/month × 12 = \$588/year
 
 3. Realistic addressable market:
    [Buyers] × [Annual price] × [Capture rate]
-   Example: 60,000 × $588 × 2% = $705,600/year achievable
+   Example: 60,000 × \$588 × 2% = \$705,600/year achievable
 
 4. Sanity check: Does that number fund the business you want?
    Solo founder needs $200K-$500K ARR to replace income + reinvest.
@@ -204,7 +204,7 @@ Score each criterion 1-5. Minimum viable total: 25/40.
 | Criterion | Score | Notes |
 |-----------|-------|-------|
 | **Pain intensity** — Hair-on-fire problem? | /5 | 5 = actively searching for a fix |
-| **Willingness to pay** — Already pay for substitutes? | /5 | 5 = pay $50+/mo for something worse |
+| **Willingness to pay** — Already pay for substitutes? | /5 | 5 = pay \$50+/mo for something worse |
 | **Reachable audience** — Can you find and contact them? | /5 | 5 = concentrated in known communities |
 | **Fragmented competition** — No dominant monopoly? | /5 | 5 = many small players, no clear winner |
 | **Small enough for solo** — Can one person serve this? | /5 | 5 = low support burden, self-serve viable |
@@ -223,14 +223,14 @@ Score each criterion 1-5. Minimum viable total: 25/40.
 
 | Channel | Cost to Test | Time to Signal | Scalable? |
 |---------|-------------|----------------|-----------|
-| Cold outreach | $0 (time only) | 2-4 weeks | Somewhat |
-| Communities | $0 (time only) | 1-3 months | Somewhat |
-| Paid search | $200-500 | 1-2 weeks | Yes (if CAC works) |
-| SEO / Content | $0 (time only) | 3-6 months | Yes |
-| Directories | $0-200 | 1-2 months | Yes (passive) |
-| Partnerships | $0 (time only) | 2-6 months | Yes |
+| Cold outreach | \$0 (time only) | 2-4 weeks | Somewhat |
+| Communities | \$0 (time only) | 1-3 months | Somewhat |
+| Paid search | \$200-500 | 1-2 weeks | Yes (if CAC works) |
+| SEO / Content | \$0 (time only) | 3-6 months | Yes |
+| Directories | \$0-200 | 1-2 months | Yes (passive) |
+| Partnerships | \$0 (time only) | 2-6 months | Yes |
 
-**Rule:** Pick the ONE channel you can test in <30 days with <$500. Prove it works before diversifying.
+**Rule:** Pick the ONE channel you can test in <30 days with <\$500. Prove it works before diversifying.
 
 ---
 
@@ -239,7 +239,7 @@ Score each criterion 1-5. Minimum viable total: 25/40.
 Confirm your ICP can actually buy:
 
 1. **Controls budget?** If they need 3 levels of approval, you lose.
-2. **Below "just expense it" threshold?** ($50-100/mo for individuals, $500-1K for teams)
+2. **Below "just expense it" threshold?** (\$50-100/mo for individuals, \$500-1K for teams)
 3. **Can adopt without IT?** Self-serve SaaS with optional SSO wins.
 4. **Low switching cost?** If migration takes weeks, adoption stalls.
 5. **One person gets value alone?** Network effects help growth but hurt initial adoption.

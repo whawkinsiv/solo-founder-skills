@@ -153,7 +153,7 @@ Include skip option text for optional steps.
 - Plan names should signal audience: "Starter", "Team", "Business" — not "Bronze", "Silver", "Gold"
 - Highlight the recommended plan with "Most popular" or "Best for most teams"
 - Feature lists: Lead with differentiators, not shared features
-- Use per-unit framing when it helps: "$8/user/month" feels smaller than "$80/month for 10 users"
+- Use per-unit framing when it helps: "\$8/user/month" feels smaller than "\$80/month for 10 users"
 
 See **pricing** skill for tier design and pricing strategy.
 

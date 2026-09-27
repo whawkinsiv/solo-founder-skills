@@ -25,9 +25,9 @@ You don't need to write code to track events. Pick a tool, add the snippet, and 
 | Stage | Tool | Why | Cost |
 |-------|------|-----|------|
 | Pre-revenue | **PostHog** | Product analytics, funnels, session replay. Built for SaaS. | Free (1M events/mo) |
-| Pre-revenue | **Plausible** | Simple, privacy-first traffic analytics. | $9/mo |
-| $0-5K MRR | **PostHog** or **Mixpanel** | Deeper funnel analysis, cohort retention | Free tier or ~$200/mo |
-| $5K+ MRR | **Amplitude** or **Heap** | Advanced analytics, experimentation | $500+/mo |
+| Pre-revenue | **Plausible** | Simple, privacy-first traffic analytics. | \$9/mo |
+| \$0-5K MRR | **PostHog** or **Mixpanel** | Deeper funnel analysis, cohort retention | Free tier or ~\$200/mo |
+| $5K+ MRR | **Amplitude** or **Heap** | Advanced analytics, experimentation | \$500+/mo |
 
 **Recommendation for solo founders:** Start with **PostHog** (free tier). It covers product analytics, funnels, session recordings, and feature flags — all things you'll need.
 

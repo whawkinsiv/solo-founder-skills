@@ -21,7 +21,7 @@ The gap between "it works on my screen" and "anyone can use it" feels enormous. 
 
 - **Don't set up Kubernetes, Docker Swarm, or "infrastructure as code."** Managed platforms handle this. You're shipping a product, not building a data center.
 - **Don't set up a staging environment** until you have paying users. Deploy straight to production. You can add staging later.
-- **Don't optimize for scale** before you have traffic. A $5/month Railway plan handles thousands of users. Worry about scaling when it becomes a real problem.
+- **Don't optimize for scale** before you have traffic. A \$5/month Railway plan handles thousands of users. Worry about scaling when it becomes a real problem.
 - **Don't self-host your database.** Use a managed service (Supabase, Railway Postgres, PlanetScale). Self-hosting means you're on call for backups, upgrades, and outages.
 
 ## Choose Your Hosting
@@ -43,7 +43,7 @@ The gap between "it works on my screen" and "anyone can use it" feels enormous. 
 | Platform | Free Tier | Ease | Database | Custom Domain | Best For |
 |----------|-----------|------|----------|---------------|----------|
 | **Vercel** | Generous | Very easy | No (use Supabase) | Yes | Next.js, React apps |
-| **Railway** | $5 credit/mo | Easy | Yes (Postgres) | Yes | Full-stack apps, any framework |
+| **Railway** | \$5 credit/mo | Easy | Yes (Postgres) | Yes | Full-stack apps, any framework |
 | **Netlify** | Generous | Very easy | No | Yes | Static sites, JAMstack |
 | **Render** | Free tier | Easy | Yes (Postgres) | Yes | Full-stack, background jobs |
 | **Fly.io** | Limited free | Moderate | Yes (Postgres) | Yes | Global distribution, Docker |
@@ -155,7 +155,7 @@ Show me which ones are public (safe for client-side) and which are secret
 - **Namecheap** or **Cloudflare Registrar** — cheapest, no markup
 - Get a `.com` if possible. `.io` and `.co` are fine for SaaS
 - Avoid hyphens, numbers, and hard-to-spell names
-- Budget: $10-15/year for a .com
+- Budget: \$10-15/year for a .com
 
 ### DNS Setup
 
@@ -205,7 +205,7 @@ Production Database Checklist — Supabase:
 | Service | Free Tier | Best For |
 |---------|-----------|----------|
 | **Supabase** | 500MB, 2 projects | Postgres + auth + storage |
-| **Railway Postgres** | Included with $5 credit | Apps already on Railway |
+| **Railway Postgres** | Included with \$5 credit | Apps already on Railway |
 | **PlanetScale** | 1 billion row reads/mo | MySQL, branching workflow |
 | **Neon** | 512MB | Serverless Postgres |
 | **Render Postgres** | 1GB, 90-day limit | Apps already on Render |
@@ -286,7 +286,7 @@ what's wrong and how to fix it.
 | Committing API keys to GitHub | Add `.env` to `.gitignore`. Rotate any leaked keys immediately |
 | Using the same database for dev and production | Create separate environments. One bad query shouldn't break production |
 | No backups | Enable database backups today. Not tomorrow. Today |
-| Skipping custom domain | Buy one. $10/year. yourapp.com builds trust |
+| Skipping custom domain | Buy one. \$10/year. yourapp.com builds trust |
 | Overcomplicating deployment | Use the platform that matches your build tool. Don't migrate unnecessarily |
 | Not testing after deploy | Always click through your app after every deployment |
 | Ignoring deploy logs | When something breaks, logs tell you why. Learn to read them |
