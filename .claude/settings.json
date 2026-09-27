@@ -1,0 +1,15 @@
+{
+  "enabledPlugins": {
+    "sf-core@solo-founder-skills-marketplace": true,
+    "sf-strategy@solo-founder-skills-marketplace": true,
+    "sf-design@solo-founder-skills-marketplace": true,
+    "sf-build@solo-founder-skills-marketplace": true,
+    "sf-ship@solo-founder-skills-marketplace": true,
+    "sf-copy@solo-founder-skills-marketplace": true,
+    "sf-seo@solo-founder-skills-marketplace": true,
+    "sf-channels@solo-founder-skills-marketplace": true,
+    "sf-customers@solo-founder-skills-marketplace": true,
+    "sf-business@solo-founder-skills-marketplace": true,
+    "sf-dev@solo-founder-skills-marketplace": true
+  }
+}
