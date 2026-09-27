@@ -1,0 +1,22 @@
+{
+  "name": "sf-channels",
+  "version": "1.0.0",
+  "description": "Reach people: product launches, content strategy, social media, lifecycle and branded email, paid ads, and community building for bootstrapped SaaS.",
+  "author": {
+    "name": "Will Hawkins",
+    "url": "https://github.com/whawkinsiv"
+  },
+  "repository": "https://github.com/whawkinsiv/solo-founder-skills",
+  "license": "MIT",
+  "keywords": [
+    "saas",
+    "founder",
+    "non-technical",
+    "launch",
+    "marketing",
+    "email",
+    "social-media",
+    "ads",
+    "community"
+  ]
+}

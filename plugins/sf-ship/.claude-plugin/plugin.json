@@ -1,0 +1,21 @@
+{
+  "name": "sf-ship",
+  "version": "1.0.0",
+  "description": "Get a SaaS app live and keep it up: testing, security, regulatory compliance, a go/no-go launch checklist, deployment, production monitoring, and analytics.",
+  "author": {
+    "name": "Will Hawkins",
+    "url": "https://github.com/whawkinsiv"
+  },
+  "repository": "https://github.com/whawkinsiv/solo-founder-skills",
+  "license": "MIT",
+  "keywords": [
+    "saas",
+    "founder",
+    "non-technical",
+    "testing",
+    "security",
+    "deployment",
+    "monitoring",
+    "analytics"
+  ]
+}

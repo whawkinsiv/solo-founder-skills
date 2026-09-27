@@ -1,0 +1,20 @@
+{
+  "name": "sf-seo",
+  "version": "1.0.0",
+  "description": "Rank in search and get cited by AI: SEO strategy and keyword planning, SEO content writing, codebase SEO audits, and technical SEO.",
+  "author": {
+    "name": "Will Hawkins",
+    "url": "https://github.com/whawkinsiv"
+  },
+  "repository": "https://github.com/whawkinsiv/solo-founder-skills",
+  "license": "MIT",
+  "keywords": [
+    "saas",
+    "founder",
+    "non-technical",
+    "seo",
+    "content",
+    "keywords",
+    "technical-seo"
+  ]
+}

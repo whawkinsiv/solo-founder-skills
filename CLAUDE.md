@@ -4,31 +4,29 @@ This file provides guidance to Claude Code (claude.ai/code) when working with th
 
 ## Repository Purpose
 
-A Claude Code plugin for non-technical founders building SaaS applications with AI tools (Claude Code, Lovable, Replit, Cursor). Contains 59 skills covering the full build lifecycle plus business, marketing, and growth strategy.
+A Claude Code plugin marketplace for solo, non-technical, and bootstrapped founders building web apps with AI tools (Claude Code, Lovable, Replit, Cursor). It holds 10 public plugins plus one plugin for skill authors. The skills cover the full build lifecycle plus business, marketing, and growth strategy.
 
 ## Structure
 
-This is a Claude Code plugin. The manifest lives at `.claude-plugin/plugin.json`.
+One marketplace, many plugins. The marketplace manifest lives at `.claude-plugin/marketplace.json`. It lists every plugin with a relative `source` of `./plugins/<plugin>`.
 
-### `skills/` — All Skills
+### `plugins/<plugin>/` — One Plugin Each
 
-Each subdirectory is a skill containing `SKILL.md` (required) plus optional supporting files.
+- `.claude-plugin/plugin.json` — the plugin manifest, with its own `version`
+- `skills/` — one subdirectory per skill, each with `SKILL.md` (required) plus optional supporting files
+- `commands/` — custom commands (only `sf-core` has one: `improve-prompt.md`)
 
-**Development & Technical:** build, database, integrations, ai-features, deploy, secure, test, debug, optimize, monitor
+Run `ls plugins/*/skills/` for the current list. Read a skill's `description` frontmatter to see what it covers. `sf-dev` holds skill-authoring tools and stays out of the README.
 
-**Design & UX:** brand-identity-generator, beautify, ui-patterns, ux-design, motion-polish, design-review
+### Adding or Moving a Skill
 
-**SEO & Content:** seo, seo-content, seo-audit, technical-seo, content, copywriting
+Each skill belongs to exactly one plugin. When you add, move, or rename a skill, update these three places so the routers stay correct:
 
-**Growth & Marketing:** launch, landing-page, growth, conversion, email, ads, sales, social-media, community
+- The plugin table at the end of `plugins/sf-core/skills/journey/SKILL.md`
+- The same table in `plugins/sf-core/skills/next/SKILL.md`
+- The plugin section under "What's Inside" in `README.md`
 
-**Strategy & Planning:** plan, validate, customer-research, market-research, pricing, prioritize, feedback, analytics
-
-**Business Operations:** legal, finances, accounting, payments, hiring, support, retention
-
-### `commands/` — Claude Code Custom Commands
-
-- `improve-prompt.md` - Transforms vague coding requests into detailed, specific prompts
+Bump the `version` in that plugin's `plugin.json` when you ship a change to it.
 
 ## File Conventions
 

@@ -1,0 +1,21 @@
+{
+  "name": "sf-customers",
+  "version": "1.0.0",
+  "description": "Win and keep customers: product-led growth, conversion optimization, retention and churn, founder-led sales, customer support, and feedback loops.",
+  "author": {
+    "name": "Will Hawkins",
+    "url": "https://github.com/whawkinsiv"
+  },
+  "repository": "https://github.com/whawkinsiv/solo-founder-skills",
+  "license": "MIT",
+  "keywords": [
+    "saas",
+    "founder",
+    "non-technical",
+    "growth",
+    "conversion",
+    "retention",
+    "sales",
+    "support"
+  ]
+}

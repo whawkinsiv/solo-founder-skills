@@ -1,0 +1,21 @@
+{
+  "name": "sf-business",
+  "version": "1.0.0",
+  "description": "Run the company: pricing, Stripe payments and billing, financial models and unit economics, bookkeeping and taxes, legal setup, and hiring technical help.",
+  "author": {
+    "name": "Will Hawkins",
+    "url": "https://github.com/whawkinsiv"
+  },
+  "repository": "https://github.com/whawkinsiv/solo-founder-skills",
+  "license": "MIT",
+  "keywords": [
+    "saas",
+    "founder",
+    "non-technical",
+    "pricing",
+    "payments",
+    "finance",
+    "legal",
+    "hiring"
+  ]
+}

@@ -1,15 +1,105 @@
 {
   "name": "solo-founder-skills-marketplace",
-  "description": "Expert skills for non-technical founders building SaaS with AI tools",
+  "description": "Expert skills for non-technical founders building SaaS with AI tools, in 10 focused plugins. Install sf-core first.",
   "owner": {
     "name": "Will Hawkins"
   },
   "plugins": [
     {
-      "name": "solo-founder-skills",
-      "description": "59 expert skills for non-technical founders building SaaS with AI tools. Covers the full lifecycle: planning, design, build, database, integrations, AI features, security, testing, debugging, deployment, monitoring, plus marketing, pricing, growth, and business strategy.",
-      "version": "3.0.1",
-      "source": "./",
+      "name": "sf-core",
+      "description": "Start here. Orientation and routing for non-technical founders building SaaS with AI tools: where to start, what to do next, whether a task is worth your time, what to build first, founder voice setup, and plain-English definitions of technical terms.",
+      "source": "./plugins/sf-core",
+      "category": "productivity",
+      "author": {
+        "name": "Will Hawkins"
+      }
+    },
+    {
+      "name": "sf-strategy",
+      "description": "Turn an idea into a buildable spec: translate professional expertise into a product, validate demand before building, customer and market research, niche advantage, naming and domain selection, and feature specs AI tools can execute.",
+      "source": "./plugins/sf-strategy",
+      "category": "productivity",
+      "author": {
+        "name": "Will Hawkins"
+      }
+    },
+    {
+      "name": "sf-design",
+      "description": "Make an AI-built SaaS look and feel professional: brand identity, UX flows, UI patterns, visual polish, motion, and a design review quality gate.",
+      "source": "./plugins/sf-design",
+      "category": "design",
+      "author": {
+        "name": "Will Hawkins"
+      }
+    },
+    {
+      "name": "sf-build",
+      "description": "Build and fix SaaS features with AI coding tools (Claude Code, Lovable, Replit, Cursor): tool selection, database design, integrations, LLM features, debugging, deduplication, and performance.",
+      "source": "./plugins/sf-build",
+      "category": "development",
+      "author": {
+        "name": "Will Hawkins"
+      }
+    },
+    {
+      "name": "sf-ship",
+      "description": "Get a SaaS app live and keep it up: testing, security, regulatory compliance, a go/no-go launch checklist, deployment, production monitoring, and analytics.",
+      "source": "./plugins/sf-ship",
+      "category": "deployment",
+      "author": {
+        "name": "Will Hawkins"
+      }
+    },
+    {
+      "name": "sf-copy",
+      "description": "Write the words for a SaaS product: UI copy and CTAs, long-form founder prose, landing pages, and removing AI writing patterns so copy reads as human-written.",
+      "source": "./plugins/sf-copy",
+      "category": "productivity",
+      "author": {
+        "name": "Will Hawkins"
+      }
+    },
+    {
+      "name": "sf-seo",
+      "description": "Rank in search and get cited by AI: SEO strategy and keyword planning, SEO content writing, codebase SEO audits, and technical SEO.",
+      "source": "./plugins/sf-seo",
+      "category": "productivity",
+      "author": {
+        "name": "Will Hawkins"
+      }
+    },
+    {
+      "name": "sf-channels",
+      "description": "Reach people: product launches, content strategy, social media, lifecycle and branded email, paid ads, and community building for bootstrapped SaaS.",
+      "source": "./plugins/sf-channels",
+      "category": "productivity",
+      "author": {
+        "name": "Will Hawkins"
+      }
+    },
+    {
+      "name": "sf-customers",
+      "description": "Win and keep customers: product-led growth, conversion optimization, retention and churn, founder-led sales, customer support, and feedback loops.",
+      "source": "./plugins/sf-customers",
+      "category": "productivity",
+      "author": {
+        "name": "Will Hawkins"
+      }
+    },
+    {
+      "name": "sf-business",
+      "description": "Run the company: pricing, Stripe payments and billing, financial models and unit economics, bookkeeping and taxes, legal setup, and hiring technical help.",
+      "source": "./plugins/sf-business",
+      "category": "productivity",
+      "author": {
+        "name": "Will Hawkins"
+      }
+    },
+    {
+      "name": "sf-dev",
+      "description": "Tools for skill authors: measure whether a Claude Code skill works and improve it through A/B evaluation.",
+      "source": "./plugins/sf-dev",
+      "category": "development",
       "author": {
         "name": "Will Hawkins"
       }
