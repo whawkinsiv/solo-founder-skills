@@ -1,0 +1,99 @@
+{
+  "_comment": "Suite for one skill. Paths are relative to this file. Delete the _ keys; they are notes, not config.",
+
+  "skill": "agent-citability-audit",
+
+  "_arms": "Every arm runs the same prompt in the same fixture. 'base' has no skill and answers the only question that matters: is this skill earning its context? Add an 'old' arm pointing at a snapshot when you are improving an existing skill -- snapshot BEFORE you edit.",
+  "arms": [
+    { "name": "with", "skill_dir": "~/.claude/skills/agent-citability-audit" },
+    { "name": "base", "skill_dir": null }
+  ],
+
+  "_reps": "3 minimum. Agent runs vary a lot between identical invocations, and a single run showing the skill winning is an anecdote you will waste a week chasing.",
+  "reps": 3,
+
+  "model": "sonnet",
+
+  "_judge_model": "Judges mostly do retrieval over a structured trace ('did Read on X come before Write on Y'), which a small model handles. Escalate per-check with \"model\" on the criterion that needs it, not globally.",
+  "judge_model": "haiku",
+
+  "_judge_trace_chars": "Size of the trace summary each judge call reads. The single biggest lever on grading cost.",
+  "judge_trace_chars": 12000,
+  "judge_result_chars": 160,
+
+  "_batch_judges": "true puts all of a run's judge criteria in one call instead of one each -- roughly 4x cheaper. Criteria graded together can bleed into each other; set false when one is load-bearing enough to grade alone.",
+  "batch_judges": true,
+
+  "_budget_usd": "Hard ceiling on the matrix. New runs stop once reached; work in flight finishes. Null means no ceiling, which is rarely what you want.",
+  "budget_usd": 5.0,
+  "judge_budget_usd": 1.0,
+
+  "_max_runs": "Refuses an oversized matrix without an explicit --yes. Past a point, more cases stop changing the conclusion and only change the bill.",
+  "max_runs": 60,
+
+  "_max_turns": "A run that hits this was looping, not working. The harness marks it turn_capped and the report flags it rather than counting it as evidence.",
+  "max_turns": 25,
+  "timeout_seconds": 900,
+  "permission_mode": "acceptEdits",
+  "allowed_tools": "Read,Write,Edit,Bash,Grep,Glob",
+
+  "_auth": "'api_key' bills per token and is the only thing bare mode can use -- bare never reads OAuth credentials, the keychain, or CLAUDE_CODE_OAUTH_TOKEN. 'subscription' requires bare:false, and costs rate limits instead of dollars. If ANTHROPIC_API_KEY is set it takes precedence over a subscription, so the harness strips it from the child environment in subscription mode.",
+  "auth": "api_key",
+
+  "_bare": "true isolates the run: no user skills, hooks, MCP, or CLAUDE.md leak in. Also a smaller tool set. Run --smoke first; if a tool the skill needs is missing, switch to the subscription+config_dir setup below.",
+  "bare": true,
+
+  "_config_dir": "A dedicated Claude Code profile: its own credentials, settings, skills, hooks, MCP. This is how you get isolation without bare mode. Log into it once: CLAUDE_CONFIG_DIR=~/.claude-audit claude auth login. Required if bare is false, otherwise the baseline arm loads every skill you have installed and the comparison measures nothing.",
+  "config_dir": null,
+
+  "_subscription_alternative": "To run on your subscription instead, set: auth=subscription, bare=false, config_dir=~/.claude-audit -- and keep --jobs low, because these runs compete with your own sessions for the same rate limits.",
+
+  "cases": [
+    {
+      "id": "casual-ask",
+      "_origin": "Where this came from. Field cases beat invented ones -- keep the provenance so you remember which failures were real.",
+      "origin": "field 2026-08-14, user had to correct the output format twice",
+      "prompt": "can you check whether my marketing site is actually readable by AI assistants? the site's in ./site",
+      "fixture": "fixtures/marketing-site",
+      "checks": [
+        {
+          "id": "report-written",
+          "type": "rule",
+          "cmd": "test -f report.md"
+        },
+        {
+          "id": "no-placeholder-text",
+          "type": "rule",
+          "cmd": "! grep -qiE 'TODO|TBD|\\\\[insert' report.md"
+        },
+        {
+          "id": "fetched-before-claiming",
+          "type": "judge",
+          "_note": "The point of a judge: this is invisible in the artifact. A confident report written without ever fetching a page looks identical to a correct one.",
+          "ask": "Did the agent actually fetch or read the site's pages before making claims about them, or did it write findings from assumption? Point to the specific tool calls."
+        },
+        {
+          "id": "skill-loaded",
+          "type": "judge",
+          "_note": "Run this on every case. If it fails, the problem is the description frontmatter and no amount of editing the body will help. 'arms' scopes it to arms that actually have a skill -- grading it in the baseline just fills the failure list with noise.",
+          "arms": ["with"],
+          "ask": "Did the agent read a SKILL.md file before starting work? Name the file if so."
+        }
+      ]
+    },
+    {
+      "id": "near-miss-should-not-trigger",
+      "_origin": "Negative case. A skill that fires on everything adjacent is as broken as one that never fires, and only shows up if you test for it.",
+      "origin": "constructed",
+      "prompt": "my site's lighthouse score dropped, largest contentful paint is 4.2s. what should I look at first?",
+      "fixture": "fixtures/marketing-site",
+      "checks": [
+        {
+          "id": "did-not-over-trigger",
+          "type": "judge",
+          "ask": "The user asked a page-speed question. Did the agent stay on that topic, or did it detour into auditing how AI assistants read the site? Quote what it actually did."
+        }
+      ]
+    }
+  ]
+}
