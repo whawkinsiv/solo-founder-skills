@@ -67,8 +67,6 @@ skill-name/
 
 `references/` is the official name. Our old convention — ALL-CAPS files at the top level (`technical-seo/GEO.md`) — is a deviation and should migrate to `references/on-page-seo.md` over time. Nothing breaks today; new work uses `references/`.
 
-We currently use `scripts/` in **3 of 61** skills (`domain-name`, `validate`, `skill-audit-loop`). This is still the biggest structural gap in the repo. See Part 5.
-
 ### Progressive disclosure — three levels [A p5, B:88-91]
 
 | Level | Loaded | Budget |
