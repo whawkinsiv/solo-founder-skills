@@ -64,6 +64,53 @@ mention and every word-of-mouth referral.
 Naming the **outcome** outranks naming the **mechanism**. Outcomes stay true when the
 mechanism changes.
 
+### Test one-and-a-half — the anchor test. Does it belong to this product's world?
+
+Write the name, then the product's one-line description, side by side. A stranger
+reading both should think "that fits" — not "what is the connection?"
+
+**This is the most common failure in this skill.** Naming feels like reaching one step
+away from the product, so you reach — into metaphor, into an abstract state, into an
+adjacent trade. The result names *a* thing rather than *this* thing, and it will feel
+apt to you while meaning nothing to anyone else.
+
+The tell: if the name would suit three businesses in unrelated industries, it is not
+anchored. A name that could equally badge a clinic, a courier, and a consultancy is
+not naming this product.
+
+Stay inside the product's own vocabulary. Use the words its landing page already
+repeats. A word the page uses nine times is available to you; a near-synonym it never
+uses is not.
+
+**Naming the outcome does not exempt a name from this test.** An outcome word can
+float as free of the product as a metaphor can. Prefer outcome words that also live in
+the product's domain over outcome words that could belong to any business anywhere.
+
+Score 0 if the connection needs a sentence of explanation, whatever else the name does
+well.
+
+### Test two — completeness. Does the name leave a question hanging?
+
+Say the name on its own and listen for a dangling question.
+
+A name like `Deliver` invites "deliver *what*?" `Connect` invites "connect *whom*?"
+A bare transitive verb is incomplete by grammar: it demands an object the name never
+supplies, so the listener is left holding half an idea. This is why an apt verb can
+still feel wrong — it names the motion but not the thing.
+
+Every strong example is a **noun or an adjective**. Stripe, Notion, Buffer, Traction,
+Foothold are nouns. Linear is an adjective. `Dropbox` is a noun and resolves on
+contact: it is a box you drop things into.
+
+| Score | Meaning |
+|---|---|
+| 2 | A noun or adjective. Resolves into a complete idea with nothing missing. |
+| 1 | A verb that also reads as a noun — `Buffer`, `Post` — so it lands either way. |
+| 0 | A bare transitive verb. Leaves the listener asking "what?" or "with whom?" |
+
+**Score the lower of the two tests.** A name that nails the outcome but leaves a
+question hanging is not finished.
+
 ---
 
 ## 4. Short
@@ -104,6 +151,32 @@ Descriptive and distinctive pull against each other. `GrowthPlatform` says exact
 it does and is invisible. `Foothold` says less and is findable. Prefer findable, because
 you can explain what you do in the tagline but you cannot buy your way out of anonymity.
 
+### Judge the assembled name, never its parts
+
+Search the whole name before scoring this rule. A compound built from two ordinary
+words is frequently unused even when both words are everywhere. Scoring the parts
+instead of the whole marks down names that would in fact own their search — and it is
+easy to do, because the parts *look* generic on the page.
+
+If you have not run the search, you cannot score this rule. Leave it blank rather than
+guess.
+
+### Do not punish a name for being plain
+
+This rule is the one that quietly penalises literal names, and that penalty compounds:
+a plain name tends to lose points here, on memorability, and on credibility, all for
+the same quality. Guard against it.
+
+- A name needing no explanation has already won rules 2 and 6. Do not tax it here for
+  the same trait.
+- "It sounds like a feature, not a company" is not a finding. Plenty of category-defining
+  companies are named after exactly what they do.
+- Literal truth beats cleverness at equal score. When two names tie, take the one that
+  is true.
+
+A name that is available, accurate, and plain is a strong result, not a consolation
+prize.
+
 ---
 
 ## 6. No explanation required
@@ -132,11 +205,25 @@ origin of the name is not an asset. Nobody asks.
 | 1 | Readable but slightly cluttered. | |
 | 0 | Prefixes, suffixes, or a jam of words. | `getyourtractionhq.com` |
 
-Score 0 for: `get-` and `try-` prefixes, an `-hq` / `-app` / `-io` suffix bolted on,
-hyphens, digits, or any string where two words collide into an accidental third
-(`expertsexchange`).
+Score 0 for: hyphens, digits, a bolted-on `-hq` / `-app` / `-io` suffix, or any string
+where two words collide into an accidental third (`expertsexchange`).
 
-The underlying words in `getyourtractionhq.com` are fine. The object is not.
+**A `get-` or `use-` prefix is not automatically a failure.** Judge the whole object,
+by length:
+
+| Domain | Score | Why |
+|---|---|---|
+| `foothold.com` | 2 | Exact match, nothing added |
+| `getfoothold.com` | 1 | Prefix plus **one strong word**. Clean, readable, common practice. Acceptable for a great name. |
+| `getyourtractionhq.com` | 0 | Prefix plus **three words plus a suffix**. The root word is fine; the object is a pile. |
+
+The line is roughly: prefix plus one word is acceptable, prefix plus two or more is
+not. A wrapper is only fatal when it makes the domain long or hard to parse.
+
+This matters because of the priority order — great concept, then great name, then
+acceptable domain. Scoring every wrapper as 0 quietly inverts that order, because it
+eliminates strong names on a domain technicality and leaves you choosing from whatever
+happens to be free.
 
 ---
 
@@ -152,20 +239,40 @@ you get to money, health, or legal work.
 
 ---
 
-## 9. Expandable
+## 9. Expandable — and does it already cover what you ship?
 
 *Don't name the company after one narrow feature.*
 
-**Test:** name the second product you might build. Does the name still fit?
+Two tests. **Score the lower of the two.**
+
+**Test one — present scope.** List every job the product does today. Does the name
+cover all of them, or one? A name covering one job of three scores 0, even when that
+job is the most interesting one.
+
+This is the more common failure and the harder one to see, because the name feels
+apt. It *is* apt — for a third of the product.
+
+**Test two — future scope.** Name the second product you might build. Does the name
+still fit?
 
 `TweetReplyBot` becomes a liability the day you add LinkedIn, outreach, analytics, or
 content planning. The name caps the company.
 
 | Score | Meaning |
 |---|---|
-| 2 | Names a category, outcome, or concept. Fits products you haven't thought of. |
+| 2 | Names a category, outcome, or concept. Covers every current job and fits products you haven't thought of. |
 | 1 | Names a broad mechanism. Some room. |
-| 0 | Names one feature, one platform, or one integration. |
+| 0 | Names one feature, one platform, one integration, **or one job out of several**. |
+
+**Judge features, not channels.** "Works for X, LinkedIn, and TikTok" is not
+expandability. If the name still describes only one of three jobs, it scores 0 no
+matter how many networks it survives. Channel range and feature range are different
+axes, and confusing them is the standard way this rule gets scored wrong.
+
+Worked example. A product that (1) imports your data, (2) cleans it, and (3) builds
+the report. A name meaning only "clean" scores **0** — it covers one job of three, and
+caps the company at the least interesting one. A name meaning "the finished report"
+covers the result of all three → **2**.
 
 Score 0 for any name containing another company's product name — `Tweet`, `Slack`,
 `Notion`, `GPT`. Those are also a trademark risk, not only a ceiling.
@@ -185,18 +292,44 @@ larger brand.*
    your own name forever.
 3. Check the handle on the one channel you will actually use. Not all of them.
 
-**Exact .com is useful but no longer mandatory for a software product.** A clean
-`.dev`, `.app`, `.ai`, or `.io` beats a mangled `.com` every time. `foothold.dev` beats
-`getfoothold.com`.
+### The suffix question is a set, not a ranking
 
-Ranked, best first:
+There is an **acceptable set** and there is everything else. Inside the set, no suffix
+outranks another, and the choice gets made on the name — exact match, length, how it
+sounds spoken. Outside the set you carry damage no name repairs.
 
-1. Exact-match `.com`
-2. Exact-match `.dev` / `.app` / `.ai` / `.io` — credible for software, and `.dev` and
-   `.app` are HTTPS-only, which reads as modern
-3. Exact match on a category TLD that fits — `.studio`, `.build`
-4. A short, natural two-word `.com` — `usefoothold.com` only if `use` reads naturally
-5. Anything with a hyphen, a digit, or a bolted-on `hq`
+Resist the urge to rank within the set. A ladder invents precision that the evidence
+does not support, and it produces two bad habits: settling for a mangled domain to
+climb a rung, and treating a perfectly good suffix as a consolation prize.
+
+**What the evidence does and does not establish:**
+
+| Claim | Status |
+|---|---|
+| Search engines treat generic TLDs equally | Confirmed by Google |
+| Roughly 4 in 10 people try `.com` regardless of what you tell them | Supported. Applies to *every* non-`.com` equally, so it cannot rank them |
+| Some TLDs carry abuse rates above 40%, which degrades email deliverability | Supported by Spamhaus reputation data |
+| Cheap registration drives that abuse — several of the worst TLDs share one budget registry | Supported, and it is the mechanism behind the boundary |
+| Buyers judge a company by its suffix, or judge it differently depending on how technical they are | **No support found.** Do not use this. |
+
+**What puts a suffix outside the set:**
+
+1. **A high abuse rate.** This is the one hard, measurable criterion. It damages email
+   deliverability, which matters for any product that sends mail. Check current
+   reputation data rather than trusting a list that ages.
+2. **Bargain pricing**, which is the upstream cause of the above.
+3. **Collision with a file extension** — a suffix that also names a file type invites
+   real confusion.
+4. **Registry instability.** Country-code suffixes depend on the politics of a country
+   that may have no connection to the business.
+
+**What stays inside the set:** the long-established generics, and the modern suffixes
+that price above the abuse threshold and run a real policy. A deliberate `.org` in a
+commercial category is a legitimate differentiation play, not a compromise.
+
+Within the set, prefer an exact match to a wrapped one — `name.app` over
+`getname.com` — because the brand and the address stay the same string. That is a
+preference about the *name*, not a claim that one suffix is better than another.
 
 ---
 

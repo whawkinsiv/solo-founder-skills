@@ -12,6 +12,27 @@ name, or it can be a good name you cannot have. Judge the concept first, then te
 availability. Running availability checks on a weak shortlist wastes the founder's time
 on names they should not want.
 
+## Optimise in this order
+
+```
+great concept  →  great name  →  acceptable domain
+```
+
+**Never the reverse.** The failure mode is subtle and almost automatic: one pattern
+starts returning free domains, so you generate more of that pattern, and within two
+rounds availability is choosing the concept. You will not notice it happening. The
+symptom is a candidate list where most names share a word or a shape.
+
+A great name with an acceptable domain beats a mediocre name with a pristine one:
+
+- `Foothold` → `getfoothold.com` — **works.** The name is doing the work.
+- `Social Engagement Automation` → `socialengagementautomation.com` — **still mediocre.**
+  A perfect domain cannot rescue a dead name.
+
+So when a strong name's exact domain is gone, do not discard the name. Try the
+variants in the rule 10 ladder first. Discard a name for being *weak*, never for being
+*taken*.
+
 Work in three phases. Do not skip ahead to phase 3 — a founder who picks from an
 unrefined list picks the first name they recognise, which is usually the most generic
 one.
@@ -29,20 +50,41 @@ No availability checks yet. Domains are cheap to check and expensive to get atta
 
 Ask for whatever is missing, in one message:
 
-1. What the product does, in one sentence.
-2. **The outcome the customer gets.** This matters more than the features. `Traction`
+1. **Every distinct job the product does. Number them. Do not compress to one
+   sentence.** A three-job product described in one sentence loses two jobs, and
+   whichever job survives becomes the entire naming territory by accident.
+2. **What unifies those jobs.** If the product does find → join → publish, the
+   unifying idea is working a defined set of people over time. **The unifying idea is
+   the naming territory, not any single job.**
+3. **The outcome the customer gets.** This matters more than the features. `Traction`
    works because it names what an early-stage product wants.
-3. Who it is for.
-4. Any word they already like, or any they have ruled out.
-5. Whether `.com` is a hard requirement.
+4. Who it is for.
+5. Any word they already like, or any they have ruled out.
+6. Whether `.com` is a hard requirement.
 
 If `ABOUT-ME.md` or `MY-ICP.md` exist in the project, read them first and ask only for
 what they do not answer.
 
 ### Step 2: Build word pools
 
-Write out four pools before you write any names. Names invented directly tend to cluster
+Write out the pools before you write any names. Names invented directly tend to cluster
 around one idea.
+
+**First, one pool per job, plus a unifying pool.** This step is what stops a multi-job
+product from being named after whichever job you thought about first.
+
+| Pool | Contains | Example — a tool that plans your meals, builds the list, and orders the food |
+|---|---|---|
+| Job 1 | Vocabulary for the first job | plan, menu, spread, course |
+| Job 2 | Vocabulary for the second job | list, tally, cart, basket |
+| Job 3 | Vocabulary for the third job | order, deliver, stock, fill |
+| **Unifying** | **Words covering every job at once** | **pantry, larder, table, kitchen** |
+
+**The name usually comes from the unifying pool.** A journalist's *beat* is the people
+they cover, the conversations they follow, and the stories they publish — one word for
+three jobs.
+
+Then cut across those with the lexical pools:
 
 | Pool | Contains | Example for a habit tracker |
 |---|---|---|
@@ -51,22 +93,82 @@ around one idea.
 | Action | What the user does | tally, mark, log, keep |
 | Metaphor | One conceptual leap away | ratchet, flywheel, cairn, tide |
 
+Before you write a single name, check that some word in your pools touches **every**
+job. If every word serves one job, stop and rebuild the pools. That is the most common
+way this skill fails, and everything downstream inherits the error.
+
 ### Step 3: Produce 20-30 candidates
 
-Cover a range deliberately: single concrete words, two-word compounds, and a few
-metaphors. Do not pad the list with variants of one idea.
+Cover all five kinds deliberately. Do not let one kind dominate — each fails
+differently, and a list of one kind inherits that kind's weakness.
+
+| Kind | What it is | Examples |
+|---|---|---|
+| **Adjacent concept** | An ordinary word one step from the product. Not descriptive, not a riddle. | Stripe, Notion, Linear, Buffer |
+| **Plain compound** | Two real words naming the thing you get | Basecamp, Mailchimp, Dropbox |
+| Outcome word | Names what the customer ends up with | Traction, Foothold |
+| **Coined** | Invented, but spellable on first hearing | Typefully, Taplio, Calendly |
+| Metaphor | One conceptual leap | Buffer, for scheduling |
+
+### Generate the obvious name first, and check it before you reach
+
+**Before any other kind, build the plain compounds from the product's own nouns** —
+the words its landing page already repeats — and check those domains immediately.
+
+Take the noun for who it serves, the noun for what it hands them, and put them
+together. Then do it again with the next pair. Produce a dozen of these before you
+generate anything clever.
+
+If one of them is free and literally true, **you may already be finished.** Reaching
+past an available, accurate, plain name is the single most expensive mistake in this
+skill: it costs rounds, and it usually ends back where it started.
+
+Only once the obvious names are generated and checked do you move to the kinds below.
+
+**Adjacent concept is the highest-yield kind and the easiest to skip.** Stripe is not
+a payments pun. Notion does not describe notes. Linear does not describe issue
+tracking. Each is a common word picked for sound and a faint thematic link, with no
+puzzle for the listener to solve. Generate at least eight of these before anything
+else.
+
+**Coined is not the same as misspelled.** `Typefully` and `Calendly` are coinages — a
+listener spells them right on first hearing. `Flickr` and `Lyft` are respellings of
+real words and score 0 on rule 2. Coin by adding a clean suffix (`-ly`, `-io`, `-a`)
+to a real word, or by fusing two real words. Never by dropping vowels.
+
+**Warning on plain compounds.** They read clearly and score 0 on rule 5, because
+`GrowthPlatform` is anonymous. A compound earns its place when it names the product's
+actual output — `Dropbox` is a box you drop things into — not when it merely labels a
+category.
 
 ### Step 4: Score and present
 
-Score each on the ten rules. Present the top 12 as a table, highest first:
+Score each on the ten rules. Present the top 12 as a table, highest first. **Every row
+carries both a pro and a con.** Never one without the other.
 
-```
-| Name | Score | Strongest | Weakest |
+| Name | Score | Pro | Con |
 |---|---|---|---|
-| Foothold | 17 | distinctive, expandable | common word, check search |
-```
+| Foothold | 17 | Vivid mental object, distinctive, expandable | Common word — the search landscape needs checking |
+| Basecamp | 16 | Names the thing you get; two real words, both true | "Camp" is well used; search is crowded |
 
-Then say which three you would keep and why. Founders need a call, not a menu.
+A row carrying only a con reads as a rejection you have already made on the founder's
+behalf. A row carrying only a pro is a sales pitch. They need both halves, because
+they are the one judging.
+
+**Cover every kind in generation. Do not cap any kind in the results.**
+
+Before scoring, confirm you produced real candidates from all five kinds. If you
+skipped one because another was going well, go back — that is a lapse in generation,
+and the list you are about to score is missing its best option.
+
+But once you have covered the kinds honestly, **let the winners win.** If one pattern
+takes eight of the top twelve after a fair fight, that is a finding about the product,
+not a bias to correct. Diluting a strong list to look varied hands the founder worse
+options and hides the real signal. Say plainly that the pattern dominated and why.
+
+The failure to guard against is **generating** narrowly — usually because one pattern
+starts returning free domains and availability quietly takes over the brief. It is not
+a list that ends up concentrated on merit.
 
 **Done when** the founder has a scored list of 12 and has told you which names they
 react to. Move to phase 2.
@@ -141,9 +243,16 @@ The domain is necessary and not sufficient. For each surviving name:
 
 ---
 
-## Phase 3 — Decide on one
+## Phase 3 — Give the founder what they need to decide
 
-A founder who has reached three good options will stall. Your job is to end it.
+**The founder chooses the name. You do not.** They will say it ten thousand times,
+defend it to customers, and live with it for years. That endorsement cannot be
+delegated, and a name the founder merely accepted is one they will second-guess
+forever.
+
+Your job is to make the decision **easy**, not to make it. A founder stalls when the
+options look interchangeable. They stall less when the real differences are sharp and
+the cost of each choice is named out loud. Sharpen, then hand over.
 
 ### Step 9: Force the comparison
 
@@ -152,22 +261,59 @@ Drop the rules where they all score the same — those carry no information.
 
 ### Step 10: Run the three tests that break ties
 
-Ask the founder directly:
+Run the first two yourself before you show the founder anything. They eliminate
+finalists, so a name that fails them never reaches a tie-break.
 
-1. **The phone test.** Say the name and the extension aloud. Would a stranger type it
+1. **The scope test.** Read the job list from Step 1 back. Does the name cover every
+   job, or one of them? Cut any finalist that names a single job of several. A name
+   can pass every other test and still describe a third of the product — and it will
+   feel apt while doing it, because it *is* apt, for that third.
+2. **The copy test.** Read the product's real landing page or pitch, not your summary
+   of it. Does the name agree with the voice, or does it name the objection the copy
+   works to answer? A tool whose FAQ asks "could this get my account banned?" must not
+   be called something that means interrupting.
+
+Then ask the founder directly:
+
+3. **The phone test.** Say the name and the extension aloud. Would a stranger type it
    correctly with no spelling?
-2. **The invoice test.** Picture the name on an invoice to their most sceptical customer.
+4. **The invoice test.** Picture the name on an invoice to their most sceptical customer.
    Which one holds up?
-3. **The second-product test.** Name a product they might build in two years. Which name
+5. **The second-product test.** Name a product they might build in two years. Which name
    still fits?
 
-### Step 11: Recommend one
+### Step 11: Hand over the decision
 
-Name your pick, give the one reason that decided it, and name what they give up. Do not
-present a ranked list and leave the decision open — that is how a founder ends up
-holding three domains and no name.
+Give the founder, for each finalist:
 
-Then tell them to register it now, before the session ends. Availability decays.
+1. **What it gives and what it costs — both halves, every finalist.** One line each.
+   The strength, then the tradeoff: the spelling correction on every podcast, the
+   crowded search, the type-in traffic that will reach somebody else. A tradeoff the founder
+   discovers later feels like a mistake. One you named up front is a choice they made.
+   Never list a con without its pro; that is a verdict wearing a table's clothes.
+2. **The one question that separates it from the others.** Not a score. A question only
+   they can answer, such as "do you mind explaining the name once per conversation?"
+3. **Your reading, offered as a reading.** You may say which you find strongest and
+   why — that is useful signal. Say it once, in a sentence, and label it as your view.
+
+**Present factors as factors. Never name one as the deciding criterion.** Saying "X is
+what really matters here" is the decision itself wearing the clothes of analysis: it
+forecloses the founder's judgment while appearing to inform it, and it is easy to do
+by accident after you have removed the explicit recommendation.
+
+List what each option gives and costs, say which way each factor cuts, and leave the
+weighting alone. How much a founder cares about brand purity, how often they will say
+the name aloud, how much they mind losing type-in traffic, what they intend
+to spend later — these are facts about their business and their taste. The scorecard
+does not hold them and neither do you.
+
+Then ask which one they want, and stop. Do not repeat the recommendation, do not
+re-rank after they answer, and do not argue with their choice. If they pick the one
+you scored lowest, that is a legitimate outcome — they know things about their
+business, their customers, and their own taste that no scorecard holds.
+
+The one thing to press on: **register it before the session ends.** Availability
+decays, and that is a fact about the world rather than an opinion about the name.
 
 ### Step 12: Archive the decision
 
@@ -229,7 +375,11 @@ Actions:
    including any `UNVERIFIABLE`.
 3. Explain that exact `.com` is no longer mandatory for software, and that
    `foothold.dev` beats `getfoothold.com` on rule 7.
-4. If every extension is gone, go back to phase 2 with variants — not to phase 1.
+4. If every extension for one good name is gone, go back to phase 2 with variants.
+   But if a whole **territory** is dead — twenty or more names from the same concept
+   all taken — that says something about the concept, not about luck. Go back to
+   phase 1 and check the pools cover every job. Digging deeper into an exhausted seam
+   produces a name that is available because nobody wanted it.
 
 ---
 
