@@ -2,7 +2,7 @@
 name: is-this-an-app
 description: "Use this skill when a founder has a new product idea and is about to build it, to decide what form the idea should take: a web app, a mobile app, a browser extension, an automation, an agent skill, an API, or no build at all. Also use when the user says 'is this an app,' 'does this need to be a web app,' 'should this be a SaaS,' 'web app or Chrome extension,' 'could this just be a Zapier or a GPT,' 'mobile app or web app,' 'what should I build this as,' or describes an idea and says they are about to open Lovable, Replit, or Claude Code to build it. Use it even when they do not ask about form: a founder who says 'I want to build an app that...' should check the form first. Scores the idea on a 14-dimension weighted matrix and returns a verdict with the best form, the code and infrastructure it needs, and the build risk. Do NOT use to test whether anyone wants the idea (use validate), to write the spec once the form is chosen (use plan), or to choose between AI coding tools (use build)."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Is this an app?
@@ -21,16 +21,16 @@ If you cannot score a dimension from what the founder said, ask. If the founder 
 
 ## Step 3 — Run the script for the weighted total
 
-The script lives beside this file, so call it by its own path:
+The script path is relative to the folder that holds this SKILL.md, not to your project:
 
 ```bash
-python3 "$CLAUDE_PLUGIN_ROOT/skills/is-this-an-app/scripts/score.py" \
+python3 scripts/score.py \
     --interface 1 --agent 5 --visual 1 --workflow 2 --background 0 \
     --state 1 --integration 0 --device 1 --judgment 2 --collaboration 0 \
     --latency 1 --distribution 5 --extensibility 0 --audit 0
 ```
 
-If `$CLAUDE_PLUGIN_ROOT` is unset, use the path this SKILL.md was loaded from.
+If your agent reports `No such file or directory`, it used the wrong working directory: prefix the path with the folder this file was loaded from.
 
 The script prints a table with each score, its weight, and its points, and a total out of 100. A higher total means the idea leans more toward a standalone app.
 
@@ -63,7 +63,7 @@ Below the answer, show the table from the script. Add a column with the directio
 
 ## Step 6 — Save and hand off
 
-Write the answer to `${SOLO_FOUNDER_CONFIG:-$HOME/.config/solo-founder}/is-this-an-app/archive/<YYYY-MM-DD>-<slug>.md`, and append one line to `INDEX.md` in the same folder. Do not write inside the skill folder, because plugin updates replace it. If `${BUSINESS_BRAIN:-$HOME/business-brain}/` exists, record the decision there and follow its `AGENTS.md`. If it does not exist, skip it.
+Ask the founder how they want the answer saved. The default is a Markdown (`.md`) file in a directory the founder names. Do not choose the directory yourself, because the founder decides where their files live. If the founder does not want it saved, skip this step.
 
 Then offer the next step:
 
@@ -95,4 +95,4 @@ Then the score table, with the directional signal for each score.
 
 ### The script fails
 
-**Cause:** A score is outside 0–5, a flag is missing, or `$CLAUDE_PLUGIN_ROOT` is unset. **Solution:** The error message names the bad flag. All 14 flags are required. If the path fails, call `scripts/score.py` from the folder this SKILL.md was loaded from.
+**Cause:** A score is outside 0–5, or a flag is missing. **Solution:** The error message names the bad flag. All 14 flags are required. If the path fails, resolve `scripts/score.py` against the folder this SKILL.md was loaded from.

@@ -6,7 +6,9 @@ Covers the full lifecycle of planning, building, launching, and growing a softwa
 
 ## Installation
 
-**Note:** Installation differs by platform. Claude Code or Cursor have built-in plugin marketplaces. Codex and OpenCode require manual setup.
+**Note:** These skills use the [Agent Skills](https://agentskills.io) open format, so they work in Claude Code, Codex, Cursor, Gemini CLI, Copilot and other agents that read it. Only the install step differs. Claude Code and Cursor have built-in plugin marketplaces. Everything else uses `install.sh`.
+
+**Install the plugins you need, not all of them.** Agents load every installed skill's name and description at startup. Codex caps that list at 2% of the model's context window, or 8,000 characters when it cannot tell — past the cap it shortens descriptions and can leave skills out. All 61 skills total about 25,000 characters. Any single plugin fits comfortably.
 
 ### Claude Code (via Plugin Marketplace)
 
@@ -65,19 +67,22 @@ In Cursor Agent chat, install from marketplace:
 /plugin-add solo-founder-skills
 ```
 
-### Codex (Manual Setup)
+### Codex
 
-Codex discovers skills from `.agents/skills/` directories. Clone this repo, then copy the skills into your project:
+Codex reads personal skills from `~/.codex/skills/` and project skills from `.codex/skills/` and `.agents/skills/`. Clone the repo, then run `install.sh` with the plugins you want:
 
 ```
-git clone https://github.com/whawkinsiv/solo-founder-skills.git /tmp/solo-founder-skills
-mkdir -p .agents/skills
-cp -R /tmp/solo-founder-skills/plugins/*/skills/* .agents/skills/
+git clone https://github.com/whawkinsiv/solo-founder-skills.git
+cd solo-founder-skills
+./install.sh --list                          # see the plugins
+./install.sh --codex sf-core sf-strategy     # into ~/.codex/skills/
 ```
 
-To copy one plugin only, replace `plugins/*` with its name, for example `plugins/sf-build`.
+Use `--agents` instead to install into `./.agents/skills/` in the current project.
 
-Or install a single skill using the built-in skill installer:
+The script prints the startup description cost and warns you when it goes over the cap. Add plugins as you need them — run it again with more names.
+
+To install one skill only, use the built-in installer:
 
 ```
 $skill-installer install https://github.com/whawkinsiv/solo-founder-skills/tree/main/plugins/sf-build/skills/build
@@ -85,17 +90,17 @@ $skill-installer install https://github.com/whawkinsiv/solo-founder-skills/tree/
 
 Restart Codex after installing. Invoke skills with `$skill-name` or let Codex select them automatically.
 
-### OpenCode (Manual Setup)
+### OpenCode and other agents
 
-OpenCode discovers skills from `.opencode/skills/`, `~/.config/opencode/skills/`, or `~/.agents/skills/`. Clone this repo, then copy the skills into any of these locations:
+OpenCode reads skills from `.opencode/skills/`, `~/.config/opencode/skills/`, or `~/.agents/skills/`. Point `install.sh` at whichever one you use:
 
 ```
-git clone https://github.com/whawkinsiv/solo-founder-skills.git /tmp/solo-founder-skills
-mkdir -p .opencode/skills
-cp -R /tmp/solo-founder-skills/plugins/*/skills/* .opencode/skills/
+git clone https://github.com/whawkinsiv/solo-founder-skills.git
+cd solo-founder-skills
+./install.sh --dest .opencode/skills sf-core sf-strategy
 ```
 
-Skills are loaded on-demand — OpenCode will show available skills and load them when relevant.
+`--dest` takes any path, so the same command works for any agent that reads a folder of skills. Skills load on demand: the agent sees their names and descriptions, and reads the full instructions only when it picks one.
 
 ### Verify Installation
 

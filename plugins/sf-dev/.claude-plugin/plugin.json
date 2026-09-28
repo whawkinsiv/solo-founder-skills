@@ -1,6 +1,6 @@
 {
   "name": "sf-dev",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Tools for skill authors: measure whether a Claude Code skill works and improve it through A/B evaluation.",
   "author": {
     "name": "Will Hawkins",

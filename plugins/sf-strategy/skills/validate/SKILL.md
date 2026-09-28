@@ -1,13 +1,13 @@
 ---
 name: validate
-description: "Use this skill when the user needs to validate a business idea, test demand before building, run a smoke test, or decide whether an idea is worth pursuing. Also use when the user says \"is this a good idea,\" \"should I build this,\" \"pressure test my idea,\" \"how do I know anyone wants this,\" \"test demand,\" or \"go/no-go.\" For sizing a market or analyzing competitors, see market-research. For interviewing existing customers and building personas, see customer-research. For ranking features you've already decided to build, see prioritize. Four modes — full (default), pressure-test, design, verdict. Outputs a validation brief with a Build / One more experiment / Pivot the angle / No-go verdict, archives it with a revisit date, and writes evidence back to the business brain."
+description: "Use this skill when the user needs to validate a business idea, test demand before building, run a smoke test, or decide whether an idea is worth pursuing. Also use when the user says \"is this a good idea,\" \"should I build this,\" \"pressure test my idea,\" \"how do I know anyone wants this,\" \"test demand,\" or \"go/no-go.\" For sizing a market or analyzing competitors, see market-research. For interviewing existing customers and building personas, see customer-research. For ranking features you've already decided to build, see prioritize. Four modes — full (default), pressure-test, design, verdict. Outputs a validation brief with a Build / One more experiment / Pivot the angle / No-go verdict and a revisit date."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Validate — Test demand before you build
 
-Runs an idea through a stage-appropriate pressure test, designs the cheapest experiment that would settle it, scores the evidence, and produces a dated go/no-go brief that gets archived and revisited.
+Runs an idea through a stage-appropriate pressure test, designs the cheapest experiment that would settle it, scores the evidence, and produces a dated go/no-go brief with a revisit date.
 
 The goal is to fail fast and cheap — not to confirm what the founder already believes.
 
@@ -28,10 +28,9 @@ Read these if they exist, silently — don't narrate what you're reading:
 
 - `${BUSINESS_BRAIN:-$HOME/business-brain}/customer/icp.md` and `customer/jobs-and-pains.md` — who this is for and what already hurts
 - `${BUSINESS_BRAIN:-$HOME/business-brain}/customer/evidence.md` — what real people have already said or done
-- `${SOLO_FOUNDER_CONFIG:-$HOME/.config/solo-founder}/validate/archive/INDEX.md` — has this idea been validated before?
 - Project files: CLAUDE.md, README, any founder or product context docs
 
-If an archived brief covers this idea, load it. This run is a revisit, not a fresh start — say so, and score against what's changed.
+If the founder mentions an earlier brief for this idea, ask them for it. This run is then a revisit, not a fresh start — say so, and score against what's changed.
 
 ## Step 1 — Parse mode
 
@@ -73,15 +72,15 @@ Only with real results in hand. Read `references/scorecard.md` for what each dim
 
 Score from evidence, not belief. A dimension with no evidence scores 1 and becomes an open question. Guessing at one to avoid an awkward number is how a scorecard ends up flattering an idea the founder already wants to build.
 
-Then run the script. It lives beside this file, so call it by its own path — a bare `scripts/score.py` only works if you happen to be standing in the skill folder:
+Then run the script. The path is relative to the folder that holds this SKILL.md, not to your project:
 
 ```bash
-python3 "$CLAUDE_PLUGIN_ROOT/skills/validate/scripts/score.py" \
+python3 scripts/score.py \
     --frequency 3 --intensity 3 --willingness 1 \
     --market 3 --advantage 5 --solutions 3
 ```
 
-If `$CLAUDE_PLUGIN_ROOT` is unset, use the path this SKILL.md was loaded from.
+If your agent reports `No such file or directory`, it used the wrong working directory: prefix the path with the folder this file was loaded from.
 
 Take the verdict from the script, not from your own reading of the bands. Summing six numbers is easy and you will get it right; picking the band and applying the override rules is where this step goes wrong in practice. The script encodes both rules:
 
@@ -140,31 +139,13 @@ Show the six numbers in the brief. A total the founder can't check is a total th
 
 Never soften the verdict. "Leaning towards maybe" wastes the brief — the whole point is to convert a vague feeling into a call the founder can act on.
 
-## Step 6 — Archive and write back
+## Step 6 — Save the brief
 
-Archives live in `${SOLO_FOUNDER_CONFIG:-$HOME/.config/solo-founder}/validate/archive/` (create if missing). Never write archives inside the skill's own folder — plugin updates re-sync from source and wipe anything saved there.
-
-Write `<archive>/<YYYY-MM-DD>-<slug>.md`. Append to `<archive>/INDEX.md`:
-
-```markdown
-- 2026-08-16 — [<idea>](./<file>.md) — **<verdict>** — <one-line rationale> — revisit 2026-09-15
-```
-
-**Then write back to the business brain** at `${BUSINESS_BRAIN:-$HOME/business-brain}/`, if it exists. Read its `AGENTS.md` first and follow its rules — append never overwrite, set `status: draft` and `updated:` to today on every file touched.
-
-| What you produced | Where it goes |
-|---|---|
-| Quotes and observed behavior from conversations | `customer/evidence.md` |
-| A measured number (signup rate, conversions, revenue) | `offer/proof.md` — and nowhere else may cite a number that isn't here |
-| The open guess the experiment is testing | `strategy/bets.md`, with what would prove it right or wrong |
-| A Build or No-go verdict | `strategy/decisions/<YYYY-MM-DD>-<slug>.md`, in that folder's format — never edited afterward |
-| A disqualified audience segment | `customer/not-our-customer.md` |
-
-If the brain doesn't exist, skip it and mention it once in Step 7. Never fail the run over a missing brain.
+Ask the founder how they want the brief saved. The default is a Markdown (`.md`) file in a directory the founder names. Do not choose the directory yourself, because the founder decides where their files live. If the founder does not want it saved, skip this step. Suggest saving a No-go brief too.
 
 ## Step 7 — Surface
 
-Show the brief in chat. Give the archive path. Then offer, based on the verdict:
+Show the brief in chat. If the founder saved it, give the file path. Then offer, based on the verdict:
 
 - **Build** → *"Want me to scope the MVP?"* (`plan`) or *"Test willingness-to-pay properly?"* (`pricing`)
 - **One more experiment** → *"Want me to set up the landing page for that test?"* (`landing-page`)
@@ -189,9 +170,8 @@ Always offer: *"Want a reminder to revisit on <date>?"* (`loop`)
 - **Set the pass bar before the experiment, never after.** A founder who sees 3% and decides 3% is encouraging has learned nothing. Write the bar into the brief in Step 3.
 - **Route back, don't score forward.** When someone asks for a verdict with no evidence, the answer is "run this experiment first," not a scorecard built on guesses. Refusing to score is the more useful output.
 - **Interest is not demand.** Waitlist signups, compliments, and "definitely would pay" are all interest. Only money, time, and switching effort are demand.
-- **Archive no-go verdicts too.** Killed ideas resurface six months later. The brief with its rationale is what stops the same argument being had twice.
+- **Save no-go verdicts too.** Killed ideas resurface six months later. The brief with its rationale is what stops the same argument being had twice.
 - **One experiment at a time.** A founder running three tests at once learns nothing from any of them and burns four weeks.
-- **Nothing reaches `offer/proof.md` that wasn't measured.** That file is the gate for every claim the business makes anywhere. A number that didn't come from a real experiment must not enter it.
 
 ## When NOT to use this skill
 

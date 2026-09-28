@@ -26,7 +26,7 @@ Dimension 3 is the one founders and scorecards both get wrong, so it is worth sa
 | 25–30 | **Build** | Strong go. Scope the MVP. |
 | 18–24 | **One more experiment** | Promising. Name the weakest dimension and design a test for it. |
 | 12–17 | **Pivot the angle** | The problem may be real but this framing isn't working. Change audience or wedge, re-test. |
-| < 12 | **No-go** | Find a different problem. Archive the brief and move on. |
+| < 12 | **No-go** | Find a different problem. Save the brief and move on. |
 
 ## Rules
 

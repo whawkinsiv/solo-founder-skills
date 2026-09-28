@@ -1,6 +1,6 @@
 {
   "name": "sf-ship",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Get a SaaS app live and keep it up: testing, security, regulatory compliance, a go/no-go launch checklist, deployment, production monitoring, and analytics.",
   "author": {
     "name": "Will Hawkins",

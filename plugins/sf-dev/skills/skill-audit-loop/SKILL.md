@@ -74,6 +74,13 @@ Bash, file read, and file edit, so a skill depending on web fetch or MCP will fa
 for reasons that have nothing to do with the skill. Say which configuration you used in
 the report, because it changes how much the numbers mean.
 
+## Running the scripts
+
+Every `scripts/...` path below is relative to the folder that holds this SKILL.md, not to
+your project. Resolve it against that folder before you run it. If your agent reports
+`No such file or directory`, it used the wrong working directory: prefix the path with the
+folder this file was loaded from.
+
 ## Stage 1 — Collect cases
 
 Cases from real failures beat cases you invented. An invented case tests whether the

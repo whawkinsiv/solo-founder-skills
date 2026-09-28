@@ -171,7 +171,13 @@ Route each recommendation to the most relevant skill:
 
 ## Which Plugin Holds Each Skill
 
-Solo Founder Skills ships as separate plugins. A skill only works if its plugin is installed. When you recommend a skill the user does not have, give them the install command: `/plugin install <plugin>@solo-founder-skills-marketplace`.
+Solo Founder Skills ships as separate plugins. A skill only works if its plugin is installed. When you recommend a skill the user does not have, give them the install command for the agent they are running.
+
+- Claude Code or Cursor: `/plugin install <plugin>@solo-founder-skills-marketplace`
+- Codex: `./install.sh --codex <plugin>` from a clone of the repo
+- Any other agent: `./install.sh --dest <its skills folder> <plugin>`
+
+Name one or two plugins, not all of them. Every installed skill costs startup context, and some agents drop skills once that list gets too long.
 
 | Plugin | Skills |
 |--------|--------|
