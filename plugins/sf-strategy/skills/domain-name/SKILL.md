@@ -2,7 +2,7 @@
 name: domain-name
 description: "Use this skill when the user needs to name a product or company and find a domain for it. Also use when the user says 'name my product,' 'what should I call it,' 'help me pick a domain,' 'is this a good name,' 'find me a domain,' 'my domain is taken,' 'check if this name is available,' or pastes a list of candidate names for an opinion. Scores names against ten rules, then verifies domain availability with DNS and RDAP. Do NOT use for buying a domain or pointing DNS at your host once the name is chosen (use deploy), for visual brand identity such as colors, logos, or typography (use brand-identity-generator), for positioning and messaging (use niche-advantage), or for writing headlines and page copy (use copywriting)."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Naming a product and getting the domain
@@ -191,18 +191,18 @@ Build the domain list. For each name pick the two or three extensions worth havi
 all of them. Then:
 
 ```bash
-python3 "$CLAUDE_PLUGIN_ROOT/skills/domain-name/scripts/check-availability.py" \
+python3 scripts/check-availability.py \
   foothold.dev traction.com momentum.app
 ```
 
 Or for a longer list, one domain per line:
 
 ```bash
-python3 "$CLAUDE_PLUGIN_ROOT/skills/domain-name/scripts/check-availability.py" \
+python3 scripts/check-availability.py \
   --file candidates.txt
 ```
 
-If `$CLAUDE_PLUGIN_ROOT` is unset, use the path this SKILL.md was loaded from.
+The path is relative to the folder that holds this SKILL.md, not to your project. If your agent reports `No such file or directory`, it used the wrong working directory: prefix the path with the folder this file was loaded from.
 
 The script runs DNS first because a nameserver record proves a domain is taken in
 milliseconds, for free. Most candidates die here, and that is the cheapest place to die.
@@ -315,23 +315,15 @@ business, their customers, and their own taste that no scorecard holds.
 The one thing to press on: **register it before the session ends.** Availability
 decays, and that is a fact about the world rather than an opinion about the name.
 
-### Step 12: Archive the decision
+### Step 12: Save the decision
 
-Write the session to:
+Ask the founder how they want the session saved. The default is a Markdown (`.md`) file in a directory the founder names. Do not choose the directory yourself, because the founder decides where their files live. If the founder does not want it saved, skip this step.
 
-```
-${SOLO_FOUNDER_CONFIG:-$HOME/.config/solo-founder}/domain-name/archive/<YYYY-MM-DD>-<slug>.md
-```
+Record the finalists, their scores, the chosen name, and the reason. A founder who revisits the name
+in six months should get their own reasoning back rather than starting over.
 
-Record the finalists, their scores, the chosen name, and the reason. Append a line to
-`INDEX.md` in the same directory. A founder who revisits the name in six months should
-get their own reasoning back rather than starting over.
-
-If `${BUSINESS_BRAIN:-$HOME/business-brain}/` exists, write the chosen name and domain
-to it following that repo's `AGENTS.md` — append, set `status: draft` and `updated:` to
-today. Skip silently if it is absent. Never fail a run over it.
-
-**Done when** one name is chosen, the domain is registered, and the decision is archived.
+**Done when** one name is chosen, the domain is registered, and the decision is saved or the founder
+chose not to save it.
 
 ---
 

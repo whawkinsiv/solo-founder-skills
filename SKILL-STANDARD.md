@@ -1,6 +1,10 @@
 # SKILL.md House Standard
 
-**Version 2.** Rebuilt against Anthropic's published guidance. Version 1 was reverse-engineered from a competitor's repo and got several rules wrong; see `SKILL-STANDARD-CHANGELOG.md`.
+**Version 3.** Rules only. Every rule here is either checkable by a script or a stated house preference.
+
+This document holds no measurements and no history. Counts go stale silently, so run `python3 scripts/audit.py` to measure the repo instead. It exits non-zero on anything that breaks the spec or the portability rules.
+
+Write rules against the published spec, not against another repo you admire. Version 1 of this document was reverse-engineered from a competitor's repo and got six rules wrong.
 
 ## Sources — check any rule yourself
 
@@ -9,7 +13,14 @@
 | **[A]** | *The Complete Guide to Building Skills for Claude* (Anthropic, 33pp) | `~/business-brain/The-Complete-Guide-to-Building-Skill-for-Claude.pdf` |
 | **[B]** | `skill-creator` SKILL.md (Anthropic, 485 lines) | `~/.claude/plugins/cache/claude-plugins-official/skill-creator/unknown/skills/skill-creator/SKILL.md` |
 | **[C]** | `quick_validate.py` (Anthropic, runnable) | same directory, `scripts/quick_validate.py` |
+| **[S]** | **Agent Skills specification** — the authority for anything portable | https://agentskills.io/specification |
 | **[H]** | House rule — our choice, not from Anthropic | this document |
+
+`[S]` outranks the rest. It is public, versioned, and binding on every agent that reads
+these skills. `[A]` and `[B]` are local files that only this machine can open, so treat
+them as background. Where they disagree with `[S]`, `[S]` wins. The description cap is
+**1024 characters** per `[S]`; Claude Code allows more, and taking Claude Code's number
+would break the skills everywhere else.
 
 Every rule below carries a citation. `[A p10]` = page 10 of the PDF. `[B:67]` = line 67 of skill-creator's SKILL.md. `[H]` = we decided it.
 
@@ -56,7 +67,7 @@ skill-name/
 
 `references/` is the official name. Our old convention — ALL-CAPS files at the top level (`technical-seo/GEO.md`) — is a deviation and should migrate to `references/on-page-seo.md` over time. Nothing breaks today; new work uses `references/`.
 
-We currently use `scripts/` in **0 of 59** skills. That is the biggest structural gap in the repo. See Part 5.
+We currently use `scripts/` in **3 of 61** skills (`domain-name`, `validate`, `skill-audit-loop`). This is still the biggest structural gap in the repo. See Part 5.
 
 ### Progressive disclosure — three levels [A p5, B:88-91]
 
@@ -197,26 +208,6 @@ This is the measurement that proves a skill is worth its context cost. Anthropic
 
 **Not from Anthropic.** These are our additions. They are the part of this standard that is a bet rather than a specification, and they should be dropped if they stop earning their place.
 
-### Archive what the skill produces [H]
-
-Anthropic's guidance covers correctness and triggering. It says nothing about whether a skill's output survives the session. Ours should:
-
-```
-${SOLO_FOUNDER_CONFIG:-$HOME/.config/solo-founder}/<skill>/archive/
-  <YYYY-MM-DD>-<slug>.md
-  INDEX.md
-```
-
-Never write archives inside the skill folder — plugin updates re-sync from source and wipe them.
-
-**Why:** a founder who validated an idea in March and revisits it in September should get their own reasoning back, not start over. This is the difference between a tool and a conversation.
-
-### Write facts back to the business brain [H]
-
-Skills that produce facts about the business write them to `${BUSINESS_BRAIN:-$HOME/business-brain}/`, following that repo's `AGENTS.md`: append rather than overwrite, set `status: draft` and `updated:` to today, and put measured numbers in `offer/proof.md`, which is the gate for every claim made anywhere.
-
-Skip silently if the brain is absent. Never fail a run over it.
-
 ### Voice [H]
 
 The reason this collection exists. Write for a founder who doesn't know what a webhook is, without condescending. Plain English in output — "you're live with no way to know when things break," not "no observability layer." Effort in human time: "~2 hours," not "low effort." Name the tradeoff, then recommend — founders need a call, not a menu.
@@ -246,25 +237,4 @@ Human-checked:
 - [ ] Reasons given instead of all-caps imperatives [B:302]
 - [ ] Deterministic checks bundled as a script, not prose [A p26]
 - [ ] Triggering tests written, including near-miss negatives [A p15, B:356]
-- [ ] Archive path and INDEX line present [H]
-- [ ] Business brain write-back present or justified as N/A [H]
 - [ ] `metadata.version` set [H]
-
----
-
-## Part 8 — Known gaps in this repo
-
-Measured, not estimated:
-
-| Gap | Count | Source |
-|---|---|---|
-| Skills using `scripts/` | 0 of 59 | [A p26] |
-| Skills using `assets/` | 0 of 59 | [A p5] |
-| Skills with `## Examples` | 0 of 59 | [A p12] |
-| Skills with `## Troubleshooting` | 0 of 59 | [A p12] |
-| Skills using `references/` | 1 of 59 | [A p5] |
-| Skills over 5,000 words | 1 of 59 (`brand-identity-generator`, 5,250) | [A p27] |
-| Orphaned support files never linked from SKILL.md | 3 | [A p13] |
-| Performance-comparison testing | not done | [A p16] |
-
-The three orphans — `monitor/INCIDENT-RESPONSE.md`, `ui-patterns/COMPONENTS.md`, `ui-patterns/LAYOUTS.md` — exist on disk and are never referenced, so they are never loaded. Fix by adding a pointer or deleting them.

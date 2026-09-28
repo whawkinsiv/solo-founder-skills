@@ -442,6 +442,8 @@ Add monitoring for [service]:
 
 ## Incident Response
 
+See [INCIDENT-RESPONSE.md](INCIDENT-RESPONSE.md) for the full playbooks: severity levels, rollback steps, customer communication templates, and the post-incident review.
+
 **When alerts fire:**
 
 ```
