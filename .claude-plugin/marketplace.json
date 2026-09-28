@@ -16,7 +16,7 @@
     },
     {
       "name": "sf-strategy",
-      "description": "Turn an idea into a buildable spec: translate professional expertise into a product, validate demand before building, customer and market research, niche advantage, naming and domain selection, and feature specs AI tools can execute.",
+      "description": "Turn an idea into a buildable spec: translate professional expertise into a product, validate demand before building, decide whether the idea needs to be an app at all, customer and market research, niche advantage, naming and domain selection, and feature specs AI tools can execute.",
       "source": "./plugins/sf-strategy",
       "category": "productivity",
       "author": {

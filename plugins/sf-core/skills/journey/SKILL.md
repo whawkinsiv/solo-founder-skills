@@ -32,9 +32,10 @@ You know a problem exists in your field. You haven't validated whether anyone el
 You have evidence people want this. Now you need to decide what the minimum product looks like.
 
 **Do this:**
-1. **customer-research** — Talk to 10 potential users about their workflow
-2. **prioritize** — Decide what to build first (ruthlessly cut scope)
-3. **plan** — Write a spec AI tools can execute
+1. **is-this-an-app** — Decide what form the idea should take. Many ideas work better as an automation, an extension, or a spreadsheet than as a web app.
+2. **customer-research** — Talk to 10 potential users about their workflow
+3. **prioritize** — Decide what to build first (ruthlessly cut scope)
+4. **plan** — Write a spec AI tools can execute
 
 **Time:** 1-2 weeks.
 
@@ -142,6 +143,7 @@ You have product-market fit. Revenue is growing. Now scale.
 | "I need to..." | Use this skill |
 |----------------|---------------|
 | Figure out if my idea is worth building | **translate**, **validate** |
+| Decide if my idea should be an app at all | **is-this-an-app** |
 | Decide what to build first | **prioritize**, **plan** |
 | Choose an AI coding tool | **build** |
 | Set up my database | **database** |
@@ -177,7 +179,7 @@ Solo Founder Skills ships as separate plugins. A skill only works if its plugin 
 | Plugin | Skills |
 |--------|--------|
 | sf-core | about-me, journey, next, focus, prioritize, glossary |
-| sf-strategy | translate, validate, customer-research, market-research, niche-advantage, plan, domain-name |
+| sf-strategy | translate, validate, is-this-an-app, customer-research, market-research, niche-advantage, plan, domain-name |
 | sf-design | brand-identity-generator, ux-design, ui-patterns, beautify, motion-polish, design-review |
 | sf-build | build, database, integrations, ai-features, debug, dry, optimize |
 | sf-ship | test, secure, compliance, go-live, deploy, monitor, analytics |
