@@ -114,12 +114,13 @@ Start a new session in your chosen platform and ask for something that should tr
 | **prioritize** | Feature prioritization, roadmaps, RICE scoring |
 | **glossary** | Plain-English explanations of 50+ technical terms |
 
-### sf-strategy — Strategy & Validation (7 skills)
+### sf-strategy — Strategy & Validation (8 skills)
 
 | Skill | What It Covers |
 |-------|----------------|
 | **translate** | Turn professional expertise into a software product |
 | **validate** | Smoke tests, fake door tests, testing demand before you build |
+| **is-this-an-app** | Decide what form an idea should take (web app, extension, automation, agent skill, or no build) before you build it |
 | **customer-research** | User interviews, Jobs-to-be-Done, ideal customer profile |
 | **market-research** | Market sizing, competitor analysis, TAM/SAM/SOM |
 | **niche-advantage** | Use domain expertise as a competitive moat |

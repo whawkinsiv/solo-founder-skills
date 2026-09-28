@@ -1,7 +1,7 @@
 {
   "name": "sf-strategy",
-  "version": "1.0.1",
-  "description": "Turn an idea into a buildable spec: translate professional expertise into a product, validate demand before building, customer and market research, niche advantage, naming and domain selection, and feature specs AI tools can execute.",
+  "version": "1.1.0",
+  "description": "Turn an idea into a buildable spec: translate professional expertise into a product, validate demand before building, decide whether the idea needs to be an app at all, customer and market research, niche advantage, naming and domain selection, and feature specs AI tools can execute.",
   "author": {
     "name": "Will Hawkins",
     "url": "https://github.com/whawkinsiv"
@@ -18,6 +18,7 @@
     "mvp",
     "spec",
     "naming",
-    "domain-name"
+    "domain-name",
+    "product-form"
   ]
 }

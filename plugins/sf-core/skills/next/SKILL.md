@@ -176,7 +176,7 @@ Solo Founder Skills ships as separate plugins. A skill only works if its plugin 
 | Plugin | Skills |
 |--------|--------|
 | sf-core | about-me, journey, next, focus, prioritize, glossary |
-| sf-strategy | translate, validate, customer-research, market-research, niche-advantage, plan, domain-name |
+| sf-strategy | translate, validate, is-this-an-app, customer-research, market-research, niche-advantage, plan, domain-name |
 | sf-design | brand-identity-generator, ux-design, ui-patterns, beautify, motion-polish, design-review |
 | sf-build | build, database, integrations, ai-features, debug, dry, optimize |
 | sf-ship | test, secure, compliance, go-live, deploy, monitor, analytics |
