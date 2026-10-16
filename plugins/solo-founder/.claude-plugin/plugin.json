@@ -1,0 +1,12 @@
+{
+  "name": "solo-founder",
+  "version": "4.0.0",
+  "description": "21 skills for a solo, bootstrapped founder building a software business alone with Claude Code: validate the idea, sell the first 10 customers by hand, build the smallest version, ship it safely, and grow to 100.",
+  "author": {
+    "name": "Will Hawkins",
+    "url": "https://github.com/whawkinsiv"
+  },
+  "repository": "https://github.com/whawkinsiv/solo-founder-skills",
+  "license": "MIT",
+  "keywords": ["solo-founder", "bootstrapping", "indie-hacker", "saas", "validation", "first-customers", "claude-code"]
+}

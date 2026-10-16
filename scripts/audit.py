@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit every skill against the Agent Skills spec and this repo's portability rules.
+"""Audit every skill against the spec rules and the house rules in SKILL-STANDARD.md.
 
 Replaces the hand-maintained "Known gaps" table that used to sit in SKILL-STANDARD.md.
 A stored count goes stale silently. This measures on demand instead.
@@ -17,20 +17,18 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 
-# The Agent Skills spec allows exactly these frontmatter keys. Anything else is a
-# Claude Code extension and makes the skill non-portable: claude.ai and the Skills
-# API reject unknown keys outright.
-SPEC_FIELDS = {"name", "description", "license", "compatibility", "metadata", "allowed-tools"}
-
 DESC_MAX = 1024        # spec hard cap
-LINE_SOFT = 500        # spec recommendation
+DESC_SOFT = 600        # house rule 6
+LINE_SOFT = 150        # house rule 1
 TOKEN_SOFT = 5000      # spec recommendation for the body
 
-# A skill body that names one vendor's variables cannot run in another agent.
-VENDOR_PATTERNS = [
-    (r"\$\{?CLAUDE_PLUGIN_ROOT\}?", "$CLAUDE_PLUGIN_ROOT is Claude Code only"),
-    (r"\$\{?CLAUDE_SKILL_DIR\}?", "$CLAUDE_SKILL_DIR is Claude Code only"),
-    (r"^\s*when_to_use\s*:", "when_to_use is not in the spec"),
+# House rules 2, 3, 8, and the dollar-sign rule in CLAUDE.md. Each is a warning:
+# the skill still loads, but it breaks a rule the founder would notice.
+HOUSE_PATTERNS = [
+    (r"Tell AI", "contains a 'Tell AI:' prompt (rule 2: write instructions to Claude)"),
+    (r"\b(Lovable|Replit|Bolt)\b", "names another build tool (rule 3: Claude Code only)"),
+    (r"business-brain|MY-ICP", "reads a private context file (rule 8)"),
+    (r"(?<!\\)\$[0-9]", "has a dollar amount without a backslash, which Claude Code replaces"),
 ]
 
 
@@ -93,15 +91,14 @@ def main():
         elif len(desc) > DESC_MAX:
             fails.append(f"{rel}: description is {len(desc)} chars, over the {DESC_MAX} cap")
 
-        # --- portability: frontmatter keys ---
-        extra = {k for k in re.findall(r"^([A-Za-z0-9_-]+):", fm, re.M)} - SPEC_FIELDS
-        if extra:
-            fails.append(f"{rel}: non-spec frontmatter {sorted(extra)} breaks portability")
+        if desc and len(desc) > DESC_SOFT:
+            warns.append(f"{rel}: description is {len(desc)} chars, over the {DESC_SOFT} house limit")
 
-        # --- portability: vendor-locked bodies ---
-        for pattern, why in VENDOR_PATTERNS:
-            if re.search(pattern, text, re.M):
-                fails.append(f"{rel}: {why}")
+        # --- house rules ---
+        body = text[text.index("---", 3) + 3:]
+        for pattern, why in HOUSE_PATTERNS:
+            if re.search(pattern, body):
+                warns.append(f"{rel}: {why}")
 
         # --- spec recommendations ---
         n_lines = len(text.splitlines())
