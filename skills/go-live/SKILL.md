@@ -2,7 +2,7 @@
 name: go-live
 description: "Use this skill for the go/no-go check before real customers use the app and pay: 'am I ready to launch,' 'is it ready to go live,' 'pre-launch checklist,' 'deploy my app,' 'set up my domain,' 'how do I know if my site goes down,' or 'set up backups.' Checks the core flow, payments, security basics, backups with a restore test, error tracking, uptime alerts, and rollback, then gives a verdict. Not for the launch announcement itself (use first-customers) or for a full security audit (use secure)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Go Live

@@ -2,7 +2,7 @@
 name: humanize
 description: "Use this skill to remove AI writing patterns from text so it reads like a person wrote it: 'this sounds like AI,' 'too robotic,' 'AI slop,' 'make this sound human,' 'sounds like ChatGPT,' or 'remove AI patterns.' Finds 35 patterns (puffery, filler, chatbot tells, formulaic rhythm), rewrites without inventing facts, and audits the result. Not for writing new content from scratch (use content or landing-page)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Humanizer: Remove AI Writing Patterns

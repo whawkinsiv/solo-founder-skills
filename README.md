@@ -15,20 +15,6 @@ In Claude Code:
 
 Not sure where to start? Ask "where do I start?" The `journey` skill finds your stage and names your next step.
 
-### Upgrading from the `sf-*` plugins
-
-Version 4 replaces the ten `sf-*` plugins with one plugin of 21 skills. Remove the old plugins, refresh the marketplace, and install `solo-founder`:
-
-```
-/plugin uninstall sf-core@solo-founder-skills-marketplace
-/plugin uninstall sf-strategy@solo-founder-skills-marketplace
-# repeat for each sf-* plugin you installed
-/plugin marketplace update solo-founder-skills-marketplace
-/plugin install solo-founder@solo-founder-skills-marketplace
-```
-
-Manual invocations change from `/sf-strategy:validate` to `/solo-founder:validate`.
-
 ## What's inside
 
 | Stage | Skill | What it does |

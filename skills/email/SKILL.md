@@ -2,7 +2,7 @@
 name: email
 description: "Use this skill to set up a professional email address on the founder's domain and make sure email lands in inboxes: 'hello@ email,' 'branded email,' 'business email,' 'email forwarding,' 'send from my domain,' 'SPF,' 'DKIM,' 'DMARC,' 'my emails go to spam,' or 'set up email for my app.' Covers a free forwarding setup, sending as the branded address, the three DNS records, and app email from a subdomain. Not for onboarding or win-back email sequences (use retention) or for writing outreach (use first-customers)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Email

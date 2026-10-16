@@ -2,7 +2,7 @@
 name: content
 description: "Use this skill when the founder wants to write and publish in their own voice to attract customers: 'content strategy,' 'build in public,' 'write a blog post,' 'founder essay,' 'LinkedIn post,' 'Twitter thread,' 'newsletter,' 'About page,' 'which platform should I post on,' or 'grow an audience.' Picks one platform, finds an angle worth publishing, and writes and edits the piece. Not for search-driven pages (use seo), for sales pages (use landing-page), or for cleaning up existing AI text (use humanize)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Content

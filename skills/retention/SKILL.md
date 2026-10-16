@@ -2,7 +2,7 @@
 name: retention
 description: "Use this skill to keep the customers the founder already has: 'customers are leaving,' 'reduce churn,' 'onboarding,' 'welcome emails,' 'people sign up but don't use it,' 'collect feedback,' 'feature requests,' 'customer support,' 'help docs,' or 'someone cancelled.' Gets new customers to their first result, sets up a weekly check-in, simple support, a feedback loop, and an honest cancellation flow, all by hand first. Not for finding new customers (use first-customers)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Retention

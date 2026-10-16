@@ -2,7 +2,7 @@
 name: about-me
 description: "Use this skill when the founder wants AI-written content to sound like them: 'set up my voice,' 'make content sound like me,' 'create my founder profile,' 'about me,' or 'my background.' Creates ABOUT-ME.md in the project root with testable voice rules, opinions, and stories that content, outreach, and landing-page work can use. Not for customer profiles (use validate), for editing existing text (use humanize), or for visual identity (use beautify)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # About Me

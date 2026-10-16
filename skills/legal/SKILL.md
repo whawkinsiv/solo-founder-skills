@@ -2,7 +2,7 @@
 name: legal
 description: "Use this skill for the legal basics of a solo software business: 'LLC or C-Corp,' 'form a company,' 'terms of service,' 'privacy policy,' 'cookie consent,' 'GDPR,' 'co-founder agreement,' 'contractor agreement,' or 'do I need a lawyer.' Picks an entity, drafts plain-English terms and a privacy policy from the product's real facts, adds data export and deletion, and says what can wait. Drafts only, for a lawyer to review. Not for security in code (use secure) or for taxes and bookkeeping (use finances)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Legal

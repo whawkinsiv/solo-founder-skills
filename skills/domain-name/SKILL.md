@@ -2,7 +2,7 @@
 name: domain-name
 description: "Use this skill when the founder needs to name a product or company and find a domain: 'name my product,' 'what should I call it,' 'help me pick a domain,' 'is this a good name,' 'my domain is taken,' 'check if this name is available,' or a pasted list of candidate names. Scores names against ten rules, then checks domain availability with DNS and RDAP. Not for pointing DNS at a host once the name is chosen (use go-live) or for writing page copy (use landing-page)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Naming a product and getting the domain

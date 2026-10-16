@@ -2,7 +2,7 @@
 name: seo
 description: "Use this skill to audit a site's code for search and AI-answer visibility and fix what matters: 'audit my SEO,' 'how do I rank,' 'why don't I show up on Google,' 'SEO review,' 'optimize for AI answers,' 'what pages should I create for SEO,' or 'meta tags and sitemap.' Claude scans the codebase, grades it, writes a prioritized plan with file paths, and offers to make the fixes. Not for writing blog posts in the founder's voice (use content) or for the sales page itself (use landing-page)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # SEO

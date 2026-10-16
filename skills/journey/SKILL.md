@@ -2,7 +2,7 @@
 name: journey
 description: "Use this skill when a solo founder does not know where to start or what to do next: 'where do I start,' 'what should I do first,' 'what order do I do things in,' 'what should I work on now,' 'I have an idea, now what,' or 'I don't have an idea yet.' Finds the founder's stage from paying customers, not from code, and names the one next skill to use. Not for judging whether a specific activity or purchase is worth it (use focus)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Journey

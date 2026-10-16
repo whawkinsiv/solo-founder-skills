@@ -2,7 +2,7 @@
 name: is-this-an-app
 description: "Use this skill when a founder has a new product idea and is about to build it, to decide what form it should take: a web app, mobile app, browser extension, automation, agent skill, API, or no build at all. Also use for 'is this an app,' 'should this be a SaaS,' 'web app or Chrome extension,' 'could this just be a Zapier or a GPT,' or 'I want to build an app that...' Scores the idea on a 14-dimension matrix and returns the best form, the code and infrastructure it needs, and the build risk. Not for testing whether anyone wants the idea (use validate)."
 metadata:
-  version: 1.1.0
+  version: 1.0.0
 ---
 
 # Is this an app?

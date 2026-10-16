@@ -2,7 +2,7 @@
 name: beautify
 description: "Use this skill to make an AI-built app look intentionally designed and behave well: 'make it look better,' 'it looks like a template,' 'something looks off,' 'make it look like Stripe or Linear,' 'review my design,' 'is the UI good enough to ship,' 'pick a look for my app,' or when building any new screen. Covers visual direction, hierarchy, spacing, color, type, the five UI states, error messages, accessibility basics, and a design review with a fix order. Not for marketing-page copy (use landing-page)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Beautify

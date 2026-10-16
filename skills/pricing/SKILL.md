@@ -2,7 +2,7 @@
 name: pricing
 description: "Use this skill to decide what to charge: 'how much should I charge,' 'what should I charge my first customers,' 'pricing tiers,' 'freemium or free trial,' 'should I raise my prices,' or 'pricing page.' Before 10 paying customers it sets one simple price and works out how many customers the founder needs. After 10 it designs tiers from how real customers differ. Not for setting up Stripe or billing code (use payments) or for runway and the quit number (use finances)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Pricing

@@ -2,7 +2,7 @@
 name: finances
 description: "Use this skill for the money math of a bootstrapped business: 'what's my quit number,' 'how many customers do I need,' 'how long is my runway,' 'should I raise money or bootstrap,' 'how much should I set aside for taxes,' 'do I need an accountant,' or 'are my numbers OK.' Works out the quit number, runway, and whether the business survives without outside money, sets up simple money habits, and says when the numbers mean stop. Not for setting a price (use pricing) or for forming a company (use legal)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Finances

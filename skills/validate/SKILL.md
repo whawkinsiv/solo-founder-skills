@@ -2,7 +2,7 @@
 name: validate
 description: "Use this skill to test whether an idea is worth pursuing before building it, or to find an idea in the first place: 'is this a good idea,' 'should I build this,' 'pressure test my idea,' 'how do I know anyone wants this,' 'I don't have an idea yet,' 'do it by hand first,' 'concierge MVP,' 'go/no-go,' or 'how big is this market.' Designs the cheapest test, scores the evidence with a script, and returns a dated verdict. Not for choosing what form to build (use is-this-an-app) or for getting customers after a go (use first-customers)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Validate

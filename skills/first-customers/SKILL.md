@@ -2,7 +2,7 @@
 name: first-customers
 description: "Use this skill to get paying customers one at a time and to plan a launch: 'how do I get my first customers,' 'find customers,' 'write cold outreach,' 'who should I contact,' 'follow up,' 'nobody replies,' 'plan my launch,' or 'Product Hunt.' Gets the first 10 paying customers by hand, starting with people the founder knows, then grows to 100, with a launch only after the first 10. Not for writing the sales page (use landing-page) or for keeping customers (use retention)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # First Customers

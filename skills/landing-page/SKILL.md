@@ -2,7 +2,7 @@
 name: landing-page
 description: "Use this skill to write or fix a page that sells: 'build my landing page,' 'homepage copy,' 'hero section,' 'sales page,' 'pre-sell page,' 'write a headline,' 'button text,' or 'people visit but don't sign up or buy.' Writes a page with one offer, one price, and one action (pay, pre-order, or book a call), using the customer's words and only real proof, then diagnoses where visitors drop off. Not for visual polish (use beautify) or for SEO pages (use seo)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Landing Page

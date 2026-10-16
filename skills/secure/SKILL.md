@@ -2,7 +2,7 @@
 name: secure
 description: "Use this skill to find and fix the security holes that AI-built apps most often ship with: 'is my app secure,' 'security check,' 'check my app for security holes,' 'can users see each other's data,' 'did I leak my API keys,' or 'I'm worried about hackers.' Claude runs the audit on the codebase: exposed keys, data isolation between users, auth on every route, webhook signatures, rate and spend limits, and dependencies. Not for the full pre-launch checklist (use go-live) or for privacy policy and legal terms (use legal)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Secure

@@ -2,7 +2,7 @@
 name: build
 description: "Use this skill when a solo founder is about to build or add to their product with Claude Code: 'build my MVP,' 'let's build this,' 'add this feature,' 'write a spec,' 'scope the first version,' 'Claude keeps breaking things,' or 'we're going in circles.' Checks that someone has paid first, scopes the first version from the steps the founder already does by hand, writes a short spec, and builds one piece at a time with a re-test after each piece. Not for deciding what form the product takes (use is-this-an-app) or for the pre-launch check (use go-live)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Build

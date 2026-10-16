@@ -2,7 +2,7 @@
 name: payments
 description: "Use this skill to take money: 'set up Stripe,' 'add subscriptions,' 'payment link,' 'billing,' 'customer portal,' 'webhooks,' 'failed payments,' 'sales tax or VAT,' or 'refunds.' Starts with a payment link or invoice for the first customers, then sets up Stripe Checkout, the customer portal, and webhooks that grant access, with test and go-live checklists. Not for deciding what to charge (use pricing)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Payments

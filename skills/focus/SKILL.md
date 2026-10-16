@@ -2,7 +2,7 @@
 name: focus
 description: "Use this skill when a solo founder wants a gut check on how to spend time or money: 'is this worth my time,' 'should I keep doing X,' 'I'm not getting results from X,' '80/20,' 'should I sign up for this,' 'should I buy this,' 'should I run ads,' 'should I hire someone,' 'should I raise money,' or 'which feature should I build next.' Returns one verdict and a plan for this week. Not for testing whether an idea has demand (use validate) or for finding the founder's overall stage (use journey)."
 metadata:
-  version: 2.0.0
+  version: 1.0.0
 ---
 
 # Focus
