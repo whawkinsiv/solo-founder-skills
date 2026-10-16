@@ -8,7 +8,7 @@
     {
       "name": "solo-founder",
       "description": "21 skills for a solo, bootstrapped founder building a software business alone with Claude Code: validate the idea, sell the first 10 customers by hand, build the smallest version, ship it safely, and grow to 100.",
-      "source": "./plugins/solo-founder",
+      "source": "./",
       "category": "productivity",
       "author": {
         "name": "Will Hawkins"

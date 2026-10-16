@@ -2,3 +2,9 @@
 __pycache__/
 eval/
 *-workspace/
+
+# Our instructions and tools for building the repo. Not for users.
+CLAUDE.md
+SKILL-STANDARD.md
+.claude/
+scripts/
